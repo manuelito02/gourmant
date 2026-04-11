@@ -12,7 +12,7 @@
     {% if recipes %}
     <div class="recipe-grid">
         {% for recipe in recipes %}
-        <div class="recipe-card">
+        <a href="/recipes/{{ recipe.id }}" class="recipe-card">
             <div class="recipe-card-type">{{ recipe.type.name }}</div>
             <h2 class="recipe-card-title">{{ recipe.title }}</h2>
             {% if recipe.description %}
@@ -21,7 +21,7 @@
             <div class="recipe-card-meta">
                 {% if recipe.servings %}{{ recipe.servings }} servings · {% endif %}{{ recipe.created_at.strftime("%d %b %Y") }}
             </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
     {% else %}

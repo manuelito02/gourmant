@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}{{ recipe.title }} — Gourmant{% endblock %}
+
+{% block content %}
+<div class="recipe-detail">
+
+    <div class="recipe-detail-header">
+        <div>
+            <div class="recipe-detail-type">{{ recipe.type.name }}</div>
+            <h1>{{ recipe.title }}</h1>
+            <div class="recipe-detail-meta">
+                {% if recipe.servings %}<span>{{ recipe.servings }} servings</span>{% endif %}
+                <span>{{ recipe.created_at.strftime("%d %b %Y") }}</span>
+            </div>
+        </div>
+        <div class="recipe-detail-actions">
+            <a href="/dashboard" class="btn-secondary">← Back</a>
+        </div>
+    </div>
+
+    {% if recipe.description %}
+    <p class="recipe-detail-desc">{{ recipe.description }}</p>
+    {% endif %}
+
+    <div class="recipe-detail-body">
+
+        <!-- ── Ingredients ── -->
+        <section class="detail-section">
+            <h2>Ingredients</h2>
+
+            {% set ungrouped = recipe.ingredients | selectattr("group_id", "none") | list %}
+            {% if ungrouped %}
+            <ul class="ingredient-detail-list">
+                {% for ri in ungrouped %}
+                <li>
+                    <span class="ing-detail-name">{{ ri.ingredient.name }}</span>
+                    <span class="ing-detail-amount">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% for group in recipe.ingredient_groups %}
+            <div class="ingredient-detail-group">
+                <h3>{{ group.name }}</h3>
+                <ul class="ingredient-detail-list">
+                    {% for ri in group.ingredients %}
+                    <li>
+                        <span class="ing-detail-name">{{ ri.ingredient.name }}</span>
+                        <span class="ing-detail-amount">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+
+            {% if not ungrouped and not recipe.ingredient_groups %}
+            <p class="detail-empty">No ingredients added.</p>
+            {% endif %}
+        </section>
+
+        <!-- ── Steps ── -->
+        <section class="detail-section">
+            <h2>Steps</h2>
+            {% if recipe.steps %}
+            {% set total_duration = recipe.steps | selectattr("duration") | map(attribute="duration") | sum %}
+            {% if total_duration %}
+            <p class="steps-total-time">Total time: {{ total_duration }} min</p>
+            {% endif %}
+            <ol class="step-detail-list">
+                {% for step in recipe.steps %}
+                <li class="step-detail-row">
+                    <div class="step-detail-desc">{{ step.description }}</div>
+                    {% if step.duration %}
+                    <div class="step-detail-duration">{{ step.duration }} min</div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+            {% else %}
+            <p class="detail-empty">No steps added.</p>
+            {% endif %}
+        </section>
+
+    </div>
+</div>
+{% endblock %}
