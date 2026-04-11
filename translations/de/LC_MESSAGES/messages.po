@@ -1,0 +1,283 @@
+# German translations for Gourmant
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+
+# ── Nav ──────────────────────────────────────────────────────────────────────
+msgid "Log in"
+msgstr "Anmelden"
+
+msgid "Log out"
+msgstr "Abmelden"
+
+# ── Index ─────────────────────────────────────────────────────────────────────
+msgid "Welcome to the Gourmant App!"
+msgstr "Willkommen bei der Gourmant App!"
+
+msgid "Your recipe management companion."
+msgstr "Ihr Rezeptverwaltungs-Assistent."
+
+# ── Auth ──────────────────────────────────────────────────────────────────────
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "No account yet?"
+msgstr "Noch kein Konto?"
+
+msgid "Create one"
+msgstr "Jetzt erstellen"
+
+msgid "Create account"
+msgstr "Konto erstellen"
+
+msgid "First name"
+msgstr "Vorname"
+
+msgid "Last name"
+msgstr "Nachname"
+
+msgid "Confirm password"
+msgstr "Passwort bestätigen"
+
+msgid "Already have an account?"
+msgstr "Bereits ein Konto?"
+
+msgid "Very weak"
+msgstr "Sehr schwach"
+
+msgid "Weak"
+msgstr "Schwach"
+
+msgid "Fair"
+msgstr "Mittel"
+
+msgid "Strong"
+msgstr "Stark"
+
+msgid "Very strong"
+msgstr "Sehr stark"
+
+# ── Auth errors ───────────────────────────────────────────────────────────────
+msgid "Passwords do not match"
+msgstr "Die Passwörter stimmen nicht überein"
+
+msgid "Password is too weak."
+msgstr "Das Passwort ist zu schwach."
+
+msgid "An account with this email already exists"
+msgstr "Ein Konto mit dieser E-Mail-Adresse existiert bereits"
+
+msgid "Invalid email or password"
+msgstr "Ungültige E-Mail-Adresse oder Passwort"
+
+# ── API errors ────────────────────────────────────────────────────────────────
+msgid "Not authenticated"
+msgstr "Nicht authentifiziert"
+
+msgid "Recipe not found"
+msgstr "Rezept nicht gefunden"
+
+msgid "Name is required"
+msgstr "Name ist erforderlich"
+
+msgid "Ingredient already exists"
+msgstr "Diese Zutat existiert bereits"
+
+# ── Dashboard ─────────────────────────────────────────────────────────────────
+msgid "My Recipes"
+msgstr "Meine Rezepte"
+
+msgid "+ New recipe"
+msgstr "+ Neues Rezept"
+
+msgid "No recipes yet."
+msgstr "Noch keine Rezepte."
+
+msgid "Create your first recipe"
+msgstr "Erstellen Sie Ihr erstes Rezept"
+
+msgid "servings"
+msgstr "Portionen"
+
+# ── Recipe form ───────────────────────────────────────────────────────────────
+msgid "New recipe"
+msgstr "Neues Rezept"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "e.g. Pizza Margherita"
+msgstr "z.B. Pizza Margherita"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Servings"
+msgstr "Portionen"
+
+msgid "e.g. 4"
+msgstr "z.B. 4"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "A short description of the recipe…"
+msgstr "Eine kurze Beschreibung des Rezepts…"
+
+msgid "Ingredients"
+msgstr "Zutaten"
+
+msgid "+ Add ingredient"
+msgstr "+ Zutat hinzufügen"
+
+msgid "+ Add group"
+msgstr "+ Gruppe hinzufügen"
+
+msgid "Steps"
+msgstr "Schritte"
+
+msgid "+ Add step"
+msgstr "+ Schritt hinzufügen"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Save recipe"
+msgstr "Rezept speichern"
+
+msgid "Saving…"
+msgstr "Wird gespeichert…"
+
+msgid "New ingredient"
+msgstr "Neue Zutat"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Create"
+msgstr "Erstellen"
+
+msgid "Title is required."
+msgstr "Titel ist erforderlich."
+
+msgid "Failed to save recipe."
+msgstr "Rezept konnte nicht gespeichert werden."
+
+msgid "Network error. Please try again."
+msgstr "Netzwerkfehler. Bitte versuchen Sie es erneut."
+
+msgid "Failed to create ingredient."
+msgstr "Zutat konnte nicht erstellt werden."
+
+msgid "Ingredient…"
+msgstr "Zutat…"
+
+msgid "Amount"
+msgstr "Menge"
+
+msgid "Group name (e.g. Dough, Toppings…)"
+msgstr "Gruppenname (z.B. Teig, Beläge…)"
+
+msgid "Describe this step…"
+msgstr "Beschreiben Sie diesen Schritt…"
+
+# ── Recipe detail ─────────────────────────────────────────────────────────────
+msgid "← Back"
+msgstr "← Zurück"
+
+msgid "No ingredients added."
+msgstr "Keine Zutaten hinzugefügt."
+
+msgid "No steps added."
+msgstr "Keine Schritte hinzugefügt."
+
+msgid "min total"
+msgstr "min gesamt"
+
+# ── Recipe types ──────────────────────────────────────────────────────────────
+msgid "Starter"
+msgstr "Vorspeise"
+
+msgid "Main course"
+msgstr "Hauptgericht"
+
+msgid "Dessert"
+msgstr "Dessert"
+
+msgid "Sauce"
+msgstr "Sauce"
+
+msgid "Side dish"
+msgstr "Beilage"
+
+msgid "Soup"
+msgstr "Suppe"
+
+msgid "Salad"
+msgstr "Salat"
+
+msgid "Breakfast"
+msgstr "Frühstück"
+
+msgid "Snack"
+msgstr "Snack"
+
+msgid "Beverage"
+msgstr "Getränk"
+
+# ── Ingredient types ──────────────────────────────────────────────────────────
+msgid "Vegetable"
+msgstr "Gemüse"
+
+msgid "Fruit"
+msgstr "Obst"
+
+msgid "Meat"
+msgstr "Fleisch"
+
+msgid "Fish"
+msgstr "Fisch"
+
+msgid "Seafood"
+msgstr "Meeresfrüchte"
+
+msgid "Dairy"
+msgstr "Milchprodukt"
+
+msgid "Egg"
+msgstr "Ei"
+
+msgid "Grain"
+msgstr "Getreide"
+
+msgid "Legume"
+msgstr "Hülsenfrucht"
+
+msgid "Nut"
+msgstr "Nuss"
+
+msgid "Spice"
+msgstr "Gewürz"
+
+msgid "Herb"
+msgstr "Kräuter"
+
+msgid "Oil"
+msgstr "Öl"
+
+msgid "Sweetener"
+msgstr "Süßungsmittel"
+
+msgid "Condiment"
+msgstr "Würzmittel"
+
+msgid "Other"
+msgstr "Sonstiges"

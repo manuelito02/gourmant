@@ -49,6 +49,17 @@ nav .btn {
 
 nav .btn:hover { background-color: #b8945e; }
 
+.lang-select {
+    background-color: transparent;
+    color: #fdf6ec;
+    border: 1px solid rgba(253,246,236,0.4);
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.lang-select option { background-color: #3d2b1f; color: #fdf6ec; }
+
 
 /* ── Main ── */
 main { padding: 2rem; }

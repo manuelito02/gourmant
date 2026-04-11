@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
 from app.config import settings
+from app.i18n import SUPPORTED_LANGS, get_templates
 from app.routers import auth, recipes
 
 app = FastAPI(title="Gourmant", description="Recipe management API", version="0.1.0")
@@ -18,14 +18,20 @@ app.include_router(recipes.router)
 
 app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
 
-templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
-
 
 @app.get("/", response_class=HTMLResponse)
 def root(request: Request):
     if request.session.get("user_id"):
         return RedirectResponse("/dashboard", status_code=302)
-    return templates.TemplateResponse(request, "index.html")
+    return get_templates(request).TemplateResponse(request, "index.html")
+
+
+@app.post("/set-language", response_class=HTMLResponse)
+def set_language(request: Request, lang: str = Form(...)):
+    if lang in SUPPORTED_LANGS:
+        request.session["lang"] = lang
+    referer = request.headers.get("referer", "/")
+    return RedirectResponse(referer, status_code=302)
 
 
 @app.get("/health")

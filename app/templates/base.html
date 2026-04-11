@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ request.session.get('lang', 'en') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,20 @@
             {% if request.session.get("user_id") %}
                 <span>{{ request.session.get("first_name") }}</span>
                 <form method="post" action="/logout" style="margin:0">
-                    <button type="submit" class="btn">Log out</button>
+                    <button type="submit" class="btn">{{ _("Log out") }}</button>
                 </form>
             {% else %}
-                <a href="/login" class="btn">Log in</a>
+                <a href="/login" class="btn">{{ _("Log in") }}</a>
             {% endif %}
+            <form method="post" action="/set-language" style="margin:0">
+                <select name="lang" class="lang-select" onchange="this.form.submit()" aria-label="Language">
+                    {% set cur = request.session.get('lang', 'en') %}
+                    <option value="en" {% if cur == 'en' %}selected{% endif %}>EN</option>
+                    <option value="fr" {% if cur == 'fr' %}selected{% endif %}>FR</option>
+                    <option value="de" {% if cur == 'de' %}selected{% endif %}>DE</option>
+                    <option value="nl" {% if cur == 'nl' %}selected{% endif %}>NL</option>
+                </select>
+            </form>
         </div>
     </nav>
     <main>

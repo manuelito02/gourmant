@@ -1,11 +1,9 @@
-from pathlib import Path
-
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 
 from app.database import get_db
+from app.i18n import get_templates, gettext_for
 from app.models.ingredient import Ingredient, IngredientType
 from app.models.recipe import (
     AmountUnit,
@@ -18,13 +16,12 @@ from app.models.recipe import (
 from app.schemas.recipe import IngredientCreate, RecipeCreate
 
 router = APIRouter()
-templates = Jinja2Templates(directory=Path(__file__).parent.parent / "templates")
 
 
 def _require_user(request: Request) -> int:
     user_id = request.session.get("user_id")
     if not user_id:
-        raise HTTPException(status_code=401, detail="Not authenticated")
+        raise HTTPException(status_code=401, detail=gettext_for(request, "Not authenticated"))
     return user_id
 
 
@@ -39,7 +36,7 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
     recipes = (
         db.query(Recipe).filter(Recipe.user_id == user_id).order_by(Recipe.created_at.desc()).all()
     )
-    return templates.TemplateResponse(request, "dashboard.html", {"recipes": recipes})
+    return get_templates(request).TemplateResponse(request, "dashboard.html", {"recipes": recipes})
 
 
 @router.get("/recipes/new", response_class=HTMLResponse)
@@ -49,7 +46,7 @@ def new_recipe_form(request: Request, db: Session = Depends(get_db)):
     recipe_types = db.query(RecipeType).order_by(RecipeType.name).all()
     amount_units = db.query(AmountUnit).all()
     ingredient_types = db.query(IngredientType).order_by(IngredientType.name).all()
-    return templates.TemplateResponse(
+    return get_templates(request).TemplateResponse(
         request,
         "recipe_form.html",
         {
@@ -69,8 +66,10 @@ def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db
     user_id = request.session["user_id"]
     recipe = db.query(Recipe).filter(Recipe.id == recipe_id, Recipe.user_id == user_id).first()
     if not recipe:
-        raise HTTPException(status_code=404, detail="Recipe not found")
-    return templates.TemplateResponse(request, "recipe_detail.html", {"recipe": recipe})
+        raise HTTPException(status_code=404, detail=gettext_for(request, "Recipe not found"))
+    return get_templates(request).TemplateResponse(
+        request, "recipe_detail.html", {"recipe": recipe}
+    )
 
 
 # ── Ingredient API ────────────────────────────────────────────────────────────

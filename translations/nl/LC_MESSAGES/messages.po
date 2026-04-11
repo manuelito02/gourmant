@@ -1,0 +1,283 @@
+# Dutch translations for Gourmant
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+
+# ── Nav ──────────────────────────────────────────────────────────────────────
+msgid "Log in"
+msgstr "Inloggen"
+
+msgid "Log out"
+msgstr "Uitloggen"
+
+# ── Index ─────────────────────────────────────────────────────────────────────
+msgid "Welcome to the Gourmant App!"
+msgstr "Welkom bij de Gourmant App!"
+
+msgid "Your recipe management companion."
+msgstr "Uw receptenbeheer-assistent."
+
+# ── Auth ──────────────────────────────────────────────────────────────────────
+msgid "Email address"
+msgstr "E-mailadres"
+
+msgid "Password"
+msgstr "Wachtwoord"
+
+msgid "No account yet?"
+msgstr "Nog geen account?"
+
+msgid "Create one"
+msgstr "Maak er een aan"
+
+msgid "Create account"
+msgstr "Account aanmaken"
+
+msgid "First name"
+msgstr "Voornaam"
+
+msgid "Last name"
+msgstr "Achternaam"
+
+msgid "Confirm password"
+msgstr "Wachtwoord bevestigen"
+
+msgid "Already have an account?"
+msgstr "Al een account?"
+
+msgid "Very weak"
+msgstr "Zeer zwak"
+
+msgid "Weak"
+msgstr "Zwak"
+
+msgid "Fair"
+msgstr "Redelijk"
+
+msgid "Strong"
+msgstr "Sterk"
+
+msgid "Very strong"
+msgstr "Zeer sterk"
+
+# ── Auth errors ───────────────────────────────────────────────────────────────
+msgid "Passwords do not match"
+msgstr "De wachtwoorden komen niet overeen"
+
+msgid "Password is too weak."
+msgstr "Het wachtwoord is te zwak."
+
+msgid "An account with this email already exists"
+msgstr "Er bestaat al een account met dit e-mailadres"
+
+msgid "Invalid email or password"
+msgstr "Ongeldig e-mailadres of wachtwoord"
+
+# ── API errors ────────────────────────────────────────────────────────────────
+msgid "Not authenticated"
+msgstr "Niet geauthenticeerd"
+
+msgid "Recipe not found"
+msgstr "Recept niet gevonden"
+
+msgid "Name is required"
+msgstr "Naam is verplicht"
+
+msgid "Ingredient already exists"
+msgstr "Dit ingrediënt bestaat al"
+
+# ── Dashboard ─────────────────────────────────────────────────────────────────
+msgid "My Recipes"
+msgstr "Mijn recepten"
+
+msgid "+ New recipe"
+msgstr "+ Nieuw recept"
+
+msgid "No recipes yet."
+msgstr "Nog geen recepten."
+
+msgid "Create your first recipe"
+msgstr "Maak uw eerste recept"
+
+msgid "servings"
+msgstr "porties"
+
+# ── Recipe form ───────────────────────────────────────────────────────────────
+msgid "New recipe"
+msgstr "Nieuw recept"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "e.g. Pizza Margherita"
+msgstr "bijv. Pizza Margherita"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Servings"
+msgstr "Porties"
+
+msgid "e.g. 4"
+msgstr "bijv. 4"
+
+msgid "Description"
+msgstr "Beschrijving"
+
+msgid "A short description of the recipe…"
+msgstr "Een korte beschrijving van het recept…"
+
+msgid "Ingredients"
+msgstr "Ingrediënten"
+
+msgid "+ Add ingredient"
+msgstr "+ Ingrediënt toevoegen"
+
+msgid "+ Add group"
+msgstr "+ Groep toevoegen"
+
+msgid "Steps"
+msgstr "Stappen"
+
+msgid "+ Add step"
+msgstr "+ Stap toevoegen"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Save recipe"
+msgstr "Recept opslaan"
+
+msgid "Saving…"
+msgstr "Opslaan…"
+
+msgid "New ingredient"
+msgstr "Nieuw ingrediënt"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Create"
+msgstr "Aanmaken"
+
+msgid "Title is required."
+msgstr "Titel is verplicht."
+
+msgid "Failed to save recipe."
+msgstr "Recept kon niet worden opgeslagen."
+
+msgid "Network error. Please try again."
+msgstr "Netwerkfout. Probeer het opnieuw."
+
+msgid "Failed to create ingredient."
+msgstr "Ingrediënt kon niet worden aangemaakt."
+
+msgid "Ingredient…"
+msgstr "Ingrediënt…"
+
+msgid "Amount"
+msgstr "Hoeveelheid"
+
+msgid "Group name (e.g. Dough, Toppings…)"
+msgstr "Groepsnaam (bijv. Deeg, Toppings…)"
+
+msgid "Describe this step…"
+msgstr "Beschrijf deze stap…"
+
+# ── Recipe detail ─────────────────────────────────────────────────────────────
+msgid "← Back"
+msgstr "← Terug"
+
+msgid "No ingredients added."
+msgstr "Geen ingrediënten toegevoegd."
+
+msgid "No steps added."
+msgstr "Geen stappen toegevoegd."
+
+msgid "min total"
+msgstr "min totaal"
+
+# ── Recipe types ──────────────────────────────────────────────────────────────
+msgid "Starter"
+msgstr "Voorgerecht"
+
+msgid "Main course"
+msgstr "Hoofdgerecht"
+
+msgid "Dessert"
+msgstr "Dessert"
+
+msgid "Sauce"
+msgstr "Saus"
+
+msgid "Side dish"
+msgstr "Bijgerecht"
+
+msgid "Soup"
+msgstr "Soep"
+
+msgid "Salad"
+msgstr "Salade"
+
+msgid "Breakfast"
+msgstr "Ontbijt"
+
+msgid "Snack"
+msgstr "Snack"
+
+msgid "Beverage"
+msgstr "Drank"
+
+# ── Ingredient types ──────────────────────────────────────────────────────────
+msgid "Vegetable"
+msgstr "Groente"
+
+msgid "Fruit"
+msgstr "Fruit"
+
+msgid "Meat"
+msgstr "Vlees"
+
+msgid "Fish"
+msgstr "Vis"
+
+msgid "Seafood"
+msgstr "Zeevruchten"
+
+msgid "Dairy"
+msgstr "Zuivel"
+
+msgid "Egg"
+msgstr "Ei"
+
+msgid "Grain"
+msgstr "Graan"
+
+msgid "Legume"
+msgstr "Peulvrucht"
+
+msgid "Nut"
+msgstr "Noot"
+
+msgid "Spice"
+msgstr "Specerij"
+
+msgid "Herb"
+msgstr "Kruid"
+
+msgid "Oil"
+msgstr "Olie"
+
+msgid "Sweetener"
+msgstr "Zoetstof"
+
+msgid "Condiment"
+msgstr "Smaakmaker"
+
+msgid "Other"
+msgstr "Overig"

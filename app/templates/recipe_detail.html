@@ -7,7 +7,7 @@
 
     <div class="recipe-detail-header">
         <div>
-            <div class="recipe-detail-type">{{ recipe.type.name }}</div>
+            <div class="recipe-detail-type">{{ _(recipe.type.name) }}</div>
             <h1>{{ recipe.title }}</h1>
             <div class="recipe-detail-meta">
                 <span>{{ recipe.created_at.strftime("%d %b %Y") }}</span>
@@ -19,12 +19,12 @@
                 <button class="servings-btn" id="servings-dec" aria-label="Fewer servings">−</button>
                 <span class="servings-display">
                     <span id="servings-count">{{ recipe.servings }}</span>
-                    <span class="servings-label">servings</span>
+                    <span class="servings-label">{{ _("servings") }}</span>
                 </span>
                 <button class="servings-btn" id="servings-inc" aria-label="More servings">+</button>
             </div>
             {% endif %}
-            <a href="/dashboard" class="btn-secondary">← Back</a>
+            <a href="/dashboard" class="btn-secondary">{{ _("← Back") }}</a>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
 
         <!-- ── Ingredients ── -->
         <section class="detail-section">
-            <h2>Ingredients</h2>
+            <h2>{{ _("Ingredients") }}</h2>
 
             {% set ungrouped = recipe.ingredients | selectattr("group_id", "none") | list %}
             {% if ungrouped %}
@@ -65,16 +65,16 @@
             {% endfor %}
 
             {% if not ungrouped and not recipe.ingredient_groups %}
-            <p class="detail-empty">No ingredients added.</p>
+            <p class="detail-empty">{{ _("No ingredients added.") }}</p>
             {% endif %}
         </section>
 
         <!-- ── Steps ── -->
         {% set total_duration = recipe.steps | selectattr("duration") | map(attribute="duration") | sum %}
         <section class="detail-section">
-            <h2>Steps
+            <h2>{{ _("Steps") }}
                 {% if total_duration %}
-                <span class="steps-total-time">{{ total_duration }} min total</span>
+                <span class="steps-total-time">{{ total_duration }} {{ _("min total") }}</span>
                 {% endif %}
             </h2>
             {% if recipe.steps %}
@@ -89,7 +89,7 @@
                 {% endfor %}
             </ol>
             {% else %}
-            <p class="detail-empty">No steps added.</p>
+            <p class="detail-empty">{{ _("No steps added.") }}</p>
             {% endif %}
         </section>
 

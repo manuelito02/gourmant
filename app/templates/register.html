@@ -1,30 +1,30 @@
 {% extends "base.html" %}
 
-{% block title %}Create account — Gourmant{% endblock %}
+{% block title %}{{ _("Create account") }} — Gourmant{% endblock %}
 
 {% block content %}
 <div class="auth-card">
-    <h2>Create account</h2>
+    <h2>{{ _("Create account") }}</h2>
     {% if error %}
     <div class="error">{{ error }}</div>
     {% endif %}
     <form method="post" action="/register">
         <div class="form-row">
             <div class="form-group">
-                <label for="first_name">First name</label>
+                <label for="first_name">{{ _("First name") }}</label>
                 <input type="text" id="first_name" name="first_name" required autofocus autocomplete="given-name" maxlength="100">
             </div>
             <div class="form-group">
-                <label for="last_name">Last name</label>
+                <label for="last_name">{{ _("Last name") }}</label>
                 <input type="text" id="last_name" name="last_name" required autocomplete="family-name" maxlength="100">
             </div>
         </div>
         <div class="form-group">
-            <label for="email">Email address</label>
+            <label for="email">{{ _("Email address") }}</label>
             <input type="email" id="email" name="email" required autocomplete="email">
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">{{ _("Password") }}</label>
             <input type="password" id="password" name="password" required autocomplete="new-password">
             <div class="strength-bar-wrap">
                 <div class="strength-bar" id="strength-bar"></div>
@@ -32,18 +32,24 @@
             <div class="strength-label" id="strength-label"></div>
         </div>
         <div class="form-group">
-            <label for="password_confirm">Confirm password</label>
+            <label for="password_confirm">{{ _("Confirm password") }}</label>
             <input type="password" id="password_confirm" name="password_confirm" required autocomplete="new-password">
         </div>
-        <button type="submit" class="submit-btn">Create account</button>
+        <button type="submit" class="submit-btn">{{ _("Create account") }}</button>
     </form>
-    <p class="auth-footer">Already have an account? <a href="/login">Log in</a></p>
+    <p class="auth-footer">{{ _("Already have an account?") }} <a href="/login">{{ _("Log in") }}</a></p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
 <script>
     const colors = ["#ef4444", "#f97316", "#eab308", "#84cc16", "#22c55e"];
-    const labels = ["Very weak", "Weak", "Fair", "Strong", "Very strong"];
+    const labels = [
+        {{ _("Very weak") | tojson }},
+        {{ _("Weak") | tojson }},
+        {{ _("Fair") | tojson }},
+        {{ _("Strong") | tojson }},
+        {{ _("Very strong") | tojson }}
+    ];
 
     document.getElementById("password").addEventListener("input", function () {
         const first = document.getElementById("first_name").value;

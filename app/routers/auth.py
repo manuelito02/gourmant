@@ -1,17 +1,14 @@
-from pathlib import Path
-
 import bcrypt
 import zxcvbn as zxcvbn_lib
 from fastapi import APIRouter, Depends, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 
 from app.database import get_db
+from app.i18n import get_templates, gettext_for
 from app.models.user import User
 
 router = APIRouter()
-templates = Jinja2Templates(directory=Path(__file__).parent.parent / "templates")
 
 MIN_PASSWORD_SCORE = 2  # 0-4; 2 = "fair"
 
@@ -42,7 +39,7 @@ def check_password_strength(password: str, user_inputs: list[str]) -> str | None
 def login_page(request: Request):
     if request.session.get("user_id"):
         return RedirectResponse("/dashboard", status_code=302)
-    return templates.TemplateResponse(request, "login.html", {"error": None})
+    return get_templates(request).TemplateResponse(request, "login.html", {"error": None})
 
 
 @router.post("/login", response_class=HTMLResponse)
@@ -54,8 +51,11 @@ def login(
 ):
     user = db.query(User).filter(User.email == email.lower()).first()
     if not user or not verify_password(password, user.hashed_password):
-        return templates.TemplateResponse(
-            request, "login.html", {"error": "Invalid email or password"}, status_code=401
+        return get_templates(request).TemplateResponse(
+            request,
+            "login.html",
+            {"error": gettext_for(request, "Invalid email or password")},
+            status_code=401,
         )
     request.session["user_id"] = user.id
     request.session["first_name"] = user.first_name
@@ -66,7 +66,7 @@ def login(
 def register_page(request: Request):
     if request.session.get("user_id"):
         return RedirectResponse("/dashboard", status_code=302)
-    return templates.TemplateResponse(request, "register.html", {"error": None})
+    return get_templates(request).TemplateResponse(request, "register.html", {"error": None})
 
 
 @router.post("/register", response_class=HTMLResponse)
@@ -79,20 +79,27 @@ def register(
     password_confirm: str = Form(...),
     db: Session = Depends(get_db),
 ):
+    _ = lambda s: gettext_for(request, s)  # noqa: E731
     if password != password_confirm:
-        return templates.TemplateResponse(
-            request, "register.html", {"error": "Passwords do not match"}, status_code=400
+        return get_templates(request).TemplateResponse(
+            request,
+            "register.html",
+            {"error": _("Passwords do not match")},
+            status_code=400,
         )
     strength_error = check_password_strength(password, user_inputs=[first_name, last_name, email])
     if strength_error:
-        return templates.TemplateResponse(
-            request, "register.html", {"error": strength_error}, status_code=400
-        )
-    if db.query(User).filter(User.email == email.lower()).first():
-        return templates.TemplateResponse(
+        return get_templates(request).TemplateResponse(
             request,
             "register.html",
-            {"error": "An account with this email already exists"},
+            {"error": strength_error},
+            status_code=400,
+        )
+    if db.query(User).filter(User.email == email.lower()).first():
+        return get_templates(request).TemplateResponse(
+            request,
+            "register.html",
+            {"error": _("An account with this email already exists")},
             status_code=400,
         )
     user = User(

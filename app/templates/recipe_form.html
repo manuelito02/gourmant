@@ -1,69 +1,81 @@
 {% extends "base.html" %}
 
-{% block title %}New recipe — Gourmant{% endblock %}
+{% block title %}{{ _("New recipe") }} — Gourmant{% endblock %}
 
 {% block head %}
 <script>
     const AMOUNT_UNITS = {{ amount_units | tojson(indent=None) }};
     const INGREDIENT_TYPES = {{ ingredient_types | tojson(indent=None) }};
+    const STRINGS = {
+        ingredientPlaceholder: {{ _("Ingredient…") | tojson }},
+        amountPlaceholder: {{ _("Amount") | tojson }},
+        groupNamePlaceholder: {{ _("Group name (e.g. Dough, Toppings…)") | tojson }},
+        stepPlaceholder: {{ _("Describe this step…") | tojson }},
+        saving: {{ _("Saving…") | tojson }},
+        saveRecipe: {{ _("Save recipe") | tojson }},
+        titleRequired: {{ _("Title is required.") | tojson }},
+        failedSave: {{ _("Failed to save recipe.") | tojson }},
+        networkError: {{ _("Network error. Please try again.") | tojson }},
+        failedCreateIngredient: {{ _("Failed to create ingredient.") | tojson }}
+    };
 </script>
 {% endblock %}
 
 {% block content %}
 <div class="recipe-form-wrap">
-    <h1>New recipe</h1>
+    <h1>{{ _("New recipe") }}</h1>
     <div id="form-error" class="error hidden"></div>
 
     <form id="recipe-form" novalidate>
 
         <!-- ── Details ─────────────────────────────────────────────────── -->
         <section class="form-section">
-            <h2>Details</h2>
+            <h2>{{ _("Details") }}</h2>
             <div class="form-group">
-                <label for="f-title">Title <span class="required">*</span></label>
-                <input type="text" id="f-title" placeholder="e.g. Pizza Margherita" required>
+                <label for="f-title">{{ _("Title") }} <span class="required">*</span></label>
+                <input type="text" id="f-title" placeholder="{{ _('e.g. Pizza Margherita') }}" required>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="f-type">Type <span class="required">*</span></label>
+                    <label for="f-type">{{ _("Type") }} <span class="required">*</span></label>
                     <select id="f-type">
                         {% for rt in recipe_types %}
-                        <option value="{{ rt.id }}">{{ rt.name }}</option>
+                        <option value="{{ rt.id }}">{{ _(rt.name) }}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="form-group" style="max-width:140px">
-                    <label for="f-servings">Servings</label>
-                    <input type="number" id="f-servings" min="1" max="999" placeholder="e.g. 4">
+                    <label for="f-servings">{{ _("Servings") }}</label>
+                    <input type="number" id="f-servings" min="1" max="999" placeholder="{{ _('e.g. 4') }}">
                 </div>
             </div>
             <div class="form-group">
-                <label for="f-description">Description</label>
-                <textarea id="f-description" rows="3" placeholder="A short description of the recipe…"></textarea>
+                <label for="f-description">{{ _("Description") }}</label>
+                <textarea id="f-description" rows="3" placeholder="{{ _('A short description of the recipe…') }}"></textarea>
             </div>
         </section>
 
         <!-- ── Ingredients ─────────────────────────────────────────────── -->
         <section class="form-section">
-            <h2>Ingredients</h2>
+            <h2>{{ _("Ingredients") }}</h2>
 
             <div id="ungrouped-ings" class="ingredient-list"></div>
-            <button type="button" class="btn-add" onclick="addIngredientRow('ungrouped')">+ Add ingredient</button>
+            <button type="button" class="btn-add" onclick="addIngredientRow('ungrouped')">{{ _("+ Add ingredient") }}</button>
 
             <div id="groups-container"></div>
-            <button type="button" class="btn-add btn-add-group" onclick="addGroup()">+ Add group</button>
+            <button type="button" class="btn-add btn-add-group" onclick="addGroup()">{{ _("+ Add group") }}</button>
         </section>
 
         <!-- ── Steps ───────────────────────────────────────────────────── -->
         <section class="form-section">
-            <h2>Steps</h2>
+            <h2>{{ _("Steps") }}</h2>
             <div id="steps-container"></div>
-            <button type="button" class="btn-add" onclick="addStep()">+ Add step</button>
+            <button type="button" class="btn-add" onclick="addStep()">{{ _("+ Add step") }}</button>
         </section>
 
         <div class="form-actions">
-            <a href="/dashboard" class="btn-secondary">Cancel</a>
-            <button type="submit" id="submit-btn" class="btn-primary">Save recipe</button>
+            <a href="/dashboard" class="btn-secondary">{{ _("Cancel") }}</a>
+            <button type="submit" id="submit-btn" class="btn-primary">{{ _("Save recipe") }}</button>
         </div>
     </form>
 </div>
@@ -71,19 +83,19 @@
 <!-- ── Create ingredient modal ─────────────────────────────────────────────── -->
 <div id="create-ing-modal" class="modal-backdrop hidden">
     <div class="modal">
-        <h3>New ingredient</h3>
+        <h3>{{ _("New ingredient") }}</h3>
         <div class="form-group">
-            <label for="modal-ing-name">Name <span class="required">*</span></label>
+            <label for="modal-ing-name">{{ _("Name") }} <span class="required">*</span></label>
             <input type="text" id="modal-ing-name">
         </div>
         <div class="form-group">
-            <label for="modal-ing-type">Type <span class="required">*</span></label>
+            <label for="modal-ing-type">{{ _("Type") }} <span class="required">*</span></label>
             <select id="modal-ing-type"></select>
         </div>
         <div id="modal-error" class="error hidden"></div>
         <div class="modal-actions">
-            <button type="button" class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
-            <button type="button" class="btn-primary" onclick="submitCreateIngredient()">Create</button>
+            <button type="button" class="btn-secondary" onclick="closeCreateModal()">{{ _("Cancel") }}</button>
+            <button type="button" class="btn-primary" onclick="submitCreateIngredient()">{{ _("Create") }}</button>
         </div>
     </div>
 </div>

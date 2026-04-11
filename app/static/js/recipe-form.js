@@ -110,7 +110,7 @@ async function submitCreateIngredient() {
     } else {
         const err = await res.json();
         const el = $("modal-error");
-        el.textContent = err.detail || "Failed to create ingredient.";
+        el.textContent = err.detail || STRINGS.failedCreateIngredient;
         el.classList.remove("hidden");
     }
 }
@@ -154,11 +154,11 @@ function addIngredientRow(containerId) {
     div.className = "ingredient-row";
     div.innerHTML = `
         <div class="autocomplete-wrap">
-            <input id="ing-search-${id}" type="text" placeholder="Ingredient…" autocomplete="off" class="ing-search">
+            <input id="ing-search-${id}" type="text" placeholder="${STRINGS.ingredientPlaceholder}" autocomplete="off" class="ing-search">
             <input id="ing-id-${id}" type="hidden">
             <ul id="ing-drop-${id}" class="autocomplete-dropdown hidden"></ul>
         </div>
-        <input id="ing-amount-${id}" type="number" placeholder="Amount" min="0.001" step="0.001" class="ing-amount">
+        <input id="ing-amount-${id}" type="number" placeholder="${STRINGS.amountPlaceholder}" min="0.001" step="0.001" class="ing-amount">
         <select id="ing-unit-${id}" class="ing-unit">${unitOptions()}</select>
         <div class="row-controls">
             <button type="button" class="btn-icon" onclick="moveRow(this)">↑</button>
@@ -180,7 +180,7 @@ function addGroup() {
     div.className = "ingredient-group";
     div.innerHTML = `
         <div class="group-header">
-            <input type="text" id="group-name-${id}" class="group-name" placeholder="Group name (e.g. Dough, Toppings…)">
+            <input type="text" id="group-name-${id}" class="group-name" placeholder="${STRINGS.groupNamePlaceholder}">
             <div class="row-controls">
                 <button type="button" class="btn-icon" onclick="moveRow(this)">↑</button>
                 <button type="button" class="btn-icon" onclick="moveRow(this, true)">↓</button>
@@ -204,7 +204,7 @@ function addStep() {
     div.className = "step-row";
     div.innerHTML = `
         <span class="step-number">${pos}</span>
-        <textarea id="step-desc-${id}" class="step-desc" rows="2" placeholder="Describe this step…"></textarea>
+        <textarea id="step-desc-${id}" class="step-desc" rows="2" placeholder="${STRINGS.stepPlaceholder}"></textarea>
         <div class="step-duration">
             <input id="step-dur-${id}" type="number" class="duration-input" placeholder="—" min="1">
             <span class="duration-unit">min</span>
@@ -276,7 +276,7 @@ async function submitRecipe(e) {
 
     const title = $("f-title").value.trim();
     if (!title) {
-        showError("Title is required.");
+        showError(STRINGS.titleRequired);
         return;
     }
 
@@ -293,7 +293,7 @@ async function submitRecipe(e) {
 
     const btn = $("submit-btn");
     btn.disabled = true;
-    btn.textContent = "Saving…";
+    btn.textContent = STRINGS.saving;
 
     try {
         const res = await fetch("/api/recipes", {
@@ -305,13 +305,13 @@ async function submitRecipe(e) {
             window.location.href = "/dashboard";
         } else {
             const err = await res.json();
-            showError(err.detail || "Failed to save recipe.");
+            showError(err.detail || STRINGS.failedSave);
         }
     } catch {
-        showError("Network error. Please try again.");
+        showError(STRINGS.networkError);
     } finally {
         btn.disabled = false;
-        btn.textContent = "Save recipe";
+        btn.textContent = STRINGS.saveRecipe;
     }
 }
 
