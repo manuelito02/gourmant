@@ -270,6 +270,18 @@ function collectSteps() {
 
 // ── Submit ────────────────────────────────────────────────────────────────────
 
+function validateIngredientRows(listId) {
+    const list = $(listId);
+    if (!list) return true;
+    for (const row of list.querySelectorAll(".ingredient-row")) {
+        const id = row.id.replace("ing-row-", "");
+        const ingId = $(`ing-id-${id}`).value;
+        const amount = $(`ing-amount-${id}`).value;
+        if (ingId && !amount) return false;
+    }
+    return true;
+}
+
 async function submitRecipe(e) {
     e.preventDefault();
     hideError();
@@ -281,14 +293,40 @@ async function submitRecipe(e) {
     }
 
     const servings = parseInt($("f-servings").value);
+    const ungrouped = collectIngredients("ungrouped-ings");
+    const groups = collectGroups();
+    const steps = collectSteps();
+
+    // Validate: each selected ingredient must have an amount
+    const ungroupedOk = validateIngredientRows("ungrouped-ings");
+    const groupsOk = Array.from($("groups-container").querySelectorAll(".ingredient-group"))
+        .every((g) => validateIngredientRows(`${g.id}-ings`));
+    if (!ungroupedOk || !groupsOk) {
+        showError(STRINGS.amountRequired);
+        return;
+    }
+
+    // Validate: at least one ingredient
+    const totalIngredients = ungrouped.length + groups.reduce((s, g) => s + g.ingredients.length, 0);
+    if (totalIngredients === 0) {
+        showError(STRINGS.ingredientRequired);
+        return;
+    }
+
+    // Validate: at least one step
+    if (steps.length === 0) {
+        showError(STRINGS.stepRequired);
+        return;
+    }
+
     const payload = {
         title,
         description: $("f-description").value.trim() || null,
         type_id: parseInt($("f-type").value),
         servings: isNaN(servings) ? null : servings,
-        ungrouped_ingredients: collectIngredients("ungrouped-ings"),
-        ingredient_groups: collectGroups(),
-        steps: collectSteps(),
+        ungrouped_ingredients: ungrouped,
+        ingredient_groups: groups,
+        steps,
     };
 
     const btn = $("submit-btn");

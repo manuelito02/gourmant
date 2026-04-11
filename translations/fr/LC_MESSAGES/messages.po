@@ -177,6 +177,15 @@ msgstr "Erreur réseau. Veuillez réessayer."
 msgid "Failed to create ingredient."
 msgstr "Impossible de créer l'ingrédient."
 
+msgid "Add at least one ingredient."
+msgstr "Ajoutez au moins un ingrédient."
+
+msgid "Add at least one step."
+msgstr "Ajoutez au moins une étape."
+
+msgid "Each ingredient needs a valid amount."
+msgstr "Chaque ingrédient doit avoir une quantité valide."
+
 msgid "Ingredient…"
 msgstr "Ingrédient…"
 

@@ -177,6 +177,15 @@ msgstr "Netwerkfout. Probeer het opnieuw."
 msgid "Failed to create ingredient."
 msgstr "Ingrediënt kon niet worden aangemaakt."
 
+msgid "Add at least one ingredient."
+msgstr "Voeg minstens één ingrediënt toe."
+
+msgid "Add at least one step."
+msgstr "Voeg minstens één stap toe."
+
+msgid "Each ingredient needs a valid amount."
+msgstr "Elk ingrediënt heeft een geldig bedrag nodig."
+
 msgid "Ingredient…"
 msgstr "Ingrediënt…"
 

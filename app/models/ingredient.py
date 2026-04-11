@@ -1,4 +1,4 @@
-from sqlalchemy import ForeignKey, String
+from sqlalchemy import ForeignKey, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
@@ -29,3 +29,16 @@ class Ingredient(Base):
     type_id: Mapped[int] = mapped_column(ForeignKey("ingredient_types.id"), nullable=False)
 
     type: Mapped["IngredientType"] = relationship(back_populates="ingredients")
+    translations: Mapped[list["IngredientTranslation"]] = relationship(back_populates="ingredient")
+
+
+class IngredientTranslation(Base):
+    __tablename__ = "ingredient_translations"
+    __table_args__ = (UniqueConstraint("ingredient_id", "lang"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    ingredient_id: Mapped[int] = mapped_column(ForeignKey("ingredients.id"), nullable=False)
+    lang: Mapped[str] = mapped_column(String(5), nullable=False)
+    name: Mapped[str] = mapped_column(String(200), nullable=False, index=True)
+
+    ingredient: Mapped["Ingredient"] = relationship(back_populates="translations")

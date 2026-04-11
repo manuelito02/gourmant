@@ -43,7 +43,7 @@
             <ul class="ingredient-detail-list">
                 {% for ri in ungrouped %}
                 <li>
-                    <span class="ing-detail-name">{{ ri.ingredient.name }}</span>
+                    <span class="ing-detail-name">{{ ingredient_translations.get(ri.ingredient_id, ri.ingredient.name) }}</span>
                     <span class="ing-detail-amount" data-base="{{ ri.amount }}">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
                 </li>
                 {% endfor %}
@@ -56,7 +56,7 @@
                 <ul class="ingredient-detail-list">
                     {% for ri in group.ingredients %}
                     <li>
-                        <span class="ing-detail-name">{{ ri.ingredient.name }}</span>
+                        <span class="ing-detail-name">{{ ingredient_translations.get(ri.ingredient_id, ri.ingredient.name) }}</span>
                         <span class="ing-detail-amount" data-base="{{ ri.amount }}">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
                     </li>
                     {% endfor %}

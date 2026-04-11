@@ -16,7 +16,10 @@
         titleRequired: {{ _("Title is required.") | tojson }},
         failedSave: {{ _("Failed to save recipe.") | tojson }},
         networkError: {{ _("Network error. Please try again.") | tojson }},
-        failedCreateIngredient: {{ _("Failed to create ingredient.") | tojson }}
+        failedCreateIngredient: {{ _("Failed to create ingredient.") | tojson }},
+        ingredientRequired: {{ _("Add at least one ingredient.") | tojson }},
+        stepRequired: {{ _("Add at least one step.") | tojson }},
+        amountRequired: {{ _("Each ingredient needs a valid amount.") | tojson }}
     };
 </script>
 {% endblock %}
@@ -46,7 +49,7 @@
                 </div>
                 <div class="form-group" style="max-width:140px">
                     <label for="f-servings">{{ _("Servings") }}</label>
-                    <input type="number" id="f-servings" min="1" max="999" placeholder="{{ _('e.g. 4') }}">
+                    <input type="number" id="f-servings" min="1" max="999" placeholder="{{ _('e.g. 4') }}" value="4">
                 </div>
             </div>
             <div class="form-group">

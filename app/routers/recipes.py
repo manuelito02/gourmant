@@ -1,10 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
-from sqlalchemy.orm import Session
+from sqlalchemy import func
+from sqlalchemy.orm import Session, aliased
 
 from app.database import get_db
-from app.i18n import get_templates, gettext_for
-from app.models.ingredient import Ingredient, IngredientType
+from app.i18n import get_lang, get_templates, gettext_for
+from app.models.ingredient import Ingredient, IngredientTranslation, IngredientType
 from app.models.recipe import (
     AmountUnit,
     Recipe,
@@ -67,8 +68,21 @@ def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db
     recipe = db.query(Recipe).filter(Recipe.id == recipe_id, Recipe.user_id == user_id).first()
     if not recipe:
         raise HTTPException(status_code=404, detail=gettext_for(request, "Recipe not found"))
+    lang = get_lang(request)
+    ing_ids = [ri.ingredient_id for ri in recipe.ingredients]
+    translations: dict[int, str] = {}
+    if lang != "en" and ing_ids:
+        rows = (
+            db.query(IngredientTranslation)
+            .filter(
+                IngredientTranslation.ingredient_id.in_(ing_ids),
+                IngredientTranslation.lang == lang,
+            )
+            .all()
+        )
+        translations = {t.ingredient_id: t.name for t in rows}
     return get_templates(request).TemplateResponse(
-        request, "recipe_detail.html", {"recipe": recipe}
+        request, "recipe_detail.html", {"recipe": recipe, "ingredient_translations": translations}
     )
 
 
@@ -76,27 +90,57 @@ def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db
 
 
 @router.get("/api/ingredients")
-def search_ingredients(q: str = "", db: Session = Depends(get_db)):
-    results = (
-        db.query(Ingredient)
-        .filter(Ingredient.name.ilike(f"%{q}%"))
-        .order_by(Ingredient.name)
-        .limit(20)
-        .all()
-    )
-    return [{"id": i.id, "name": i.name} for i in results]
+def search_ingredients(request: Request, q: str = "", db: Session = Depends(get_db)):
+    lang = get_lang(request)
+    if lang == "en":
+        results = (
+            db.query(Ingredient.id, Ingredient.name.label("display_name"))
+            .filter(Ingredient.name.ilike(f"%{q}%"))
+            .order_by(Ingredient.name)
+            .limit(20)
+            .all()
+        )
+    else:
+        trans_alias = aliased(IngredientTranslation)
+        display = func.coalesce(trans_alias.name, Ingredient.name).label("display_name")
+        results = (
+            db.query(Ingredient.id, display)
+            .outerjoin(
+                trans_alias,
+                (trans_alias.ingredient_id == Ingredient.id) & (trans_alias.lang == lang),
+            )
+            .filter(display.ilike(f"%{q}%"))
+            .order_by(display)
+            .limit(20)
+            .all()
+        )
+    return [{"id": r.id, "name": r.display_name} for r in results]
 
 
 @router.post("/api/ingredients", status_code=201)
 def create_ingredient(data: IngredientCreate, request: Request, db: Session = Depends(get_db)):
     _require_user(request)
+    lang = get_lang(request)
     name = data.name.strip()
     if not name:
         raise HTTPException(status_code=400, detail="Name is required")
     if db.query(Ingredient).filter(Ingredient.name.ilike(name)).first():
         raise HTTPException(status_code=400, detail="Ingredient already exists")
+    if (
+        lang != "en"
+        and db.query(IngredientTranslation)
+        .filter(
+            IngredientTranslation.name.ilike(name),
+            IngredientTranslation.lang == lang,
+        )
+        .first()
+    ):
+        raise HTTPException(status_code=400, detail="Ingredient already exists")
     ing = Ingredient(name=name, type_id=data.type_id)
     db.add(ing)
+    db.flush()
+    if lang != "en":
+        db.add(IngredientTranslation(ingredient_id=ing.id, lang=lang, name=name))
     db.commit()
     db.refresh(ing)
     return {"id": ing.id, "name": ing.name}

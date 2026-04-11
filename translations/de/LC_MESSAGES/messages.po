@@ -177,6 +177,15 @@ msgstr "Netzwerkfehler. Bitte versuchen Sie es erneut."
 msgid "Failed to create ingredient."
 msgstr "Zutat konnte nicht erstellt werden."
 
+msgid "Add at least one ingredient."
+msgstr "Füge mindestens eine Zutat hinzu."
+
+msgid "Add at least one step."
+msgstr "Füge mindestens einen Schritt hinzu."
+
+msgid "Each ingredient needs a valid amount."
+msgstr "Jede Zutat benötigt eine gültige Menge."
+
 msgid "Ingredient…"
 msgstr "Zutat…"
 

@@ -12,6 +12,7 @@ RUN uv sync --frozen --no-dev --no-install-project
 # Copy application code and migrations
 COPY app/ ./app/
 COPY alembic/ ./alembic/
+COPY translations/ ./translations/
 COPY alembic.ini ./
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh

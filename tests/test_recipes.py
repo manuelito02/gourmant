@@ -1,7 +1,4 @@
-import pytest
-
-from app.models.ingredient import AmountUnit, Ingredient, IngredientType
-from app.models.recipe import RecipeType
+from app.models.ingredient import Ingredient, IngredientTranslation
 
 # ── Shared helpers ────────────────────────────────────────────────────────────
 
@@ -12,20 +9,6 @@ OTHER_USER = {
     "password": "correct-horse-battery-staple",
     "password_confirm": "correct-horse-battery-staple",
 }
-
-
-@pytest.fixture
-def ref(db):
-    """IDs for seeded reference data needed to build valid payloads."""
-    return {
-        "type_id": db.query(RecipeType).first().id,
-        "ing_type_id": db.query(IngredientType).first().id,
-        "unit_id": db.query(AmountUnit).first().id,
-        # Use the first seeded ingredient for recipe ingredient tests
-        "ingredient_id": db.query(Ingredient).first().id,
-        # A second seeded ingredient for group tests
-        "ingredient_id2": db.query(Ingredient).order_by(Ingredient.id.desc()).first().id,
-    }
 
 
 def minimal_payload(ref: dict) -> dict:
@@ -470,3 +453,186 @@ def test_create_recipe_returns_id(auth_client, ref):
     r1 = auth_client.post("/api/recipes", json={**minimal_payload(ref), "title": "Recipe A"})
     r2 = auth_client.post("/api/recipes", json={**minimal_payload(ref), "title": "Recipe B"})
     assert r1.json()["id"] != r2.json()["id"]
+
+
+# ── Multilingual ingredient search ────────────────────────────────────────────
+
+
+def test_search_ingredients_french_returns_translation(client):
+    """With lang=fr, searching the French name returns the translated ingredient."""
+    client.post("/set-language", data={"lang": "fr"})
+    response = client.get("/api/ingredients?q=tomate")
+    assert response.status_code == 200
+    names = [i["name"] for i in response.json()]
+    assert "tomate" in names
+
+
+def test_search_ingredients_french_fallback_to_canonical(auth_client, ref):
+    """User-created ingredient with no French translation still appears in French searches."""
+    auth_client.post("/api/ingredients", json={"name": "Wakame", "type_id": ref["ing_type_id"]})
+    auth_client.post("/set-language", data={"lang": "fr"})
+    response = auth_client.get("/api/ingredients?q=Wakame")
+    names = [i["name"] for i in response.json()]
+    assert "Wakame" in names
+
+
+def test_search_ingredients_german_returns_translation(client):
+    """With lang=de, searching the German name returns the translated ingredient."""
+    client.post("/set-language", data={"lang": "de"})
+    response = client.get("/api/ingredients?q=Karotte")
+    assert response.status_code == 200
+    names = [i["name"] for i in response.json()]
+    assert "Karotte" in names
+
+
+def test_search_ingredients_dutch_returns_translation(client):
+    """With lang=nl, searching the Dutch name returns the translated ingredient."""
+    client.post("/set-language", data={"lang": "nl"})
+    response = client.get("/api/ingredients?q=wortel")
+    assert response.status_code == 200
+    names = [i["name"] for i in response.json()]
+    assert "wortel" in names
+
+
+def test_search_ingredients_translated_result_has_id_and_name(client):
+    """Translated search results include both id and name fields."""
+    client.post("/set-language", data={"lang": "fr"})
+    response = client.get("/api/ingredients?q=tomate")
+    item = response.json()[0]
+    assert "id" in item
+    assert "name" in item
+
+
+# ── Multilingual ingredient creation ─────────────────────────────────────────
+
+
+def test_create_ingredient_in_french_stores_translation(auth_client, ref, db):
+    """Creating an ingredient in French mode stores an ingredient_translations row."""
+    auth_client.post("/set-language", data={"lang": "fr"})
+    res = auth_client.post(
+        "/api/ingredients", json={"name": "Papaye", "type_id": ref["ing_type_id"]}
+    )
+    assert res.status_code == 201
+    ing_id = res.json()["id"]
+    trans = (
+        db.query(IngredientTranslation)
+        .filter(IngredientTranslation.ingredient_id == ing_id, IngredientTranslation.lang == "fr")
+        .first()
+    )
+    assert trans is not None
+    assert trans.name == "Papaye"
+
+
+def test_create_ingredient_in_english_stores_no_translation(auth_client, ref, db):
+    """Creating an ingredient in English mode does NOT create any translation row."""
+    res = auth_client.post(
+        "/api/ingredients", json={"name": "Chayote", "type_id": ref["ing_type_id"]}
+    )
+    assert res.status_code == 201
+    ing_id = res.json()["id"]
+    assert (
+        db.query(IngredientTranslation)
+        .filter(IngredientTranslation.ingredient_id == ing_id)
+        .count()
+        == 0
+    )
+
+
+def test_create_ingredient_duplicate_translation_rejected(auth_client, ref):
+    """Re-creating an ingredient with the same name in the same language returns 400."""
+    auth_client.post("/set-language", data={"lang": "fr"})
+    auth_client.post("/api/ingredients", json={"name": "Papaye", "type_id": ref["ing_type_id"]})
+    response = auth_client.post(
+        "/api/ingredients", json={"name": "Papaye", "type_id": ref["ing_type_id"]}
+    )
+    assert response.status_code == 400
+    assert "already exists" in response.json()["detail"]
+
+
+def test_create_ingredient_blocked_by_existing_seeded_translation(auth_client, ref):
+    """Creating an ingredient whose name already exists as a seeded translation is rejected."""
+    # "tomate" is the French translation of the seeded "tomato" ingredient
+    auth_client.post("/set-language", data={"lang": "fr"})
+    response = auth_client.post(
+        "/api/ingredients", json={"name": "tomate", "type_id": ref["ing_type_id"]}
+    )
+    assert response.status_code == 400
+    assert "already exists" in response.json()["detail"]
+
+
+def test_create_ingredient_french_searchable_after_creation(auth_client, ref):
+    """A French-created ingredient can be found by its name in the French search."""
+    auth_client.post("/set-language", data={"lang": "fr"})
+    auth_client.post("/api/ingredients", json={"name": "Papaye", "type_id": ref["ing_type_id"]})
+    response = auth_client.get("/api/ingredients?q=Papaye")
+    names = [i["name"] for i in response.json()]
+    assert "Papaye" in names
+
+
+# ── Recipe detail with ingredient translations ────────────────────────────────
+
+
+def test_recipe_detail_shows_translated_ungrouped_ingredient(auth_client, ref, db):
+    """Recipe detail shows the French name for an ungrouped seeded ingredient."""
+    onion = db.query(Ingredient).filter(Ingredient.name == "onion").first()
+    payload = {
+        **minimal_payload(ref),
+        "ungrouped_ingredients": [
+            {"ingredient_id": onion.id, "amount": 2, "unit_id": ref["unit_id"]}
+        ],
+    }
+    recipe_id = create_recipe(auth_client, payload)
+    auth_client.post("/set-language", data={"lang": "fr"})
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "oignon" in response.text
+
+
+def test_recipe_detail_shows_translated_grouped_ingredient(auth_client, ref, db):
+    """Recipe detail shows the French name for a grouped seeded ingredient."""
+    tomato = db.query(Ingredient).filter(Ingredient.name == "tomato").first()
+    payload = {
+        **minimal_payload(ref),
+        "ingredient_groups": [
+            {
+                "name": "Sauce",
+                "position": 0,
+                "ingredients": [
+                    {"ingredient_id": tomato.id, "amount": 400, "unit_id": ref["unit_id"]}
+                ],
+            }
+        ],
+    }
+    recipe_id = create_recipe(auth_client, payload)
+    auth_client.post("/set-language", data={"lang": "fr"})
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "tomate" in response.text
+
+
+def test_recipe_detail_canonical_name_when_no_translation(auth_client, ref):
+    """Ingredient created without a translation shows the canonical name in French mode."""
+    auth_client.post("/api/ingredients", json={"name": "Wakame", "type_id": ref["ing_type_id"]})
+    wakame_id = auth_client.get("/api/ingredients?q=Wakame").json()[0]["id"]
+    payload = {
+        **minimal_payload(ref),
+        "ungrouped_ingredients": [
+            {"ingredient_id": wakame_id, "amount": 50, "unit_id": ref["unit_id"]}
+        ],
+    }
+    recipe_id = create_recipe(auth_client, payload)
+    auth_client.post("/set-language", data={"lang": "fr"})
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Wakame" in response.text
+
+
+def test_recipe_detail_english_shows_canonical_name(auth_client, ref, db):
+    """In English mode, the canonical ingredient name is shown (not a translation)."""
+    onion = db.query(Ingredient).filter(Ingredient.name == "onion").first()
+    payload = {
+        **minimal_payload(ref),
+        "ungrouped_ingredients": [
+            {"ingredient_id": onion.id, "amount": 3, "unit_id": ref["unit_id"]}
+        ],
+    }
+    recipe_id = create_recipe(auth_client, payload)
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "onion" in response.text

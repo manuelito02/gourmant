@@ -7,6 +7,8 @@ from sqlalchemy.orm import sessionmaker
 
 from app.database import get_db
 from app.main import app
+from app.models.ingredient import AmountUnit, Ingredient, IngredientType
+from app.models.recipe import RecipeType
 
 _BASE_URL = "postgresql+psycopg://gourmant:gourmant@localhost:5432"
 _TEST_DB_NAME = "gourmant_test"
@@ -64,11 +66,17 @@ def db(test_engine, seeded_ingredient_max_id):
     yield session
     session.close()
     with test_engine.begin() as conn:
+        # Truncate users first — CASCADE removes all recipes and recipe_ingredients,
+        # which frees FK references on ingredients so the ingredient deletes below succeed.
+        conn.execute(text("TRUNCATE TABLE users RESTART IDENTITY CASCADE"))
+        conn.execute(
+            text("DELETE FROM ingredient_translations WHERE ingredient_id > :max_id"),
+            {"max_id": seeded_ingredient_max_id},
+        )
         conn.execute(
             text("DELETE FROM ingredients WHERE id > :max_id"),
             {"max_id": seeded_ingredient_max_id},
         )
-        conn.execute(text("TRUNCATE TABLE users RESTART IDENTITY CASCADE"))
 
 
 @pytest.fixture
@@ -87,3 +95,15 @@ def auth_client(client):
     """A client that is already registered and logged in."""
     client.post("/register", data=VALID_USER)
     return client
+
+
+@pytest.fixture
+def ref(db):
+    """IDs for seeded reference data needed to build valid payloads."""
+    return {
+        "type_id": db.query(RecipeType).first().id,
+        "ing_type_id": db.query(IngredientType).first().id,
+        "unit_id": db.query(AmountUnit).first().id,
+        "ingredient_id": db.query(Ingredient).first().id,
+        "ingredient_id2": db.query(Ingredient).order_by(Ingredient.id.desc()).first().id,
+    }
