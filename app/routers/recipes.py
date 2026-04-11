@@ -42,17 +42,6 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
     return templates.TemplateResponse(request, "dashboard.html", {"recipes": recipes})
 
 
-@router.get("/recipes/{recipe_id}", response_class=HTMLResponse)
-def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db)):
-    if not request.session.get("user_id"):
-        return RedirectResponse("/login", status_code=302)
-    user_id = request.session["user_id"]
-    recipe = db.query(Recipe).filter(Recipe.id == recipe_id, Recipe.user_id == user_id).first()
-    if not recipe:
-        raise HTTPException(status_code=404, detail="Recipe not found")
-    return templates.TemplateResponse(request, "recipe_detail.html", {"recipe": recipe})
-
-
 @router.get("/recipes/new", response_class=HTMLResponse)
 def new_recipe_form(request: Request, db: Session = Depends(get_db)):
     if not request.session.get("user_id"):
@@ -71,6 +60,17 @@ def new_recipe_form(request: Request, db: Session = Depends(get_db)):
             "ingredient_types": [{"id": t.id, "name": t.name} for t in ingredient_types],
         },
     )
+
+
+@router.get("/recipes/{recipe_id}", response_class=HTMLResponse)
+def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db)):
+    if not request.session.get("user_id"):
+        return RedirectResponse("/login", status_code=302)
+    user_id = request.session["user_id"]
+    recipe = db.query(Recipe).filter(Recipe.id == recipe_id, Recipe.user_id == user_id).first()
+    if not recipe:
+        raise HTTPException(status_code=404, detail="Recipe not found")
+    return templates.TemplateResponse(request, "recipe_detail.html", {"recipe": recipe})
 
 
 # ── Ingredient API ────────────────────────────────────────────────────────────
