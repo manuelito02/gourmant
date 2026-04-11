@@ -41,7 +41,7 @@ def check_password_strength(password: str, user_inputs: list[str]) -> str | None
 @router.get("/login", response_class=HTMLResponse)
 def login_page(request: Request):
     if request.session.get("user_id"):
-        return RedirectResponse("/", status_code=302)
+        return RedirectResponse("/dashboard", status_code=302)
     return templates.TemplateResponse(request, "login.html", {"error": None})
 
 
@@ -59,13 +59,13 @@ def login(
         )
     request.session["user_id"] = user.id
     request.session["first_name"] = user.first_name
-    return RedirectResponse("/", status_code=302)
+    return RedirectResponse("/dashboard", status_code=302)
 
 
 @router.get("/register", response_class=HTMLResponse)
 def register_page(request: Request):
     if request.session.get("user_id"):
-        return RedirectResponse("/", status_code=302)
+        return RedirectResponse("/dashboard", status_code=302)
     return templates.TemplateResponse(request, "register.html", {"error": None})
 
 
@@ -106,10 +106,10 @@ def register(
     db.refresh(user)
     request.session["user_id"] = user.id
     request.session["first_name"] = user.first_name
-    return RedirectResponse("/", status_code=302)
+    return RedirectResponse("/dashboard", status_code=302)
 
 
 @router.post("/logout")
 def logout(request: Request):
     request.session.clear()
-    return RedirectResponse("/", status_code=302)
+    return RedirectResponse("/dashboard", status_code=302)

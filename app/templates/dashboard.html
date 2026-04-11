@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — Gourmant{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>My Recipes</h1>
+        <a href="/recipes/new" class="btn-primary">+ New recipe</a>
+    </div>
+
+    {% if recipes %}
+    <div class="recipe-grid">
+        {% for recipe in recipes %}
+        <div class="recipe-card">
+            <div class="recipe-card-type">{{ recipe.type.name }}</div>
+            <h2 class="recipe-card-title">{{ recipe.title }}</h2>
+            {% if recipe.description %}
+            <p class="recipe-card-desc">{{ recipe.description }}</p>
+            {% endif %}
+            <div class="recipe-card-meta">
+                {{ recipe.created_at.strftime("%d %b %Y") }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <p>No recipes yet.</p>
+        <a href="/recipes/new" class="btn-primary">Create your first recipe</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

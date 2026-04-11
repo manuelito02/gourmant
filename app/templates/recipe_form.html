@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}New recipe — Gourmant{% endblock %}
+
+{% block head %}
+<script>
+    const AMOUNT_UNITS = {{ amount_units | tojson(indent=None) }};
+    const INGREDIENT_TYPES = {{ ingredient_types | tojson(indent=None) }};
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="recipe-form-wrap">
+    <h1>New recipe</h1>
+    <div id="form-error" class="error hidden"></div>
+
+    <form id="recipe-form" novalidate>
+
+        <!-- ── Details ─────────────────────────────────────────────────── -->
+        <section class="form-section">
+            <h2>Details</h2>
+            <div class="form-group">
+                <label for="f-title">Title <span class="required">*</span></label>
+                <input type="text" id="f-title" placeholder="e.g. Pizza Margherita" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="f-type">Type <span class="required">*</span></label>
+                    <select id="f-type">
+                        {% for rt in recipe_types %}
+                        <option value="{{ rt.id }}">{{ rt.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="f-description">Description</label>
+                <textarea id="f-description" rows="3" placeholder="A short description of the recipe…"></textarea>
+            </div>
+        </section>
+
+        <!-- ── Ingredients ─────────────────────────────────────────────── -->
+        <section class="form-section">
+            <h2>Ingredients</h2>
+
+            <div id="ungrouped-ings" class="ingredient-list"></div>
+            <button type="button" class="btn-add" onclick="addIngredientRow('ungrouped')">+ Add ingredient</button>
+
+            <div id="groups-container"></div>
+            <button type="button" class="btn-add btn-add-group" onclick="addGroup()">+ Add group</button>
+        </section>
+
+        <!-- ── Steps ───────────────────────────────────────────────────── -->
+        <section class="form-section">
+            <h2>Steps</h2>
+            <div id="steps-container"></div>
+            <button type="button" class="btn-add" onclick="addStep()">+ Add step</button>
+        </section>
+
+        <div class="form-actions">
+            <a href="/dashboard" class="btn-secondary">Cancel</a>
+            <button type="submit" id="submit-btn" class="btn-primary">Save recipe</button>
+        </div>
+    </form>
+</div>
+
+<!-- ── Create ingredient modal ─────────────────────────────────────────────── -->
+<div id="create-ing-modal" class="modal-backdrop hidden">
+    <div class="modal">
+        <h3>New ingredient</h3>
+        <div class="form-group">
+            <label for="modal-ing-name">Name <span class="required">*</span></label>
+            <input type="text" id="modal-ing-name">
+        </div>
+        <div class="form-group">
+            <label for="modal-ing-type">Type <span class="required">*</span></label>
+            <select id="modal-ing-type"></select>
+        </div>
+        <div id="modal-error" class="error hidden"></div>
+        <div class="modal-actions">
+            <button type="button" class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
+            <button type="button" class="btn-primary" onclick="submitCreateIngredient()">Create</button>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/recipe-form.js"></script>
+{% endblock %}
