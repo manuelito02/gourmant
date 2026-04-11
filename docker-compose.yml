@@ -18,11 +18,15 @@ services:
           path: ./app
           target: /app/app
         - action: sync
-          path: ./app/templates
-          target: /app/app/templates
+          path: ./alembic
+          target: /app/alembic
+        - action: rebuild
+          path: pyproject.toml
 
   db:
     image: postgres:16-alpine
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: gourmant
       POSTGRES_PASSWORD: gourmant

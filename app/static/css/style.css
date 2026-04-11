@@ -1,0 +1,142 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ── */
+body {
+    font-family: sans-serif;
+    background-color: #fdf6ec;
+    color: #3d2b1f;
+    min-height: 100vh;
+}
+
+/* ── Nav ── */
+nav {
+    background-color: #3d2b1f;
+    color: #fdf6ec;
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a.brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fdf6ec;
+    text-decoration: none;
+}
+
+nav .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+}
+
+nav .nav-right span { color: #c9a97a; }
+
+nav .btn {
+    background-color: #c9a97a;
+    color: #3d2b1f;
+    border: 1px solid transparent;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav .btn:hover { background-color: #b8945e; }
+
+
+/* ── Main ── */
+main { padding: 2rem; }
+
+/* ── Alerts ── */
+.error {
+    background-color: #fde8e8;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ── Auth card ── */
+.auth-card {
+    max-width: 420px;
+    margin: 3rem auto;
+    background: #fff8f0;
+    border: 1px solid #e5d5c0;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.auth-card h2 { margin-bottom: 1.5rem; font-size: 1.5rem; }
+
+/* ── Forms ── */
+.form-row { display: flex; gap: 0.75rem; }
+.form-row .form-group { flex: 1; }
+
+.form-group { margin-bottom: 1rem; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+    color: #5a3e2b;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #c9a97a;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #fdf6ec;
+    color: #3d2b1f;
+}
+
+.form-group input:focus { outline: 2px solid #c9a97a; }
+
+.submit-btn {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #3d2b1f;
+    color: #fdf6ec;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.submit-btn:hover { background-color: #5a3e2b; }
+
+.auth-footer { text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #7a5c44; }
+.auth-footer a { color: #3d2b1f; font-weight: bold; }
+
+/* ── Password strength bar ── */
+.strength-bar-wrap {
+    margin-top: 0.4rem;
+    height: 4px;
+    background: #e5d5c0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-label {
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+    color: #7a5c44;
+    min-height: 1rem;
+}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Create account — Gourmant{% endblock %}
+
+{% block content %}
+<div class="auth-card">
+    <h2>Create account</h2>
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+    <form method="post" action="/register">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first_name">First name</label>
+                <input type="text" id="first_name" name="first_name" required autofocus autocomplete="given-name" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last name</label>
+                <input type="text" id="last_name" name="last_name" required autocomplete="family-name" maxlength="100">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required autocomplete="new-password">
+            <div class="strength-bar-wrap">
+                <div class="strength-bar" id="strength-bar"></div>
+            </div>
+            <div class="strength-label" id="strength-label"></div>
+        </div>
+        <div class="form-group">
+            <label for="password_confirm">Confirm password</label>
+            <input type="password" id="password_confirm" name="password_confirm" required autocomplete="new-password">
+        </div>
+        <button type="submit" class="submit-btn">Create account</button>
+    </form>
+    <p class="auth-footer">Already have an account? <a href="/login">Log in</a></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+<script>
+    const colors = ["#ef4444", "#f97316", "#eab308", "#84cc16", "#22c55e"];
+    const labels = ["Very weak", "Weak", "Fair", "Strong", "Very strong"];
+
+    document.getElementById("password").addEventListener("input", function () {
+        const first = document.getElementById("first_name").value;
+        const last  = document.getElementById("last_name").value;
+        const email = document.getElementById("email").value;
+        const result = zxcvbn(this.value, [first, last, email]);
+        const score  = result.score;
+        const bar    = document.getElementById("strength-bar");
+        const label  = document.getElementById("strength-label");
+
+        if (this.value.length === 0) {
+            bar.style.width = "0%";
+            label.textContent = "";
+            return;
+        }
+
+        bar.style.width = ((score + 1) * 20) + "%";
+        bar.style.backgroundColor = colors[score];
+        label.textContent = labels[score];
+        label.style.color = colors[score];
+    });
+</script>
+{% endblock %}
