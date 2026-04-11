@@ -280,10 +280,12 @@ async function submitRecipe(e) {
         return;
     }
 
+    const servings = parseInt($("f-servings").value);
     const payload = {
         title,
         description: $("f-description").value.trim() || null,
         type_id: parseInt($("f-type").value),
+        servings: isNaN(servings) ? null : servings,
         ungrouped_ingredients: collectIngredients("ungrouped-ings"),
         ingredient_groups: collectGroups(),
         steps: collectSteps(),

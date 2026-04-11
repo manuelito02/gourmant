@@ -19,7 +19,7 @@
             <p class="recipe-card-desc">{{ recipe.description }}</p>
             {% endif %}
             <div class="recipe-card-meta">
-                {{ recipe.created_at.strftime("%d %b %Y") }}
+                {% if recipe.servings %}{{ recipe.servings }} servings · {% endif %}{{ recipe.created_at.strftime("%d %b %Y") }}
             </div>
         </div>
         {% endfor %}

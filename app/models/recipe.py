@@ -24,6 +24,7 @@ class Recipe(Base):
     title: Mapped[str] = mapped_column(String(200), nullable=False)
     description: Mapped[str | None] = mapped_column(Text)
     type_id: Mapped[int] = mapped_column(ForeignKey("recipe_types.id"), nullable=False)
+    servings: Mapped[int | None] = mapped_column(nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     type: Mapped["RecipeType"] = relationship(back_populates="recipes")

@@ -104,6 +104,7 @@ def create_recipe(data: RecipeCreate, request: Request, db: Session = Depends(ge
         title=data.title.strip(),
         description=data.description,
         type_id=data.type_id,
+        servings=data.servings,
     )
     db.add(recipe)
     db.flush()

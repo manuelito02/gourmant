@@ -28,6 +28,7 @@ class RecipeCreate(BaseModel):
     title: str
     description: str | None = None
     type_id: int
+    servings: int | None = None
     ungrouped_ingredients: list[RecipeIngredientIn] = []
     ingredient_groups: list[IngredientGroupIn] = []
     steps: list[StepIn] = []
