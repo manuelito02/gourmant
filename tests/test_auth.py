@@ -1,12 +1,6 @@
 from fastapi.testclient import TestClient
 
-VALID_USER = {
-    "first_name": "Jane",
-    "last_name": "Doe",
-    "email": "jane@example.com",
-    "password": "correct-horse-battery-staple",
-    "password_confirm": "correct-horse-battery-staple",
-}
+from tests.conftest import VALID_USER
 
 
 def register(client: TestClient, data: dict = VALID_USER) -> None:
@@ -32,13 +26,13 @@ def test_register_page(client):
 def test_login_page_redirects_when_logged_in(client):
     client.post("/register", data=VALID_USER)
     response = client.get("/login")
-    assert response.url.path == "/"
+    assert response.url.path == "/dashboard"
 
 
 def test_register_page_redirects_when_logged_in(client):
     client.post("/register", data=VALID_USER)
     response = client.get("/register")
-    assert response.url.path == "/"
+    assert response.url.path == "/dashboard"
 
 
 # ── Health ────────────────────────────────────────────────────────────────────
