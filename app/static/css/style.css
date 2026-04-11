@@ -502,7 +502,43 @@ main { padding: 2rem; }
     font-size: 0.85rem;
     color: #a08060;
 }
-.recipe-detail-actions { flex-shrink: 0; padding-top: 0.25rem; }
+.recipe-detail-actions {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+}
+
+.servings-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff8f0;
+    border: 1px solid #e5d5c0;
+    border-radius: 6px;
+    padding: 0.3rem 0.5rem;
+}
+.servings-btn {
+    background: none;
+    border: 1px solid #c9a97a;
+    border-radius: 4px;
+    color: #3d2b1f;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.servings-btn:hover { background-color: #f5e9d8; }
+.servings-display { text-align: center; min-width: 5rem; }
+#servings-count { font-size: 1.1rem; font-weight: bold; color: #3d2b1f; }
+.servings-label { font-size: 0.8rem; color: #7a5c44; margin-left: 0.3rem; }
 .recipe-detail-desc {
     color: #5a3e2b;
     margin-bottom: 1.5rem;
@@ -557,9 +593,11 @@ main { padding: 2rem; }
 
 /* Steps */
 .steps-total-time {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #7a5c44;
-    margin-bottom: 0.75rem;
+    font-weight: normal;
+    margin-left: 0.75rem;
+    vertical-align: middle;
 }
 .step-detail-list {
     list-style: none;

@@ -10,11 +10,20 @@
             <div class="recipe-detail-type">{{ recipe.type.name }}</div>
             <h1>{{ recipe.title }}</h1>
             <div class="recipe-detail-meta">
-                {% if recipe.servings %}<span>{{ recipe.servings }} servings</span>{% endif %}
                 <span>{{ recipe.created_at.strftime("%d %b %Y") }}</span>
             </div>
         </div>
         <div class="recipe-detail-actions">
+            {% if recipe.servings %}
+            <div class="servings-control">
+                <button class="servings-btn" id="servings-dec" aria-label="Fewer servings">−</button>
+                <span class="servings-display">
+                    <span id="servings-count">{{ recipe.servings }}</span>
+                    <span class="servings-label">servings</span>
+                </span>
+                <button class="servings-btn" id="servings-inc" aria-label="More servings">+</button>
+            </div>
+            {% endif %}
             <a href="/dashboard" class="btn-secondary">← Back</a>
         </div>
     </div>
@@ -35,7 +44,7 @@
                 {% for ri in ungrouped %}
                 <li>
                     <span class="ing-detail-name">{{ ri.ingredient.name }}</span>
-                    <span class="ing-detail-amount">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
+                    <span class="ing-detail-amount" data-base="{{ ri.amount }}">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
                 </li>
                 {% endfor %}
             </ul>
@@ -48,7 +57,7 @@
                     {% for ri in group.ingredients %}
                     <li>
                         <span class="ing-detail-name">{{ ri.ingredient.name }}</span>
-                        <span class="ing-detail-amount">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
+                        <span class="ing-detail-amount" data-base="{{ ri.amount }}">{{ ri.amount | int if ri.amount == ri.amount | int else ri.amount }} {{ ri.unit.abbreviation }}</span>
                     </li>
                     {% endfor %}
                 </ul>
@@ -61,13 +70,14 @@
         </section>
 
         <!-- ── Steps ── -->
+        {% set total_duration = recipe.steps | selectattr("duration") | map(attribute="duration") | sum %}
         <section class="detail-section">
-            <h2>Steps</h2>
+            <h2>Steps
+                {% if total_duration %}
+                <span class="steps-total-time">{{ total_duration }} min total</span>
+                {% endif %}
+            </h2>
             {% if recipe.steps %}
-            {% set total_duration = recipe.steps | selectattr("duration") | map(attribute="duration") | sum %}
-            {% if total_duration %}
-            <p class="steps-total-time">Total time: {{ total_duration }} min</p>
-            {% endif %}
             <ol class="step-detail-list">
                 {% for step in recipe.steps %}
                 <li class="step-detail-row">
@@ -85,4 +95,35 @@
 
     </div>
 </div>
+
+{% if recipe.servings %}
+<script>
+    const BASE_SERVINGS = {{ recipe.servings }};
+    let currentServings = BASE_SERVINGS;
+
+    function formatAmount(value) {
+        const rounded = Math.round(value * 1000) / 1000;
+        if (rounded === Math.floor(rounded)) return String(Math.floor(rounded));
+        return parseFloat(rounded.toFixed(2)).toString();
+    }
+
+    function updateAmounts() {
+        const ratio = currentServings / BASE_SERVINGS;
+        document.querySelectorAll(".ing-detail-amount").forEach(el => {
+            const base = parseFloat(el.dataset.base);
+            const unit = el.textContent.trim().split(" ").slice(1).join(" ");
+            el.textContent = formatAmount(base * ratio) + " " + unit;
+        });
+        document.getElementById("servings-count").textContent = currentServings;
+    }
+
+    document.getElementById("servings-dec").addEventListener("click", () => {
+        if (currentServings > 1) { currentServings--; updateAmounts(); }
+    });
+    document.getElementById("servings-inc").addEventListener("click", () => {
+        currentServings++;
+        updateAmounts();
+    });
+</script>
+{% endif %}
 {% endblock %}
