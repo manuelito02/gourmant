@@ -59,24 +59,30 @@ def seeded_ingredient_max_id(test_engine):
         return conn.execute(text("SELECT COALESCE(MAX(id), 0) FROM ingredients")).scalar()
 
 
+def _clean_dynamic_data(conn, seeded_ingredient_max_id: int) -> None:
+    """Remove all user-created data, preserving seeded reference data."""
+    conn.execute(text("TRUNCATE TABLE users RESTART IDENTITY CASCADE"))
+    conn.execute(
+        text("DELETE FROM ingredient_translations WHERE ingredient_id > :max_id"),
+        {"max_id": seeded_ingredient_max_id},
+    )
+    conn.execute(
+        text("DELETE FROM ingredients WHERE id > :max_id"),
+        {"max_id": seeded_ingredient_max_id},
+    )
+
+
 @pytest.fixture
 def db(test_engine, seeded_ingredient_max_id):
+    # Clean before each test so migration-seeded demo users don't interfere.
+    with test_engine.begin() as conn:
+        _clean_dynamic_data(conn, seeded_ingredient_max_id)
     make_session = sessionmaker(test_engine)
     session = make_session()
     yield session
     session.close()
     with test_engine.begin() as conn:
-        # Truncate users first — CASCADE removes all recipes and recipe_ingredients,
-        # which frees FK references on ingredients so the ingredient deletes below succeed.
-        conn.execute(text("TRUNCATE TABLE users RESTART IDENTITY CASCADE"))
-        conn.execute(
-            text("DELETE FROM ingredient_translations WHERE ingredient_id > :max_id"),
-            {"max_id": seeded_ingredient_max_id},
-        )
-        conn.execute(
-            text("DELETE FROM ingredients WHERE id > :max_id"),
-            {"max_id": seeded_ingredient_max_id},
-        )
+        _clean_dynamic_data(conn, seeded_ingredient_max_id)
 
 
 @pytest.fixture

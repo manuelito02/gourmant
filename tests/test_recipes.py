@@ -636,3 +636,185 @@ def test_recipe_detail_english_shows_canonical_name(auth_client, ref, db):
     recipe_id = create_recipe(auth_client, payload)
     response = auth_client.get(f"/recipes/{recipe_id}")
     assert "onion" in response.text
+
+
+# ── Edit recipe form ──────────────────────────────────────────────────────────
+
+
+def test_edit_form_redirects_when_logged_out(client):
+    response = client.get("/recipes/999/edit")
+    assert response.url.path == "/login"
+
+
+def test_edit_form_404_nonexistent(auth_client):
+    response = auth_client.get("/recipes/999999/edit")
+    assert response.status_code == 404
+
+
+def test_edit_form_404_other_users_recipe(client, ref):
+    client.post(
+        "/register",
+        data={
+            "first_name": "Alice",
+            "last_name": "A",
+            "email": "alice@example.com",
+            "password": "correct-horse-battery-staple",
+            "password_confirm": "correct-horse-battery-staple",
+        },
+    )
+    recipe_id = create_recipe(client, minimal_payload(ref))
+    client.post("/logout")
+
+    client.post("/register", data=OTHER_USER)
+    response = client.get(f"/recipes/{recipe_id}/edit")
+    assert response.status_code == 404
+
+
+def test_edit_form_loads_with_recipe_data(auth_client, ref):
+    recipe_id = create_recipe(
+        auth_client,
+        {**minimal_payload(ref), "title": "My Stew", "description": "Slow cooked"},
+    )
+    response = auth_client.get(f"/recipes/{recipe_id}/edit")
+    assert response.status_code == 200
+    assert "Edit recipe" in response.text
+    assert "My Stew" in response.text
+    assert "Slow cooked" in response.text
+
+
+def test_edit_form_contains_recipe_data_js(auth_client, ref):
+    recipe_id = create_recipe(auth_client, {**minimal_payload(ref), "title": "Tiramisu"})
+    response = auth_client.get(f"/recipes/{recipe_id}/edit")
+    assert "RECIPE_DATA" in response.text
+    assert "RECIPE_ID" in response.text
+    assert "Tiramisu" in response.text
+
+
+# ── Recipe update API ─────────────────────────────────────────────────────────
+
+
+def test_update_recipe_requires_auth(client, ref):
+    response = client.put("/api/recipes/999", json=minimal_payload(ref))
+    assert response.status_code == 401
+
+
+def test_update_recipe_404_nonexistent(auth_client, ref):
+    response = auth_client.put("/api/recipes/999999", json=minimal_payload(ref))
+    assert response.status_code == 404
+
+
+def test_update_recipe_404_other_users_recipe(client, ref):
+    client.post(
+        "/register",
+        data={
+            "first_name": "Alice",
+            "last_name": "A",
+            "email": "alice@example.com",
+            "password": "correct-horse-battery-staple",
+            "password_confirm": "correct-horse-battery-staple",
+        },
+    )
+    recipe_id = create_recipe(client, minimal_payload(ref))
+    client.post("/logout")
+
+    client.post("/register", data=OTHER_USER)
+    response = client.put(f"/api/recipes/{recipe_id}", json=minimal_payload(ref))
+    assert response.status_code == 404
+
+
+def test_update_recipe_title_and_description(auth_client, ref):
+    recipe_id = create_recipe(
+        auth_client, {**minimal_payload(ref), "title": "Old Title", "description": "Old desc"}
+    )
+    payload = {**minimal_payload(ref), "title": "New Title", "description": "New desc"}
+    response = auth_client.put(f"/api/recipes/{recipe_id}", json=payload)
+    assert response.status_code == 200
+    assert response.json()["id"] == recipe_id
+
+    detail = auth_client.get(f"/recipes/{recipe_id}")
+    assert "New Title" in detail.text
+    assert "New desc" in detail.text
+    assert "Old Title" not in detail.text
+
+
+def test_update_recipe_replaces_ingredients(auth_client, ref):
+    orig = {
+        **minimal_payload(ref),
+        "ungrouped_ingredients": [
+            {"ingredient_id": ref["ingredient_id"], "amount": 100, "unit_id": ref["unit_id"]}
+        ],
+    }
+    recipe_id = create_recipe(auth_client, orig)
+
+    updated = {
+        **minimal_payload(ref),
+        "ungrouped_ingredients": [
+            {"ingredient_id": ref["ingredient_id2"], "amount": 999, "unit_id": ref["unit_id"]}
+        ],
+    }
+    auth_client.put(f"/api/recipes/{recipe_id}", json=updated)
+
+    detail = auth_client.get(f"/recipes/{recipe_id}")
+    assert "999" in detail.text
+
+
+def test_update_recipe_replaces_steps(auth_client, ref):
+    orig = {
+        **minimal_payload(ref),
+        "steps": [{"position": 1, "description": "Old step", "duration": None}],
+    }
+    recipe_id = create_recipe(auth_client, orig)
+
+    updated = {
+        **minimal_payload(ref),
+        "steps": [{"position": 1, "description": "New step", "duration": 10}],
+    }
+    auth_client.put(f"/api/recipes/{recipe_id}", json=updated)
+
+    detail = auth_client.get(f"/recipes/{recipe_id}")
+    assert "New step" in detail.text
+    assert "Old step" not in detail.text
+
+
+def test_update_recipe_replaces_groups(auth_client, ref):
+    orig = {
+        **minimal_payload(ref),
+        "ingredient_groups": [
+            {
+                "name": "Old Group",
+                "position": 0,
+                "ingredients": [
+                    {"ingredient_id": ref["ingredient_id"], "amount": 50, "unit_id": ref["unit_id"]}
+                ],
+            }
+        ],
+    }
+    recipe_id = create_recipe(auth_client, orig)
+
+    updated = {
+        **minimal_payload(ref),
+        "ingredient_groups": [
+            {
+                "name": "New Group",
+                "position": 0,
+                "ingredients": [
+                    {
+                        "ingredient_id": ref["ingredient_id2"],
+                        "amount": 75,
+                        "unit_id": ref["unit_id"],
+                    }
+                ],
+            }
+        ],
+    }
+    auth_client.put(f"/api/recipes/{recipe_id}", json=updated)
+
+    detail = auth_client.get(f"/recipes/{recipe_id}")
+    assert "New Group" in detail.text
+    assert "Old Group" not in detail.text
+
+
+def test_update_recipe_returns_same_id(auth_client, ref):
+    recipe_id = create_recipe(auth_client, minimal_payload(ref))
+    response = auth_client.put(f"/api/recipes/{recipe_id}", json=minimal_payload(ref))
+    assert response.json()["id"] == recipe_id

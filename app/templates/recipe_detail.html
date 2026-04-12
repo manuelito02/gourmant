@@ -24,6 +24,7 @@
                 <button class="servings-btn" id="servings-inc" aria-label="More servings">+</button>
             </div>
             {% endif %}
+            <a href="/recipes/{{ recipe.id }}/edit" class="btn-secondary">{{ _("Edit recipe") }}</a>
             <a href="/dashboard" class="btn-secondary">{{ _("← Back") }}</a>
         </div>
     </div>

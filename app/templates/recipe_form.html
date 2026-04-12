@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _("New recipe") }} — Gourmant{% endblock %}
+{% block title %}{% if edit_mode %}{{ _("Edit recipe") }}{% else %}{{ _("New recipe") }}{% endif %} — Gourmant{% endblock %}
 
 {% block head %}
 <script>
     const AMOUNT_UNITS = {{ amount_units | tojson(indent=None) }};
     const INGREDIENT_TYPES = {{ ingredient_types | tojson(indent=None) }};
+    const RECIPE_ID = {{ recipe_id | default(none) | tojson }};
+    const RECIPE_DATA = {{ recipe_data | default(none) | tojson }};
     const STRINGS = {
         ingredientPlaceholder: {{ _("Ingredient…") | tojson }},
         amountPlaceholder: {{ _("Amount") | tojson }},
@@ -13,6 +15,7 @@
         stepPlaceholder: {{ _("Describe this step…") | tojson }},
         saving: {{ _("Saving…") | tojson }},
         saveRecipe: {{ _("Save recipe") | tojson }},
+        saveChanges: {{ _("Save changes") | tojson }},
         titleRequired: {{ _("Title is required.") | tojson }},
         failedSave: {{ _("Failed to save recipe.") | tojson }},
         networkError: {{ _("Network error. Please try again.") | tojson }},
@@ -26,7 +29,7 @@
 
 {% block content %}
 <div class="recipe-form-wrap">
-    <h1>{{ _("New recipe") }}</h1>
+    <h1>{% if edit_mode %}{{ _("Edit recipe") }}{% else %}{{ _("New recipe") }}{% endif %}</h1>
     <div id="form-error" class="error hidden"></div>
 
     <form id="recipe-form" novalidate>

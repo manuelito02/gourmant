@@ -153,8 +153,14 @@ msgstr "Abbrechen"
 msgid "Save recipe"
 msgstr "Rezept speichern"
 
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
 msgid "Saving…"
 msgstr "Wird gespeichert…"
+
+msgid "Edit recipe"
+msgstr "Rezept bearbeiten"
 
 msgid "New ingredient"
 msgstr "Neue Zutat"

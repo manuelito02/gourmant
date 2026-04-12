@@ -153,8 +153,14 @@ msgstr "Annuler"
 msgid "Save recipe"
 msgstr "Enregistrer la recette"
 
+msgid "Save changes"
+msgstr "Enregistrer les modifications"
+
 msgid "Saving…"
 msgstr "Enregistrement…"
+
+msgid "Edit recipe"
+msgstr "Modifier la recette"
 
 msgid "New ingredient"
 msgstr "Nouvel ingrédient"

@@ -146,7 +146,7 @@ function unitOptions() {
     ).join("");
 }
 
-function addIngredientRow(containerId) {
+function addIngredientRow(containerId, skipFocus = false) {
     const id = uid();
     const container = $(`${containerId}-ings`);
     const div = document.createElement("div");
@@ -167,12 +167,13 @@ function addIngredientRow(containerId) {
         </div>`;
     container.appendChild(div);
     setupAutocomplete(id);
-    $(`ing-search-${id}`).focus();
+    if (!skipFocus) $(`ing-search-${id}`).focus();
+    return id;
 }
 
 // ── Groups ────────────────────────────────────────────────────────────────────
 
-function addGroup() {
+function addGroup(skipFocus = false) {
     const id = uid();
     const container = $("groups-container");
     const div = document.createElement("div");
@@ -190,12 +191,13 @@ function addGroup() {
         <div id="group-${id}-ings" class="ingredient-list group-ingredient-list"></div>
         <button type="button" class="btn-add btn-add-sub" onclick="addIngredientRow('group-${id}')">+ Add ingredient</button>`;
     container.appendChild(div);
-    $(`group-name-${id}`).focus();
+    if (!skipFocus) $(`group-name-${id}`).focus();
+    return id;
 }
 
 // ── Steps ─────────────────────────────────────────────────────────────────────
 
-function addStep() {
+function addStep(skipFocus = false) {
     const id = uid();
     const container = $("steps-container");
     const pos = container.children.length + 1;
@@ -215,7 +217,8 @@ function addStep() {
             <button type="button" class="btn-icon btn-remove" onclick="removeRow('step-row-${id}')">×</button>
         </div>`;
     container.appendChild(div);
-    $(`step-desc-${id}`).focus();
+    if (!skipFocus) $(`step-desc-${id}`).focus();
+    return id;
 }
 
 function updateStepNumbers() {
@@ -333,14 +336,18 @@ async function submitRecipe(e) {
     btn.disabled = true;
     btn.textContent = STRINGS.saving;
 
+    const url = RECIPE_ID != null ? `/api/recipes/${RECIPE_ID}` : "/api/recipes";
+    const method = RECIPE_ID != null ? "PUT" : "POST";
+
     try {
-        const res = await fetch("/api/recipes", {
-            method: "POST",
+        const res = await fetch(url, {
+            method,
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
         });
         if (res.ok) {
-            window.location.href = "/dashboard";
+            const data = await res.json();
+            window.location.href = `/recipes/${data.id}`;
         } else {
             const err = await res.json();
             showError(err.detail || STRINGS.failedSave);
@@ -349,7 +356,7 @@ async function submitRecipe(e) {
         showError(STRINGS.networkError);
     } finally {
         btn.disabled = false;
-        btn.textContent = STRINGS.saveRecipe;
+        btn.textContent = RECIPE_ID != null ? STRINGS.saveChanges : STRINGS.saveRecipe;
     }
 }
 
@@ -364,6 +371,38 @@ function hideError() {
     $("form-error").classList.add("hidden");
 }
 
+// ── Prefill (edit mode) ───────────────────────────────────────────────────────
+
+function prefillIngredient(containerId, ing) {
+    const rowId = addIngredientRow(containerId, true);
+    $(`ing-search-${rowId}`).value = ing.ingredient_name;
+    $(`ing-id-${rowId}`).value = ing.ingredient_id;
+    $(`ing-amount-${rowId}`).value = ing.amount;
+    $(`ing-unit-${rowId}`).value = ing.unit_id;
+}
+
+function prefillForm(data) {
+    $("f-title").value = data.title || "";
+    $("f-description").value = data.description || "";
+    $("f-servings").value = data.servings || "";
+    $("f-type").value = data.type_id;
+
+    (data.ungrouped_ingredients || []).forEach((ing) => prefillIngredient("ungrouped", ing));
+
+    (data.ingredient_groups || []).forEach((group) => {
+        const groupId = addGroup(true);
+        $(`group-name-${groupId}`).value = group.name;
+        (group.ingredients || []).forEach((ing) => prefillIngredient(`group-${groupId}`, ing));
+    });
+
+    (data.steps || []).forEach((step) => {
+        const stepId = addStep(true);
+        $(`step-desc-${stepId}`).value = step.description;
+        if (step.duration) $(`step-dur-${stepId}`).value = step.duration;
+    });
+    updateStepNumbers();
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -376,4 +415,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     $("recipe-form").addEventListener("submit", submitRecipe);
+
+    if (RECIPE_DATA) {
+        prefillForm(RECIPE_DATA);
+        $("submit-btn").textContent = STRINGS.saveChanges;
+    }
 });
