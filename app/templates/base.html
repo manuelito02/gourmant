@@ -1,5 +1,6 @@
+{% set cur = request.session.get('lang', 'en') %}
 <!DOCTYPE html>
-<html lang="{{ request.session.get('lang', 'en') }}">
+<html lang="{{ cur }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,6 @@
             {% endif %}
             <form method="post" action="/set-language" style="margin:0">
                 <select name="lang" class="lang-select" onchange="this.form.submit()" aria-label="Language">
-                    {% set cur = request.session.get('lang', 'en') %}
                     <option value="en" {% if cur == 'en' %}selected{% endif %}>EN</option>
                     <option value="fr" {% if cur == 'fr' %}selected{% endif %}>FR</option>
                     <option value="de" {% if cur == 'de' %}selected{% endif %}>DE</option>

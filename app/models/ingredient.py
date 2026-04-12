@@ -29,7 +29,9 @@ class Ingredient(Base):
     type_id: Mapped[int] = mapped_column(ForeignKey("ingredient_types.id"), nullable=False)
 
     type: Mapped["IngredientType"] = relationship(back_populates="ingredients")
-    translations: Mapped[list["IngredientTranslation"]] = relationship(back_populates="ingredient")
+    translations: Mapped[list["IngredientTranslation"]] = relationship(
+        back_populates="ingredient", cascade="all, delete-orphan"
+    )
 
 
 class IngredientTranslation(Base):
@@ -37,7 +39,9 @@ class IngredientTranslation(Base):
     __table_args__ = (UniqueConstraint("ingredient_id", "lang"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    ingredient_id: Mapped[int] = mapped_column(ForeignKey("ingredients.id"), nullable=False)
+    ingredient_id: Mapped[int] = mapped_column(
+        ForeignKey("ingredients.id", ondelete="CASCADE"), nullable=False
+    )
     lang: Mapped[str] = mapped_column(String(5), nullable=False)
     name: Mapped[str] = mapped_column(String(200), nullable=False, index=True)
 
