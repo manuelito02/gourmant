@@ -219,40 +219,40 @@ msgstr "min au total"
 
 # ── Amount units ─────────────────────────────────────────────────────────────
 msgid "gram"
-msgstr "gramme"
+msgstr "Gramme"
 
 msgid "kilogram"
-msgstr "kilogramme"
+msgstr "Kilogramme"
 
 msgid "milliliter"
-msgstr "millilitre"
+msgstr "Millilitre"
 
 msgid "liter"
-msgstr "litre"
+msgstr "Litre"
 
 msgid "centiliter"
-msgstr "centilitre"
+msgstr "Centilitre"
 
 msgid "deciliter"
-msgstr "décilitre"
+msgstr "Décilitre"
 
 msgid "teaspoon"
-msgstr "cuillère à café"
+msgstr "Càc"
 
 msgid "tablespoon"
-msgstr "cuillère à soupe"
+msgstr "Càs"
 
 msgid "cup"
-msgstr "tasse"
+msgstr "Tasse"
 
 msgid "piece"
-msgstr "pièce"
+msgstr "Pièce"
 
 msgid "pinch"
-msgstr "pincée"
+msgstr "Pincée"
 
 msgid "to taste"
-msgstr "à volonté"
+msgstr "À volonté"
 
 # ── Recipe types ──────────────────────────────────────────────────────────────
 msgid "Starter"

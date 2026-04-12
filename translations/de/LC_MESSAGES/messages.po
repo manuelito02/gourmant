@@ -252,7 +252,7 @@ msgid "pinch"
 msgstr "Prise"
 
 msgid "to taste"
-msgstr "nach Geschmack"
+msgstr "Nach Geschmack"
 
 # ── Recipe types ──────────────────────────────────────────────────────────────
 msgid "Starter"

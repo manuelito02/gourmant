@@ -219,40 +219,40 @@ msgstr "min totaal"
 
 # ── Amount units ─────────────────────────────────────────────────────────────
 msgid "gram"
-msgstr "gram"
+msgstr "Gram"
 
 msgid "kilogram"
-msgstr "kilogram"
+msgstr "Kilogram"
 
 msgid "milliliter"
-msgstr "milliliter"
+msgstr "Milliliter"
 
 msgid "liter"
-msgstr "liter"
+msgstr "Liter"
 
 msgid "centiliter"
-msgstr "centiliter"
+msgstr "Centiliter"
 
 msgid "deciliter"
-msgstr "deciliter"
+msgstr "Deciliter"
 
 msgid "teaspoon"
-msgstr "theelepel"
+msgstr "Theelepel"
 
 msgid "tablespoon"
-msgstr "eetlepel"
+msgstr "Eetlepel"
 
 msgid "cup"
-msgstr "kop"
+msgstr "Kop"
 
 msgid "piece"
-msgstr "stuk"
+msgstr "Stuk"
 
 msgid "pinch"
-msgstr "snufje"
+msgstr "Snufje"
 
 msgid "to taste"
-msgstr "naar smaak"
+msgstr "Naar smaak"
 
 # ── Recipe types ──────────────────────────────────────────────────────────────
 msgid "Starter"

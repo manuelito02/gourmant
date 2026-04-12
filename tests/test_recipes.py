@@ -101,10 +101,10 @@ def test_recipe_form_translates_units_and_types(auth_client):
     auth_client.post("/set-language", data={"lang": "fr"})
     response = auth_client.get("/recipes/new")
     # Amount units — ASCII-safe French names present in JSON
-    assert "gramme" in response.text
-    assert "tasse" in response.text        # cup → tasse
-    assert "pincée" not in response.text   # tojson escapes non-ASCII; pinc\u00e9e
-    assert r"pinc\u00e9e" in response.text
+    assert "Gramme" in response.text
+    assert "Tasse" in response.text        # cup → Tasse
+    assert r"C\u00e0c" in response.text    # Càc (teaspoon shorthand)
+    assert r"C\u00e0s" in response.text    # Càs (tablespoon shorthand)
     # Ingredient types — tojson escapes accented chars too
     assert r"L\u00e9gume" in response.text  # Légume
     # Reset language
