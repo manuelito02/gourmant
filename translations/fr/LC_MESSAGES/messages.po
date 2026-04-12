@@ -92,6 +92,9 @@ msgstr "Cet ingrédient existe déjà"
 msgid "My Recipes"
 msgstr "Mes recettes"
 
+msgid "Recipes"
+msgstr "Recettes"
+
 msgid "+ New recipe"
 msgstr "+ Nouvelle recette"
 

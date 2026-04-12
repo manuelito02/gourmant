@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _("My Recipes") }} — Gourmant{% endblock %}
+{% block title %}{{ _("Recipes") }} — Gourmant{% endblock %}
 
 {% block content %}
 <div class="dashboard">
     <div class="dashboard-header">
-        <h1>{{ _("My Recipes") }}</h1>
+        <h1>{{ _("Recipes") }}</h1>
         <a href="/recipes/new" class="btn-primary">{{ _("+ New recipe") }}</a>
     </div>
 
@@ -21,6 +21,7 @@
             <div class="recipe-card-meta">
                 {% if recipe.servings %}{{ recipe.servings }} {{ _("servings") }} · {% endif %}{{ recipe.created_at.strftime("%d %b %Y") }}
             </div>
+            <div class="recipe-card-author">{{ recipe.user.first_name }} {{ recipe.user.last_name }}</div>
         </a>
         {% endfor %}
     </div>

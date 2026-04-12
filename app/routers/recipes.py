@@ -147,9 +147,14 @@ def _populate_recipe(db: Session, recipe_id: int, data: RecipeCreate) -> None:
 def dashboard(request: Request, db: Session = Depends(get_db)):
     user_id = _require_page_user(request)
     recipes = (
-        db.query(Recipe).filter(Recipe.user_id == user_id).order_by(Recipe.created_at.desc()).all()
+        db.query(Recipe)
+        .options(selectinload(Recipe.type), selectinload(Recipe.user))
+        .order_by(Recipe.created_at.desc())
+        .all()
     )
-    return get_templates(request).TemplateResponse(request, "dashboard.html", {"recipes": recipes})
+    return get_templates(request).TemplateResponse(
+        request, "dashboard.html", {"recipes": recipes, "current_user_id": user_id}
+    )
 
 
 @router.get("/recipes/new", response_class=HTMLResponse)

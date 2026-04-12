@@ -92,6 +92,9 @@ msgstr "Diese Zutat existiert bereits"
 msgid "My Recipes"
 msgstr "Meine Rezepte"
 
+msgid "Recipes"
+msgstr "Rezepte"
+
 msgid "+ New recipe"
 msgstr "+ Neues Rezept"
 

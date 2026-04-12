@@ -56,8 +56,8 @@ def test_dashboard_shows_servings(auth_client, ref):
     assert "4 servings" in response.text
 
 
-def test_dashboard_only_shows_own_recipes(client, ref):
-    # Register two users; only first user's recipe should appear on their dashboard
+def test_dashboard_shows_all_recipes_with_author(client, ref):
+    # Recipes from all users appear on the dashboard; author name is shown
     client.post(
         "/register",
         data={
@@ -72,8 +72,13 @@ def test_dashboard_only_shows_own_recipes(client, ref):
     client.post("/logout")
 
     client.post("/register", data=OTHER_USER)
+    create_recipe(client, {**minimal_payload(ref), "title": "Bob Stew"})
     response = client.get("/dashboard")
-    assert "Alice Soup" not in response.text
+    # Both recipes visible to Bob
+    assert "Alice Soup" in response.text
+    assert "Bob Stew" in response.text
+    # Author names present
+    assert "Alice A" in response.text
 
 
 # ── New recipe form ───────────────────────────────────────────────────────────

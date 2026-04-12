@@ -5,6 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 from app.models.ingredient import AmountUnit, Ingredient
+from app.models.user import User
 
 
 class RecipeType(Base):
@@ -28,6 +29,7 @@ class Recipe(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     type: Mapped["RecipeType"] = relationship(back_populates="recipes")
+    user: Mapped["User"] = relationship()
     ingredient_groups: Mapped[list["RecipeIngredientGroup"]] = relationship(
         back_populates="recipe",
         cascade="all, delete-orphan",

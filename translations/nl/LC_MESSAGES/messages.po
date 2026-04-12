@@ -92,6 +92,9 @@ msgstr "Dit ingrediënt bestaat al"
 msgid "My Recipes"
 msgstr "Mijn recepten"
 
+msgid "Recipes"
+msgstr "Recepten"
+
 msgid "+ New recipe"
 msgstr "+ Nieuw recept"
 

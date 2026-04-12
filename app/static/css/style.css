@@ -278,6 +278,7 @@ main { padding: 2rem; }
     margin-bottom: 0.75rem;
 }
 .recipe-card-meta { font-size: 0.78rem; color: var(--meta); }
+.recipe-card-author { font-size: 0.78rem; color: var(--meta); font-style: italic; margin-top: 0.25rem; }
 
 .empty-state {
     text-align: center;
