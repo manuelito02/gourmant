@@ -217,6 +217,43 @@ msgstr "Keine Schritte hinzugefügt."
 msgid "min total"
 msgstr "min gesamt"
 
+# ── Amount units ─────────────────────────────────────────────────────────────
+msgid "gram"
+msgstr "Gramm"
+
+msgid "kilogram"
+msgstr "Kilogramm"
+
+msgid "milliliter"
+msgstr "Milliliter"
+
+msgid "liter"
+msgstr "Liter"
+
+msgid "centiliter"
+msgstr "Zentiliter"
+
+msgid "deciliter"
+msgstr "Deziliter"
+
+msgid "teaspoon"
+msgstr "Teelöffel"
+
+msgid "tablespoon"
+msgstr "Esslöffel"
+
+msgid "cup"
+msgstr "Tasse"
+
+msgid "piece"
+msgstr "Stück"
+
+msgid "pinch"
+msgstr "Prise"
+
+msgid "to taste"
+msgstr "nach Geschmack"
+
 # ── Recipe types ──────────────────────────────────────────────────────────────
 msgid "Starter"
 msgstr "Vorspeise"

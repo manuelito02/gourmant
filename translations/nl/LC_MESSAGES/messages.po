@@ -217,6 +217,43 @@ msgstr "Geen stappen toegevoegd."
 msgid "min total"
 msgstr "min totaal"
 
+# ── Amount units ─────────────────────────────────────────────────────────────
+msgid "gram"
+msgstr "gram"
+
+msgid "kilogram"
+msgstr "kilogram"
+
+msgid "milliliter"
+msgstr "milliliter"
+
+msgid "liter"
+msgstr "liter"
+
+msgid "centiliter"
+msgstr "centiliter"
+
+msgid "deciliter"
+msgstr "deciliter"
+
+msgid "teaspoon"
+msgstr "theelepel"
+
+msgid "tablespoon"
+msgstr "eetlepel"
+
+msgid "cup"
+msgstr "kop"
+
+msgid "piece"
+msgstr "stuk"
+
+msgid "pinch"
+msgstr "snufje"
+
+msgid "to taste"
+msgstr "naar smaak"
+
 # ── Recipe types ──────────────────────────────────────────────────────────────
 msgid "Starter"
 msgstr "Voorgerecht"

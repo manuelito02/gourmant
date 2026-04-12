@@ -43,16 +43,20 @@ def _require_page_user(request: Request) -> int:
 # ── Query helpers ─────────────────────────────────────────────────────────────
 
 
-def _form_context(db: Session) -> dict:
+def _form_context(db: Session, request: Request) -> dict:
     """Shared context dict for the new/edit recipe form."""
     return {
         "recipe_types": db.query(RecipeType).order_by(RecipeType.name).all(),
         "amount_units": [
-            {"id": u.id, "name": u.name, "abbreviation": u.abbreviation}
+            {
+                "id": u.id,
+                "name": gettext_for(request, u.name),
+                "abbreviation": u.abbreviation,
+            }
             for u in db.query(AmountUnit).all()
         ],
         "ingredient_types": [
-            {"id": t.id, "name": t.name}
+            {"id": t.id, "name": gettext_for(request, t.name)}
             for t in db.query(IngredientType).order_by(IngredientType.name).all()
         ],
     }
@@ -152,7 +156,7 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
 def new_recipe_form(request: Request, db: Session = Depends(get_db)):
     _require_page_user(request)
     return get_templates(request).TemplateResponse(
-        request, "recipe_form.html", _form_context(db)
+        request, "recipe_form.html", _form_context(db, request)
     )
 
 
@@ -214,7 +218,7 @@ def edit_recipe_form(recipe_id: int, request: Request, db: Session = Depends(get
         request,
         "recipe_form.html",
         {
-            **_form_context(db),
+            **_form_context(db, request),
             "edit_mode": True,
             "recipe_id": recipe_id,
             "recipe_data": recipe_data,
