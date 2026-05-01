@@ -1,133 +1,450 @@
 # Dutch translations for Gourmant
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-05-01 22:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
+"Language-Team: nl <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
-# ── Nav ──────────────────────────────────────────────────────────────────────
-msgid "Log in"
-msgstr "Inloggen"
+#: app/routers/admin.py:62
+msgid "Cannot remove the last admin role."
+msgstr "De laatste beheerdersrol kan niet worden verwijderd."
 
-msgid "Log out"
-msgstr "Uitloggen"
+#: app/routers/admin.py:83
+msgid "Cannot delete your own account."
+msgstr "Je kunt je eigen account niet verwijderen."
 
-msgid "Menu"
-msgstr "Menu"
+#: app/routers/admin.py:85
+msgid "Cannot delete the last admin."
+msgstr "De laatste beheerder kan niet worden verwijderd."
 
-# ── Account ───────────────────────────────────────────────────────────────────
-msgid "Account"
-msgstr "Account"
+# ── Auth errors
+# ───────────────────────────────────────────────────────────────
+#: app/routers/auth.py:89 app/routers/settings.py:90
+msgid "Passwords do not match"
+msgstr "De wachtwoorden komen niet overeen"
 
-msgid "Account settings"
-msgstr "Accountinstellingen"
+#: app/routers/auth.py:104
+msgid "An account with this email already exists"
+msgstr "Er bestaat al een account met dit e-mailadres"
 
-msgid "Personal information"
-msgstr "Persoonlijke informatie"
-
-msgid "Default language"
-msgstr "Standaardtaal"
-
-msgid "Change password"
-msgstr "Wachtwoord wijzigen"
-
-msgid "Current password"
-msgstr "Huidig wachtwoord"
-
-msgid "New password"
-msgstr "Nieuw wachtwoord"
-
-msgid "Confirm new password"
-msgstr "Nieuw wachtwoord bevestigen"
-
-msgid "Leave blank to keep your current password"
-msgstr "Laat leeg om uw huidige wachtwoord te behouden"
-
-msgid "Apply"
-msgstr "Toepassen"
-
-msgid "Email cannot be changed"
-msgstr "E-mailadres kan niet worden gewijzigd"
-
-msgid "Current password is incorrect"
-msgstr "Het huidige wachtwoord is onjuist"
-
-msgid "All password fields are required to change your password"
-msgstr "Alle wachtwoordvelden zijn vereist om uw wachtwoord te wijzigen"
-
+#: app/routers/settings.py:77
 msgid "First name is required."
 msgstr "Voornaam is verplicht."
 
+#: app/routers/settings.py:79
 msgid "Last name is required."
 msgstr "Achternaam is verplicht."
 
+#: app/routers/settings.py:81
 msgid "Invalid language."
 msgstr "Ongeldige taal."
 
-# ── Index ─────────────────────────────────────────────────────────────────────
-msgid "Welcome to the Gourmant App!"
-msgstr "Welkom bij de Gourmant App!"
+#: app/routers/settings.py:86
+msgid "All password fields are required to change your password"
+msgstr "Alle wachtwoordvelden zijn vereist om uw wachtwoord te wijzigen"
 
-msgid "Your recipe management companion."
-msgstr "Uw receptenbeheer-assistent."
+#: app/routers/settings.py:88
+msgid "Current password is incorrect"
+msgstr "Het huidige wachtwoord is onjuist"
 
-# ── Auth ──────────────────────────────────────────────────────────────────────
-msgid "Email address"
-msgstr "E-mailadres"
+#: app/templates/account.html:3 app/templates/account.html:7
+msgid "Account settings"
+msgstr "Accountinstellingen"
 
-msgid "Password"
-msgstr "Wachtwoord"
+#: app/templates/account.html:16
+msgid "Personal information"
+msgstr "Persoonlijke informatie"
 
-msgid "No account yet?"
-msgstr "Nog geen account?"
-
-msgid "Create one"
-msgstr "Maak er een aan"
-
-msgid "Create account"
-msgstr "Account aanmaken"
-
+#: app/templates/account.html:19 app/templates/register.html:14
 msgid "First name"
 msgstr "Voornaam"
 
+#: app/templates/account.html:24 app/templates/register.html:18
 msgid "Last name"
 msgstr "Achternaam"
 
-msgid "Confirm password"
-msgstr "Wachtwoord bevestigen"
+# ── Auth
+# ──────────────────────────────────────────────────────────────────────
+#: app/templates/account.html:30 app/templates/login.html:13
+#: app/templates/register.html:23
+msgid "Email address"
+msgstr "E-mailadres"
 
-msgid "Already have an account?"
-msgstr "Al een account?"
+#: app/templates/account.html:32
+msgid "Email cannot be changed"
+msgstr "E-mailadres kan niet worden gewijzigd"
 
+#: app/templates/account.html:37
+msgid "Default language"
+msgstr "Standaardtaal"
+
+#: app/templates/account.html:49
+msgid "Change password"
+msgstr "Wachtwoord wijzigen"
+
+#: app/templates/account.html:50
+msgid "Leave blank to keep your current password"
+msgstr "Laat leeg om uw huidige wachtwoord te behouden"
+
+#: app/templates/account.html:52
+msgid "Current password"
+msgstr "Huidig wachtwoord"
+
+#: app/templates/account.html:57
+msgid "New password"
+msgstr "Nieuw wachtwoord"
+
+#: app/templates/account.html:66
+msgid "Confirm new password"
+msgstr "Nieuw wachtwoord bevestigen"
+
+#: app/templates/account.html:73 app/templates/recipe_form.html:83
+#: app/templates/recipe_form.html:103
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: app/templates/account.html:74
+msgid "Apply"
+msgstr "Toepassen"
+
+#: app/templates/account.html:84 app/templates/register.html:47
 msgid "Very weak"
 msgstr "Zeer zwak"
 
+#: app/templates/account.html:85 app/templates/register.html:48
 msgid "Weak"
 msgstr "Zwak"
 
+#: app/templates/account.html:86 app/templates/register.html:49
 msgid "Fair"
 msgstr "Redelijk"
 
+#: app/templates/account.html:87 app/templates/register.html:50
 msgid "Strong"
 msgstr "Sterk"
 
+#: app/templates/account.html:88 app/templates/register.html:51
 msgid "Very strong"
 msgstr "Zeer sterk"
 
-# ── Auth errors ───────────────────────────────────────────────────────────────
-msgid "Passwords do not match"
-msgstr "De wachtwoorden komen niet overeen"
+#: app/templates/base.html:21
+msgid "Menu"
+msgstr "Menu"
+
+#: app/templates/base.html:28
+msgid "Admin"
+msgstr "Admin"
+
+# ── Account
+# ───────────────────────────────────────────────────────────────────
+#: app/templates/base.html:30
+msgid "Account"
+msgstr "Account"
+
+#: app/templates/base.html:32
+msgid "Log out"
+msgstr "Uitloggen"
+
+# ── Nav
+# ──────────────────────────────────────────────────────────────────────
+#: app/templates/base.html:37 app/templates/login.html:3
+#: app/templates/login.html:7 app/templates/login.html:20
+#: app/templates/register.html:40
+msgid "Log in"
+msgstr "Inloggen"
+
+#: app/templates/admin/users.html:14 app/templates/dashboard.html:3
+#: app/templates/dashboard.html:8
+msgid "Recipes"
+msgstr "Recepten"
+
+#: app/templates/dashboard.html:9
+msgid "+ New recipe"
+msgstr "+ Nieuw recept"
+
+#: app/templates/dashboard.html:17
+msgid "Search…"
+msgstr "Zoeken…"
+
+#: app/templates/dashboard.html:19
+msgid "Newest first"
+msgstr "Nieuwste eerst"
+
+#: app/templates/dashboard.html:20
+msgid "Oldest first"
+msgstr "Oudste eerst"
+
+#: app/templates/dashboard.html:21
+msgid "Title A–Z"
+msgstr "Titel A–Z"
+
+#: app/templates/dashboard.html:22
+msgid "Title Z–A"
+msgstr "Titel Z–A"
+
+#: app/templates/dashboard.html:25 app/templates/dashboard.html:82
+msgid "Clear filters"
+msgstr "Filters wissen"
+
+#: app/templates/dashboard.html:30 app/templates/recipe_form.html:46
+#: app/templates/recipe_form.html:98
+msgid "Type"
+msgstr "Type"
+
+#: app/templates/dashboard.html:42 app/templates/recipe_detail.html:40
+#: app/templates/recipe_form.html:66
+msgid "Ingredients"
+msgstr "Ingrediënten"
+
+#: app/templates/dashboard.html:53
+msgid "Add ingredient…"
+msgstr "Ingrediënt toevoegen…"
+
+#: app/templates/dashboard.html:72 app/templates/recipe_detail.html:22
+msgid "servings"
+msgstr "porties"
+
+#: app/templates/dashboard.html:81
+msgid "No recipes match your filters."
+msgstr "Geen recepten komen overeen met uw filters."
+
+#: app/templates/dashboard.html:84
+msgid "No recipes yet."
+msgstr "Nog geen recepten."
+
+#: app/templates/dashboard.html:85
+msgid "Create your first recipe"
+msgstr "Maak uw eerste recept"
+
+# ── Index
+# ─────────────────────────────────────────────────────────────────────
+#: app/templates/index.html:7
+msgid "Welcome to the Gourmant App!"
+msgstr "Welkom bij de Gourmant App!"
+
+#: app/templates/index.html:8
+msgid "Your recipe management companion."
+msgstr "Uw receptenbeheer-assistent."
+
+#: app/templates/login.html:17 app/templates/register.html:27
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: app/templates/login.html:22
+msgid "No account yet?"
+msgstr "Nog geen account?"
+
+#: app/templates/login.html:22
+msgid "Create one"
+msgstr "Maak er een aan"
+
+#: app/templates/recipe_detail.html:27 app/templates/recipe_form.html:3
+#: app/templates/recipe_form.html:32
+msgid "Edit recipe"
+msgstr "Recept bewerken"
+
+# ── Recipe detail
+# ─────────────────────────────────────────────────────────────
+#: app/templates/recipe_detail.html:28
+msgid "← Back"
+msgstr "← Terug"
+
+#: app/templates/recipe_detail.html:69
+msgid "No ingredients added."
+msgstr "Geen ingrediënten toegevoegd."
+
+#: app/templates/recipe_detail.html:76 app/templates/recipe_form.html:77
+msgid "Steps"
+msgstr "Stappen"
+
+#: app/templates/recipe_detail.html:78
+msgid "min total"
+msgstr "min totaal"
+
+#: app/templates/recipe_detail.html:93
+msgid "No steps added."
+msgstr "Geen stappen toegevoegd."
+
+# ── Recipe form
+# ───────────────────────────────────────────────────────────────
+#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:32
+msgid "New recipe"
+msgstr "Nieuw recept"
+
+#: app/templates/recipe_form.html:12
+msgid "Ingredient…"
+msgstr "Ingrediënt…"
+
+#: app/templates/recipe_form.html:13
+msgid "Amount"
+msgstr "Hoeveelheid"
+
+#: app/templates/recipe_form.html:14
+msgid "Group name (e.g. Dough, Toppings…)"
+msgstr "Groepsnaam (bijv. Deeg, Toppings…)"
+
+#: app/templates/recipe_form.html:15
+msgid "Describe this step…"
+msgstr "Beschrijf deze stap…"
+
+#: app/templates/recipe_form.html:16
+msgid "Saving…"
+msgstr "Opslaan…"
+
+#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:84
+msgid "Save recipe"
+msgstr "Recept opslaan"
+
+#: app/templates/recipe_form.html:18
+msgid "Save changes"
+msgstr "Wijzigingen opslaan"
+
+#: app/templates/recipe_form.html:19
+msgid "Title is required."
+msgstr "Titel is verplicht."
+
+#: app/templates/recipe_form.html:20
+msgid "Failed to save recipe."
+msgstr "Recept kon niet worden opgeslagen."
+
+#: app/templates/recipe_form.html:21
+msgid "Network error. Please try again."
+msgstr "Netwerkfout. Probeer het opnieuw."
+
+#: app/templates/recipe_form.html:22
+msgid "Failed to create ingredient."
+msgstr "Ingrediënt kon niet worden aangemaakt."
+
+#: app/templates/recipe_form.html:23
+msgid "Add at least one ingredient."
+msgstr "Voeg minstens één ingrediënt toe."
+
+#: app/templates/recipe_form.html:24
+msgid "Add at least one step."
+msgstr "Voeg minstens één stap toe."
+
+#: app/templates/recipe_form.html:25
+msgid "Each ingredient needs a valid amount."
+msgstr "Elk ingrediënt heeft een geldig bedrag nodig."
+
+#: app/templates/recipe_form.html:39
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/recipe_form.html:41
+msgid "Title"
+msgstr "Titel"
+
+#: app/templates/recipe_form.html:42
+msgid "e.g. Pizza Margherita"
+msgstr "bijv. Pizza Margherita"
+
+#: app/templates/recipe_form.html:54
+msgid "Servings"
+msgstr "Porties"
+
+#: app/templates/recipe_form.html:55
+msgid "e.g. 4"
+msgstr "bijv. 4"
+
+#: app/templates/recipe_form.html:59
+msgid "Description"
+msgstr "Beschrijving"
+
+#: app/templates/recipe_form.html:60
+msgid "A short description of the recipe…"
+msgstr "Een korte beschrijving van het recept…"
+
+#: app/templates/recipe_form.html:69
+msgid "+ Add ingredient"
+msgstr "+ Ingrediënt toevoegen"
+
+#: app/templates/recipe_form.html:72
+msgid "+ Add group"
+msgstr "+ Groep toevoegen"
+
+#: app/templates/recipe_form.html:79
+msgid "+ Add step"
+msgstr "+ Stap toevoegen"
+
+#: app/templates/recipe_form.html:92
+msgid "New ingredient"
+msgstr "Nieuw ingrediënt"
+
+#: app/templates/admin/users.html:12 app/templates/recipe_form.html:94
+msgid "Name"
+msgstr "Naam"
+
+#: app/templates/recipe_form.html:104
+msgid "Create"
+msgstr "Aanmaken"
+
+#: app/templates/register.html:3 app/templates/register.html:7
+#: app/templates/register.html:38
+msgid "Create account"
+msgstr "Account aanmaken"
+
+#: app/templates/register.html:35
+msgid "Confirm password"
+msgstr "Wachtwoord bevestigen"
+
+#: app/templates/register.html:40
+msgid "Already have an account?"
+msgstr "Al een account?"
+
+#: app/templates/admin/users.html:3
+msgid "Admin — Users"
+msgstr "Admin — Gebruikers"
+
+#: app/templates/admin/users.html:7
+msgid "Users"
+msgstr "Gebruikers"
+
+#: app/templates/admin/users.html:11
+msgid "Email"
+msgstr "E-mail"
+
+#: app/templates/admin/users.html:13
+msgid "Role"
+msgstr "Rol"
+
+#: app/templates/admin/users.html:15
+msgid "Created"
+msgstr "Aangemaakt"
+
+#: app/templates/admin/users.html:33
+msgid "Demote"
+msgstr "Degraderen"
+
+#: app/templates/admin/users.html:33
+msgid "Promote"
+msgstr "Promoveren"
+
+#: app/templates/admin/users.html:40
+msgid "Delete user and all their recipes?"
+msgstr "Gebruiker en alle recepten verwijderen?"
+
+#: app/templates/admin/users.html:41
+msgid "Delete"
+msgstr "Verwijderen"
 
 msgid "Password is too weak."
 msgstr "Het wachtwoord is te zwak."
 
-msgid "An account with this email already exists"
-msgstr "Er bestaat al een account met dit e-mailadres"
-
 msgid "Invalid email or password"
 msgstr "Ongeldig e-mailadres of wachtwoord"
 
-# ── API errors ────────────────────────────────────────────────────────────────
+# ── API errors
+# ────────────────────────────────────────────────────────────────
 msgid "Not authenticated"
 msgstr "Niet geauthenticeerd"
 
@@ -140,163 +457,13 @@ msgstr "Naam is verplicht"
 msgid "Ingredient already exists"
 msgstr "Dit ingrediënt bestaat al"
 
-# ── Dashboard ─────────────────────────────────────────────────────────────────
+# ── Dashboard
+# ─────────────────────────────────────────────────────────────────
 msgid "My Recipes"
 msgstr "Mijn recepten"
 
-msgid "Recipes"
-msgstr "Recepten"
-
-msgid "+ New recipe"
-msgstr "+ Nieuw recept"
-
-msgid "No recipes yet."
-msgstr "Nog geen recepten."
-
-msgid "No recipes match your filters."
-msgstr "Geen recepten komen overeen met uw filters."
-
-msgid "Create your first recipe"
-msgstr "Maak uw eerste recept"
-
-msgid "Search…"
-msgstr "Zoeken…"
-
-msgid "Newest first"
-msgstr "Nieuwste eerst"
-
-msgid "Oldest first"
-msgstr "Oudste eerst"
-
-msgid "Title A–Z"
-msgstr "Titel A–Z"
-
-msgid "Title Z–A"
-msgstr "Titel Z–A"
-
-msgid "Clear filters"
-msgstr "Filters wissen"
-
-msgid "Add ingredient…"
-msgstr "Ingrediënt toevoegen…"
-
-msgid "servings"
-msgstr "porties"
-
-# ── Recipe form ───────────────────────────────────────────────────────────────
-msgid "New recipe"
-msgstr "Nieuw recept"
-
-msgid "Details"
-msgstr "Details"
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "e.g. Pizza Margherita"
-msgstr "bijv. Pizza Margherita"
-
-msgid "Type"
-msgstr "Type"
-
-msgid "Servings"
-msgstr "Porties"
-
-msgid "e.g. 4"
-msgstr "bijv. 4"
-
-msgid "Description"
-msgstr "Beschrijving"
-
-msgid "A short description of the recipe…"
-msgstr "Een korte beschrijving van het recept…"
-
-msgid "Ingredients"
-msgstr "Ingrediënten"
-
-msgid "+ Add ingredient"
-msgstr "+ Ingrediënt toevoegen"
-
-msgid "+ Add group"
-msgstr "+ Groep toevoegen"
-
-msgid "Steps"
-msgstr "Stappen"
-
-msgid "+ Add step"
-msgstr "+ Stap toevoegen"
-
-msgid "Cancel"
-msgstr "Annuleren"
-
-msgid "Save recipe"
-msgstr "Recept opslaan"
-
-msgid "Save changes"
-msgstr "Wijzigingen opslaan"
-
-msgid "Saving…"
-msgstr "Opslaan…"
-
-msgid "Edit recipe"
-msgstr "Recept bewerken"
-
-msgid "New ingredient"
-msgstr "Nieuw ingrediënt"
-
-msgid "Name"
-msgstr "Naam"
-
-msgid "Create"
-msgstr "Aanmaken"
-
-msgid "Title is required."
-msgstr "Titel is verplicht."
-
-msgid "Failed to save recipe."
-msgstr "Recept kon niet worden opgeslagen."
-
-msgid "Network error. Please try again."
-msgstr "Netwerkfout. Probeer het opnieuw."
-
-msgid "Failed to create ingredient."
-msgstr "Ingrediënt kon niet worden aangemaakt."
-
-msgid "Add at least one ingredient."
-msgstr "Voeg minstens één ingrediënt toe."
-
-msgid "Add at least one step."
-msgstr "Voeg minstens één stap toe."
-
-msgid "Each ingredient needs a valid amount."
-msgstr "Elk ingrediënt heeft een geldig bedrag nodig."
-
-msgid "Ingredient…"
-msgstr "Ingrediënt…"
-
-msgid "Amount"
-msgstr "Hoeveelheid"
-
-msgid "Group name (e.g. Dough, Toppings…)"
-msgstr "Groepsnaam (bijv. Deeg, Toppings…)"
-
-msgid "Describe this step…"
-msgstr "Beschrijf deze stap…"
-
-# ── Recipe detail ─────────────────────────────────────────────────────────────
-msgid "← Back"
-msgstr "← Terug"
-
-msgid "No ingredients added."
-msgstr "Geen ingrediënten toegevoegd."
-
-msgid "No steps added."
-msgstr "Geen stappen toegevoegd."
-
-msgid "min total"
-msgstr "min totaal"
-
-# ── Amount units ─────────────────────────────────────────────────────────────
+# ── Amount units
+# ─────────────────────────────────────────────────────────────
 msgid "gram"
 msgstr "Gram"
 
@@ -311,9 +478,6 @@ msgstr "Liter"
 
 msgid "centiliter"
 msgstr "Centiliter"
-
-msgid "deciliter"
-msgstr "Deciliter"
 
 msgid "teaspoon"
 msgstr "Theelepel"
@@ -333,7 +497,8 @@ msgstr "Snufje"
 msgid "to taste"
 msgstr "Naar smaak"
 
-# ── Recipe types ──────────────────────────────────────────────────────────────
+# ── Recipe types
+# ──────────────────────────────────────────────────────────────
 msgid "Starter"
 msgstr "Voorgerecht"
 
@@ -364,7 +529,8 @@ msgstr "Snack"
 msgid "Beverage"
 msgstr "Drank"
 
-# ── Ingredient types ──────────────────────────────────────────────────────────
+# ── Ingredient types
+# ──────────────────────────────────────────────────────────
 msgid "Vegetable"
 msgstr "Groente"
 
@@ -385,9 +551,6 @@ msgstr "Zuivel"
 
 msgid "Egg"
 msgstr "Ei"
-
-msgid "Grain"
-msgstr "Graan"
 
 msgid "Legume"
 msgstr "Peulvrucht"
@@ -412,3 +575,4 @@ msgstr "Smaakmaker"
 
 msgid "Other"
 msgstr "Overig"
+

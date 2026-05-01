@@ -24,6 +24,9 @@
                         <span class="hamburger-bar"></span>
                     </summary>
                     <div class="nav-menu-panel">
+                        {% if request.session.get("role") == "admin" %}
+                        <a href="/admin/users" class="nav-menu-item">{{ _("Admin") }}</a>
+                        {% endif %}
                         <a href="/account" class="nav-menu-item">{{ _("Account") }}</a>
                         <form method="post" action="/logout" style="margin:0">
                             <button type="submit" class="nav-menu-item nav-menu-item-btn">{{ _("Log out") }}</button>

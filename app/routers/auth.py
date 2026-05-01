@@ -60,6 +60,7 @@ def login(
     request.session["user_id"] = user.id
     request.session["first_name"] = user.first_name
     request.session["lang"] = user.language
+    request.session["role"] = user.role.value
     return RedirectResponse("/dashboard", status_code=302)
 
 
@@ -115,6 +116,7 @@ def register(
     db.refresh(user)
     request.session["user_id"] = user.id
     request.session["first_name"] = user.first_name
+    request.session["role"] = user.role.value
     return RedirectResponse("/dashboard", status_code=302)
 
 

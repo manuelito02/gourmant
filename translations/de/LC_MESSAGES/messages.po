@@ -1,133 +1,450 @@
 # German translations for Gourmant
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-05-01 22:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
 
-# ── Nav ──────────────────────────────────────────────────────────────────────
-msgid "Log in"
-msgstr "Anmelden"
+#: app/routers/admin.py:62
+msgid "Cannot remove the last admin role."
+msgstr "Die letzte Administratorrolle kann nicht entfernt werden."
 
-msgid "Log out"
-msgstr "Abmelden"
+#: app/routers/admin.py:83
+msgid "Cannot delete your own account."
+msgstr "Das eigene Konto kann nicht gelöscht werden."
 
-msgid "Menu"
-msgstr "Menü"
+#: app/routers/admin.py:85
+msgid "Cannot delete the last admin."
+msgstr "Der letzte Administrator kann nicht gelöscht werden."
 
-# ── Account ───────────────────────────────────────────────────────────────────
-msgid "Account"
-msgstr "Konto"
+# ── Auth errors
+# ───────────────────────────────────────────────────────────────
+#: app/routers/auth.py:89 app/routers/settings.py:90
+msgid "Passwords do not match"
+msgstr "Die Passwörter stimmen nicht überein"
 
-msgid "Account settings"
-msgstr "Kontoeinstellungen"
+#: app/routers/auth.py:104
+msgid "An account with this email already exists"
+msgstr "Ein Konto mit dieser E-Mail-Adresse existiert bereits"
 
-msgid "Personal information"
-msgstr "Persönliche Informationen"
-
-msgid "Default language"
-msgstr "Standardsprache"
-
-msgid "Change password"
-msgstr "Passwort ändern"
-
-msgid "Current password"
-msgstr "Aktuelles Passwort"
-
-msgid "New password"
-msgstr "Neues Passwort"
-
-msgid "Confirm new password"
-msgstr "Neues Passwort bestätigen"
-
-msgid "Leave blank to keep your current password"
-msgstr "Leer lassen, um Ihr aktuelles Passwort beizubehalten"
-
-msgid "Apply"
-msgstr "Übernehmen"
-
-msgid "Email cannot be changed"
-msgstr "E-Mail-Adresse kann nicht geändert werden"
-
-msgid "Current password is incorrect"
-msgstr "Das aktuelle Passwort ist falsch"
-
-msgid "All password fields are required to change your password"
-msgstr "Alle Passwortfelder sind erforderlich, um Ihr Passwort zu ändern"
-
+#: app/routers/settings.py:77
 msgid "First name is required."
 msgstr "Vorname ist erforderlich."
 
+#: app/routers/settings.py:79
 msgid "Last name is required."
 msgstr "Nachname ist erforderlich."
 
+#: app/routers/settings.py:81
 msgid "Invalid language."
 msgstr "Ungültige Sprache."
 
-# ── Index ─────────────────────────────────────────────────────────────────────
-msgid "Welcome to the Gourmant App!"
-msgstr "Willkommen bei der Gourmant App!"
+#: app/routers/settings.py:86
+msgid "All password fields are required to change your password"
+msgstr "Alle Passwortfelder sind erforderlich, um Ihr Passwort zu ändern"
 
-msgid "Your recipe management companion."
-msgstr "Ihr Rezeptverwaltungs-Assistent."
+#: app/routers/settings.py:88
+msgid "Current password is incorrect"
+msgstr "Das aktuelle Passwort ist falsch"
 
-# ── Auth ──────────────────────────────────────────────────────────────────────
-msgid "Email address"
-msgstr "E-Mail-Adresse"
+#: app/templates/account.html:3 app/templates/account.html:7
+msgid "Account settings"
+msgstr "Kontoeinstellungen"
 
-msgid "Password"
-msgstr "Passwort"
+#: app/templates/account.html:16
+msgid "Personal information"
+msgstr "Persönliche Informationen"
 
-msgid "No account yet?"
-msgstr "Noch kein Konto?"
-
-msgid "Create one"
-msgstr "Jetzt erstellen"
-
-msgid "Create account"
-msgstr "Konto erstellen"
-
+#: app/templates/account.html:19 app/templates/register.html:14
 msgid "First name"
 msgstr "Vorname"
 
+#: app/templates/account.html:24 app/templates/register.html:18
 msgid "Last name"
 msgstr "Nachname"
 
-msgid "Confirm password"
-msgstr "Passwort bestätigen"
+# ── Auth
+# ──────────────────────────────────────────────────────────────────────
+#: app/templates/account.html:30 app/templates/login.html:13
+#: app/templates/register.html:23
+msgid "Email address"
+msgstr "E-Mail-Adresse"
 
-msgid "Already have an account?"
-msgstr "Bereits ein Konto?"
+#: app/templates/account.html:32
+msgid "Email cannot be changed"
+msgstr "E-Mail-Adresse kann nicht geändert werden"
 
+#: app/templates/account.html:37
+msgid "Default language"
+msgstr "Standardsprache"
+
+#: app/templates/account.html:49
+msgid "Change password"
+msgstr "Passwort ändern"
+
+#: app/templates/account.html:50
+msgid "Leave blank to keep your current password"
+msgstr "Leer lassen, um Ihr aktuelles Passwort beizubehalten"
+
+#: app/templates/account.html:52
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+#: app/templates/account.html:57
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: app/templates/account.html:66
+msgid "Confirm new password"
+msgstr "Neues Passwort bestätigen"
+
+#: app/templates/account.html:73 app/templates/recipe_form.html:83
+#: app/templates/recipe_form.html:103
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: app/templates/account.html:74
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: app/templates/account.html:84 app/templates/register.html:47
 msgid "Very weak"
 msgstr "Sehr schwach"
 
+#: app/templates/account.html:85 app/templates/register.html:48
 msgid "Weak"
 msgstr "Schwach"
 
+#: app/templates/account.html:86 app/templates/register.html:49
 msgid "Fair"
 msgstr "Mittel"
 
+#: app/templates/account.html:87 app/templates/register.html:50
 msgid "Strong"
 msgstr "Stark"
 
+#: app/templates/account.html:88 app/templates/register.html:51
 msgid "Very strong"
 msgstr "Sehr stark"
 
-# ── Auth errors ───────────────────────────────────────────────────────────────
-msgid "Passwords do not match"
-msgstr "Die Passwörter stimmen nicht überein"
+#: app/templates/base.html:21
+msgid "Menu"
+msgstr "Menü"
+
+#: app/templates/base.html:28
+msgid "Admin"
+msgstr "Admin"
+
+# ── Account
+# ───────────────────────────────────────────────────────────────────
+#: app/templates/base.html:30
+msgid "Account"
+msgstr "Konto"
+
+#: app/templates/base.html:32
+msgid "Log out"
+msgstr "Abmelden"
+
+# ── Nav
+# ──────────────────────────────────────────────────────────────────────
+#: app/templates/base.html:37 app/templates/login.html:3
+#: app/templates/login.html:7 app/templates/login.html:20
+#: app/templates/register.html:40
+msgid "Log in"
+msgstr "Anmelden"
+
+#: app/templates/admin/users.html:14 app/templates/dashboard.html:3
+#: app/templates/dashboard.html:8
+msgid "Recipes"
+msgstr "Rezepte"
+
+#: app/templates/dashboard.html:9
+msgid "+ New recipe"
+msgstr "+ Neues Rezept"
+
+#: app/templates/dashboard.html:17
+msgid "Search…"
+msgstr "Suchen…"
+
+#: app/templates/dashboard.html:19
+msgid "Newest first"
+msgstr "Neueste zuerst"
+
+#: app/templates/dashboard.html:20
+msgid "Oldest first"
+msgstr "Älteste zuerst"
+
+#: app/templates/dashboard.html:21
+msgid "Title A–Z"
+msgstr "Titel A–Z"
+
+#: app/templates/dashboard.html:22
+msgid "Title Z–A"
+msgstr "Titel Z–A"
+
+#: app/templates/dashboard.html:25 app/templates/dashboard.html:82
+msgid "Clear filters"
+msgstr "Filter zurücksetzen"
+
+#: app/templates/dashboard.html:30 app/templates/recipe_form.html:46
+#: app/templates/recipe_form.html:98
+msgid "Type"
+msgstr "Typ"
+
+#: app/templates/dashboard.html:42 app/templates/recipe_detail.html:40
+#: app/templates/recipe_form.html:66
+msgid "Ingredients"
+msgstr "Zutaten"
+
+#: app/templates/dashboard.html:53
+msgid "Add ingredient…"
+msgstr "Zutat hinzufügen…"
+
+#: app/templates/dashboard.html:72 app/templates/recipe_detail.html:22
+msgid "servings"
+msgstr "Portionen"
+
+#: app/templates/dashboard.html:81
+msgid "No recipes match your filters."
+msgstr "Keine Rezepte entsprechen Ihren Filtern."
+
+#: app/templates/dashboard.html:84
+msgid "No recipes yet."
+msgstr "Noch keine Rezepte."
+
+#: app/templates/dashboard.html:85
+msgid "Create your first recipe"
+msgstr "Erstellen Sie Ihr erstes Rezept"
+
+# ── Index
+# ─────────────────────────────────────────────────────────────────────
+#: app/templates/index.html:7
+msgid "Welcome to the Gourmant App!"
+msgstr "Willkommen bei der Gourmant App!"
+
+#: app/templates/index.html:8
+msgid "Your recipe management companion."
+msgstr "Ihr Rezeptverwaltungs-Assistent."
+
+#: app/templates/login.html:17 app/templates/register.html:27
+msgid "Password"
+msgstr "Passwort"
+
+#: app/templates/login.html:22
+msgid "No account yet?"
+msgstr "Noch kein Konto?"
+
+#: app/templates/login.html:22
+msgid "Create one"
+msgstr "Jetzt erstellen"
+
+#: app/templates/recipe_detail.html:27 app/templates/recipe_form.html:3
+#: app/templates/recipe_form.html:32
+msgid "Edit recipe"
+msgstr "Rezept bearbeiten"
+
+# ── Recipe detail
+# ─────────────────────────────────────────────────────────────
+#: app/templates/recipe_detail.html:28
+msgid "← Back"
+msgstr "← Zurück"
+
+#: app/templates/recipe_detail.html:69
+msgid "No ingredients added."
+msgstr "Keine Zutaten hinzugefügt."
+
+#: app/templates/recipe_detail.html:76 app/templates/recipe_form.html:77
+msgid "Steps"
+msgstr "Schritte"
+
+#: app/templates/recipe_detail.html:78
+msgid "min total"
+msgstr "min gesamt"
+
+#: app/templates/recipe_detail.html:93
+msgid "No steps added."
+msgstr "Keine Schritte hinzugefügt."
+
+# ── Recipe form
+# ───────────────────────────────────────────────────────────────
+#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:32
+msgid "New recipe"
+msgstr "Neues Rezept"
+
+#: app/templates/recipe_form.html:12
+msgid "Ingredient…"
+msgstr "Zutat…"
+
+#: app/templates/recipe_form.html:13
+msgid "Amount"
+msgstr "Menge"
+
+#: app/templates/recipe_form.html:14
+msgid "Group name (e.g. Dough, Toppings…)"
+msgstr "Gruppenname (z.B. Teig, Beläge…)"
+
+#: app/templates/recipe_form.html:15
+msgid "Describe this step…"
+msgstr "Beschreiben Sie diesen Schritt…"
+
+#: app/templates/recipe_form.html:16
+msgid "Saving…"
+msgstr "Wird gespeichert…"
+
+#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:84
+msgid "Save recipe"
+msgstr "Rezept speichern"
+
+#: app/templates/recipe_form.html:18
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: app/templates/recipe_form.html:19
+msgid "Title is required."
+msgstr "Titel ist erforderlich."
+
+#: app/templates/recipe_form.html:20
+msgid "Failed to save recipe."
+msgstr "Rezept konnte nicht gespeichert werden."
+
+#: app/templates/recipe_form.html:21
+msgid "Network error. Please try again."
+msgstr "Netzwerkfehler. Bitte versuchen Sie es erneut."
+
+#: app/templates/recipe_form.html:22
+msgid "Failed to create ingredient."
+msgstr "Zutat konnte nicht erstellt werden."
+
+#: app/templates/recipe_form.html:23
+msgid "Add at least one ingredient."
+msgstr "Füge mindestens eine Zutat hinzu."
+
+#: app/templates/recipe_form.html:24
+msgid "Add at least one step."
+msgstr "Füge mindestens einen Schritt hinzu."
+
+#: app/templates/recipe_form.html:25
+msgid "Each ingredient needs a valid amount."
+msgstr "Jede Zutat benötigt eine gültige Menge."
+
+#: app/templates/recipe_form.html:39
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/recipe_form.html:41
+msgid "Title"
+msgstr "Titel"
+
+#: app/templates/recipe_form.html:42
+msgid "e.g. Pizza Margherita"
+msgstr "z.B. Pizza Margherita"
+
+#: app/templates/recipe_form.html:54
+msgid "Servings"
+msgstr "Portionen"
+
+#: app/templates/recipe_form.html:55
+msgid "e.g. 4"
+msgstr "z.B. 4"
+
+#: app/templates/recipe_form.html:59
+msgid "Description"
+msgstr "Beschreibung"
+
+#: app/templates/recipe_form.html:60
+msgid "A short description of the recipe…"
+msgstr "Eine kurze Beschreibung des Rezepts…"
+
+#: app/templates/recipe_form.html:69
+msgid "+ Add ingredient"
+msgstr "+ Zutat hinzufügen"
+
+#: app/templates/recipe_form.html:72
+msgid "+ Add group"
+msgstr "+ Gruppe hinzufügen"
+
+#: app/templates/recipe_form.html:79
+msgid "+ Add step"
+msgstr "+ Schritt hinzufügen"
+
+#: app/templates/recipe_form.html:92
+msgid "New ingredient"
+msgstr "Neue Zutat"
+
+#: app/templates/admin/users.html:12 app/templates/recipe_form.html:94
+msgid "Name"
+msgstr "Name"
+
+#: app/templates/recipe_form.html:104
+msgid "Create"
+msgstr "Erstellen"
+
+#: app/templates/register.html:3 app/templates/register.html:7
+#: app/templates/register.html:38
+msgid "Create account"
+msgstr "Konto erstellen"
+
+#: app/templates/register.html:35
+msgid "Confirm password"
+msgstr "Passwort bestätigen"
+
+#: app/templates/register.html:40
+msgid "Already have an account?"
+msgstr "Bereits ein Konto?"
+
+#: app/templates/admin/users.html:3
+msgid "Admin — Users"
+msgstr "Admin — Benutzer"
+
+#: app/templates/admin/users.html:7
+msgid "Users"
+msgstr "Benutzer"
+
+#: app/templates/admin/users.html:11
+msgid "Email"
+msgstr "E-Mail"
+
+#: app/templates/admin/users.html:13
+msgid "Role"
+msgstr "Rolle"
+
+#: app/templates/admin/users.html:15
+msgid "Created"
+msgstr "Erstellt"
+
+#: app/templates/admin/users.html:33
+msgid "Demote"
+msgstr "Degradieren"
+
+#: app/templates/admin/users.html:33
+msgid "Promote"
+msgstr "Befördern"
+
+#: app/templates/admin/users.html:40
+msgid "Delete user and all their recipes?"
+msgstr "Benutzer und alle Rezepte löschen?"
+
+#: app/templates/admin/users.html:41
+msgid "Delete"
+msgstr "Löschen"
 
 msgid "Password is too weak."
 msgstr "Das Passwort ist zu schwach."
 
-msgid "An account with this email already exists"
-msgstr "Ein Konto mit dieser E-Mail-Adresse existiert bereits"
-
 msgid "Invalid email or password"
 msgstr "Ungültige E-Mail-Adresse oder Passwort"
 
-# ── API errors ────────────────────────────────────────────────────────────────
+# ── API errors
+# ────────────────────────────────────────────────────────────────
 msgid "Not authenticated"
 msgstr "Nicht authentifiziert"
 
@@ -140,163 +457,13 @@ msgstr "Name ist erforderlich"
 msgid "Ingredient already exists"
 msgstr "Diese Zutat existiert bereits"
 
-# ── Dashboard ─────────────────────────────────────────────────────────────────
+# ── Dashboard
+# ─────────────────────────────────────────────────────────────────
 msgid "My Recipes"
 msgstr "Meine Rezepte"
 
-msgid "Recipes"
-msgstr "Rezepte"
-
-msgid "+ New recipe"
-msgstr "+ Neues Rezept"
-
-msgid "No recipes yet."
-msgstr "Noch keine Rezepte."
-
-msgid "No recipes match your filters."
-msgstr "Keine Rezepte entsprechen Ihren Filtern."
-
-msgid "Create your first recipe"
-msgstr "Erstellen Sie Ihr erstes Rezept"
-
-msgid "Search…"
-msgstr "Suchen…"
-
-msgid "Newest first"
-msgstr "Neueste zuerst"
-
-msgid "Oldest first"
-msgstr "Älteste zuerst"
-
-msgid "Title A–Z"
-msgstr "Titel A–Z"
-
-msgid "Title Z–A"
-msgstr "Titel Z–A"
-
-msgid "Clear filters"
-msgstr "Filter zurücksetzen"
-
-msgid "Add ingredient…"
-msgstr "Zutat hinzufügen…"
-
-msgid "servings"
-msgstr "Portionen"
-
-# ── Recipe form ───────────────────────────────────────────────────────────────
-msgid "New recipe"
-msgstr "Neues Rezept"
-
-msgid "Details"
-msgstr "Details"
-
-msgid "Title"
-msgstr "Titel"
-
-msgid "e.g. Pizza Margherita"
-msgstr "z.B. Pizza Margherita"
-
-msgid "Type"
-msgstr "Typ"
-
-msgid "Servings"
-msgstr "Portionen"
-
-msgid "e.g. 4"
-msgstr "z.B. 4"
-
-msgid "Description"
-msgstr "Beschreibung"
-
-msgid "A short description of the recipe…"
-msgstr "Eine kurze Beschreibung des Rezepts…"
-
-msgid "Ingredients"
-msgstr "Zutaten"
-
-msgid "+ Add ingredient"
-msgstr "+ Zutat hinzufügen"
-
-msgid "+ Add group"
-msgstr "+ Gruppe hinzufügen"
-
-msgid "Steps"
-msgstr "Schritte"
-
-msgid "+ Add step"
-msgstr "+ Schritt hinzufügen"
-
-msgid "Cancel"
-msgstr "Abbrechen"
-
-msgid "Save recipe"
-msgstr "Rezept speichern"
-
-msgid "Save changes"
-msgstr "Änderungen speichern"
-
-msgid "Saving…"
-msgstr "Wird gespeichert…"
-
-msgid "Edit recipe"
-msgstr "Rezept bearbeiten"
-
-msgid "New ingredient"
-msgstr "Neue Zutat"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Create"
-msgstr "Erstellen"
-
-msgid "Title is required."
-msgstr "Titel ist erforderlich."
-
-msgid "Failed to save recipe."
-msgstr "Rezept konnte nicht gespeichert werden."
-
-msgid "Network error. Please try again."
-msgstr "Netzwerkfehler. Bitte versuchen Sie es erneut."
-
-msgid "Failed to create ingredient."
-msgstr "Zutat konnte nicht erstellt werden."
-
-msgid "Add at least one ingredient."
-msgstr "Füge mindestens eine Zutat hinzu."
-
-msgid "Add at least one step."
-msgstr "Füge mindestens einen Schritt hinzu."
-
-msgid "Each ingredient needs a valid amount."
-msgstr "Jede Zutat benötigt eine gültige Menge."
-
-msgid "Ingredient…"
-msgstr "Zutat…"
-
-msgid "Amount"
-msgstr "Menge"
-
-msgid "Group name (e.g. Dough, Toppings…)"
-msgstr "Gruppenname (z.B. Teig, Beläge…)"
-
-msgid "Describe this step…"
-msgstr "Beschreiben Sie diesen Schritt…"
-
-# ── Recipe detail ─────────────────────────────────────────────────────────────
-msgid "← Back"
-msgstr "← Zurück"
-
-msgid "No ingredients added."
-msgstr "Keine Zutaten hinzugefügt."
-
-msgid "No steps added."
-msgstr "Keine Schritte hinzugefügt."
-
-msgid "min total"
-msgstr "min gesamt"
-
-# ── Amount units ─────────────────────────────────────────────────────────────
+# ── Amount units
+# ─────────────────────────────────────────────────────────────
 msgid "gram"
 msgstr "Gramm"
 
@@ -311,9 +478,6 @@ msgstr "Liter"
 
 msgid "centiliter"
 msgstr "Zentiliter"
-
-msgid "deciliter"
-msgstr "Deziliter"
 
 msgid "teaspoon"
 msgstr "Teelöffel"
@@ -333,7 +497,8 @@ msgstr "Prise"
 msgid "to taste"
 msgstr "Nach Geschmack"
 
-# ── Recipe types ──────────────────────────────────────────────────────────────
+# ── Recipe types
+# ──────────────────────────────────────────────────────────────
 msgid "Starter"
 msgstr "Vorspeise"
 
@@ -364,7 +529,8 @@ msgstr "Snack"
 msgid "Beverage"
 msgstr "Getränk"
 
-# ── Ingredient types ──────────────────────────────────────────────────────────
+# ── Ingredient types
+# ──────────────────────────────────────────────────────────
 msgid "Vegetable"
 msgstr "Gemüse"
 
@@ -385,9 +551,6 @@ msgstr "Milchprodukt"
 
 msgid "Egg"
 msgstr "Ei"
-
-msgid "Grain"
-msgstr "Getreide"
 
 msgid "Legume"
 msgstr "Hülsenfrucht"
@@ -412,3 +575,4 @@ msgstr "Würzmittel"
 
 msgid "Other"
 msgstr "Sonstiges"
+

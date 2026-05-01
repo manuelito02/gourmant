@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.i18n import SUPPORTED_LANGS, get_lang, get_templates, gettext_for
+from app.i18n import SUPPORTED_LANGS, get_templates, gettext_for
 from app.models.user import User
 from app.routers.auth import check_password_strength, hash_password, verify_password
 

@@ -1,14 +1,20 @@
 import os
 
+# Must be set before app modules are imported — Pydantic reads env at Settings() init time.
+os.environ.setdefault("ADMIN_EMAIL", "admin@gourmant.test")
+os.environ.setdefault("ADMIN_PASSWORD", "test-admin-change-me-99")
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
+from app.config import settings as app_settings
 from app.database import get_db
 from app.main import app
 from app.models.ingredient import AmountUnit, Ingredient, IngredientType
 from app.models.recipe import RecipeType
+from app.scripts.seed_admin import run_with_conn as seed_admin
 
 _BASE_URL = "postgresql+psycopg://gourmant:gourmant@localhost:5432"
 _TEST_DB_NAME = "gourmant_test"
@@ -60,7 +66,7 @@ def seeded_ingredient_max_id(test_engine):
 
 
 def _clean_dynamic_data(conn, seeded_ingredient_max_id: int) -> None:
-    """Remove all user-created data, preserving seeded reference data."""
+    """Remove all user-created data, preserving seeded reference data, then re-seed admin."""
     conn.execute(text("TRUNCATE TABLE users RESTART IDENTITY CASCADE"))
     conn.execute(
         text("DELETE FROM ingredient_translations WHERE ingredient_id > :max_id"),
@@ -70,6 +76,7 @@ def _clean_dynamic_data(conn, seeded_ingredient_max_id: int) -> None:
         text("DELETE FROM ingredients WHERE id > :max_id"),
         {"max_id": seeded_ingredient_max_id},
     )
+    seed_admin(conn)
 
 
 @pytest.fixture
@@ -100,6 +107,16 @@ def client(db):
 def auth_client(client):
     """A client that is already registered and logged in."""
     client.post("/register", data=VALID_USER)
+    return client
+
+
+@pytest.fixture
+def admin_client(client):
+    """A client logged in as the seeded admin user."""
+    client.post(
+        "/login",
+        data={"email": app_settings.admin_email, "password": app_settings.admin_password},
+    )
     return client
 
 

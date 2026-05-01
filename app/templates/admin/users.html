@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Admin — Users") }} — Gourmant{% endblock %}
+
+{% block content %}
+<div class="recipe-form-wrap">
+    <h1>{{ _("Users") }}</h1>
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>{{ _("Email") }}</th>
+                <th>{{ _("Name") }}</th>
+                <th>{{ _("Role") }}</th>
+                <th>{{ _("Recipes") }}</th>
+                <th>{{ _("Created") }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.email }}</td>
+                <td>{{ user.first_name }} {{ user.last_name }}</td>
+                <td>
+                    <span class="role-badge role-{{ user.role.value }}">{{ user.role.value }}</span>
+                </td>
+                <td>{{ recipe_counts.get(user.id, 0) }}</td>
+                <td>{{ user.created_at.strftime('%Y-%m-%d') }}</td>
+                <td class="admin-actions">
+                    {% if not (user.role.value == 'admin' and admin_count <= 1) %}
+                    <form method="post" action="/admin/users/{{ user.id }}/role" style="display:inline">
+                        <button type="submit" class="btn-secondary btn-sm">
+                            {% if user.role.value == 'admin' %}{{ _("Demote") }}{% else %}{{ _("Promote") }}{% endif %}
+                        </button>
+                    </form>
+                    {% endif %}
+                    {% if user.id != request.session.get('user_id') %}
+                    {% if not (user.role.value == 'admin' and admin_count <= 1) %}
+                    <form method="post" action="/admin/users/{{ user.id }}/delete" style="display:inline"
+                          onsubmit="return confirm('{{ _("Delete user and all their recipes?") }}')">
+                        <button type="submit" class="btn-danger btn-sm">{{ _("Delete") }}</button>
+                    </form>
+                    {% endif %}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

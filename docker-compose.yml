@@ -7,6 +7,8 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg://gourmant:gourmant@db:5432/gourmant
       REDIS_URL: redis://redis:6379/0
+      ADMIN_EMAIL: admin@gourmant.test
+      ADMIN_PASSWORD: change-me-now-please-99
     depends_on:
       db:
         condition: service_healthy

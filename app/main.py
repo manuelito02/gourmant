@@ -7,7 +7,7 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from app.config import settings as app_settings
 from app.i18n import SUPPORTED_LANGS, get_templates
-from app.routers import auth, recipes
+from app.routers import admin, auth, recipes
 from app.routers import settings as settings_router
 
 app = FastAPI(title="Gourmant", description="Recipe management API", version="0.1.0")
@@ -17,6 +17,7 @@ app.add_middleware(SessionMiddleware, secret_key=app_settings.secret_key)
 app.include_router(auth.router)
 app.include_router(recipes.router)
 app.include_router(settings_router.router)
+app.include_router(admin.router)
 
 app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
 
