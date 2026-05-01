@@ -82,6 +82,78 @@ nav .btn:hover { background-color: var(--brand-mid); color: var(--bg); }
 }
 .lang-select option { background-color: var(--brand); color: var(--bg); }
 
+/* ── Hamburger menu ── */
+details.nav-menu { position: relative; }
+
+details.nav-menu > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 0.45rem 0.5rem;
+    border-radius: 4px;
+}
+details.nav-menu > summary::-webkit-details-marker { display: none; }
+details.nav-menu > summary::marker { content: none; }
+details.nav-menu > summary:hover { background-color: var(--brand-mid); }
+
+.hamburger-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: var(--bg);
+    border-radius: 1px;
+}
+
+.nav-menu-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 4px 16px var(--shadow);
+    min-width: 160px;
+    z-index: 500;
+    overflow: hidden;
+}
+
+.nav-menu-item {
+    display: block;
+    padding: 0.65rem 1rem;
+    color: var(--brand);
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+.nav-menu-item:hover { background-color: var(--hover); }
+
+.nav-menu-item-btn {
+    background: none;
+    border: none;
+    border-top: 1px solid var(--border);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    color: var(--brand);
+}
+
+/* ── Account page ── */
+.account-email {
+    font-size: 1rem;
+    color: var(--brand-mid);
+    padding: 0.4rem 0;
+}
+
+.form-helper {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    display: block;
+}
 
 /* ── Main ── */
 main { padding: 2rem; }

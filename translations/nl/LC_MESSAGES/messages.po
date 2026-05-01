@@ -12,6 +12,58 @@ msgstr "Inloggen"
 msgid "Log out"
 msgstr "Uitloggen"
 
+msgid "Menu"
+msgstr "Menu"
+
+# ── Account ───────────────────────────────────────────────────────────────────
+msgid "Account"
+msgstr "Account"
+
+msgid "Account settings"
+msgstr "Accountinstellingen"
+
+msgid "Personal information"
+msgstr "Persoonlijke informatie"
+
+msgid "Default language"
+msgstr "Standaardtaal"
+
+msgid "Change password"
+msgstr "Wachtwoord wijzigen"
+
+msgid "Current password"
+msgstr "Huidig wachtwoord"
+
+msgid "New password"
+msgstr "Nieuw wachtwoord"
+
+msgid "Confirm new password"
+msgstr "Nieuw wachtwoord bevestigen"
+
+msgid "Leave blank to keep your current password"
+msgstr "Laat leeg om uw huidige wachtwoord te behouden"
+
+msgid "Apply"
+msgstr "Toepassen"
+
+msgid "Email cannot be changed"
+msgstr "E-mailadres kan niet worden gewijzigd"
+
+msgid "Current password is incorrect"
+msgstr "Het huidige wachtwoord is onjuist"
+
+msgid "All password fields are required to change your password"
+msgstr "Alle wachtwoordvelden zijn vereist om uw wachtwoord te wijzigen"
+
+msgid "First name is required."
+msgstr "Voornaam is verplicht."
+
+msgid "Last name is required."
+msgstr "Achternaam is verplicht."
+
+msgid "Invalid language."
+msgstr "Ongeldige taal."
+
 # ── Index ─────────────────────────────────────────────────────────────────────
 msgid "Welcome to the Gourmant App!"
 msgstr "Welkom bij de Gourmant App!"

@@ -17,9 +17,19 @@
         <div class="nav-right">
             {% if request.session.get("user_id") %}
                 <span>{{ request.session.get("first_name") }}</span>
-                <form method="post" action="/logout" style="margin:0">
-                    <button type="submit" class="btn">{{ _("Log out") }}</button>
-                </form>
+                <details class="nav-menu">
+                    <summary class="nav-menu-trigger" aria-label="{{ _('Menu') }}">
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                    </summary>
+                    <div class="nav-menu-panel">
+                        <a href="/account" class="nav-menu-item">{{ _("Account") }}</a>
+                        <form method="post" action="/logout" style="margin:0">
+                            <button type="submit" class="nav-menu-item nav-menu-item-btn">{{ _("Log out") }}</button>
+                        </form>
+                    </div>
+                </details>
             {% else %}
                 <a href="/login" class="btn">{{ _("Log in") }}</a>
             {% endif %}
@@ -36,5 +46,13 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+    <script>
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('details.nav-menu').forEach(function (d) {
+                if (!d.contains(e.target)) d.removeAttribute('open');
+            });
+        });
+    </script>
+    {% block foot %}{% endblock %}
 </body>
 </html>

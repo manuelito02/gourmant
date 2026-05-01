@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.i18n import get_templates, gettext_for
+from app.i18n import get_lang, get_templates, gettext_for
 from app.models.user import User
 
 router = APIRouter()
@@ -59,6 +59,7 @@ def login(
         )
     request.session["user_id"] = user.id
     request.session["first_name"] = user.first_name
+    request.session["lang"] = user.language
     return RedirectResponse("/dashboard", status_code=302)
 
 
@@ -107,6 +108,7 @@ def register(
         first_name=first_name,
         last_name=last_name,
         hashed_password=hash_password(password),
+        language=get_lang(request),
     )
     db.add(user)
     db.commit()

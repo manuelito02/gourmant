@@ -123,9 +123,12 @@ def upgrade() -> None:
 
     # 1. Spaghetti Bolognese
     r1 = _insert_recipe(
-        conn, bob_id, "Spaghetti Bolognese",
+        conn,
+        bob_id,
+        "Spaghetti Bolognese",
         "A hearty Italian pasta dish with a rich tomato and meat sauce.",
-        main, 4,
+        main,
+        4,
     )
     for ing_name, amount, unit_id in [
         ("spaghetti", 400, g),
@@ -150,9 +153,12 @@ def upgrade() -> None:
 
     # 2. Caesar Salad
     r2 = _insert_recipe(
-        conn, bob_id, "Caesar Salad",
+        conn,
+        bob_id,
+        "Caesar Salad",
         "A classic salad with a tangy lemony dressing and parmesan.",
-        salad, 2,
+        salad,
+        2,
     )
     for ing_name, amount, unit_id in [
         ("lettuce", 1, pc),
@@ -173,9 +179,12 @@ def upgrade() -> None:
 
     # 3. Chocolate Mousse
     r3 = _insert_recipe(
-        conn, bob_id, "Chocolate Mousse",
+        conn,
+        bob_id,
+        "Chocolate Mousse",
         "Light and airy mousse — perfect for dinner parties.",
-        dessert, 6,
+        dessert,
+        6,
     )
     for ing_name, amount, unit_id in [
         ("egg", 3, pc),
@@ -197,9 +206,12 @@ def upgrade() -> None:
 
     # 4. French Onion Soup
     r4 = _insert_recipe(
-        conn, charly_id, "French Onion Soup",
+        conn,
+        charly_id,
+        "French Onion Soup",
         "Deeply caramelized onions in a rich beef broth — a French bistro staple.",
-        soup, 4,
+        soup,
+        4,
     )
     for ing_name, amount, unit_id in [
         ("onion", 6, pc),
@@ -220,9 +232,12 @@ def upgrade() -> None:
 
     # 5. Quiche Lorraine
     r5 = _insert_recipe(
-        conn, charly_id, "Quiche Lorraine",
+        conn,
+        charly_id,
+        "Quiche Lorraine",
         "A classic French tart with bacon and gruyère in a creamy egg custard.",
-        main, 6,
+        main,
+        6,
     )
     g5_pastry = _insert_group(conn, r5, "Pastry", 0)
     for ing_name, amount, unit_id in [
@@ -262,9 +277,12 @@ def upgrade() -> None:
 
     # 6. Tarte Tatin
     r6 = _insert_recipe(
-        conn, charly_id, "Tarte Tatin",
+        conn,
+        charly_id,
+        "Tarte Tatin",
         "Upside-down caramelized apple tart — a French classic.",
-        dessert, 8,
+        dessert,
+        8,
     )
     g6_apples = _insert_group(conn, r6, "Caramel apples", 0)
     for ing_name, amount, unit_id in [
@@ -294,6 +312,4 @@ def upgrade() -> None:
 
 def downgrade() -> None:
     conn = op.get_bind()
-    conn.execute(
-        text("DELETE FROM users WHERE email IN ('bob@example.com', 'charly@example.com')")
-    )
+    conn.execute(text("DELETE FROM users WHERE email IN ('bob@example.com', 'charly@example.com')"))

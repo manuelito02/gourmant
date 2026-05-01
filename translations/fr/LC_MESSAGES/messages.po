@@ -12,6 +12,58 @@ msgstr "Se connecter"
 msgid "Log out"
 msgstr "Se déconnecter"
 
+msgid "Menu"
+msgstr "Menu"
+
+# ── Account ───────────────────────────────────────────────────────────────────
+msgid "Account"
+msgstr "Compte"
+
+msgid "Account settings"
+msgstr "Paramètres du compte"
+
+msgid "Personal information"
+msgstr "Informations personnelles"
+
+msgid "Default language"
+msgstr "Langue par défaut"
+
+msgid "Change password"
+msgstr "Changer le mot de passe"
+
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+msgid "Confirm new password"
+msgstr "Confirmer le nouveau mot de passe"
+
+msgid "Leave blank to keep your current password"
+msgstr "Laisser vide pour conserver votre mot de passe actuel"
+
+msgid "Apply"
+msgstr "Appliquer"
+
+msgid "Email cannot be changed"
+msgstr "L'adresse e-mail ne peut pas être modifiée"
+
+msgid "Current password is incorrect"
+msgstr "Le mot de passe actuel est incorrect"
+
+msgid "All password fields are required to change your password"
+msgstr "Tous les champs de mot de passe sont requis pour modifier votre mot de passe"
+
+msgid "First name is required."
+msgstr "Le prénom est obligatoire."
+
+msgid "Last name is required."
+msgstr "Le nom de famille est obligatoire."
+
+msgid "Invalid language."
+msgstr "Langue invalide."
+
 # ── Index ─────────────────────────────────────────────────────────────────────
 msgid "Welcome to the Gourmant App!"
 msgstr "Bienvenue dans Gourmant !"

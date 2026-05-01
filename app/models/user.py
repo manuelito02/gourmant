@@ -14,4 +14,5 @@ class User(Base):
     first_name: Mapped[str] = mapped_column(String(100), nullable=False)
     last_name: Mapped[str] = mapped_column(String(100), nullable=False)
     hashed_password: Mapped[str] = mapped_column(String(255), nullable=False)
+    language: Mapped[str] = mapped_column(String(2), nullable=False, server_default="en")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
