@@ -3,6 +3,7 @@
 
 /* ── Design tokens ── */
 :root {
+    --font-display: 'Cormorant Garamond', Georgia, serif;
     --bg:           #fdf6ec;   /* page background */
     --surface:      #fff8f0;   /* card / section fill */
     --hover:        #f5e9d8;   /* hover fill */
@@ -22,7 +23,7 @@
 
 /* ── Base ── */
 body {
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
     background-color: var(--bg);
     color: var(--brand);
     min-height: 100vh;
@@ -39,8 +40,10 @@ nav {
 }
 
 nav a.brand {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-family: var(--font-display);
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
     color: var(--bg);
     text-decoration: none;
 }
@@ -103,7 +106,7 @@ main { padding: 2rem; }
     padding: 2rem;
 }
 
-.auth-card h2 { margin-bottom: 1.5rem; font-size: 1.5rem; }
+.auth-card h2 { font-family: var(--font-display); margin-bottom: 1.5rem; font-size: 1.9rem; }
 
 /* ── Forms ── */
 .form-row { display: flex; gap: 0.75rem; }
@@ -141,6 +144,7 @@ main { padding: 2rem; }
     cursor: pointer;
     margin-top: 0.5rem;
     font-weight: bold;
+    transition: background-color 0.15s;
 }
 
 .submit-btn:hover { background-color: var(--brand-mid); }
@@ -183,6 +187,7 @@ main { padding: 2rem; }
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 0.15s;
 }
 .btn-primary:hover { background-color: var(--brand-mid); }
 
@@ -197,6 +202,7 @@ main { padding: 2rem; }
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 0.15s;
 }
 .btn-secondary:hover { background-color: var(--hover); }
 
@@ -240,7 +246,7 @@ main { padding: 2rem; }
     align-items: center;
     margin-bottom: 1.5rem;
 }
-.dashboard-header h1 { font-size: 1.6rem; }
+.dashboard-header h1 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; }
 
 .recipe-grid {
     display: grid;
@@ -254,12 +260,16 @@ main { padding: 2rem; }
     border-radius: 8px;
     padding: 1.25rem;
     cursor: pointer;
-    transition: box-shadow 0.15s;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
     text-decoration: none;
     color: inherit;
     display: block;
 }
-.recipe-card:hover { box-shadow: 0 2px 8px var(--shadow); }
+.recipe-card:hover {
+    box-shadow: 0 6px 20px var(--shadow);
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
 .recipe-card-type {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -267,7 +277,7 @@ main { padding: 2rem; }
     color: var(--accent);
     margin-bottom: 0.35rem;
 }
-.recipe-card-title { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.recipe-card-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.4rem; }
 .recipe-card-desc {
     font-size: 0.875rem;
     color: var(--muted);
@@ -416,7 +426,7 @@ main { padding: 2rem; }
 
 /* ── Recipe form ── */
 .recipe-form-wrap { max-width: 760px; margin: 0 auto; }
-.recipe-form-wrap h1 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+.recipe-form-wrap h1 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 1.25rem; }
 
 .form-section {
     background: var(--surface);
@@ -426,7 +436,8 @@ main { padding: 2rem; }
     margin-bottom: 1.25rem;
 }
 .form-section h2 {
-    font-size: 1.05rem;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
     color: var(--brand-mid);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -644,7 +655,7 @@ main { padding: 2rem; }
     margin-bottom: 1.25rem;
     gap: 1rem;
 }
-.recipe-detail-header h1 { font-size: 1.8rem; margin: 0.2rem 0 0.4rem; }
+.recipe-detail-header h1 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; margin: 0.2rem 0 0.4rem; }
 .recipe-detail-type {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -709,7 +720,8 @@ main { padding: 2rem; }
     padding: 1.5rem;
 }
 .detail-section h2 {
-    font-size: 1.05rem;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
     color: var(--brand-mid);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
