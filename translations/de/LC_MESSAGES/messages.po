@@ -101,8 +101,32 @@ msgstr "+ Neues Rezept"
 msgid "No recipes yet."
 msgstr "Noch keine Rezepte."
 
+msgid "No recipes match your filters."
+msgstr "Keine Rezepte entsprechen Ihren Filtern."
+
 msgid "Create your first recipe"
 msgstr "Erstellen Sie Ihr erstes Rezept"
+
+msgid "Search…"
+msgstr "Suchen…"
+
+msgid "Newest first"
+msgstr "Neueste zuerst"
+
+msgid "Oldest first"
+msgstr "Älteste zuerst"
+
+msgid "Title A–Z"
+msgstr "Titel A–Z"
+
+msgid "Title Z–A"
+msgstr "Titel Z–A"
+
+msgid "Clear filters"
+msgstr "Filter zurücksetzen"
+
+msgid "Add ingredient…"
+msgstr "Zutat hinzufügen…"
 
 msgid "servings"
 msgstr "Portionen"

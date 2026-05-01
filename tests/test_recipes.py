@@ -81,6 +81,85 @@ def test_dashboard_shows_all_recipes_with_author(client, ref):
     assert "Alice A" in response.text
 
 
+# ── Dashboard filters ─────────────────────────────────────────────────────────
+
+
+def test_dashboard_filter_by_title(auth_client, ref):
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Chocolate Cake"})
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Tomato Soup"})
+    response = auth_client.get("/dashboard?q=chocolate")
+    assert "Chocolate Cake" in response.text
+    assert "Tomato Soup" not in response.text
+
+
+def test_dashboard_filter_by_description(auth_client, ref):
+    create_recipe(
+        auth_client,
+        {**minimal_payload(ref), "title": "Soup", "description": "rich broth"},
+    )
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Cake"})
+    response = auth_client.get("/dashboard?q=broth")
+    assert "Soup" in response.text
+    assert "Cake" not in response.text
+
+
+def test_dashboard_filter_by_type(auth_client, ref, db):
+    from app.models.recipe import RecipeType
+    types = db.query(RecipeType).order_by(RecipeType.id).all()
+    assert len(types) >= 2
+    t_a, t_b = types[0], types[1]
+    create_recipe(auth_client, {**minimal_payload(ref), "type_id": t_a.id, "title": "Recipe A"})
+    create_recipe(auth_client, {**minimal_payload(ref), "type_id": t_b.id, "title": "Recipe B"})
+    response = auth_client.get(f"/dashboard?types={t_a.id}")
+    assert "Recipe A" in response.text
+    assert "Recipe B" not in response.text
+
+
+def test_dashboard_filter_by_ingredient(auth_client, ref):
+    ing = {"amount": 1, "unit_id": ref["unit_id"]}
+    payload1 = {
+        **minimal_payload(ref), "title": "Uses Ing 1",
+        "ungrouped_ingredients": [{**ing, "ingredient_id": ref["ingredient_id"]}],
+    }
+    payload2 = {
+        **minimal_payload(ref), "title": "Uses Ing 2",
+        "ungrouped_ingredients": [{**ing, "ingredient_id": ref["ingredient_id2"]}],
+    }
+    create_recipe(auth_client, payload1)
+    create_recipe(auth_client, payload2)
+    response = auth_client.get(f"/dashboard?ingredients={ref['ingredient_id']}")
+    assert "Uses Ing 1" in response.text
+    assert "Uses Ing 2" not in response.text
+
+
+def test_dashboard_filter_no_match_shows_empty(auth_client, ref):
+    create_recipe(auth_client, minimal_payload(ref))
+    response = auth_client.get("/dashboard?q=zzznomatch")
+    assert "No recipes match your filters" in response.text
+    assert "Clear filters" in response.text
+
+
+def test_dashboard_sort_title_asc(auth_client, ref):
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Zebra Cake"})
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Apple Tart"})
+    response = auth_client.get("/dashboard?sort=title_asc")
+    assert response.text.index("Apple Tart") < response.text.index("Zebra Cake")
+
+
+def test_dashboard_sort_title_desc(auth_client, ref):
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Zebra Cake"})
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Apple Tart"})
+    response = auth_client.get("/dashboard?sort=title_desc")
+    assert response.text.index("Zebra Cake") < response.text.index("Apple Tart")
+
+
+def test_dashboard_sort_date_asc(auth_client, ref):
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "First Recipe"})
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Second Recipe"})
+    response = auth_client.get("/dashboard?sort=date_asc")
+    assert response.text.index("First Recipe") < response.text.index("Second Recipe")
+
+
 # ── New recipe form ───────────────────────────────────────────────────────────
 
 

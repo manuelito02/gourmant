@@ -9,6 +9,56 @@
         <a href="/recipes/new" class="btn-primary">{{ _("+ New recipe") }}</a>
     </div>
 
+    <!-- ── Filters ── -->
+    <form method="get" action="/dashboard" id="filter-form" class="filter-bar" novalidate>
+
+        <div class="filter-row">
+            <input type="text" name="q" id="filter-q" value="{{ filter_q }}"
+                   placeholder="{{ _('Search…') }}" class="filter-search" autocomplete="off">
+            <select name="sort" class="filter-sort" onchange="this.form.submit()">
+                <option value="date_desc" {% if filter_sort == 'date_desc' %}selected{% endif %}>{{ _("Newest first") }}</option>
+                <option value="date_asc"  {% if filter_sort == 'date_asc'  %}selected{% endif %}>{{ _("Oldest first") }}</option>
+                <option value="title_asc" {% if filter_sort == 'title_asc' %}selected{% endif %}>{{ _("Title A–Z") }}</option>
+                <option value="title_desc"{% if filter_sort == 'title_desc'%}selected{% endif %}>{{ _("Title Z–A") }}</option>
+            </select>
+            {% if has_filters %}
+            <a href="/dashboard" class="filter-clear">{{ _("Clear filters") }}</a>
+            {% endif %}
+        </div>
+
+        <div class="filter-row">
+            <span class="filter-label">{{ _("Type") }}</span>
+            {% for rt in recipe_types %}
+            <label class="filter-type-pill">
+                <input type="checkbox" name="types" value="{{ rt.id }}" class="sr-only"
+                       {% if rt.id in filter_types %}checked{% endif %}
+                       onchange="this.form.submit()">
+                {{ _(rt.name) }}
+            </label>
+            {% endfor %}
+        </div>
+
+        <div class="filter-row">
+            <span class="filter-label">{{ _("Ingredients") }}</span>
+            <div class="filter-ing-box" id="filter-ing-box">
+                {% for ing in selected_ingredients %}
+                <span class="filter-ing-tag" data-id="{{ ing.id }}">
+                    {{ ing.name }}
+                    <button type="button" aria-label="Remove" onclick="removeIngTag({{ ing.id }})">×</button>
+                    <input type="hidden" name="ingredients" value="{{ ing.id }}">
+                </span>
+                {% endfor %}
+                <div class="filter-ing-autocomplete">
+                    <input type="text" id="filter-ing-input"
+                           placeholder="{{ _('Add ingredient…') }}"
+                           class="filter-ing-input" autocomplete="off">
+                    <ul id="filter-ing-dropdown" class="autocomplete-dropdown hidden"></ul>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
     {% if recipes %}
     <div class="recipe-grid">
         {% for recipe in recipes %}
@@ -27,9 +77,87 @@
     </div>
     {% else %}
     <div class="empty-state">
+        {% if has_filters %}
+        <p>{{ _("No recipes match your filters.") }}</p>
+        <a href="/dashboard" class="btn-primary">{{ _("Clear filters") }}</a>
+        {% else %}
         <p>{{ _("No recipes yet.") }}</p>
         <a href="/recipes/new" class="btn-primary">{{ _("Create your first recipe") }}</a>
+        {% endif %}
     </div>
     {% endif %}
 </div>
+
+<script>
+(function () {
+    // ── Text search debounce ──────────────────────────────────────────────────
+    const searchInput = document.getElementById('filter-q');
+    let searchTimer;
+    searchInput.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => document.getElementById('filter-form').submit(), 400);
+    });
+    searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { clearTimeout(searchTimer); this.form.submit(); }
+    });
+
+    // ── Ingredient autocomplete ───────────────────────────────────────────────
+    const ingInput    = document.getElementById('filter-ing-input');
+    const ingDropdown = document.getElementById('filter-ing-dropdown');
+    const ingBox      = document.getElementById('filter-ing-box');
+
+    function selectedIds() {
+        return [...ingBox.querySelectorAll('input[type=hidden][name=ingredients]')]
+            .map(i => parseInt(i.value));
+    }
+
+    ingInput.addEventListener('input', async function () {
+        const q = this.value.trim();
+        if (!q) { ingDropdown.classList.add('hidden'); return; }
+        const res = await fetch(`/api/ingredients?q=${encodeURIComponent(q)}`);
+        const items = await res.json();
+        const taken = selectedIds();
+        const filtered = items.filter(i => !taken.includes(i.id));
+        if (!filtered.length) { ingDropdown.classList.add('hidden'); return; }
+        ingDropdown.innerHTML = filtered
+            .map(i => `<li data-id="${i.id}" data-name="${i.name.replace(/"/g,'&quot;')}">${i.name}</li>`)
+            .join('');
+        ingDropdown.classList.remove('hidden');
+    });
+
+    ingInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); }
+    });
+
+    ingDropdown.addEventListener('click', function (e) {
+        const li = e.target.closest('li');
+        if (!li) return;
+        addIngTag(parseInt(li.dataset.id), li.dataset.name);
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!ingBox.contains(e.target)) ingDropdown.classList.add('hidden');
+    });
+
+    window.removeIngTag = function (id) {
+        const tag = ingBox.querySelector(`.filter-ing-tag[data-id="${id}"]`);
+        if (tag) tag.remove();
+        document.getElementById('filter-form').submit();
+    };
+
+    function addIngTag(id, name) {
+        if (selectedIds().includes(id)) return;
+        const tag = document.createElement('span');
+        tag.className = 'filter-ing-tag';
+        tag.dataset.id = id;
+        tag.innerHTML =
+            `${name} <button type="button" aria-label="Remove" onclick="removeIngTag(${id})">×</button>` +
+            `<input type="hidden" name="ingredients" value="${id}">`;
+        ingBox.insertBefore(tag, ingBox.querySelector('.filter-ing-autocomplete'));
+        ingInput.value = '';
+        ingDropdown.classList.add('hidden');
+        document.getElementById('filter-form').submit();
+    }
+}());
+</script>
 {% endblock %}

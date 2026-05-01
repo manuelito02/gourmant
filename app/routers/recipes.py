@@ -1,6 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
-from sqlalchemy import func
+from sqlalchemy import func, or_
 from sqlalchemy.orm import Session, aliased, selectinload
 
 from app.database import get_db
@@ -144,16 +144,67 @@ def _populate_recipe(db: Session, recipe_id: int, data: RecipeCreate) -> None:
 
 
 @router.get("/dashboard", response_class=HTMLResponse)
-def dashboard(request: Request, db: Session = Depends(get_db)):
+def dashboard(
+    request: Request,
+    db: Session = Depends(get_db),
+    q: str = "",
+    types: list[int] = Query(default=[]),
+    ingredients: list[int] = Query(default=[]),
+    sort: str = "date_desc",
+):
     user_id = _require_page_user(request)
-    recipes = (
-        db.query(Recipe)
-        .options(selectinload(Recipe.type), selectinload(Recipe.user))
-        .order_by(Recipe.created_at.desc())
-        .all()
-    )
+
+    query = db.query(Recipe).options(selectinload(Recipe.type), selectinload(Recipe.user))
+
+    if q:
+        like = f"%{q}%"
+        query = query.filter(
+            or_(Recipe.title.ilike(like), Recipe.description.ilike(like))
+        )
+    if types:
+        query = query.filter(Recipe.type_id.in_(types))
+    for ing_id in ingredients:
+        sub = (
+            db.query(RecipeIngredient.recipe_id)
+            .filter(RecipeIngredient.ingredient_id == ing_id)
+        )
+        query = query.filter(Recipe.id.in_(sub))
+
+    if sort == "title_asc":
+        query = query.order_by(Recipe.title.asc())
+    elif sort == "title_desc":
+        query = query.order_by(Recipe.title.desc())
+    elif sort == "date_asc":
+        query = query.order_by(Recipe.created_at.asc())
+    else:
+        query = query.order_by(Recipe.created_at.desc())
+
+    recipes = query.all()
+
+    lang = get_lang(request)
+    selected_ingredient_data = []
+    if ingredients:
+        ings = db.query(Ingredient).filter(Ingredient.id.in_(ingredients)).all()
+        translations = _get_ingredient_translations(db, lang, ingredients)
+        selected_ingredient_data = [
+            {"id": ing.id, "name": translations.get(ing.id, ing.name)} for ing in ings
+        ]
+
+    recipe_types = db.query(RecipeType).order_by(RecipeType.name).all()
+
     return get_templates(request).TemplateResponse(
-        request, "dashboard.html", {"recipes": recipes, "current_user_id": user_id}
+        request,
+        "dashboard.html",
+        {
+            "recipes": recipes,
+            "current_user_id": user_id,
+            "recipe_types": recipe_types,
+            "filter_q": q,
+            "filter_types": types,
+            "filter_sort": sort,
+            "selected_ingredients": selected_ingredient_data,
+            "has_filters": bool(q or types or ingredients),
+        },
     )
 
 
