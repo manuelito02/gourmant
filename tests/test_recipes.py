@@ -84,6 +84,38 @@ def test_dashboard_shows_all_recipes_with_author(client, ref):
 # ── Dashboard filters ─────────────────────────────────────────────────────────
 
 
+def test_dashboard_filter_text_matches_translated_ingredient_name(auth_client, ref, db):
+    # "onion" is seeded with French translation "oignon"; searching "oig" in FR
+    # should find the recipe that uses it even though the English name differs.
+    onion = db.query(Ingredient).filter(Ingredient.name == "onion").first()
+    if onion is None:
+        return  # ingredient not seeded — skip
+    ing = {"amount": 1, "unit_id": ref["unit_id"], "ingredient_id": onion.id}
+    create_recipe(
+        auth_client,
+        {**minimal_payload(ref), "title": "French Dish", "ungrouped_ingredients": [ing]},
+    )
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Other Dish"})
+    auth_client.post("/set-language", data={"lang": "fr"})
+    response = auth_client.get("/dashboard?q=oig")
+    auth_client.post("/set-language", data={"lang": "en"})
+    assert "French Dish" in response.text
+    assert "Other Dish" not in response.text
+
+
+def test_dashboard_filter_text_matches_ingredient_name(auth_client, ref, db):
+    first_ing = db.query(Ingredient).filter(Ingredient.id == ref["ingredient_id"]).one()
+    ing = {"amount": 1, "unit_id": ref["unit_id"], "ingredient_id": ref["ingredient_id"]}
+    create_recipe(
+        auth_client,
+        {**minimal_payload(ref), "title": "Mystery Dish", "ungrouped_ingredients": [ing]},
+    )
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Other Dish"})
+    # Searching the ingredient name should surface the recipe that uses it.
+    response = auth_client.get(f"/dashboard?q={first_ing.name[:4]}")
+    assert "Mystery Dish" in response.text
+
+
 def test_dashboard_filter_by_title(auth_client, ref):
     create_recipe(auth_client, {**minimal_payload(ref), "title": "Chocolate Cake"})
     create_recipe(auth_client, {**minimal_payload(ref), "title": "Tomato Soup"})
@@ -105,6 +137,7 @@ def test_dashboard_filter_by_description(auth_client, ref):
 
 def test_dashboard_filter_by_type(auth_client, ref, db):
     from app.models.recipe import RecipeType
+
     types = db.query(RecipeType).order_by(RecipeType.id).all()
     assert len(types) >= 2
     t_a, t_b = types[0], types[1]
@@ -118,11 +151,13 @@ def test_dashboard_filter_by_type(auth_client, ref, db):
 def test_dashboard_filter_by_ingredient(auth_client, ref):
     ing = {"amount": 1, "unit_id": ref["unit_id"]}
     payload1 = {
-        **minimal_payload(ref), "title": "Uses Ing 1",
+        **minimal_payload(ref),
+        "title": "Uses Ing 1",
         "ungrouped_ingredients": [{**ing, "ingredient_id": ref["ingredient_id"]}],
     }
     payload2 = {
-        **minimal_payload(ref), "title": "Uses Ing 2",
+        **minimal_payload(ref),
+        "title": "Uses Ing 2",
         "ungrouped_ingredients": [{**ing, "ingredient_id": ref["ingredient_id2"]}],
     }
     create_recipe(auth_client, payload1)
@@ -186,9 +221,9 @@ def test_recipe_form_translates_units_and_types(auth_client):
     response = auth_client.get("/recipes/new")
     # Amount units — ASCII-safe French names present in JSON
     assert "Gramme" in response.text
-    assert "Tasse" in response.text        # cup → Tasse
-    assert r"C\u00e0c" in response.text    # Càc (teaspoon shorthand)
-    assert r"C\u00e0s" in response.text    # Càs (tablespoon shorthand)
+    assert "Tasse" in response.text  # cup → Tasse
+    assert r"C\u00e0c" in response.text  # Càc (teaspoon shorthand)
+    assert r"C\u00e0s" in response.text  # Càs (tablespoon shorthand)
     # Ingredient types — tojson escapes accented chars too
     assert r"L\u00e9gume" in response.text  # Légume
     # Reset language

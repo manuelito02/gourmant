@@ -62,9 +62,7 @@ def _form_context(db: Session, request: Request) -> dict:
     }
 
 
-def _get_ingredient_translations(
-    db: Session, lang: str, ing_ids: list[int]
-) -> dict[int, str]:
+def _get_ingredient_translations(db: Session, lang: str, ing_ids: list[int]) -> dict[int, str]:
     """Return {ingredient_id: translated_name} for the given ids and language."""
     if lang == "en" or not ing_ids:
         return {}
@@ -153,21 +151,40 @@ def dashboard(
     sort: str = "date_desc",
 ):
     user_id = _require_page_user(request)
+    lang = get_lang(request)
 
     query = db.query(Recipe).options(selectinload(Recipe.type), selectinload(Recipe.user))
 
     if q:
         like = f"%{q}%"
+        # Build a subquery matching recipes whose ingredients contain q in the
+        # current language (falls back to English canonical name).
+        _t = aliased(IngredientTranslation)
+        if lang == "en":
+            ing_sub = (
+                db.query(RecipeIngredient.recipe_id)
+                .join(Ingredient, RecipeIngredient.ingredient_id == Ingredient.id)
+                .filter(Ingredient.name.ilike(like))
+            )
+        else:
+            ing_sub = (
+                db.query(RecipeIngredient.recipe_id)
+                .join(Ingredient, RecipeIngredient.ingredient_id == Ingredient.id)
+                .outerjoin(_t, (_t.ingredient_id == Ingredient.id) & (_t.lang == lang))
+                .filter(func.coalesce(_t.name, Ingredient.name).ilike(like))
+            )
         query = query.filter(
-            or_(Recipe.title.ilike(like), Recipe.description.ilike(like))
+            or_(
+                Recipe.title.ilike(like),
+                Recipe.description.ilike(like),
+                Recipe.id.in_(ing_sub),
+            )
         )
+
     if types:
         query = query.filter(Recipe.type_id.in_(types))
     for ing_id in ingredients:
-        sub = (
-            db.query(RecipeIngredient.recipe_id)
-            .filter(RecipeIngredient.ingredient_id == ing_id)
-        )
+        sub = db.query(RecipeIngredient.recipe_id).filter(RecipeIngredient.ingredient_id == ing_id)
         query = query.filter(Recipe.id.in_(sub))
 
     if sort == "title_asc":
@@ -181,8 +198,7 @@ def dashboard(
 
     recipes = query.all()
 
-    lang = get_lang(request)
-    selected_ingredient_data = []
+    selected_ingredient_data: list[dict[str, int | str]] = []
     if ingredients:
         ings = db.query(Ingredient).filter(Ingredient.id.in_(ingredients)).all()
         translations = _get_ingredient_translations(db, lang, ingredients)
@@ -190,7 +206,10 @@ def dashboard(
             {"id": ing.id, "name": translations.get(ing.id, ing.name)} for ing in ings
         ]
 
-    recipe_types = db.query(RecipeType).order_by(RecipeType.name).all()
+    # Sort types alphabetically in the active language so the pills are in the
+    # expected order for the user regardless of the English DB value.
+    recipe_types = db.query(RecipeType).all()
+    recipe_types.sort(key=lambda rt: gettext_for(request, rt.name).lower())
 
     return get_templates(request).TemplateResponse(
         request,
@@ -249,9 +268,7 @@ def edit_recipe_form(recipe_id: int, request: Request, db: Session = Depends(get
                 "ingredients": [
                     {
                         "ingredient_id": ri.ingredient_id,
-                        "ingredient_name": translations.get(
-                            ri.ingredient_id, ri.ingredient.name
-                        ),
+                        "ingredient_name": translations.get(ri.ingredient_id, ri.ingredient.name),
                         "amount": float(ri.amount),
                         "unit_id": ri.unit_id,
                     }
