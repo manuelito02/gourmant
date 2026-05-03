@@ -148,25 +148,6 @@ def test_dashboard_filter_by_type(auth_client, ref, db):
     assert "Recipe B" not in response.text
 
 
-def test_dashboard_filter_by_ingredient(auth_client, ref):
-    ing = {"amount": 1, "unit_id": ref["unit_id"]}
-    payload1 = {
-        **minimal_payload(ref),
-        "title": "Uses Ing 1",
-        "ungrouped_ingredients": [{**ing, "ingredient_id": ref["ingredient_id"]}],
-    }
-    payload2 = {
-        **minimal_payload(ref),
-        "title": "Uses Ing 2",
-        "ungrouped_ingredients": [{**ing, "ingredient_id": ref["ingredient_id2"]}],
-    }
-    create_recipe(auth_client, payload1)
-    create_recipe(auth_client, payload2)
-    response = auth_client.get(f"/dashboard?ingredients={ref['ingredient_id']}")
-    assert "Uses Ing 1" in response.text
-    assert "Uses Ing 2" not in response.text
-
-
 def test_dashboard_filter_no_match_shows_empty(auth_client, ref):
     create_recipe(auth_client, minimal_payload(ref))
     response = auth_client.get("/dashboard?q=zzznomatch")

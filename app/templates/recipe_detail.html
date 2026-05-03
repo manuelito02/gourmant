@@ -26,7 +26,9 @@
                 <button class="servings-btn" id="servings-inc" aria-label="More servings">+</button>
             </div>
             {% endif %}
+            {% if recipe.user_id == current_user_id %}
             <a href="/recipes/{{ recipe.id }}/edit" class="btn-secondary">{{ _("Edit recipe") }}</a>
+            {% endif %}
             <a href="/dashboard" class="btn-secondary">{{ _("← Back") }}</a>
         </div>
     </div>

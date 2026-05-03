@@ -150,7 +150,6 @@ def dashboard(
     db: Session = Depends(get_db),
     q: str = "",
     types: list[int] = Query(default=[]),
-    ingredients: list[int] = Query(default=[]),
     sort: str = "date_desc",
 ):
     user_id = _require_page_user(request)
@@ -186,9 +185,6 @@ def dashboard(
 
     if types:
         query = query.filter(Recipe.type_id.in_(types))
-    for ing_id in ingredients:
-        sub = db.query(RecipeIngredient.recipe_id).filter(RecipeIngredient.ingredient_id == ing_id)
-        query = query.filter(Recipe.id.in_(sub))
 
     if sort == "title_asc":
         query = query.order_by(Recipe.title.asc())
@@ -200,14 +196,6 @@ def dashboard(
         query = query.order_by(Recipe.created_at.desc())
 
     recipes = query.all()
-
-    selected_ingredient_data: list[dict[str, int | str]] = []
-    if ingredients:
-        ings = db.query(Ingredient).filter(Ingredient.id.in_(ingredients)).all()
-        translations = _get_ingredient_translations(db, lang, ingredients)
-        selected_ingredient_data = [
-            {"id": ing.id, "name": translations.get(ing.id, ing.name)} for ing in ings
-        ]
 
     # Sort types alphabetically in the active language so the pills are in the
     # expected order for the user regardless of the English DB value.
@@ -224,8 +212,7 @@ def dashboard(
             "filter_q": q,
             "filter_types": types,
             "filter_sort": sort,
-            "selected_ingredients": selected_ingredient_data,
-            "has_filters": bool(q or types or ingredients),
+            "has_filters": bool(q or types),
         },
     )
 
@@ -308,7 +295,7 @@ def edit_recipe_form(recipe_id: int, request: Request, db: Session = Depends(get
 
 @router.get("/recipes/{recipe_id}", response_class=HTMLResponse)
 def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db)):
-    _require_page_user(request)
+    user_id = _require_page_user(request)
     recipe = _load_recipe(db, recipe_id)
     if not recipe:
         raise HTTPException(status_code=404, detail=gettext_for(request, "Recipe not found"))
@@ -318,7 +305,13 @@ def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db
     translations = _get_ingredient_translations(db, lang, ing_ids)
 
     return get_templates(request).TemplateResponse(
-        request, "recipe_detail.html", {"recipe": recipe, "ingredient_translations": translations}
+        request,
+        "recipe_detail.html",
+        {
+            "recipe": recipe,
+            "ingredient_translations": translations,
+            "current_user_id": user_id,
+        },
     )
 
 
