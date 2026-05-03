@@ -246,7 +246,7 @@ function addGroup(skipFocus = false) {
             </div>
         </div>
         <div id="group-${id}-ings" class="ingredient-list group-ingredient-list"></div>
-        <button type="button" class="btn-add btn-add-sub" onclick="addIngredientRow('group-${id}')">+ Add ingredient</button>`;
+        <button type="button" class="btn-add btn-add-sub" onclick="addIngredientRow('group-${id}')">${STRINGS.addIngredient}</button>`;
     container.appendChild(div);
     if (!skipFocus) $(`group-name-${id}`).focus();
     return id;

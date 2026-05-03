@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-02 14:16+0200\n"
+"POT-Creation-Date: 2026-05-03 16:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,200 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: app/routers/admin.py:62 app/routers/admin.py:102
+#: app/i18n_strings.py:11
+msgid "gram"
+msgstr ""
+
+#: app/i18n_strings.py:12
+msgid "kilogram"
+msgstr ""
+
+#: app/i18n_strings.py:13
+msgid "milliliter"
+msgstr ""
+
+#: app/i18n_strings.py:14
+msgid "liter"
+msgstr ""
+
+#: app/i18n_strings.py:15
+msgid "centiliter"
+msgstr ""
+
+#: app/i18n_strings.py:16
+msgid "deciliter"
+msgstr ""
+
+#: app/i18n_strings.py:17
+msgid "teaspoon"
+msgstr ""
+
+#: app/i18n_strings.py:18
+msgid "tablespoon"
+msgstr ""
+
+#: app/i18n_strings.py:19
+msgid "cup"
+msgstr ""
+
+#: app/i18n_strings.py:20
+msgid "piece"
+msgstr ""
+
+#: app/i18n_strings.py:21
+msgid "pinch"
+msgstr ""
+
+#: app/i18n_strings.py:22
+msgid "to taste"
+msgstr ""
+
+#: app/i18n_strings.py:25
+msgid "Vegetable"
+msgstr ""
+
+#: app/i18n_strings.py:26
+msgid "Fruit"
+msgstr ""
+
+#: app/i18n_strings.py:27
+msgid "Meat"
+msgstr ""
+
+#: app/i18n_strings.py:28
+msgid "Fish"
+msgstr ""
+
+#: app/i18n_strings.py:29
+msgid "Seafood"
+msgstr ""
+
+#: app/i18n_strings.py:30
+msgid "Dairy"
+msgstr ""
+
+#: app/i18n_strings.py:31
+msgid "Egg"
+msgstr ""
+
+#: app/i18n_strings.py:32
+msgid "Grain"
+msgstr ""
+
+#: app/i18n_strings.py:33
+msgid "Legume"
+msgstr ""
+
+#: app/i18n_strings.py:34
+msgid "Nut"
+msgstr ""
+
+#: app/i18n_strings.py:35
+msgid "Spice"
+msgstr ""
+
+#: app/i18n_strings.py:36
+msgid "Herb"
+msgstr ""
+
+#: app/i18n_strings.py:37
+msgid "Oil"
+msgstr ""
+
+#: app/i18n_strings.py:38
+msgid "Sweetener"
+msgstr ""
+
+#: app/i18n_strings.py:39
+msgid "Condiment"
+msgstr ""
+
+#: app/i18n_strings.py:40 app/i18n_strings.py:53
+msgid "Beverage"
+msgstr ""
+
+#: app/i18n_strings.py:41
+msgid "Other"
+msgstr ""
+
+#: app/i18n_strings.py:44
+msgid "Starter"
+msgstr ""
+
+#: app/i18n_strings.py:45
+msgid "Main course"
+msgstr ""
+
+#: app/i18n_strings.py:46
+msgid "Dessert"
+msgstr ""
+
+#: app/i18n_strings.py:47
+msgid "Sauce"
+msgstr ""
+
+#: app/i18n_strings.py:48
+msgid "Side dish"
+msgstr ""
+
+#: app/i18n_strings.py:49
+msgid "Soup"
+msgstr ""
+
+#: app/i18n_strings.py:50
+msgid "Salad"
+msgstr ""
+
+#: app/i18n_strings.py:51
+msgid "Breakfast"
+msgstr ""
+
+#: app/i18n_strings.py:52
+msgid "Snack"
+msgstr ""
+
+#: app/i18n_strings.py:56
+msgid "Password is too weak."
+msgstr ""
+
+#: app/i18n_strings.py:57 app/routers/auth.py:57
+msgid "Invalid email or password"
+msgstr ""
+
+#: app/i18n_strings.py:58 app/routers/recipes.py:30
+msgid "Not authenticated"
+msgstr ""
+
+#: app/i18n_strings.py:59 app/routers/recipes.py:246 app/routers/recipes.py:314
+#: app/routers/recipes.py:395
+msgid "Recipe not found"
+msgstr ""
+
+#: app/i18n_strings.py:60 app/routers/recipes.py:248
+msgid "Not your recipe"
+msgstr ""
+
+#: app/i18n_strings.py:61
+msgid "Name is required"
+msgstr ""
+
+#: app/i18n_strings.py:62
+msgid "Ingredient already exists"
+msgstr ""
+
+#: app/i18n_strings.py:63
+msgid "My Recipes"
+msgstr ""
+
+#: app/routers/admin.py:82
 msgid "Cannot remove the last admin role."
 msgstr ""
 
-#: app/routers/admin.py:123
+#: app/routers/admin.py:103
 msgid "Cannot delete your own account."
 msgstr ""
 
-#: app/routers/admin.py:125
+#: app/routers/admin.py:105
 msgid "Cannot delete the last admin."
 msgstr ""
 
@@ -107,7 +292,7 @@ msgid "Confirm new password"
 msgstr ""
 
 #: app/templates/account.html:73 app/templates/admin/user_edit.html:31
-#: app/templates/recipe_form.html:105 app/templates/recipe_form.html:125
+#: app/templates/recipe_form.html:106 app/templates/recipe_form.html:126
 msgid "Cancel"
 msgstr ""
 
@@ -190,13 +375,13 @@ msgstr ""
 msgid "Clear filters"
 msgstr ""
 
-#: app/templates/dashboard.html:30 app/templates/recipe_form.html:50
-#: app/templates/recipe_form.html:120
+#: app/templates/dashboard.html:30 app/templates/recipe_form.html:51
+#: app/templates/recipe_form.html:121
 msgid "Type"
 msgstr ""
 
 #: app/templates/dashboard.html:42 app/templates/recipe_detail.html:42
-#: app/templates/recipe_form.html:88
+#: app/templates/recipe_form.html:89
 msgid "Ingredients"
 msgstr ""
 
@@ -241,7 +426,7 @@ msgid "Create one"
 msgstr ""
 
 #: app/templates/recipe_detail.html:29 app/templates/recipe_form.html:3
-#: app/templates/recipe_form.html:36
+#: app/templates/recipe_form.html:37
 msgid "Edit recipe"
 msgstr ""
 
@@ -253,7 +438,7 @@ msgstr ""
 msgid "No ingredients added."
 msgstr ""
 
-#: app/templates/recipe_detail.html:78 app/templates/recipe_form.html:99
+#: app/templates/recipe_detail.html:78 app/templates/recipe_form.html:100
 msgid "Steps"
 msgstr ""
 
@@ -269,7 +454,7 @@ msgstr ""
 msgid "No steps added."
 msgstr ""
 
-#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:36
+#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:37
 msgid "New recipe"
 msgstr ""
 
@@ -293,7 +478,7 @@ msgstr ""
 msgid "Saving…"
 msgstr ""
 
-#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:106
+#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:107
 msgid "Save recipe"
 msgstr ""
 
@@ -329,7 +514,7 @@ msgstr ""
 msgid "Each ingredient needs a valid amount."
 msgstr ""
 
-#: app/templates/recipe_form.html:26 app/templates/recipe_form.html:80
+#: app/templates/recipe_form.html:26 app/templates/recipe_form.html:81
 msgid "Add image"
 msgstr ""
 
@@ -341,67 +526,67 @@ msgstr ""
 msgid "Upload failed"
 msgstr ""
 
-#: app/templates/recipe_form.html:29 app/templates/recipe_form.html:76
+#: app/templates/recipe_form.html:29 app/templates/recipe_form.html:77
 msgid "Remove image"
 msgstr ""
 
-#: app/templates/recipe_form.html:43
-msgid "Details"
-msgstr ""
-
-#: app/templates/recipe_form.html:45
-msgid "Title"
-msgstr ""
-
-#: app/templates/recipe_form.html:46
-msgid "e.g. Pizza Margherita"
-msgstr ""
-
-#: app/templates/recipe_form.html:58
-msgid "Servings"
-msgstr ""
-
-#: app/templates/recipe_form.html:59
-msgid "e.g. 4"
-msgstr ""
-
-#: app/templates/recipe_form.html:63
-msgid "Description"
-msgstr ""
-
-#: app/templates/recipe_form.html:64
-msgid "A short description of the recipe…"
-msgstr ""
-
-#: app/templates/recipe_form.html:70
-msgid "Cover image"
-msgstr ""
-
-#: app/templates/recipe_form.html:74
-msgid "Cover image preview"
-msgstr ""
-
-#: app/templates/recipe_form.html:91
+#: app/templates/recipe_form.html:30 app/templates/recipe_form.html:92
 msgid "+ Add ingredient"
 msgstr ""
 
-#: app/templates/recipe_form.html:94
+#: app/templates/recipe_form.html:44
+msgid "Details"
+msgstr ""
+
+#: app/templates/recipe_form.html:46
+msgid "Title"
+msgstr ""
+
+#: app/templates/recipe_form.html:47
+msgid "e.g. Pizza Margherita"
+msgstr ""
+
+#: app/templates/recipe_form.html:59
+msgid "Servings"
+msgstr ""
+
+#: app/templates/recipe_form.html:60
+msgid "e.g. 4"
+msgstr ""
+
+#: app/templates/recipe_form.html:64
+msgid "Description"
+msgstr ""
+
+#: app/templates/recipe_form.html:65
+msgid "A short description of the recipe…"
+msgstr ""
+
+#: app/templates/recipe_form.html:71
+msgid "Cover image"
+msgstr ""
+
+#: app/templates/recipe_form.html:75
+msgid "Cover image preview"
+msgstr ""
+
+#: app/templates/recipe_form.html:95
 msgid "+ Add group"
 msgstr ""
 
-#: app/templates/recipe_form.html:101
+#: app/templates/recipe_form.html:102
 msgid "+ Add step"
 msgstr ""
 
-#: app/templates/recipe_form.html:114
+#: app/templates/recipe_form.html:115
 msgid "New ingredient"
 msgstr ""
 
-#: app/templates/admin/users.html:15 app/templates/recipe_form.html:116
+#: app/templates/admin/users.html:15 app/templates/recipe_form.html:117
 msgid "Name"
 msgstr ""
 
-#: app/templates/recipe_form.html:126
+#: app/templates/recipe_form.html:127
 msgid "Create"
 msgstr ""
 
@@ -454,19 +639,15 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-#: app/templates/admin/users.html:36
-msgid "Demote"
+#: app/templates/admin/users.html:33
+msgid "Edit"
 msgstr ""
 
-#: app/templates/admin/users.html:36
-msgid "Promote"
-msgstr ""
-
-#: app/templates/admin/users.html:43
+#: app/templates/admin/users.html:37
 msgid "Delete user and all their recipes?"
 msgstr ""
 
-#: app/templates/admin/users.html:44
+#: app/templates/admin/users.html:38
 msgid "Delete"
 msgstr ""
 

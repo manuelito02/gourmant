@@ -45,27 +45,6 @@ def admin_users(
     )
 
 
-@router.post("/users/{user_id}/role", response_class=HTMLResponse)
-def toggle_role(
-    user_id: int,
-    request: Request,
-    db: Session = Depends(get_db),
-    admin: User = Depends(_require_admin),
-):
-    target = db.query(User).filter(User.id == user_id).first()
-    if not target:
-        raise HTTPException(status_code=404)
-
-    _ = lambda s: gettext_for(request, s)  # noqa: E731
-
-    if target.role == UserRole.ADMIN and _count_admins(db) <= 1:
-        raise HTTPException(status_code=400, detail=_("Cannot remove the last admin role."))
-
-    target.role = UserRole.USER if target.role == UserRole.ADMIN else UserRole.ADMIN
-    db.commit()
-    return RedirectResponse("/admin/users", status_code=302)
-
-
 @router.get("/users/{user_id}/edit", response_class=HTMLResponse)
 def edit_user_form(
     user_id: int,

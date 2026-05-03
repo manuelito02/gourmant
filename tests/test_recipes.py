@@ -955,21 +955,24 @@ def test_update_recipe_returns_same_id(auth_client, ref):
 
 # ── Images ────────────────────────────────────────────────────────────────────
 
+# Valid filenames match the upload endpoint's output: 32 lowercase hex chars + .jpg
+_IMG_A = "a" * 32 + ".jpg"
+_IMG_B = "b" * 32 + ".jpg"
+
 
 def test_recipe_with_image_filename_shows_thumbnail_on_dashboard(auth_client, ref):
-    payload = {**minimal_payload(ref), "image_filename": "abc123.jpg"}
+    payload = {**minimal_payload(ref), "image_filename": _IMG_A}
     create_recipe(auth_client, payload)
     response = auth_client.get("/dashboard")
     assert 'class="recipe-card-thumb"' in response.text
-    assert "thumb_abc123.jpg" in response.text
+    assert f"thumb_{_IMG_A}" in response.text
 
 
 def test_recipe_with_image_filename_shows_hero_on_detail(auth_client, ref):
-    payload = {**minimal_payload(ref), "image_filename": "hero.jpg"}
-    recipe_id = create_recipe(auth_client, payload)
+    recipe_id = create_recipe(auth_client, {**minimal_payload(ref), "image_filename": _IMG_A})
     response = auth_client.get(f"/recipes/{recipe_id}")
     assert "has-hero" in response.text
-    assert "hero.jpg" in response.text
+    assert _IMG_A in response.text
 
 
 def test_recipe_without_image_has_no_hero(auth_client, ref):
@@ -987,27 +990,82 @@ def test_recipe_with_step_images_shows_on_detail(auth_client, ref, db):
         step = Step(recipe_id=recipe_id, position=1, description="Boil water")
         db.add(step)
         db.flush()
-    db.add(StepImage(step_id=step.id, position=0, filename="step1.jpg"))
+    db.add(StepImage(step_id=step.id, position=0, filename=_IMG_A))
     db.commit()
 
     response = auth_client.get(f"/recipes/{recipe_id}")
-    assert "thumb_step1.jpg" in response.text
+    assert f"thumb_{_IMG_A}" in response.text
     assert 'class="step-images"' in response.text
 
 
 def test_edit_form_includes_image_filename_in_recipe_data(auth_client, ref):
-    payload = {**minimal_payload(ref), "image_filename": "cover.jpg"}
-    recipe_id = create_recipe(auth_client, payload)
+    recipe_id = create_recipe(auth_client, {**minimal_payload(ref), "image_filename": _IMG_A})
     response = auth_client.get(f"/recipes/{recipe_id}/edit")
-    assert "cover.jpg" in response.text
+    assert _IMG_A in response.text
 
 
 def test_update_recipe_clears_image_filename(auth_client, ref):
-    payload = {**minimal_payload(ref), "image_filename": "old.jpg"}
-    recipe_id = create_recipe(auth_client, payload)
-
+    recipe_id = create_recipe(auth_client, {**minimal_payload(ref), "image_filename": _IMG_A})
     auth_client.put(
         f"/api/recipes/{recipe_id}", json={**minimal_payload(ref), "image_filename": None}
     )
     response = auth_client.get(f"/recipes/{recipe_id}")
     assert "has-hero" not in response.text
+
+
+def test_update_recipe_replaces_step_images(auth_client, ref):
+    """Old StepImage rows must be gone and new ones present after update."""
+    step_with_img = {"position": 1, "description": "Fry", "image_filenames": [_IMG_A]}
+    recipe_id = create_recipe(auth_client, {**minimal_payload(ref), "steps": [step_with_img]})
+
+    updated_step = {"position": 1, "description": "Fry", "image_filenames": [_IMG_B]}
+    auth_client.put(
+        f"/api/recipes/{recipe_id}",
+        json={**minimal_payload(ref), "steps": [updated_step]},
+    )
+
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert f"thumb_{_IMG_B}" in response.text
+    assert f"thumb_{_IMG_A}" not in response.text
+
+
+# ── Image filename validation ──────────────────────────────────────────────────
+
+
+def test_create_recipe_rejects_path_traversal_image_filename(auth_client, ref):
+    response = auth_client.post(
+        "/api/recipes", json={**minimal_payload(ref), "image_filename": "../../etc/passwd"}
+    )
+    assert response.status_code == 422
+
+
+def test_create_recipe_rejects_non_hex_image_filename(auth_client, ref):
+    response = auth_client.post(
+        "/api/recipes", json={**minimal_payload(ref), "image_filename": "notahex.jpg"}
+    )
+    assert response.status_code == 422
+
+
+def test_create_recipe_accepts_valid_image_filename(auth_client, ref):
+    response = auth_client.post(
+        "/api/recipes", json={**minimal_payload(ref), "image_filename": _IMG_A}
+    )
+    assert response.status_code == 201
+
+
+def test_step_image_filename_rejects_path_traversal(auth_client, ref):
+    payload = {
+        **minimal_payload(ref),
+        "steps": [{"position": 1, "description": "x", "image_filenames": ["../evil.jpg"]}],
+    }
+    response = auth_client.post("/api/recipes", json=payload)
+    assert response.status_code == 422
+
+
+def test_update_recipe_rejects_invalid_image_filename(auth_client, ref):
+    recipe_id = create_recipe(auth_client, minimal_payload(ref))
+    response = auth_client.put(
+        f"/api/recipes/{recipe_id}",
+        json={**minimal_payload(ref), "image_filename": "../../secret.jpg"},
+    )
+    assert response.status_code == 422

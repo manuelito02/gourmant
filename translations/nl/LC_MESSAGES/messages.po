@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-01 22:31+0200\n"
+"POT-Creation-Date: 2026-05-03 16:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
@@ -14,15 +14,204 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: app/routers/admin.py:62
+#: app/i18n_strings.py:11
+msgid "gram"
+msgstr "Gram"
+
+#: app/i18n_strings.py:12
+msgid "kilogram"
+msgstr "Kilogram"
+
+#: app/i18n_strings.py:13
+msgid "milliliter"
+msgstr "Milliliter"
+
+#: app/i18n_strings.py:14
+msgid "liter"
+msgstr "Liter"
+
+#: app/i18n_strings.py:15
+msgid "centiliter"
+msgstr "Centiliter"
+
+#: app/i18n_strings.py:16
+msgid "deciliter"
+msgstr "Deciliter"
+
+#: app/i18n_strings.py:17
+msgid "teaspoon"
+msgstr "Theelepel"
+
+#: app/i18n_strings.py:18
+msgid "tablespoon"
+msgstr "Eetlepel"
+
+#: app/i18n_strings.py:19
+msgid "cup"
+msgstr "Kop"
+
+#: app/i18n_strings.py:20
+msgid "piece"
+msgstr "Stuk"
+
+#: app/i18n_strings.py:21
+msgid "pinch"
+msgstr "Snufje"
+
+#: app/i18n_strings.py:22
+msgid "to taste"
+msgstr "Naar smaak"
+
+#: app/i18n_strings.py:25
+msgid "Vegetable"
+msgstr "Groente"
+
+#: app/i18n_strings.py:26
+msgid "Fruit"
+msgstr "Fruit"
+
+#: app/i18n_strings.py:27
+msgid "Meat"
+msgstr "Vlees"
+
+#: app/i18n_strings.py:28
+msgid "Fish"
+msgstr "Vis"
+
+#: app/i18n_strings.py:29
+msgid "Seafood"
+msgstr "Zeevruchten"
+
+#: app/i18n_strings.py:30
+msgid "Dairy"
+msgstr "Zuivel"
+
+#: app/i18n_strings.py:31
+msgid "Egg"
+msgstr "Ei"
+
+#: app/i18n_strings.py:32
+msgid "Grain"
+msgstr "Graan"
+
+#: app/i18n_strings.py:33
+msgid "Legume"
+msgstr "Peulvrucht"
+
+#: app/i18n_strings.py:34
+msgid "Nut"
+msgstr "Noot"
+
+#: app/i18n_strings.py:35
+msgid "Spice"
+msgstr "Specerij"
+
+#: app/i18n_strings.py:36
+msgid "Herb"
+msgstr "Kruid"
+
+#: app/i18n_strings.py:37
+msgid "Oil"
+msgstr "Olie"
+
+#: app/i18n_strings.py:38
+msgid "Sweetener"
+msgstr "Zoetstof"
+
+#: app/i18n_strings.py:39
+msgid "Condiment"
+msgstr "Condiment"
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+#: app/i18n_strings.py:40 app/i18n_strings.py:53
+msgid "Beverage"
+msgstr "Drank"
+
+#: app/i18n_strings.py:41
+msgid "Other"
+msgstr "Overig"
+
+#: app/i18n_strings.py:44
+msgid "Starter"
+msgstr "Voorgerecht"
+
+#: app/i18n_strings.py:45
+msgid "Main course"
+msgstr "Hoofdgerecht"
+
+#: app/i18n_strings.py:46
+msgid "Dessert"
+msgstr "Dessert"
+
+#: app/i18n_strings.py:47
+msgid "Sauce"
+msgstr "Saus"
+
+#: app/i18n_strings.py:48
+msgid "Side dish"
+msgstr "Bijgerecht"
+
+#: app/i18n_strings.py:49
+msgid "Soup"
+msgstr "Soep"
+
+#: app/i18n_strings.py:50
+msgid "Salad"
+msgstr "Salade"
+
+#: app/i18n_strings.py:51
+msgid "Breakfast"
+msgstr "Ontbijt"
+
+#: app/i18n_strings.py:52
+msgid "Snack"
+msgstr "Snack"
+
+# ── Auth errors
+# ───────────────────────────────────────────────────────────────
+#: app/i18n_strings.py:56
+msgid "Password is too weak."
+msgstr "Het wachtwoord is te zwak."
+
+#: app/i18n_strings.py:57 app/routers/auth.py:57
+msgid "Invalid email or password"
+msgstr "Ongeldig e-mailadres of wachtwoord"
+
+#: app/i18n_strings.py:58 app/routers/recipes.py:30
+msgid "Not authenticated"
+msgstr "Niet geauthenticeerd"
+
+#: app/i18n_strings.py:59 app/routers/recipes.py:246 app/routers/recipes.py:314
+#: app/routers/recipes.py:395
+msgid "Recipe not found"
+msgstr "Recept niet gevonden"
+
+#: app/i18n_strings.py:60 app/routers/recipes.py:248
+msgid "Not your recipe"
+msgstr "Dit recept is niet van jou"
+
+#: app/i18n_strings.py:61
+msgid "Name is required"
+msgstr "Naam is verplicht"
+
+#: app/i18n_strings.py:62
+msgid "Ingredient already exists"
+msgstr "Dit ingrediënt bestaat al"
+
+#: app/i18n_strings.py:63
+msgid "My Recipes"
+msgstr "Mijn recepten"
+
+#: app/routers/admin.py:82
 msgid "Cannot remove the last admin role."
 msgstr "De laatste beheerdersrol kan niet worden verwijderd."
 
-#: app/routers/admin.py:83
+#: app/routers/admin.py:103
 msgid "Cannot delete your own account."
 msgstr "Je kunt je eigen account niet verwijderen."
 
-#: app/routers/admin.py:85
+#: app/routers/admin.py:105
 msgid "Cannot delete the last admin."
 msgstr "De laatste beheerder kan niet worden verwijderd."
 
@@ -74,8 +263,8 @@ msgstr "Achternaam"
 
 # ── Auth
 # ──────────────────────────────────────────────────────────────────────
-#: app/templates/account.html:30 app/templates/login.html:13
-#: app/templates/register.html:23
+#: app/templates/account.html:30 app/templates/admin/user_edit.html:15
+#: app/templates/login.html:13 app/templates/register.html:23
 msgid "Email address"
 msgstr "E-mailadres"
 
@@ -107,8 +296,8 @@ msgstr "Nieuw wachtwoord"
 msgid "Confirm new password"
 msgstr "Nieuw wachtwoord bevestigen"
 
-#: app/templates/account.html:73 app/templates/recipe_form.html:83
-#: app/templates/recipe_form.html:103
+#: app/templates/account.html:73 app/templates/admin/user_edit.html:31
+#: app/templates/recipe_form.html:106 app/templates/recipe_form.html:126
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -140,7 +329,7 @@ msgstr "Zeer sterk"
 msgid "Menu"
 msgstr "Menu"
 
-#: app/templates/base.html:28
+#: app/templates/admin/user_edit.html:25 app/templates/base.html:28
 msgid "Admin"
 msgstr "Admin"
 
@@ -162,7 +351,7 @@ msgstr "Uitloggen"
 msgid "Log in"
 msgstr "Inloggen"
 
-#: app/templates/admin/users.html:14 app/templates/dashboard.html:3
+#: app/templates/admin/users.html:17 app/templates/dashboard.html:3
 #: app/templates/dashboard.html:8
 msgid "Recipes"
 msgstr "Recepten"
@@ -191,17 +380,17 @@ msgstr "Titel A–Z"
 msgid "Title Z–A"
 msgstr "Titel Z–A"
 
-#: app/templates/dashboard.html:25 app/templates/dashboard.html:82
+#: app/templates/dashboard.html:25 app/templates/dashboard.html:86
 msgid "Clear filters"
 msgstr "Filters wissen"
 
-#: app/templates/dashboard.html:30 app/templates/recipe_form.html:46
-#: app/templates/recipe_form.html:98
+#: app/templates/dashboard.html:30 app/templates/recipe_form.html:51
+#: app/templates/recipe_form.html:121
 msgid "Type"
 msgstr "Type"
 
-#: app/templates/dashboard.html:42 app/templates/recipe_detail.html:40
-#: app/templates/recipe_form.html:66
+#: app/templates/dashboard.html:42 app/templates/recipe_detail.html:42
+#: app/templates/recipe_form.html:89
 msgid "Ingredients"
 msgstr "Ingrediënten"
 
@@ -209,19 +398,19 @@ msgstr "Ingrediënten"
 msgid "Add ingredient…"
 msgstr "Ingrediënt toevoegen…"
 
-#: app/templates/dashboard.html:72 app/templates/recipe_detail.html:22
+#: app/templates/dashboard.html:76 app/templates/recipe_detail.html:24
 msgid "servings"
 msgstr "porties"
 
-#: app/templates/dashboard.html:81
+#: app/templates/dashboard.html:85
 msgid "No recipes match your filters."
 msgstr "Geen recepten komen overeen met uw filters."
 
-#: app/templates/dashboard.html:84
+#: app/templates/dashboard.html:88
 msgid "No recipes yet."
 msgstr "Nog geen recepten."
 
-#: app/templates/dashboard.html:85
+#: app/templates/dashboard.html:89
 msgid "Create your first recipe"
 msgstr "Maak uw eerste recept"
 
@@ -247,36 +436,40 @@ msgstr "Nog geen account?"
 msgid "Create one"
 msgstr "Maak er een aan"
 
-#: app/templates/recipe_detail.html:27 app/templates/recipe_form.html:3
-#: app/templates/recipe_form.html:32
+#: app/templates/recipe_detail.html:29 app/templates/recipe_form.html:3
+#: app/templates/recipe_form.html:37
 msgid "Edit recipe"
 msgstr "Recept bewerken"
 
 # ── Recipe detail
 # ─────────────────────────────────────────────────────────────
-#: app/templates/recipe_detail.html:28
+#: app/templates/recipe_detail.html:30
 msgid "← Back"
 msgstr "← Terug"
 
-#: app/templates/recipe_detail.html:69
+#: app/templates/recipe_detail.html:71
 msgid "No ingredients added."
 msgstr "Geen ingrediënten toegevoegd."
 
-#: app/templates/recipe_detail.html:76 app/templates/recipe_form.html:77
+#: app/templates/recipe_detail.html:78 app/templates/recipe_form.html:100
 msgid "Steps"
 msgstr "Stappen"
 
-#: app/templates/recipe_detail.html:78
+#: app/templates/recipe_detail.html:80
 msgid "min total"
 msgstr "min totaal"
 
-#: app/templates/recipe_detail.html:93
+#: app/templates/recipe_detail.html:92
+msgid "Step image"
+msgstr "Stapafbeelding"
+
+#: app/templates/recipe_detail.html:104
 msgid "No steps added."
 msgstr "Geen stappen toegevoegd."
 
 # ── Recipe form
 # ───────────────────────────────────────────────────────────────
-#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:32
+#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:37
 msgid "New recipe"
 msgstr "Nieuw recept"
 
@@ -300,7 +493,7 @@ msgstr "Beschrijf deze stap…"
 msgid "Saving…"
 msgstr "Opslaan…"
 
-#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:84
+#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:107
 msgid "Save recipe"
 msgstr "Recept opslaan"
 
@@ -336,55 +529,81 @@ msgstr "Voeg minstens één stap toe."
 msgid "Each ingredient needs a valid amount."
 msgstr "Elk ingrediënt heeft een geldig bedrag nodig."
 
-#: app/templates/recipe_form.html:39
-msgid "Details"
-msgstr "Details"
+#: app/templates/recipe_form.html:26 app/templates/recipe_form.html:81
+msgid "Add image"
+msgstr "Foto toevoegen"
 
-#: app/templates/recipe_form.html:41
-msgid "Title"
-msgstr "Titel"
+#: app/templates/recipe_form.html:27
+msgid "Uploading…"
+msgstr "Uploaden…"
 
-#: app/templates/recipe_form.html:42
-msgid "e.g. Pizza Margherita"
-msgstr "bijv. Pizza Margherita"
+#: app/templates/recipe_form.html:28
+msgid "Upload failed"
+msgstr "Upload mislukt"
 
-#: app/templates/recipe_form.html:54
-msgid "Servings"
-msgstr "Porties"
+#: app/templates/recipe_form.html:29 app/templates/recipe_form.html:77
+msgid "Remove image"
+msgstr "Foto verwijderen"
 
-#: app/templates/recipe_form.html:55
-msgid "e.g. 4"
-msgstr "bijv. 4"
-
-#: app/templates/recipe_form.html:59
-msgid "Description"
-msgstr "Beschrijving"
-
-#: app/templates/recipe_form.html:60
-msgid "A short description of the recipe…"
-msgstr "Een korte beschrijving van het recept…"
-
-#: app/templates/recipe_form.html:69
+#: app/templates/recipe_form.html:30 app/templates/recipe_form.html:92
 msgid "+ Add ingredient"
 msgstr "+ Ingrediënt toevoegen"
 
-#: app/templates/recipe_form.html:72
+#: app/templates/recipe_form.html:44
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/recipe_form.html:46
+msgid "Title"
+msgstr "Titel"
+
+#: app/templates/recipe_form.html:47
+msgid "e.g. Pizza Margherita"
+msgstr "bijv. Pizza Margherita"
+
+#: app/templates/recipe_form.html:59
+msgid "Servings"
+msgstr "Porties"
+
+#: app/templates/recipe_form.html:60
+msgid "e.g. 4"
+msgstr "bijv. 4"
+
+#: app/templates/recipe_form.html:64
+msgid "Description"
+msgstr "Beschrijving"
+
+#: app/templates/recipe_form.html:65
+msgid "A short description of the recipe…"
+msgstr "Een korte beschrijving van het recept…"
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+#: app/templates/recipe_form.html:71
+msgid "Cover image"
+msgstr "Omslagfoto"
+
+#: app/templates/recipe_form.html:75
+msgid "Cover image preview"
+msgstr "Voorbeeld omslagfoto"
+
+#: app/templates/recipe_form.html:95
 msgid "+ Add group"
 msgstr "+ Groep toevoegen"
 
-#: app/templates/recipe_form.html:79
+#: app/templates/recipe_form.html:102
 msgid "+ Add step"
 msgstr "+ Stap toevoegen"
 
-#: app/templates/recipe_form.html:92
+#: app/templates/recipe_form.html:115
 msgid "New ingredient"
 msgstr "Nieuw ingrediënt"
 
-#: app/templates/admin/users.html:12 app/templates/recipe_form.html:94
+#: app/templates/admin/users.html:15 app/templates/recipe_form.html:117
 msgid "Name"
 msgstr "Naam"
 
-#: app/templates/recipe_form.html:104
+#: app/templates/recipe_form.html:127
 msgid "Create"
 msgstr "Aanmaken"
 
@@ -401,201 +620,51 @@ msgstr "Wachtwoord bevestigen"
 msgid "Already have an account?"
 msgstr "Al een account?"
 
+#: app/templates/admin/user_edit.html:3 app/templates/admin/user_edit.html:10
+msgid "Edit user"
+msgstr "Gebruiker bewerken"
+
+#: app/templates/admin/user_edit.html:8 app/templates/admin/users.html:10
+msgid "Users"
+msgstr "Gebruikers"
+
+#: app/templates/admin/user_edit.html:22 app/templates/admin/users.html:16
+msgid "Role"
+msgstr "Rol"
+
+#: app/templates/admin/user_edit.html:24
+msgid "User"
+msgstr "Gebruiker"
+
+#: app/templates/admin/user_edit.html:32
+msgid "Save"
+msgstr "Opslaan"
+
 #: app/templates/admin/users.html:3
 msgid "Admin — Users"
 msgstr "Admin — Gebruikers"
 
-#: app/templates/admin/users.html:7
-msgid "Users"
-msgstr "Gebruikers"
+#: app/templates/admin/users.html:8
+msgid "Dashboard"
+msgstr "Dashboard"
 
-#: app/templates/admin/users.html:11
+#: app/templates/admin/users.html:14
 msgid "Email"
 msgstr "E-mail"
 
-#: app/templates/admin/users.html:13
-msgid "Role"
-msgstr "Rol"
-
-#: app/templates/admin/users.html:15
+#: app/templates/admin/users.html:18
 msgid "Created"
 msgstr "Aangemaakt"
 
 #: app/templates/admin/users.html:33
-msgid "Demote"
-msgstr "Degraderen"
+msgid "Edit"
+msgstr "Bewerken"
 
-#: app/templates/admin/users.html:33
-msgid "Promote"
-msgstr "Promoveren"
-
-#: app/templates/admin/users.html:40
+#: app/templates/admin/users.html:37
 msgid "Delete user and all their recipes?"
 msgstr "Gebruiker en alle recepten verwijderen?"
 
-#: app/templates/admin/users.html:41
+#: app/templates/admin/users.html:38
 msgid "Delete"
 msgstr "Verwijderen"
 
-msgid "Password is too weak."
-msgstr "Het wachtwoord is te zwak."
-
-msgid "Invalid email or password"
-msgstr "Ongeldig e-mailadres of wachtwoord"
-
-# ── API errors
-# ────────────────────────────────────────────────────────────────
-msgid "Not authenticated"
-msgstr "Niet geauthenticeerd"
-
-msgid "Recipe not found"
-msgstr "Recept niet gevonden"
-
-msgid "Name is required"
-msgstr "Naam is verplicht"
-
-msgid "Ingredient already exists"
-msgstr "Dit ingrediënt bestaat al"
-
-# ── Dashboard
-# ─────────────────────────────────────────────────────────────────
-msgid "My Recipes"
-msgstr "Mijn recepten"
-
-# ── Amount units
-# ─────────────────────────────────────────────────────────────
-msgid "gram"
-msgstr "Gram"
-
-msgid "kilogram"
-msgstr "Kilogram"
-
-msgid "milliliter"
-msgstr "Milliliter"
-
-msgid "liter"
-msgstr "Liter"
-
-msgid "centiliter"
-msgstr "Centiliter"
-
-msgid "teaspoon"
-msgstr "Theelepel"
-
-msgid "tablespoon"
-msgstr "Eetlepel"
-
-msgid "cup"
-msgstr "Kop"
-
-msgid "piece"
-msgstr "Stuk"
-
-msgid "pinch"
-msgstr "Snufje"
-
-msgid "to taste"
-msgstr "Naar smaak"
-
-# ── Recipe types
-# ──────────────────────────────────────────────────────────────
-msgid "Starter"
-msgstr "Voorgerecht"
-
-msgid "Main course"
-msgstr "Hoofdgerecht"
-
-msgid "Dessert"
-msgstr "Dessert"
-
-msgid "Sauce"
-msgstr "Saus"
-
-msgid "Side dish"
-msgstr "Bijgerecht"
-
-msgid "Soup"
-msgstr "Soep"
-
-msgid "Salad"
-msgstr "Salade"
-
-msgid "Breakfast"
-msgstr "Ontbijt"
-
-msgid "Snack"
-msgstr "Snack"
-
-msgid "Beverage"
-msgstr "Drank"
-
-# ── Ingredient types
-# ──────────────────────────────────────────────────────────
-msgid "Vegetable"
-msgstr "Groente"
-
-msgid "Fruit"
-msgstr "Fruit"
-
-msgid "Meat"
-msgstr "Vlees"
-
-msgid "Fish"
-msgstr "Vis"
-
-msgid "Seafood"
-msgstr "Zeevruchten"
-
-msgid "Dairy"
-msgstr "Zuivel"
-
-msgid "Egg"
-msgstr "Ei"
-
-msgid "Legume"
-msgstr "Peulvrucht"
-
-msgid "Nut"
-msgstr "Noot"
-
-msgid "Spice"
-msgstr "Specerij"
-
-msgid "Herb"
-msgstr "Kruid"
-
-msgid "Oil"
-msgstr "Olie"
-
-msgid "Sweetener"
-msgstr "Zoetstof"
-
-msgid "Condiment"
-msgstr "Smaakmaker"
-
-msgid "Other"
-msgstr "Overig"
-
-
-# ── Recipe images
-# ────────────────────────────────────────────────────────────
-msgid "Cover image"
-msgstr "Omslagfoto"
-
-msgid "Cover image preview"
-msgstr "Voorbeeld omslagfoto"
-
-msgid "Add image"
-msgstr "Foto toevoegen"
-
-msgid "Uploading…"
-msgstr "Uploaden…"
-
-msgid "Upload failed"
-msgstr "Upload mislukt"
-
-msgid "Remove image"
-msgstr "Foto verwijderen"
-
-msgid "Step image"
-msgstr "Stapafbeelding"

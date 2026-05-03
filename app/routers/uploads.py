@@ -11,6 +11,7 @@ from app.routers.recipes import _require_user
 router = APIRouter()
 
 UPLOADS_DIR = Path(os.environ.get("UPLOADS_DIR", "/app/uploads"))
+MAX_UPLOAD_BYTES = 20 * 1024 * 1024  # 20 MB
 MAX_ORIGINAL_PX = 2000
 THUMB_PX = 400
 ALLOWED_FORMATS = {"JPEG", "PNG", "WEBP", "GIF"}
@@ -51,7 +52,9 @@ def _save_image(file_bytes: bytes, filename_stem: str, ext: str) -> tuple[str, s
 async def upload_image(file: UploadFile, request: Request):
     _require_user(request)
 
-    contents = await file.read()
+    contents = await file.read(MAX_UPLOAD_BYTES + 1)
+    if len(contents) > MAX_UPLOAD_BYTES:
+        raise HTTPException(status_code=413, detail="File too large")
     stem = uuid.uuid4().hex
     filename, thumb_filename = _save_image(contents, stem, "jpg")
 

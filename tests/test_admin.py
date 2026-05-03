@@ -144,7 +144,7 @@ def test_admin_demotes_another_admin(admin_client, db):
 
 def test_last_admin_cannot_demote_self(admin_client, db):
     admin = _get_user(db, app_settings.admin_email)
-    response = admin_client.post(f"/admin/users/{admin.id}/role")
+    response = admin_client.post(f"/admin/users/{admin.id}/edit", data={"role": "user"})
     assert response.status_code == 400
     db.expire_all()
     assert _get_user(db, app_settings.admin_email).role == UserRole.ADMIN
@@ -187,8 +187,8 @@ def test_admin_cannot_delete_self(admin_client, db):
 # ── Edge cases ────────────────────────────────────────────────────────────────
 
 
-def test_role_toggle_nonexistent_user_returns_404(admin_client):
-    response = admin_client.post("/admin/users/999999/role")
+def test_edit_nonexistent_user_returns_404(admin_client):
+    response = admin_client.post("/admin/users/999999/edit", data={"role": "user"})
     assert response.status_code == 404
 
 
