@@ -5,7 +5,9 @@
 {% block content %}
 <div class="recipe-detail">
 
-    <div class="recipe-detail-header">
+    <div class="recipe-detail-header{% if recipe.image_filename %} has-hero{% endif %}"
+         {% if recipe.image_filename %}style="background-image: url('/uploads/{{ recipe.image_filename }}')"{% endif %}>
+        {% if recipe.image_filename %}<div class="hero-overlay"></div>{% endif %}
         <div>
             <div class="recipe-detail-type">{{ _(recipe.type.name) }}</div>
             <h1>{{ recipe.title }}</h1>
@@ -83,6 +85,15 @@
                 {% for step in recipe.steps %}
                 <li class="step-detail-row">
                     <div class="step-detail-desc">{{ step.description }}</div>
+                    {% if step.images %}
+                    <div class="step-images">
+                        {% for si in step.images %}
+                        <a href="/uploads/{{ si.filename }}" target="_blank" rel="noopener">
+                            <img src="/uploads/thumb_{{ si.filename }}" alt="{{ _('Step image') }} {{ loop.index }}" loading="lazy">
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                     {% if step.duration %}
                     <div class="step-detail-duration">{{ step.duration }} min</div>
                     {% endif %}

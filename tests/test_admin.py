@@ -58,13 +58,23 @@ def test_non_admin_get_admin_users_returns_403(auth_client):
     assert response.status_code == 403
 
 
-def test_anon_post_role_redirects_to_login(client):
-    response = client.post("/admin/users/9999/role")
+def test_anon_get_edit_redirects_to_login(client):
+    response = client.get("/admin/users/9999/edit")
     assert response.url.path == "/login"
 
 
-def test_non_admin_post_role_returns_403(auth_client):
-    response = auth_client.post("/admin/users/9999/role")
+def test_non_admin_get_edit_returns_403(auth_client):
+    response = auth_client.get("/admin/users/9999/edit")
+    assert response.status_code == 403
+
+
+def test_anon_post_edit_redirects_to_login(client):
+    response = client.post("/admin/users/9999/edit", data={"role": "user"})
+    assert response.url.path == "/login"
+
+
+def test_non_admin_post_edit_returns_403(auth_client):
+    response = auth_client.post("/admin/users/9999/edit", data={"role": "user"})
     assert response.status_code == 403
 
 
@@ -81,6 +91,12 @@ def test_non_admin_post_delete_returns_403(auth_client):
 # ── GET /admin/users ──────────────────────────────────────────────────────────
 
 
+def test_admin_users_list_has_back_button(admin_client):
+    response = admin_client.get("/admin/users")
+    assert response.status_code == 200
+    assert "/dashboard" in response.text
+
+
 def test_admin_sees_user_list(admin_client, db):
     _create_user_db(db, REGULAR_USER)
     response = admin_client.get("/admin/users")
@@ -89,12 +105,28 @@ def test_admin_sees_user_list(admin_client, db):
     assert app_settings.admin_email in response.text
 
 
-# ── Role toggle ───────────────────────────────────────────────────────────────
+# ── GET /admin/users/{id}/edit ────────────────────────────────────────────────
+
+
+def test_admin_get_edit_renders_form(admin_client, db):
+    regular = _create_user_db(db, REGULAR_USER)
+    response = admin_client.get(f"/admin/users/{regular.id}/edit")
+    assert response.status_code == 200
+    assert REGULAR_USER["email"] in response.text
+    assert 'name="role"' in response.text
+
+
+def test_get_edit_nonexistent_user_returns_404(admin_client):
+    response = admin_client.get("/admin/users/999999/edit")
+    assert response.status_code == 404
+
+
+# ── POST /admin/users/{id}/edit ───────────────────────────────────────────────
 
 
 def test_admin_promotes_regular_user(admin_client, db):
     regular = _create_user_db(db, REGULAR_USER)
-    admin_client.post(f"/admin/users/{regular.id}/role")
+    admin_client.post(f"/admin/users/{regular.id}/edit", data={"role": "admin"})
     db.expire_all()
     assert _get_user(db, REGULAR_USER["email"]).role == UserRole.ADMIN
 
@@ -102,7 +134,7 @@ def test_admin_promotes_regular_user(admin_client, db):
 def test_admin_demotes_another_admin(admin_client, db):
     second = _create_user_db(db, SECOND_ADMIN)
     _promote_db(db, second)
-    admin_client.post(f"/admin/users/{second.id}/role")
+    admin_client.post(f"/admin/users/{second.id}/edit", data={"role": "user"})
     db.expire_all()
     assert _get_user(db, SECOND_ADMIN["email"]).role == UserRole.USER
 

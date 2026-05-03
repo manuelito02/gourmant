@@ -14,6 +14,8 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    volumes:
+      - ./uploads:/app/uploads
     develop:
       watch:
         - action: sync

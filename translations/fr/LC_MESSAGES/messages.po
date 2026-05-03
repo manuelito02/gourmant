@@ -578,3 +578,26 @@ msgstr "Condiment"
 msgid "Other"
 msgstr "Autre"
 
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+msgid "Cover image"
+msgstr "Photo de couverture"
+
+msgid "Cover image preview"
+msgstr "Aperçu de la photo de couverture"
+
+msgid "Add image"
+msgstr "Ajouter une photo"
+
+msgid "Uploading…"
+msgstr "Téléchargement…"
+
+msgid "Upload failed"
+msgstr "Téléchargement échoué"
+
+msgid "Remove image"
+msgstr "Supprimer la photo"
+
+msgid "Step image"
+msgstr "Photo de l'étape"

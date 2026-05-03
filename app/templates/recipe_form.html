@@ -22,7 +22,11 @@
         failedCreateIngredient: {{ _("Failed to create ingredient.") | tojson }},
         ingredientRequired: {{ _("Add at least one ingredient.") | tojson }},
         stepRequired: {{ _("Add at least one step.") | tojson }},
-        amountRequired: {{ _("Each ingredient needs a valid amount.") | tojson }}
+        amountRequired: {{ _("Each ingredient needs a valid amount.") | tojson }},
+        addImage: {{ _("Add image") | tojson }},
+        uploading: {{ _("Uploading…") | tojson }},
+        uploadFailed: {{ _("Upload failed") | tojson }},
+        removeImage: {{ _("Remove image") | tojson }}
     };
 </script>
 {% endblock %}
@@ -58,6 +62,24 @@
             <div class="form-group">
                 <label for="f-description">{{ _("Description") }}</label>
                 <textarea id="f-description" rows="3" placeholder="{{ _('A short description of the recipe…') }}"></textarea>
+            </div>
+        </section>
+
+        <!-- ── Cover image ────────────────────────────────────────────── -->
+        <section class="form-section">
+            <h2>{{ _("Cover image") }}</h2>
+            <div class="recipe-image-upload" id="recipe-image-wrap">
+                <input type="hidden" id="recipe-image-filename" value="">
+                <div class="image-preview-wrap hidden" id="recipe-image-preview-wrap">
+                    <img id="recipe-image-preview" src="" alt="{{ _('Cover image preview') }}">
+                    <button type="button" class="image-remove-btn" id="recipe-image-remove"
+                            aria-label="{{ _('Remove image') }}">×</button>
+                </div>
+                <label class="image-upload-label" id="recipe-image-label">
+                    <input type="file" accept="image/*" id="recipe-image-input" class="sr-only">
+                    <span>{{ _("Add image") }}</span>
+                </label>
+                <div class="image-upload-status hidden" id="recipe-image-status"></div>
             </div>
         </section>
 

@@ -576,3 +576,26 @@ msgstr "Würzmittel"
 msgid "Other"
 msgstr "Sonstiges"
 
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+msgid "Cover image"
+msgstr "Titelbild"
+
+msgid "Cover image preview"
+msgstr "Vorschau des Titelbilds"
+
+msgid "Add image"
+msgstr "Bild hinzufügen"
+
+msgid "Uploading…"
+msgstr "Wird hochgeladen…"
+
+msgid "Upload failed"
+msgstr "Upload fehlgeschlagen"
+
+msgid "Remove image"
+msgstr "Bild entfernen"
+
+msgid "Step image"
+msgstr "Schritt-Bild"

@@ -13,6 +13,7 @@ from app.models.recipe import (
     RecipeIngredientGroup,
     RecipeType,
     Step,
+    StepImage,
 )
 from app.schemas.recipe import IngredientCreate, RecipeCreate
 
@@ -77,7 +78,7 @@ def _get_ingredient_translations(db: Session, lang: str, ing_ids: list[int]) -> 
     return {t.ingredient_id: t.name for t in rows}
 
 
-def _load_recipe(db: Session, recipe_id: int, user_id: int) -> Recipe | None:
+def _load_recipe(db: Session, recipe_id: int) -> Recipe | None:
     """Fetch a recipe with all relationships eagerly loaded in a fixed number of queries."""
     _ri_opts = [
         selectinload(RecipeIngredient.ingredient),
@@ -87,13 +88,13 @@ def _load_recipe(db: Session, recipe_id: int, user_id: int) -> Recipe | None:
         db.query(Recipe)
         .options(
             selectinload(Recipe.type),
-            selectinload(Recipe.steps),
+            selectinload(Recipe.steps).selectinload(Step.images),
             selectinload(Recipe.ingredients).options(*_ri_opts),
             selectinload(Recipe.ingredient_groups)
             .selectinload(RecipeIngredientGroup.ingredients)
             .options(*_ri_opts),
         )
-        .filter(Recipe.id == recipe_id, Recipe.user_id == user_id)
+        .filter(Recipe.id == recipe_id)
         .first()
     )
 
@@ -128,14 +129,16 @@ def _populate_recipe(db: Session, recipe_id: int, data: RecipeCreate) -> None:
                 )
             )
     for step in data.steps:
-        db.add(
-            Step(
-                recipe_id=recipe_id,
-                position=step.position,
-                description=step.description,
-                duration=step.duration,
-            )
+        s = Step(
+            recipe_id=recipe_id,
+            position=step.position,
+            description=step.description,
+            duration=step.duration,
         )
+        db.add(s)
+        db.flush()
+        for i, fn in enumerate(step.image_filenames):
+            db.add(StepImage(step_id=s.id, position=i, filename=fn))
 
 
 # ── Pages ─────────────────────────────────────────────────────────────────────
@@ -238,9 +241,11 @@ def new_recipe_form(request: Request, db: Session = Depends(get_db)):
 @router.get("/recipes/{recipe_id}/edit", response_class=HTMLResponse)
 def edit_recipe_form(recipe_id: int, request: Request, db: Session = Depends(get_db)):
     user_id = _require_page_user(request)
-    recipe = _load_recipe(db, recipe_id, user_id)
+    recipe = _load_recipe(db, recipe_id)
     if not recipe:
         raise HTTPException(status_code=404, detail=gettext_for(request, "Recipe not found"))
+    if recipe.user_id != user_id:
+        raise HTTPException(status_code=403, detail=gettext_for(request, "Not your recipe"))
 
     lang = get_lang(request)
     ing_ids = [ri.ingredient_id for ri in recipe.ingredients]
@@ -277,11 +282,13 @@ def edit_recipe_form(recipe_id: int, request: Request, db: Session = Depends(get
             }
             for group in recipe.ingredient_groups
         ],
+        "image_filename": recipe.image_filename,
         "steps": [
             {
                 "position": step.position,
                 "description": step.description,
                 "duration": step.duration,
+                "image_filenames": [si.filename for si in step.images],
             }
             for step in recipe.steps
         ],
@@ -301,8 +308,8 @@ def edit_recipe_form(recipe_id: int, request: Request, db: Session = Depends(get
 
 @router.get("/recipes/{recipe_id}", response_class=HTMLResponse)
 def recipe_detail(recipe_id: int, request: Request, db: Session = Depends(get_db)):
-    user_id = _require_page_user(request)
-    recipe = _load_recipe(db, recipe_id, user_id)
+    _require_page_user(request)
+    recipe = _load_recipe(db, recipe_id)
     if not recipe:
         raise HTTPException(status_code=404, detail=gettext_for(request, "Recipe not found"))
 
@@ -391,6 +398,7 @@ def update_recipe(
     recipe.description = data.description
     recipe.type_id = data.type_id
     recipe.servings = data.servings
+    recipe.image_filename = data.image_filename
 
     # Delete children in FK-safe order before repopulating
     db.query(RecipeIngredient).filter(RecipeIngredient.recipe_id == recipe_id).delete()
@@ -413,6 +421,7 @@ def create_recipe(data: RecipeCreate, request: Request, db: Session = Depends(ge
         description=data.description,
         type_id=data.type_id,
         servings=data.servings,
+        image_filename=data.image_filename,
     )
     db.add(recipe)
     db.flush()

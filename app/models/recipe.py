@@ -28,6 +28,7 @@ class Recipe(Base):
     description: Mapped[str | None] = mapped_column(Text)
     type_id: Mapped[int] = mapped_column(ForeignKey("recipe_types.id"), nullable=False)
     servings: Mapped[int | None] = mapped_column(nullable=True)
+    image_filename: Mapped[str | None] = mapped_column(String(255), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     type: Mapped["RecipeType"] = relationship(back_populates="recipes")
@@ -87,4 +88,24 @@ class Step(Base):
     description: Mapped[str] = mapped_column(Text, nullable=False)
     duration: Mapped[int | None] = mapped_column(nullable=True)  # minutes
 
+    images: Mapped[list["StepImage"]] = relationship(
+        back_populates="step",
+        cascade="all, delete-orphan",
+        order_by="StepImage.position",
+    )
     recipe: Mapped["Recipe"] = relationship(back_populates="steps")
+
+
+class StepImage(Base):
+    __tablename__ = "step_images"
+    __table_args__ = (UniqueConstraint("step_id", "position", name="uq_step_image_position"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    step_id: Mapped[int] = mapped_column(
+        ForeignKey("steps.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    position: Mapped[int] = mapped_column(nullable=False)
+    filename: Mapped[str] = mapped_column(String(255), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+    step: Mapped["Step"] = relationship(back_populates="images")

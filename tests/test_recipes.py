@@ -243,7 +243,7 @@ def test_recipe_detail_404_nonexistent(auth_client):
     assert response.status_code == 404
 
 
-def test_recipe_detail_404_other_users_recipe(client, ref):
+def test_recipe_detail_visible_to_other_users(client, ref):
     # Create recipe as first user
     client.post(
         "/register",
@@ -258,10 +258,10 @@ def test_recipe_detail_404_other_users_recipe(client, ref):
     recipe_id = create_recipe(client, minimal_payload(ref))
     client.post("/logout")
 
-    # Log in as second user — should not be able to view first user's recipe
+    # Any authenticated user can view any recipe
     client.post("/register", data=OTHER_USER)
     response = client.get(f"/recipes/{recipe_id}")
-    assert response.status_code == 404
+    assert response.status_code == 200
 
 
 def test_recipe_detail_shows_title_and_description(auth_client, ref):
@@ -784,7 +784,7 @@ def test_edit_form_404_nonexistent(auth_client):
     assert response.status_code == 404
 
 
-def test_edit_form_404_other_users_recipe(client, ref):
+def test_edit_form_403_other_users_recipe(client, ref):
     client.post(
         "/register",
         data={
@@ -800,7 +800,7 @@ def test_edit_form_404_other_users_recipe(client, ref):
 
     client.post("/register", data=OTHER_USER)
     response = client.get(f"/recipes/{recipe_id}/edit")
-    assert response.status_code == 404
+    assert response.status_code == 403
 
 
 def test_edit_form_loads_with_recipe_data(auth_client, ref):
@@ -951,3 +951,63 @@ def test_update_recipe_returns_same_id(auth_client, ref):
     recipe_id = create_recipe(auth_client, minimal_payload(ref))
     response = auth_client.put(f"/api/recipes/{recipe_id}", json=minimal_payload(ref))
     assert response.json()["id"] == recipe_id
+
+
+# ── Images ────────────────────────────────────────────────────────────────────
+
+
+def test_recipe_with_image_filename_shows_thumbnail_on_dashboard(auth_client, ref):
+    payload = {**minimal_payload(ref), "image_filename": "abc123.jpg"}
+    create_recipe(auth_client, payload)
+    response = auth_client.get("/dashboard")
+    assert 'class="recipe-card-thumb"' in response.text
+    assert "thumb_abc123.jpg" in response.text
+
+
+def test_recipe_with_image_filename_shows_hero_on_detail(auth_client, ref):
+    payload = {**minimal_payload(ref), "image_filename": "hero.jpg"}
+    recipe_id = create_recipe(auth_client, payload)
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "has-hero" in response.text
+    assert "hero.jpg" in response.text
+
+
+def test_recipe_without_image_has_no_hero(auth_client, ref):
+    recipe_id = create_recipe(auth_client, minimal_payload(ref))
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "has-hero" not in response.text
+
+
+def test_recipe_with_step_images_shows_on_detail(auth_client, ref, db):
+    from app.models.recipe import Step, StepImage
+
+    recipe_id = create_recipe(auth_client, minimal_payload(ref))
+    step = db.query(Step).filter(Step.recipe_id == recipe_id).first()
+    if not step:
+        step = Step(recipe_id=recipe_id, position=1, description="Boil water")
+        db.add(step)
+        db.flush()
+    db.add(StepImage(step_id=step.id, position=0, filename="step1.jpg"))
+    db.commit()
+
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "thumb_step1.jpg" in response.text
+    assert 'class="step-images"' in response.text
+
+
+def test_edit_form_includes_image_filename_in_recipe_data(auth_client, ref):
+    payload = {**minimal_payload(ref), "image_filename": "cover.jpg"}
+    recipe_id = create_recipe(auth_client, payload)
+    response = auth_client.get(f"/recipes/{recipe_id}/edit")
+    assert "cover.jpg" in response.text
+
+
+def test_update_recipe_clears_image_filename(auth_client, ref):
+    payload = {**minimal_payload(ref), "image_filename": "old.jpg"}
+    recipe_id = create_recipe(auth_client, payload)
+
+    auth_client.put(
+        f"/api/recipes/{recipe_id}", json={**minimal_payload(ref), "image_filename": None}
+    )
+    response = auth_client.get(f"/recipes/{recipe_id}")
+    assert "has-hero" not in response.text

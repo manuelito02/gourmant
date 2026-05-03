@@ -1,20 +1,25 @@
 import os
+import tempfile
 
 # Must be set before app modules are imported — Pydantic reads env at Settings() init time.
 os.environ.setdefault("ADMIN_EMAIL", "admin@gourmant.test")
 os.environ.setdefault("ADMIN_PASSWORD", "test-admin-change-me-99")
 
-import pytest
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker
+# Redirect uploads to a temp directory so tests never touch /app/uploads.
+_tmp_uploads = tempfile.mkdtemp()
+os.environ.setdefault("UPLOADS_DIR", _tmp_uploads)
 
-from app.config import settings as app_settings
-from app.database import get_db
-from app.main import app
-from app.models.ingredient import AmountUnit, Ingredient, IngredientType
-from app.models.recipe import RecipeType
-from app.scripts.seed_admin import run_with_conn as seed_admin
+import pytest  # noqa: E402
+from fastapi.testclient import TestClient  # noqa: E402
+from sqlalchemy import create_engine, text  # noqa: E402
+from sqlalchemy.orm import sessionmaker  # noqa: E402
+
+from app.config import settings as app_settings  # noqa: E402
+from app.database import get_db  # noqa: E402
+from app.main import app  # noqa: E402
+from app.models.ingredient import AmountUnit, Ingredient, IngredientType  # noqa: E402
+from app.models.recipe import RecipeType  # noqa: E402
+from app.scripts.seed_admin import run_with_conn as seed_admin  # noqa: E402
 
 _BASE_URL = "postgresql+psycopg://gourmant:gourmant@localhost:5432"
 _TEST_DB_NAME = "gourmant_test"
@@ -27,6 +32,12 @@ VALID_USER = {
     "password": "correct-horse-battery-staple",
     "password_confirm": "correct-horse-battery-staple",
 }
+
+
+@pytest.fixture(scope="session")
+def tmp_uploads_dir():
+    """Return the temp uploads directory used by the test session."""
+    return _tmp_uploads
 
 
 @pytest.fixture(scope="session", autouse=True)

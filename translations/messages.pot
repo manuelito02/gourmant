@@ -1,0 +1,472 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-05-02 14:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: app/routers/admin.py:62 app/routers/admin.py:102
+msgid "Cannot remove the last admin role."
+msgstr ""
+
+#: app/routers/admin.py:123
+msgid "Cannot delete your own account."
+msgstr ""
+
+#: app/routers/admin.py:125
+msgid "Cannot delete the last admin."
+msgstr ""
+
+#: app/routers/auth.py:89 app/routers/settings.py:90
+msgid "Passwords do not match"
+msgstr ""
+
+#: app/routers/auth.py:104
+msgid "An account with this email already exists"
+msgstr ""
+
+#: app/routers/settings.py:77
+msgid "First name is required."
+msgstr ""
+
+#: app/routers/settings.py:79
+msgid "Last name is required."
+msgstr ""
+
+#: app/routers/settings.py:81
+msgid "Invalid language."
+msgstr ""
+
+#: app/routers/settings.py:86
+msgid "All password fields are required to change your password"
+msgstr ""
+
+#: app/routers/settings.py:88
+msgid "Current password is incorrect"
+msgstr ""
+
+#: app/templates/account.html:3 app/templates/account.html:7
+msgid "Account settings"
+msgstr ""
+
+#: app/templates/account.html:16
+msgid "Personal information"
+msgstr ""
+
+#: app/templates/account.html:19 app/templates/register.html:14
+msgid "First name"
+msgstr ""
+
+#: app/templates/account.html:24 app/templates/register.html:18
+msgid "Last name"
+msgstr ""
+
+#: app/templates/account.html:30 app/templates/admin/user_edit.html:15
+#: app/templates/login.html:13 app/templates/register.html:23
+msgid "Email address"
+msgstr ""
+
+#: app/templates/account.html:32
+msgid "Email cannot be changed"
+msgstr ""
+
+#: app/templates/account.html:37
+msgid "Default language"
+msgstr ""
+
+#: app/templates/account.html:49
+msgid "Change password"
+msgstr ""
+
+#: app/templates/account.html:50
+msgid "Leave blank to keep your current password"
+msgstr ""
+
+#: app/templates/account.html:52
+msgid "Current password"
+msgstr ""
+
+#: app/templates/account.html:57
+msgid "New password"
+msgstr ""
+
+#: app/templates/account.html:66
+msgid "Confirm new password"
+msgstr ""
+
+#: app/templates/account.html:73 app/templates/admin/user_edit.html:31
+#: app/templates/recipe_form.html:105 app/templates/recipe_form.html:125
+msgid "Cancel"
+msgstr ""
+
+#: app/templates/account.html:74
+msgid "Apply"
+msgstr ""
+
+#: app/templates/account.html:84 app/templates/register.html:47
+msgid "Very weak"
+msgstr ""
+
+#: app/templates/account.html:85 app/templates/register.html:48
+msgid "Weak"
+msgstr ""
+
+#: app/templates/account.html:86 app/templates/register.html:49
+msgid "Fair"
+msgstr ""
+
+#: app/templates/account.html:87 app/templates/register.html:50
+msgid "Strong"
+msgstr ""
+
+#: app/templates/account.html:88 app/templates/register.html:51
+msgid "Very strong"
+msgstr ""
+
+#: app/templates/base.html:21
+msgid "Menu"
+msgstr ""
+
+#: app/templates/admin/user_edit.html:25 app/templates/base.html:28
+msgid "Admin"
+msgstr ""
+
+#: app/templates/base.html:30
+msgid "Account"
+msgstr ""
+
+#: app/templates/base.html:32
+msgid "Log out"
+msgstr ""
+
+#: app/templates/base.html:37 app/templates/login.html:3
+#: app/templates/login.html:7 app/templates/login.html:20
+#: app/templates/register.html:40
+msgid "Log in"
+msgstr ""
+
+#: app/templates/admin/users.html:17 app/templates/dashboard.html:3
+#: app/templates/dashboard.html:8
+msgid "Recipes"
+msgstr ""
+
+#: app/templates/dashboard.html:9
+msgid "+ New recipe"
+msgstr ""
+
+#: app/templates/dashboard.html:17
+msgid "Search…"
+msgstr ""
+
+#: app/templates/dashboard.html:19
+msgid "Newest first"
+msgstr ""
+
+#: app/templates/dashboard.html:20
+msgid "Oldest first"
+msgstr ""
+
+#: app/templates/dashboard.html:21
+msgid "Title A–Z"
+msgstr ""
+
+#: app/templates/dashboard.html:22
+msgid "Title Z–A"
+msgstr ""
+
+#: app/templates/dashboard.html:25 app/templates/dashboard.html:86
+msgid "Clear filters"
+msgstr ""
+
+#: app/templates/dashboard.html:30 app/templates/recipe_form.html:50
+#: app/templates/recipe_form.html:120
+msgid "Type"
+msgstr ""
+
+#: app/templates/dashboard.html:42 app/templates/recipe_detail.html:42
+#: app/templates/recipe_form.html:88
+msgid "Ingredients"
+msgstr ""
+
+#: app/templates/dashboard.html:53
+msgid "Add ingredient…"
+msgstr ""
+
+#: app/templates/dashboard.html:76 app/templates/recipe_detail.html:24
+msgid "servings"
+msgstr ""
+
+#: app/templates/dashboard.html:85
+msgid "No recipes match your filters."
+msgstr ""
+
+#: app/templates/dashboard.html:88
+msgid "No recipes yet."
+msgstr ""
+
+#: app/templates/dashboard.html:89
+msgid "Create your first recipe"
+msgstr ""
+
+#: app/templates/index.html:7
+msgid "Welcome to the Gourmant App!"
+msgstr ""
+
+#: app/templates/index.html:8
+msgid "Your recipe management companion."
+msgstr ""
+
+#: app/templates/login.html:17 app/templates/register.html:27
+msgid "Password"
+msgstr ""
+
+#: app/templates/login.html:22
+msgid "No account yet?"
+msgstr ""
+
+#: app/templates/login.html:22
+msgid "Create one"
+msgstr ""
+
+#: app/templates/recipe_detail.html:29 app/templates/recipe_form.html:3
+#: app/templates/recipe_form.html:36
+msgid "Edit recipe"
+msgstr ""
+
+#: app/templates/recipe_detail.html:30
+msgid "← Back"
+msgstr ""
+
+#: app/templates/recipe_detail.html:71
+msgid "No ingredients added."
+msgstr ""
+
+#: app/templates/recipe_detail.html:78 app/templates/recipe_form.html:99
+msgid "Steps"
+msgstr ""
+
+#: app/templates/recipe_detail.html:80
+msgid "min total"
+msgstr ""
+
+#: app/templates/recipe_detail.html:92
+msgid "Step image"
+msgstr ""
+
+#: app/templates/recipe_detail.html:104
+msgid "No steps added."
+msgstr ""
+
+#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:36
+msgid "New recipe"
+msgstr ""
+
+#: app/templates/recipe_form.html:12
+msgid "Ingredient…"
+msgstr ""
+
+#: app/templates/recipe_form.html:13
+msgid "Amount"
+msgstr ""
+
+#: app/templates/recipe_form.html:14
+msgid "Group name (e.g. Dough, Toppings…)"
+msgstr ""
+
+#: app/templates/recipe_form.html:15
+msgid "Describe this step…"
+msgstr ""
+
+#: app/templates/recipe_form.html:16
+msgid "Saving…"
+msgstr ""
+
+#: app/templates/recipe_form.html:17 app/templates/recipe_form.html:106
+msgid "Save recipe"
+msgstr ""
+
+#: app/templates/recipe_form.html:18
+msgid "Save changes"
+msgstr ""
+
+#: app/templates/recipe_form.html:19
+msgid "Title is required."
+msgstr ""
+
+#: app/templates/recipe_form.html:20
+msgid "Failed to save recipe."
+msgstr ""
+
+#: app/templates/recipe_form.html:21
+msgid "Network error. Please try again."
+msgstr ""
+
+#: app/templates/recipe_form.html:22
+msgid "Failed to create ingredient."
+msgstr ""
+
+#: app/templates/recipe_form.html:23
+msgid "Add at least one ingredient."
+msgstr ""
+
+#: app/templates/recipe_form.html:24
+msgid "Add at least one step."
+msgstr ""
+
+#: app/templates/recipe_form.html:25
+msgid "Each ingredient needs a valid amount."
+msgstr ""
+
+#: app/templates/recipe_form.html:26 app/templates/recipe_form.html:80
+msgid "Add image"
+msgstr ""
+
+#: app/templates/recipe_form.html:27
+msgid "Uploading…"
+msgstr ""
+
+#: app/templates/recipe_form.html:28
+msgid "Upload failed"
+msgstr ""
+
+#: app/templates/recipe_form.html:29 app/templates/recipe_form.html:76
+msgid "Remove image"
+msgstr ""
+
+#: app/templates/recipe_form.html:43
+msgid "Details"
+msgstr ""
+
+#: app/templates/recipe_form.html:45
+msgid "Title"
+msgstr ""
+
+#: app/templates/recipe_form.html:46
+msgid "e.g. Pizza Margherita"
+msgstr ""
+
+#: app/templates/recipe_form.html:58
+msgid "Servings"
+msgstr ""
+
+#: app/templates/recipe_form.html:59
+msgid "e.g. 4"
+msgstr ""
+
+#: app/templates/recipe_form.html:63
+msgid "Description"
+msgstr ""
+
+#: app/templates/recipe_form.html:64
+msgid "A short description of the recipe…"
+msgstr ""
+
+#: app/templates/recipe_form.html:70
+msgid "Cover image"
+msgstr ""
+
+#: app/templates/recipe_form.html:74
+msgid "Cover image preview"
+msgstr ""
+
+#: app/templates/recipe_form.html:91
+msgid "+ Add ingredient"
+msgstr ""
+
+#: app/templates/recipe_form.html:94
+msgid "+ Add group"
+msgstr ""
+
+#: app/templates/recipe_form.html:101
+msgid "+ Add step"
+msgstr ""
+
+#: app/templates/recipe_form.html:114
+msgid "New ingredient"
+msgstr ""
+
+#: app/templates/admin/users.html:15 app/templates/recipe_form.html:116
+msgid "Name"
+msgstr ""
+
+#: app/templates/recipe_form.html:126
+msgid "Create"
+msgstr ""
+
+#: app/templates/register.html:3 app/templates/register.html:7
+#: app/templates/register.html:38
+msgid "Create account"
+msgstr ""
+
+#: app/templates/register.html:35
+msgid "Confirm password"
+msgstr ""
+
+#: app/templates/register.html:40
+msgid "Already have an account?"
+msgstr ""
+
+#: app/templates/admin/user_edit.html:3 app/templates/admin/user_edit.html:10
+msgid "Edit user"
+msgstr ""
+
+#: app/templates/admin/user_edit.html:8 app/templates/admin/users.html:10
+msgid "Users"
+msgstr ""
+
+#: app/templates/admin/user_edit.html:22 app/templates/admin/users.html:16
+msgid "Role"
+msgstr ""
+
+#: app/templates/admin/user_edit.html:24
+msgid "User"
+msgstr ""
+
+#: app/templates/admin/user_edit.html:32
+msgid "Save"
+msgstr ""
+
+#: app/templates/admin/users.html:3
+msgid "Admin — Users"
+msgstr ""
+
+#: app/templates/admin/users.html:8
+msgid "Dashboard"
+msgstr ""
+
+#: app/templates/admin/users.html:14
+msgid "Email"
+msgstr ""
+
+#: app/templates/admin/users.html:18
+msgid "Created"
+msgstr ""
+
+#: app/templates/admin/users.html:36
+msgid "Demote"
+msgstr ""
+
+#: app/templates/admin/users.html:36
+msgid "Promote"
+msgstr ""
+
+#: app/templates/admin/users.html:43
+msgid "Delete user and all their recipes?"
+msgstr ""
+
+#: app/templates/admin/users.html:44
+msgid "Delete"
+msgstr ""
+

@@ -576,3 +576,26 @@ msgstr "Smaakmaker"
 msgid "Other"
 msgstr "Overig"
 
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+msgid "Cover image"
+msgstr "Omslagfoto"
+
+msgid "Cover image preview"
+msgstr "Voorbeeld omslagfoto"
+
+msgid "Add image"
+msgstr "Foto toevoegen"
+
+msgid "Uploading…"
+msgstr "Uploaden…"
+
+msgid "Upload failed"
+msgstr "Upload mislukt"
+
+msgid "Remove image"
+msgstr "Foto verwijderen"
+
+msgid "Step image"
+msgstr "Stapafbeelding"

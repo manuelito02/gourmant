@@ -13,6 +13,7 @@ dependencies = [
     "jinja2>=3.1.6",
     "psycopg[binary]>=3.3.3",
     "pydantic-settings>=2.13.1",
+    "pillow>=10.0",
     "python-multipart>=0.0.26",
     "redis>=7.4.0",
     "sqlalchemy>=2.0.49",

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Edit user") }} — Gourmant{% endblock %}
+
+{% block content %}
+<div class="recipe-form-wrap">
+    <div class="form-actions" style="justify-content: flex-start; margin-bottom: 1.5rem;">
+        <a href="/admin/users" class="btn-secondary">← {{ _("Users") }}</a>
+    </div>
+    <h1>{{ _("Edit user") }}</h1>
+
+    <form method="post" action="/admin/users/{{ target.id }}/edit">
+        <div class="form-section">
+            <div class="form-group">
+                <label>{{ _("Email address") }}</label>
+                <p class="account-email">{{ target.email }}</p>
+            </div>
+            <div class="form-group">
+                <label>{{ target.first_name }} {{ target.last_name }}</label>
+            </div>
+            <div class="form-group">
+                <label for="role">{{ _("Role") }}</label>
+                <select id="role" name="role">
+                    <option value="user" {% if target.role.value == 'user' %}selected{% endif %}>{{ _("User") }}</option>
+                    <option value="admin" {% if target.role.value == 'admin' %}selected{% endif %}>{{ _("Admin") }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <a href="/admin/users" class="btn-secondary">{{ _("Cancel") }}</a>
+            <button type="submit" class="btn-primary">{{ _("Save") }}</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

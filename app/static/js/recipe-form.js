@@ -115,6 +115,63 @@ async function submitCreateIngredient() {
     }
 }
 
+// ── Image upload ──────────────────────────────────────────────────────────────
+
+async function uploadImage(file) {
+    const fd = new FormData();
+    fd.append("file", file);
+    const res = await fetch("/api/uploads", { method: "POST", body: fd });
+    if (!res.ok) throw new Error(STRINGS.uploadFailed);
+    return await res.json();
+}
+
+function setRecipeImage(filename) {
+    $("recipe-image-preview").src = "/uploads/thumb_" + filename;
+    $("recipe-image-filename").value = filename;
+    $("recipe-image-preview-wrap").classList.remove("hidden");
+    $("recipe-image-label").classList.add("hidden");
+}
+
+function clearRecipeImage() {
+    $("recipe-image-preview").src = "";
+    $("recipe-image-filename").value = "";
+    $("recipe-image-preview-wrap").classList.add("hidden");
+    $("recipe-image-label").classList.remove("hidden");
+    $("recipe-image-input").value = "";
+}
+
+function addStepImagePreview(stepRowId, filename) {
+    const strip = $("step-img-strip-" + stepRowId);
+    const wrapper = document.createElement("div");
+    wrapper.className = "step-img-thumb";
+    wrapper.dataset.filename = filename;
+
+    const img = document.createElement("img");
+    img.src = "/uploads/thumb_" + filename;
+    img.alt = "";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "image-remove-btn";
+    btn.setAttribute("aria-label", STRINGS.removeImage);
+    btn.textContent = "×";
+    btn.addEventListener("click", () => {
+        wrapper.remove();
+        _syncStepFilenames(stepRowId);
+    });
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(btn);
+    strip.appendChild(wrapper);
+    _syncStepFilenames(stepRowId);
+}
+
+function _syncStepFilenames(stepRowId) {
+    const row = $("step-row-" + stepRowId);
+    const filenames = [...row.querySelectorAll(".step-img-thumb")].map((el) => el.dataset.filename);
+    row.dataset.imageFilenames = JSON.stringify(filenames);
+}
+
 // ── Row helpers ───────────────────────────────────────────────────────────────
 
 function moveRow(btn, down = false) {
@@ -202,22 +259,104 @@ function addStep(skipFocus = false) {
     const container = $("steps-container");
     const pos = container.children.length + 1;
     const div = document.createElement("div");
-    div.id = `step-row-${id}`;
+    div.id = "step-row-" + id;
     div.className = "step-row";
-    div.innerHTML = `
-        <span class="step-number">${pos}</span>
-        <textarea id="step-desc-${id}" class="step-desc" rows="2" placeholder="${STRINGS.stepPlaceholder}"></textarea>
-        <div class="step-duration">
-            <input id="step-dur-${id}" type="number" class="duration-input" placeholder="—" min="1">
-            <span class="duration-unit">min</span>
-        </div>
-        <div class="row-controls">
-            <button type="button" class="btn-icon" onclick="moveRow(this)">↑</button>
-            <button type="button" class="btn-icon" onclick="moveRow(this, true)">↓</button>
-            <button type="button" class="btn-icon btn-remove" onclick="removeRow('step-row-${id}')">×</button>
-        </div>`;
+    div.dataset.imageFilenames = "[]";
+
+    // Step number
+    const num = document.createElement("span");
+    num.className = "step-number";
+    num.textContent = pos;
+
+    // Description textarea
+    const ta = document.createElement("textarea");
+    ta.id = "step-desc-" + id;
+    ta.className = "step-desc";
+    ta.rows = 2;
+    ta.placeholder = STRINGS.stepPlaceholder;
+
+    // Duration
+    const durWrap = document.createElement("div");
+    durWrap.className = "step-duration";
+    const durInput = document.createElement("input");
+    durInput.id = "step-dur-" + id;
+    durInput.type = "number";
+    durInput.className = "duration-input";
+    durInput.placeholder = "—";
+    durInput.min = "1";
+    const durUnit = document.createElement("span");
+    durUnit.className = "duration-unit";
+    durUnit.textContent = "min";
+    durWrap.appendChild(durInput);
+    durWrap.appendChild(durUnit);
+
+    // Step images strip
+    const strip = document.createElement("div");
+    strip.className = "step-images-strip";
+    strip.id = "step-img-strip-" + id;
+
+    // Add image label/button
+    const imgLabel = document.createElement("label");
+    imgLabel.className = "btn-add btn-add-img";
+    const imgInput = document.createElement("input");
+    imgInput.type = "file";
+    imgInput.accept = "image/*";
+    imgInput.id = "step-img-input-" + id;
+    imgInput.className = "sr-only";
+    const imgSpan = document.createElement("span");
+    imgSpan.textContent = STRINGS.addImage;
+    imgLabel.appendChild(imgInput);
+    imgLabel.appendChild(imgSpan);
+
+    imgInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        imgSpan.textContent = STRINGS.uploading;
+        imgLabel.classList.add("uploading");
+        try {
+            const data = await uploadImage(file);
+            addStepImagePreview(id, data.filename);
+        } catch {
+            imgSpan.textContent = STRINGS.uploadFailed;
+            setTimeout(() => { imgSpan.textContent = STRINGS.addImage; }, 2000);
+        } finally {
+            imgLabel.classList.remove("uploading");
+            imgSpan.textContent = STRINGS.addImage;
+            e.target.value = "";
+        }
+    });
+
+    // Row controls
+    const controls = document.createElement("div");
+    controls.className = "row-controls";
+    const btnUp = document.createElement("button");
+    btnUp.type = "button";
+    btnUp.className = "btn-icon";
+    btnUp.textContent = "↑";
+    btnUp.addEventListener("click", () => moveRow(btnUp));
+    const btnDown = document.createElement("button");
+    btnDown.type = "button";
+    btnDown.className = "btn-icon";
+    btnDown.textContent = "↓";
+    btnDown.addEventListener("click", () => moveRow(btnDown, true));
+    const btnRm = document.createElement("button");
+    btnRm.type = "button";
+    btnRm.className = "btn-icon btn-remove";
+    btnRm.textContent = "×";
+    btnRm.addEventListener("click", () => removeRow("step-row-" + id));
+    controls.appendChild(btnUp);
+    controls.appendChild(btnDown);
+    controls.appendChild(btnRm);
+
+    div.appendChild(num);
+    div.appendChild(ta);
+    div.appendChild(durWrap);
+    div.appendChild(strip);
+    div.appendChild(imgLabel);
+    div.appendChild(controls);
     container.appendChild(div);
-    if (!skipFocus) $(`step-desc-${id}`).focus();
+
+    if (!skipFocus) $("step-desc-" + id).focus();
     return id;
 }
 
@@ -261,11 +400,12 @@ function collectSteps() {
     return Array.from($("steps-container").querySelectorAll(".step-row"))
         .map((row, i) => {
             const id = row.id.replace("step-row-", "");
-            const dur = parseInt($(`step-dur-${id}`).value);
+            const dur = parseInt($("step-dur-" + id).value);
             return {
                 position: i + 1,
-                description: $(`step-desc-${id}`).value.trim(),
+                description: $("step-desc-" + id).value.trim(),
                 duration: isNaN(dur) ? null : dur,
+                image_filenames: JSON.parse(row.dataset.imageFilenames || "[]"),
             };
         })
         .filter((s) => s.description);
@@ -327,6 +467,7 @@ async function submitRecipe(e) {
         description: $("f-description").value.trim() || null,
         type_id: parseInt($("f-type").value),
         servings: isNaN(servings) ? null : servings,
+        image_filename: $("recipe-image-filename").value || null,
         ungrouped_ingredients: ungrouped,
         ingredient_groups: groups,
         steps,
@@ -387,18 +528,21 @@ function prefillForm(data) {
     $("f-servings").value = data.servings || "";
     $("f-type").value = data.type_id;
 
+    if (data.image_filename) setRecipeImage(data.image_filename);
+
     (data.ungrouped_ingredients || []).forEach((ing) => prefillIngredient("ungrouped", ing));
 
     (data.ingredient_groups || []).forEach((group) => {
         const groupId = addGroup(true);
-        $(`group-name-${groupId}`).value = group.name;
-        (group.ingredients || []).forEach((ing) => prefillIngredient(`group-${groupId}`, ing));
+        $("group-name-" + groupId).value = group.name;
+        (group.ingredients || []).forEach((ing) => prefillIngredient("group-" + groupId, ing));
     });
 
     (data.steps || []).forEach((step) => {
         const stepId = addStep(true);
-        $(`step-desc-${stepId}`).value = step.description;
-        if (step.duration) $(`step-dur-${stepId}`).value = step.duration;
+        $("step-desc-" + stepId).value = step.description;
+        if (step.duration) $("step-dur-" + stepId).value = step.duration;
+        (step.image_filenames || []).forEach((fn) => addStepImagePreview(stepId, fn));
     });
     updateStepNumbers();
 }
@@ -415,6 +559,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     $("recipe-form").addEventListener("submit", submitRecipe);
+
+    // Recipe cover image upload
+    const recipeImgInput = $("recipe-image-input");
+    recipeImgInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const status = $("recipe-image-status");
+        status.textContent = STRINGS.uploading;
+        status.classList.remove("hidden");
+        try {
+            const data = await uploadImage(file);
+            setRecipeImage(data.filename);
+        } catch {
+            status.textContent = STRINGS.uploadFailed;
+            setTimeout(() => status.classList.add("hidden"), 2000);
+        } finally {
+            status.classList.add("hidden");
+            recipeImgInput.value = "";
+        }
+    });
+    $("recipe-image-remove").addEventListener("click", clearRecipeImage);
 
     if (RECIPE_DATA) {
         prefillForm(RECIPE_DATA);

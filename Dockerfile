@@ -17,6 +17,8 @@ COPY alembic.ini ./
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
 
+RUN mkdir -p /app/uploads
+
 # Place executables on PATH
 ENV PATH="/app/.venv/bin:$PATH"
 

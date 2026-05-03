@@ -22,6 +22,7 @@ class StepIn(BaseModel):
     position: int
     description: str
     duration: int | None = None
+    image_filenames: list[str] = []
 
 
 class RecipeCreate(BaseModel):
@@ -29,6 +30,7 @@ class RecipeCreate(BaseModel):
     description: str | None = None
     type_id: int
     servings: int | None = None
+    image_filename: str | None = None
     ungrouped_ingredients: list[RecipeIngredientIn] = []
     ingredient_groups: list[IngredientGroupIn] = []
     steps: list[StepIn] = []
