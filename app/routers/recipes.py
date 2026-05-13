@@ -1,3 +1,5 @@
+from math import ceil
+
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 from sqlalchemy import func, or_
@@ -18,6 +20,8 @@ from app.models.recipe import (
 from app.schemas.recipe import IngredientCreate, RecipeCreate
 
 router = APIRouter()
+
+PAGE_SIZE = 24
 
 
 # ── Auth helpers ──────────────────────────────────────────────────────────────
@@ -151,6 +155,7 @@ def dashboard(
     q: str = "",
     types: list[int] = Query(default=[]),
     sort: str = "date_desc",
+    page: int = 1,
 ):
     user_id = _require_page_user(request)
     lang = get_lang(request)
@@ -195,7 +200,10 @@ def dashboard(
     else:
         query = query.order_by(Recipe.created_at.desc())
 
-    recipes = query.all()
+    total = query.count()
+    total_pages = max(1, ceil(total / PAGE_SIZE))
+    page = max(1, min(page, total_pages))
+    recipes = query.offset((page - 1) * PAGE_SIZE).limit(PAGE_SIZE).all()
 
     # Sort types alphabetically in the active language so the pills are in the
     # expected order for the user regardless of the English DB value.
@@ -213,6 +221,9 @@ def dashboard(
             "filter_types": types,
             "filter_sort": sort,
             "has_filters": bool(q or types),
+            "page": page,
+            "total_pages": total_pages,
+            "total": total,
         },
     )
 

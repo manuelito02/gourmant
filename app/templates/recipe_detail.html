@@ -16,16 +16,6 @@
             </div>
         </div>
         <div class="recipe-detail-actions">
-            {% if recipe.servings %}
-            <div class="servings-control">
-                <button class="servings-btn" id="servings-dec" aria-label="Fewer servings">−</button>
-                <span class="servings-display">
-                    <span id="servings-count">{{ recipe.servings }}</span>
-                    <span class="servings-label">{{ _("servings") }}</span>
-                </span>
-                <button class="servings-btn" id="servings-inc" aria-label="More servings">+</button>
-            </div>
-            {% endif %}
             {% if recipe.user_id == current_user_id %}
             <a href="/recipes/{{ recipe.id }}/edit" class="btn-secondary">{{ _("Edit recipe") }}</a>
             {% endif %}
@@ -35,6 +25,19 @@
 
     {% if recipe.description %}
     <p class="recipe-detail-desc">{{ recipe.description }}</p>
+    {% endif %}
+
+    {% if recipe.servings %}
+    <div class="servings-row">
+        <div class="servings-control">
+            <button class="servings-btn" id="servings-dec" aria-label="Fewer servings">−</button>
+            <span class="servings-display">
+                <span id="servings-count">{{ recipe.servings }}</span>
+                <span class="servings-label">{{ _("servings") }}</span>
+            </span>
+            <button class="servings-btn" id="servings-inc" aria-label="More servings">+</button>
+        </div>
+    </div>
     {% endif %}
 
     <div class="recipe-detail-body">

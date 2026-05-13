@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% macro page_url(p) %}
+  {%- set parts = [] -%}
+  {%- if filter_q -%}{%- set _ = parts.append("q=" ~ filter_q | urlencode) -%}{%- endif -%}
+  {%- if filter_sort and filter_sort != "date_desc" -%}{%- set _ = parts.append("sort=" ~ filter_sort) -%}{%- endif -%}
+  {%- for t in filter_types -%}{%- set _ = parts.append("types=" ~ t) -%}{%- endfor -%}
+  {%- if p > 1 -%}{%- set _ = parts.append("page=" ~ p) -%}{%- endif -%}
+  /dashboard{% if parts %}?{{ parts | join("&") }}{% endif %}
+{%- endmacro %}
+
 {% block title %}{{ _("Recipes") }} — Gourmant{% endblock %}
 
 {% block content %}
@@ -60,6 +69,23 @@
         </a>
         {% endfor %}
     </div>
+
+    {% if total_pages > 1 %}
+    <nav class="pagination">
+        {% if page > 1 %}
+        <a href="{{ page_url(page - 1) }}" class="pagination-btn">← {{ _("Previous") }}</a>
+        {% else %}
+        <span class="pagination-btn pagination-btn--disabled">← {{ _("Previous") }}</span>
+        {% endif %}
+        <span class="pagination-info">{{ _("Page %(n)s of %(m)s") % {"n": page, "m": total_pages} }}</span>
+        {% if page < total_pages %}
+        <a href="{{ page_url(page + 1) }}" class="pagination-btn">{{ _("Next") }} →</a>
+        {% else %}
+        <span class="pagination-btn pagination-btn--disabled">{{ _("Next") }} →</span>
+        {% endif %}
+    </nav>
+    {% endif %}
+
     {% else %}
     <div class="empty-state">
         {% if has_filters %}

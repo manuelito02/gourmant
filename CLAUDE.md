@@ -45,6 +45,16 @@ uv run pybabel compile -d translations
 ```
 The Docker entrypoint also compiles translations on every start (`pybabel compile -d translations -f`), so the container always reflects the checked-in `.po` files. Always commit both `.po` and `.mo` files together.
 
+### Demo recipe seed (optional)
+Loads 50 French recipes (from chefsimon.com, pre-scraped) for bob and charly. Run once after the DB is migrated:
+```bash
+docker compose exec app python -m app.scripts.seed_demo_recipes
+```
+The dataset lives in `app/scripts/demo_recipes/` (JSON + cached images). To refresh it from the source:
+```bash
+uv run python -m app.scripts.build_demo_recipes   # overwrites recipes.json + images/
+```
+
 ### Database migrations
 ```bash
 # Create a new migration

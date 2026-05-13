@@ -176,6 +176,44 @@ def test_dashboard_sort_date_asc(auth_client, ref):
     assert response.text.index("First Recipe") < response.text.index("Second Recipe")
 
 
+# ── Pagination ───────────────────────────────────────────────────────────────
+
+
+def test_dashboard_paginates_at_page_size(auth_client, ref):
+    for i in range(25):
+        create_recipe(auth_client, {**minimal_payload(ref), "title": f"Recipe {i:02d}"})
+    page1 = auth_client.get("/dashboard")
+    page2 = auth_client.get("/dashboard?page=2")
+    # 24 recipe cards on page 1, 1 on page 2
+    assert page1.text.count('class="recipe-card"') == 24
+    assert page2.text.count('class="recipe-card"') == 1
+
+
+def test_dashboard_page_out_of_range_clamps(auth_client, ref):
+    create_recipe(auth_client, minimal_payload(ref))
+    response = auth_client.get("/dashboard?page=999")
+    assert response.status_code == 200
+    assert response.text.count('class="recipe-card"') == 1
+
+
+def test_dashboard_pagination_preserves_filters(auth_client, ref):
+    for i in range(26):
+        create_recipe(auth_client, {**minimal_payload(ref), "title": f"Soup {i:02d}"})
+    create_recipe(auth_client, {**minimal_payload(ref), "title": "Unrelated"})
+    page2 = auth_client.get("/dashboard?q=Soup&page=2")
+    assert page2.status_code == 200
+    # 26 soups → page 2 should have 2, and "Unrelated" must not appear
+    assert "Unrelated" not in page2.text
+    assert page2.text.count('class="recipe-card"') == 2
+
+
+def test_dashboard_no_pagination_when_one_page(auth_client, ref):
+    for _i in range(5):
+        create_recipe(auth_client, minimal_payload(ref))
+    response = auth_client.get("/dashboard")
+    assert "pagination" not in response.text
+
+
 # ── New recipe form ───────────────────────────────────────────────────────────
 
 

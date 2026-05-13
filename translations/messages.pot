@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-03 16:23+0200\n"
+"POT-Creation-Date: 2026-05-03 20:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,16 +177,16 @@ msgstr ""
 msgid "Invalid email or password"
 msgstr ""
 
-#: app/i18n_strings.py:58 app/routers/recipes.py:30
+#: app/i18n_strings.py:58 app/routers/recipes.py:34
 msgid "Not authenticated"
 msgstr ""
 
-#: app/i18n_strings.py:59 app/routers/recipes.py:246 app/routers/recipes.py:314
-#: app/routers/recipes.py:395
+#: app/i18n_strings.py:59 app/routers/recipes.py:244 app/routers/recipes.py:312
+#: app/routers/recipes.py:399
 msgid "Recipe not found"
 msgstr ""
 
-#: app/i18n_strings.py:60 app/routers/recipes.py:248
+#: app/i18n_strings.py:60 app/routers/recipes.py:246
 msgid "Not your recipe"
 msgstr ""
 
@@ -202,15 +202,15 @@ msgstr ""
 msgid "My Recipes"
 msgstr ""
 
-#: app/routers/admin.py:82
+#: app/routers/admin.py:81
 msgid "Cannot remove the last admin role."
 msgstr ""
 
-#: app/routers/admin.py:103
+#: app/routers/admin.py:102
 msgid "Cannot delete your own account."
 msgstr ""
 
-#: app/routers/admin.py:105
+#: app/routers/admin.py:104
 msgid "Cannot delete the last admin."
 msgstr ""
 
@@ -342,66 +342,70 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: app/templates/admin/users.html:17 app/templates/dashboard.html:3
-#: app/templates/dashboard.html:8
+#: app/templates/admin/users.html:17 app/templates/dashboard.html:12
+#: app/templates/dashboard.html:17
 msgid "Recipes"
 msgstr ""
 
-#: app/templates/dashboard.html:9
+#: app/templates/dashboard.html:18
 msgid "+ New recipe"
 msgstr ""
 
-#: app/templates/dashboard.html:17
+#: app/templates/dashboard.html:26
 msgid "Search…"
 msgstr ""
 
-#: app/templates/dashboard.html:19
+#: app/templates/dashboard.html:28
 msgid "Newest first"
 msgstr ""
 
-#: app/templates/dashboard.html:20
+#: app/templates/dashboard.html:29
 msgid "Oldest first"
 msgstr ""
 
-#: app/templates/dashboard.html:21
+#: app/templates/dashboard.html:30
 msgid "Title A–Z"
 msgstr ""
 
-#: app/templates/dashboard.html:22
+#: app/templates/dashboard.html:31
 msgid "Title Z–A"
 msgstr ""
 
-#: app/templates/dashboard.html:25 app/templates/dashboard.html:86
+#: app/templates/dashboard.html:34 app/templates/dashboard.html:93
 msgid "Clear filters"
 msgstr ""
 
-#: app/templates/dashboard.html:30 app/templates/recipe_form.html:51
+#: app/templates/dashboard.html:39 app/templates/recipe_form.html:51
 #: app/templates/recipe_form.html:121
 msgid "Type"
 msgstr ""
 
-#: app/templates/dashboard.html:42 app/templates/recipe_detail.html:42
-#: app/templates/recipe_form.html:89
-msgid "Ingredients"
-msgstr ""
-
-#: app/templates/dashboard.html:53
-msgid "Add ingredient…"
-msgstr ""
-
-#: app/templates/dashboard.html:76 app/templates/recipe_detail.html:24
+#: app/templates/dashboard.html:66 app/templates/recipe_detail.html:36
 msgid "servings"
 msgstr ""
 
-#: app/templates/dashboard.html:85
+#: app/templates/dashboard.html:76 app/templates/dashboard.html:78
+msgid "Previous"
+msgstr ""
+
+#: app/templates/dashboard.html:80
+#, python-format
+msgid "Page %(n)s of %(m)s"
+msgstr ""
+
+#: app/templates/dashboard.html:82 app/templates/dashboard.html:84
+msgid "Next"
+msgstr ""
+
+#: app/templates/dashboard.html:92
 msgid "No recipes match your filters."
 msgstr ""
 
-#: app/templates/dashboard.html:88
+#: app/templates/dashboard.html:95
 msgid "No recipes yet."
 msgstr ""
 
-#: app/templates/dashboard.html:89
+#: app/templates/dashboard.html:96
 msgid "Create your first recipe"
 msgstr ""
 
@@ -425,32 +429,36 @@ msgstr ""
 msgid "Create one"
 msgstr ""
 
-#: app/templates/recipe_detail.html:29 app/templates/recipe_form.html:3
+#: app/templates/recipe_detail.html:20 app/templates/recipe_form.html:3
 #: app/templates/recipe_form.html:37
 msgid "Edit recipe"
 msgstr ""
 
-#: app/templates/recipe_detail.html:30
+#: app/templates/recipe_detail.html:22
 msgid "← Back"
 msgstr ""
 
-#: app/templates/recipe_detail.html:71
+#: app/templates/recipe_detail.html:47 app/templates/recipe_form.html:89
+msgid "Ingredients"
+msgstr ""
+
+#: app/templates/recipe_detail.html:76
 msgid "No ingredients added."
 msgstr ""
 
-#: app/templates/recipe_detail.html:78 app/templates/recipe_form.html:100
+#: app/templates/recipe_detail.html:83 app/templates/recipe_form.html:100
 msgid "Steps"
 msgstr ""
 
-#: app/templates/recipe_detail.html:80
+#: app/templates/recipe_detail.html:85
 msgid "min total"
 msgstr ""
 
-#: app/templates/recipe_detail.html:92
+#: app/templates/recipe_detail.html:97
 msgid "Step image"
 msgstr ""
 
-#: app/templates/recipe_detail.html:104
+#: app/templates/recipe_detail.html:109
 msgid "No steps added."
 msgstr ""
 
