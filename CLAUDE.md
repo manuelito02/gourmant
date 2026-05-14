@@ -4,6 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
+### First-time setup
+```bash
+cp .env.example .env   # then edit .env: set SECRET_KEY and a strong ADMIN_PASSWORD
+```
+
 ### Running the app
 ```bash
 docker compose up --build -d        # build image and start all services
@@ -13,6 +18,13 @@ docker compose watch                # start with live-sync (app/ and alembic/ sy
 ```
 
 The app runs at http://localhost:8000. The container entrypoint compiles translations, runs `alembic upgrade head`, then starts uvicorn with `--reload`.
+
+### Going public (Cloudflare Quick Tunnel)
+`docker compose up -d` also starts a `cloudflared` tunnel service. To get the public URL:
+```bash
+./scripts/public-url.sh             # prints https://<random>.trycloudflare.com
+```
+The URL is ephemeral — it changes on every restart. To use HTTPS cookies when accessing via the tunnel, set `SESSION_COOKIE_SECURE=true` in `.env` and rebuild. Keep it `false` for local `http://localhost:8000` dev.
 
 ### Tests
 Tests require a running PostgreSQL on localhost:5432 (the Docker `db` service). Run from the project root:

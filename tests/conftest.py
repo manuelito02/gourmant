@@ -4,6 +4,8 @@ import tempfile
 # Must be set before app modules are imported — Pydantic reads env at Settings() init time.
 os.environ.setdefault("ADMIN_EMAIL", "admin@gourmant.test")
 os.environ.setdefault("ADMIN_PASSWORD", "test-admin-change-me-99")
+os.environ.setdefault("SECRET_KEY", "test-secret-key-not-for-production")
+os.environ.setdefault("TESTING", "1")
 
 # Redirect uploads to a temp directory so tests never touch /app/uploads.
 _tmp_uploads = tempfile.mkdtemp()

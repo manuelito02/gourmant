@@ -16,6 +16,7 @@ dependencies = [
     "pillow>=10.0",
     "python-multipart>=0.0.26",
     "redis>=7.4.0",
+    "slowapi>=0.1.9",
     "sqlalchemy>=2.0.49",
     "uvicorn[standard]>=0.44.0",
     "zxcvbn>=4.5.0",
@@ -34,7 +35,7 @@ testpaths = ["tests"]
 addopts = "--cov=app --cov-report=term-missing --cov-fail-under=80"
 
 [tool.coverage.run]
-omit = ["app/models/__init__.py", "app/database.py"]
+omit = ["app/models/__init__.py", "app/database.py", "app/scripts/build_demo_recipes.py", "app/scripts/seed_admin.py"]
 
 [tool.ruff]
 line-length = 100

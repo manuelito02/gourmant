@@ -1,18 +1,15 @@
-import secrets
-
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://gourmant:gourmant@localhost:5432/gourmant"
     redis_url: str = "redis://localhost:6379/0"
-    # Random default keeps dev working out of the box; sessions reset on restart.
-    # Set SECRET_KEY in .env (or environment) for a stable key in production.
-    secret_key: str = secrets.token_hex(32)
-    # Must be overridden in production. Container will fail to start if seed_admin
-    # cannot connect or if the password is too weak.
+    secret_key: str
     admin_email: str
     admin_password: str
+    # Set to true in .env when running behind the Cloudflare Tunnel (HTTPS).
+    # Keep false for local HTTP dev.
+    session_cookie_secure: bool = False
 
     model_config = {"env_file": ".env", "case_sensitive": False}
 

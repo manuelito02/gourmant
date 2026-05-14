@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.i18n import get_lang, get_templates, gettext_for
+from app.limiter import limiter
 from app.models.user import User
 
 router = APIRouter()
@@ -43,6 +44,7 @@ def login_page(request: Request):
 
 
 @router.post("/login", response_class=HTMLResponse)
+@limiter.limit("5/minute")
 def login(
     request: Request,
     email: str = Form(...),
@@ -72,6 +74,7 @@ def register_page(request: Request):
 
 
 @router.post("/register", response_class=HTMLResponse)
+@limiter.limit("3/minute")
 def register(
     request: Request,
     first_name: str = Form(...),
