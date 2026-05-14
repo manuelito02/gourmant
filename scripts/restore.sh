@@ -54,9 +54,12 @@ docker compose -f "$REPO_DIR/docker-compose.yml" exec -T db \
     pg_restore -U gourmant -d gourmant < "$BUNDLE/gourmant.dump"
 
 echo "[restore] Restoring uploads..."
-rm -rf "$REPO_DIR/uploads"
-mkdir -p "$REPO_DIR/uploads"
-tar -xzf "$BUNDLE/uploads.tar.gz" -C "$REPO_DIR"
+# Run inside a container so we have the same root permissions that wrote the files.
+BUNDLE_ABS="$(realpath "$BUNDLE")"
+docker run --rm \
+    -v "$REPO_DIR/uploads:/uploads" \
+    -v "$BUNDLE_ABS:/backup:ro" \
+    alpine sh -c "rm -rf /uploads/* /uploads/.* 2>/dev/null; tar -xzf /backup/uploads.tar.gz --strip-components=1 -C /uploads"
 
 echo "[restore] Starting app container..."
 docker compose -f "$REPO_DIR/docker-compose.yml" start app
