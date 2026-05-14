@@ -45,6 +45,16 @@ uv run pybabel compile -d translations
 ```
 The Docker entrypoint also compiles translations on every start (`pybabel compile -d translations -f`), so the container always reflects the checked-in `.po` files. Always commit both `.po` and `.mo` files together.
 
+### Backups
+```bash
+./scripts/backup.sh                 # dump DB + uploads to /mnt/d/work/gourmant-backups/<timestamp>/
+./scripts/restore.sh <bundle-path>  # restore DB + uploads from a bundle (interactive confirmation)
+```
+
+Each bundle is a directory containing `gourmant.dump` (pg_dump custom format), `uploads.tar.gz`, and `manifest.txt`. The 7 most recent bundles are kept; older ones are pruned automatically after a successful backup.
+
+The `db` container must be running before taking a backup. The restore script stops the `app` container, drops and recreates the database, runs `pg_restore`, swaps the uploads directory, then restarts the app.
+
 ### Demo recipe seed (optional)
 Loads 50 French recipes (from chefsimon.com, pre-scraped) for bob and charly. Run once after the DB is migrated:
 ```bash
