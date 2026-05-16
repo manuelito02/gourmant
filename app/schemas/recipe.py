@@ -2,6 +2,8 @@ import re
 
 from pydantic import BaseModel, field_validator
 
+from app.models.ingredient import DietClassification
+
 # Matches filenames produced by the upload endpoint: 32 lowercase hex chars + .jpg
 _FILENAME_RE = re.compile(r"^[0-9a-f]{32}\.jpg$")
 
@@ -15,6 +17,7 @@ def _validate_filename(v: str) -> str:
 class IngredientCreate(BaseModel):
     name: str
     type_id: int
+    classification: DietClassification = DietClassification.VEGAN
 
 
 class RecipeIngredientIn(BaseModel):

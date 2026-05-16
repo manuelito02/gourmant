@@ -6,6 +6,8 @@ os.environ.setdefault("ADMIN_EMAIL", "admin@gourmant.test")
 os.environ.setdefault("ADMIN_PASSWORD", "test-admin-change-me-99")
 os.environ.setdefault("SECRET_KEY", "test-secret-key-not-for-production")
 os.environ.setdefault("TESTING", "1")
+# TestClient uses http://testserver — secure cookies won't be sent without HTTPS.
+os.environ["SESSION_COOKIE_SECURE"] = "false"
 
 # Redirect uploads to a temp directory so tests never touch /app/uploads.
 _tmp_uploads = tempfile.mkdtemp()

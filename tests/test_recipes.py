@@ -1088,3 +1088,137 @@ def test_update_recipe_rejects_invalid_image_filename(auth_client, ref):
         json={**minimal_payload(ref), "image_filename": "../../secret.jpg"},
     )
     assert response.status_code == 422
+
+
+# ── Dietary classification ────────────────────────────────────────────────────
+
+
+def _create_ing(client, ref, name, classification):
+    """Create a test ingredient with the given dietary classification; return its id."""
+    res = client.post(
+        "/api/ingredients",
+        json={"name": name, "type_id": ref["ing_type_id"], "classification": classification},
+    )
+    assert res.status_code == 201
+    return res.json()["id"]
+
+
+def _recipe_with_ings(ref, *ing_ids):
+    return {
+        **minimal_payload(ref),
+        "ungrouped_ingredients": [
+            {"ingredient_id": i, "amount": 1.0, "unit_id": ref["unit_id"]} for i in ing_ids
+        ],
+    }
+
+
+def test_create_ingredient_defaults_to_vegan(auth_client, ref):
+    vegan_id = _create_ing(auth_client, ref, "Test Spinach", "vegan")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, vegan_id))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Vegan" in resp.text
+
+
+def test_create_ingredient_explicit_pescatarian(auth_client, ref):
+    pesc_id = _create_ing(auth_client, ref, "Test Anchovy", "pescatarian")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, pesc_id))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Pescatarian" in resp.text
+
+
+def test_create_ingredient_invalid_classification_rejected(auth_client, ref):
+    res = auth_client.post(
+        "/api/ingredients",
+        json={"name": "Test Bad", "type_id": ref["ing_type_id"], "classification": "omnivore"},
+    )
+    assert res.status_code == 422
+
+
+def test_recipe_no_ingredients_is_vegan(auth_client, ref):
+    recipe_id = create_recipe(auth_client, minimal_payload(ref))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Vegan" in resp.text
+
+
+def test_recipe_all_vegan_is_vegan(auth_client, ref):
+    v1 = _create_ing(auth_client, ref, "Test Carrot", "vegan")
+    v2 = _create_ing(auth_client, ref, "Test Garlic", "vegan")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, v1, v2))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Vegan" in resp.text
+
+
+def test_recipe_one_vegetarian_overrides_vegan(auth_client, ref):
+    vegan_id = _create_ing(auth_client, ref, "Test Onion", "vegan")
+    veg_id = _create_ing(auth_client, ref, "Test Cheese", "vegetarian")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, vegan_id, veg_id))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Vegetarian" in resp.text
+
+
+def test_recipe_pescatarian_overrides_vegetarian(auth_client, ref):
+    veg_id = _create_ing(auth_client, ref, "Test Butter", "vegetarian")
+    pesc_id = _create_ing(auth_client, ref, "Test Tuna", "pescatarian")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, veg_id, pesc_id))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Pescatarian" in resp.text
+
+
+def test_recipe_meat_overrides_all(auth_client, ref):
+    veg_id = _create_ing(auth_client, ref, "Test Milk", "vegetarian")
+    pesc_id = _create_ing(auth_client, ref, "Test Salmon", "pescatarian")
+    meat_id = _create_ing(auth_client, ref, "Test Beef", "meat")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, veg_id, pesc_id, meat_id))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Meat" in resp.text
+
+
+def test_recipe_classification_order_independent(auth_client, ref):
+    meat_id = _create_ing(auth_client, ref, "Test Pork", "meat")
+    vegan_id = _create_ing(auth_client, ref, "Test Basil", "vegan")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, vegan_id, meat_id))
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Meat" in resp.text
+
+
+def test_dashboard_filter_by_classification_meat(auth_client, ref):
+    vegan_id = _create_ing(auth_client, ref, "Test Pepper", "vegan")
+    meat_id = _create_ing(auth_client, ref, "Test Lamb", "meat")
+    create_recipe(auth_client, {**_recipe_with_ings(ref, vegan_id), "title": "Vegan Salad"})
+    create_recipe(auth_client, {**_recipe_with_ings(ref, meat_id), "title": "Meat Stew"})
+
+    resp = auth_client.get("/dashboard?classification=meat")
+    assert resp.status_code == 200
+    assert "Meat Stew" in resp.text
+    assert "Vegan Salad" not in resp.text
+
+
+def test_dashboard_filter_by_classification_vegan(auth_client, ref):
+    vegan_id = _create_ing(auth_client, ref, "Test Kale", "vegan")
+    meat_id = _create_ing(auth_client, ref, "Test Duck", "meat")
+    create_recipe(auth_client, {**_recipe_with_ings(ref, vegan_id), "title": "Kale Bowl"})
+    create_recipe(auth_client, {**_recipe_with_ings(ref, meat_id), "title": "Duck Breast"})
+
+    resp = auth_client.get("/dashboard?classification=vegan")
+    assert "Kale Bowl" in resp.text
+    assert "Duck Breast" not in resp.text
+
+
+def test_dashboard_no_filter_shows_all(auth_client, ref):
+    vegan_id = _create_ing(auth_client, ref, "Test Tomato", "vegan")
+    meat_id = _create_ing(auth_client, ref, "Test Turkey", "meat")
+    create_recipe(auth_client, {**_recipe_with_ings(ref, vegan_id), "title": "Tomato Soup"})
+    create_recipe(auth_client, {**_recipe_with_ings(ref, meat_id), "title": "Turkey Roast"})
+
+    resp = auth_client.get("/dashboard")
+    assert "Tomato Soup" in resp.text
+    assert "Turkey Roast" in resp.text
+
+
+def test_recipe_classification_badge_translates_french(auth_client, ref):
+    veg_id = _create_ing(auth_client, ref, "Test Cream", "vegetarian")
+    recipe_id = create_recipe(auth_client, _recipe_with_ings(ref, veg_id))
+    auth_client.post("/set-language", data={"lang": "fr"})
+    resp = auth_client.get(f"/recipes/{recipe_id}")
+    assert "Végétarien" in resp.text
+    auth_client.post("/set-language", data={"lang": "en"})

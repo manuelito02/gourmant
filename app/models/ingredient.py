@@ -1,7 +1,19 @@
-from sqlalchemy import ForeignKey, String, UniqueConstraint
+import enum
+
+from sqlalchemy import Enum, ForeignKey, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
+
+
+class DietClassification(enum.StrEnum):
+    VEGAN = "vegan"
+    VEGETARIAN = "vegetarian"
+    PESCATARIAN = "pescatarian"
+    MEAT = "meat"
+
+
+DIET_ORDER = list(DietClassification)
 
 
 class IngredientType(Base):
@@ -27,6 +39,15 @@ class Ingredient(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(200), unique=True, nullable=False, index=True)
     type_id: Mapped[int] = mapped_column(ForeignKey("ingredient_types.id"), nullable=False)
+    classification: Mapped[DietClassification] = mapped_column(
+        Enum(
+            DietClassification,
+            name="dietclassification",
+            values_callable=lambda obj: [e.value for e in obj],
+        ),
+        nullable=False,
+        server_default=DietClassification.VEGAN.value,
+    )
 
     type: Mapped["IngredientType"] = relationship(back_populates="ingredients")
     translations: Mapped[list["IngredientTranslation"]] = relationship(

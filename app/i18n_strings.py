@@ -52,6 +52,14 @@ _("Breakfast")
 _("Snack")
 _("Beverage")
 
+# ── Dietary classifications ───────────────────────────────────────────────────
+_("Vegan")
+_("Vegetarian")
+_("Pescatarian")
+_("Meat")
+_("All diets")
+_("Diet")
+
 # ── Error / feedback messages used in Python (not in templates) ───────────────
 _("Password is too weak.")
 _("Invalid email or password")

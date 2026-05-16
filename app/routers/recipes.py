@@ -7,7 +7,13 @@ from sqlalchemy.orm import Session, aliased, selectinload
 
 from app.database import get_db
 from app.i18n import get_lang, get_templates, gettext_for
-from app.models.ingredient import Ingredient, IngredientTranslation, IngredientType
+from app.models.ingredient import (
+    DIET_ORDER,
+    DietClassification,
+    Ingredient,
+    IngredientTranslation,
+    IngredientType,
+)
 from app.models.recipe import (
     AmountUnit,
     Recipe,
@@ -63,6 +69,10 @@ def _form_context(db: Session, request: Request) -> dict:
         "ingredient_types": [
             {"id": t.id, "name": gettext_for(request, t.name)}
             for t in db.query(IngredientType).order_by(IngredientType.name).all()
+        ],
+        "ingredient_classifications": [
+            {"value": c.value, "label": gettext_for(request, c.value.capitalize())}
+            for c in DIET_ORDER
         ],
     }
 
@@ -155,12 +165,17 @@ def dashboard(
     q: str = "",
     types: list[int] = Query(default=[]),
     sort: str = "date_desc",
+    classification: str = "",
     page: int = 1,
 ):
     user_id = _require_page_user(request)
     lang = get_lang(request)
 
-    query = db.query(Recipe).options(selectinload(Recipe.type), selectinload(Recipe.user))
+    query = db.query(Recipe).options(
+        selectinload(Recipe.type),
+        selectinload(Recipe.user),
+        selectinload(Recipe.ingredients).selectinload(RecipeIngredient.ingredient),
+    )
 
     if q:
         like = f"%{q}%"
@@ -191,6 +206,9 @@ def dashboard(
     if types:
         query = query.filter(Recipe.type_id.in_(types))
 
+    if classification and classification in DietClassification._value2member_map_:
+        query = query.filter(Recipe.classification == classification)
+
     if sort == "title_asc":
         query = query.order_by(Recipe.title.asc())
     elif sort == "title_desc":
@@ -220,7 +238,12 @@ def dashboard(
             "filter_q": q,
             "filter_types": types,
             "filter_sort": sort,
-            "has_filters": bool(q or types),
+            "filter_classification": classification,
+            "has_filters": bool(q or types or classification),
+            "diet_classifications": [
+                {"value": c.value, "label": gettext_for(request, c.value.capitalize())}
+                for c in DIET_ORDER
+            ],
             "page": page,
             "total_pages": total_pages,
             "total": total,
@@ -376,7 +399,7 @@ def create_ingredient(data: IngredientCreate, request: Request, db: Session = De
         .first()
     ):
         raise HTTPException(status_code=400, detail="Ingredient already exists")
-    ing = Ingredient(name=name, type_id=data.type_id)
+    ing = Ingredient(name=name, type_id=data.type_id, classification=data.classification)
     db.add(ing)
     db.flush()
     if lang != "en":

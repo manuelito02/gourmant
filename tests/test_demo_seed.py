@@ -1,6 +1,5 @@
 """Tests for the demo recipe seed script."""
 
-
 from sqlalchemy import text
 
 from app.routers.auth import hash_password

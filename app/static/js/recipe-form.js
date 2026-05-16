@@ -96,12 +96,13 @@ function closeCreateModal() {
 async function submitCreateIngredient() {
     const name = $("modal-ing-name").value.trim();
     const typeId = parseInt($("modal-ing-type").value);
+    const classification = $("modal-ing-classification").value;
     if (!name) return;
 
     const res = await fetch("/api/ingredients", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, type_id: typeId }),
+        body: JSON.stringify({ name, type_id: typeId, classification }),
     });
     if (res.ok) {
         const ing = await res.json();
@@ -556,6 +557,14 @@ document.addEventListener("DOMContentLoaded", () => {
         opt.value = t.id;
         opt.textContent = t.name;
         typeSelect.appendChild(opt);
+    });
+
+    const classSelect = $("modal-ing-classification");
+    INGREDIENT_CLASSIFICATIONS.forEach((c) => {
+        const opt = document.createElement("option");
+        opt.value = c.value;
+        opt.textContent = c.label;
+        classSelect.appendChild(opt);
     });
 
     $("recipe-form").addEventListener("submit", submitRecipe);

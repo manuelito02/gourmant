@@ -5,6 +5,7 @@
   {%- if filter_q -%}{%- set _ = parts.append("q=" ~ filter_q | urlencode) -%}{%- endif -%}
   {%- if filter_sort and filter_sort != "date_desc" -%}{%- set _ = parts.append("sort=" ~ filter_sort) -%}{%- endif -%}
   {%- for t in filter_types -%}{%- set _ = parts.append("types=" ~ t) -%}{%- endfor -%}
+  {%- if filter_classification -%}{%- set _ = parts.append("classification=" ~ filter_classification) -%}{%- endif -%}
   {%- if p > 1 -%}{%- set _ = parts.append("page=" ~ p) -%}{%- endif -%}
   /dashboard{% if parts %}?{{ parts | join("&") }}{% endif %}
 {%- endmacro %}
@@ -24,6 +25,12 @@
         <div class="filter-row">
             <input type="text" name="q" id="filter-q" value="{{ filter_q }}"
                    placeholder="{{ _('Search…') }}" class="filter-search" autocomplete="off">
+            <select name="classification" class="filter-sort" onchange="this.form.submit()">
+                <option value="" {% if not filter_classification %}selected{% endif %}>{{ _("All diets") }}</option>
+                {% for dc in diet_classifications %}
+                <option value="{{ dc.value }}" {% if filter_classification == dc.value %}selected{% endif %}>{{ dc.label }}</option>
+                {% endfor %}
+            </select>
             <select name="sort" class="filter-sort" onchange="this.form.submit()">
                 <option value="date_desc" {% if filter_sort == 'date_desc' %}selected{% endif %}>{{ _("Newest first") }}</option>
                 <option value="date_asc"  {% if filter_sort == 'date_asc'  %}selected{% endif %}>{{ _("Oldest first") }}</option>
@@ -58,6 +65,7 @@
                  alt="{{ recipe.title }}" loading="lazy">
             {% endif %}
             <div class="recipe-card-type">{{ _(recipe.type.name) }}</div>
+            <div class="recipe-card-diet recipe-card-diet--{{ recipe.classification.value }}">{{ _(recipe.classification.value.capitalize()) }}</div>
             <h2 class="recipe-card-title">{{ recipe.title }}</h2>
             {% if recipe.description %}
             <p class="recipe-card-desc">{{ recipe.description }}</p>

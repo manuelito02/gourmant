@@ -10,6 +10,7 @@
         {% if recipe.image_filename %}<div class="hero-overlay"></div>{% endif %}
         <div>
             <div class="recipe-detail-type">{{ _(recipe.type.name) }}</div>
+            <div class="recipe-detail-diet recipe-detail-diet--{{ recipe.classification.value }}">{{ _(recipe.classification.value.capitalize()) }}</div>
             <h1>{{ recipe.title }}</h1>
             <div class="recipe-detail-meta">
                 <span>{{ recipe.created_at.strftime("%d %b %Y") }}</span>

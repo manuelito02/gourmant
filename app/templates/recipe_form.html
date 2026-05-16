@@ -6,6 +6,7 @@
 <script>
     const AMOUNT_UNITS = {{ amount_units | tojson(indent=None) }};
     const INGREDIENT_TYPES = {{ ingredient_types | tojson(indent=None) }};
+    const INGREDIENT_CLASSIFICATIONS = {{ ingredient_classifications | tojson(indent=None) }};
     const RECIPE_ID = {{ recipe_id | default(none) | tojson }};
     const RECIPE_DATA = {{ recipe_data | default(none) | tojson }};
     const STRINGS = {
@@ -120,6 +121,10 @@
         <div class="form-group">
             <label for="modal-ing-type">{{ _("Type") }} <span class="required">*</span></label>
             <select id="modal-ing-type"></select>
+        </div>
+        <div class="form-group">
+            <label for="modal-ing-classification">{{ _("Diet") }}</label>
+            <select id="modal-ing-classification"></select>
         </div>
         <div id="modal-error" class="error hidden"></div>
         <div class="modal-actions">

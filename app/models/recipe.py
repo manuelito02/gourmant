@@ -1,10 +1,21 @@
 from datetime import datetime
 
-from sqlalchemy import DateTime, ForeignKey, Numeric, String, Text, UniqueConstraint, func
+from sqlalchemy import (
+    DateTime,
+    ForeignKey,
+    Numeric,
+    String,
+    Text,
+    UniqueConstraint,
+    cast,
+    func,
+    select,
+)
+from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
-from app.models.ingredient import AmountUnit, Ingredient
+from app.models.ingredient import DIET_ORDER, AmountUnit, DietClassification, Ingredient
 from app.models.user import User
 
 
@@ -46,6 +57,33 @@ class Recipe(Base):
         cascade="all, delete-orphan",
         order_by="Step.position",
     )
+
+    @hybrid_property
+    def classification(self) -> DietClassification:
+        if not self.ingredients:
+            return DietClassification.VEGAN
+        return max(
+            (ri.ingredient.classification for ri in self.ingredients),
+            key=DIET_ORDER.index,
+            default=DietClassification.VEGAN,
+        )
+
+    @classification.expression
+    @classmethod
+    def classification(cls):
+        return (
+            select(
+                func.coalesce(
+                    cast(func.max(Ingredient.classification), String()),
+                    DietClassification.VEGAN.value,
+                )
+            )
+            .select_from(RecipeIngredient)
+            .join(Ingredient, RecipeIngredient.ingredient_id == Ingredient.id)
+            .where(RecipeIngredient.recipe_id == cls.id)
+            .correlate(cls)
+            .scalar_subquery()
+        )
 
 
 class RecipeIngredientGroup(Base):
