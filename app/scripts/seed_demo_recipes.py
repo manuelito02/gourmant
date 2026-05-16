@@ -25,6 +25,169 @@ UPLOADS_DIR = Path(os.environ.get("UPLOADS_DIR", "/app/uploads"))
 BOB_EMAIL = "bob@example.com"
 CHARLY_EMAIL = "charly@example.com"
 
+# French keyword patterns for dietary classification.
+# Checked in order: meat > pescatarian > vegetarian > vegan (first match wins).
+_MEAT_KEYWORDS = [
+    "poulet",
+    "volaille",
+    "canard",
+    "magret",
+    "agneau",
+    "mouton",
+    "porc",
+    "boeuf",
+    "veau",
+    "lapin",
+    "dinde",
+    "pintade",
+    "caille",
+    "faisan",
+    "gibier",
+    "chevreuil",
+    "sanglier",
+    "lardons",
+    "lard",
+    "jambon",
+    "bacon",
+    "saucisse",
+    "saucisson",
+    "merguez",
+    "andouille",
+    "viande",
+    "haché",
+    "bouillon de boeuf",
+    "bouillon de volaille",
+    "bouillon volaille",
+    "fond de veau",
+    "fond blanc",
+    "fond brun",
+    "os de",
+    "foie",
+    "rognon",
+    "gésier",
+    "abat",
+    # common beef cuts
+    "paleron",
+    "macreuse",
+    "jarret",
+    "gîte",
+    "entrecôte",
+    "contre filet",
+    "contre-filet",
+    "filet mignon",
+    "rumsteck",
+    "faux-filet",
+]
+_FISH_KEYWORDS = [
+    "saumon",
+    "thon",
+    "cabillaud",
+    "sole",
+    "truite",
+    "dorade",
+    "bar ",
+    "lotte",
+    "merlu",
+    "morue",
+    "maquereau",
+    "anchois",
+    "sardine",
+    "hareng",
+    "perche",
+    "brochet",
+    "sandre",
+    "turbot",
+    "lieu noir",
+    "lieu jaune",
+    "saint-pierre",
+    "daurade",
+    "pageot",
+    "grondin",
+    "rouget",
+    "mérou",
+    "lingue",
+    "flétan",
+    "limande",
+    "carrelet",
+    "raie",
+    "merlan",
+    "bar de ligne",
+    "bar d'",
+    "filet de bar",
+    "pavés de bar",
+    "crevette",
+    "homard",
+    "langouste",
+    "langoustine",
+    "calamar",
+    "calmar",
+    "poulpe",
+    "moule",
+    "palourde",
+    "huître",
+    "crabe",
+    "coquille",
+    "saint-jacques",
+    "seiche",
+    "oursin",
+    "bulot",
+    "bigorneaux",
+    "fumet de poisson",
+    "fumet de crustacé",
+    "fond de poisson",
+]
+_VEGETARIAN_KEYWORDS = [
+    "crème fraîche",
+    "crème liquide",
+    "crème entière",
+    "crème double",
+    "beurre",
+    "fromage",
+    "gruyère",
+    "comté",
+    "emmental",
+    "parmesan",
+    "mozzarella",
+    "roquefort",
+    "camembert",
+    "brie",
+    "cheddar",
+    "reblochon",
+    "raclette",
+    "beaufort",
+    "chèvre",
+    "ricotta",
+    "mascarpone",
+    "feta",
+    "gouda",
+    "édam",
+    "lait",
+    "yaourt",
+    "crème",
+    "fromage blanc",
+    "œuf",
+    "oeuf",
+    "jaune d",
+    "blanc d",
+]
+
+
+def _classify_ingredient_name(name: str) -> str:
+    """Infer a dietary classification from a French ingredient name via keyword matching."""
+    # Normalize ligatures so e.g. "bœuf" matches keyword "boeuf" before "oeuf" (egg) matches.
+    lower = name.lower().replace("œ", "oe").replace("æ", "ae")
+    for kw in _MEAT_KEYWORDS:
+        if kw in lower:
+            return "meat"
+    for kw in _FISH_KEYWORDS:
+        if kw in lower:
+            return "pescatarian"
+    for kw in _VEGETARIAN_KEYWORDS:
+        if kw in lower:
+            return "vegetarian"
+    return "vegan"
+
+
 # Map JSON type_name → canonical English DB value in recipe_types.name
 # (must match the seeded values from migration 0001)
 TYPE_ALIASES: dict[str, list[str]] = {
@@ -134,14 +297,18 @@ def run_with_conn(conn) -> None:
         if row:
             ing_cache[key] = row[0]
             return row[0]
-        # Create new ingredient (type = "Other")
+        # Create new ingredient (type = "Other", classification inferred from name)
         other_type = conn.execute(
             text("SELECT id FROM ingredient_types WHERE name = 'Other'")
         ).fetchone()
         type_id = other_type[0] if other_type else None
+        classification = _classify_ingredient_name(name)
         new_id = conn.execute(
-            text("INSERT INTO ingredients (name, type_id) VALUES (:n, :t) RETURNING id"),
-            {"n": name, "t": type_id},
+            text(
+                "INSERT INTO ingredients (name, type_id, classification)"
+                " VALUES (:n, :t, :c) RETURNING id"
+            ),
+            {"n": name, "t": type_id, "c": classification},
         ).fetchone()[0]
         # Store French translation so the name is searchable in FR UI
         conn.execute(

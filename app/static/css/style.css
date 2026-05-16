@@ -709,6 +709,40 @@ main { padding: 2rem; }
     letter-spacing: 0.05em;
     color: var(--accent);
 }
+.recipe-detail-diet {
+    display: inline-block;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.1rem 0.45rem;
+    border-radius: 3px;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+.recipe-detail-diet--vegan        { color: #2d7a2d; border-color: #c3e6c3; background: #f0faf0; }
+.recipe-detail-diet--vegetarian   { color: #5a7a00; border-color: #d4e8a0; background: #f6fae8; }
+.recipe-detail-diet--pescatarian  { color: #006f9e; border-color: #b0d8ee; background: #eaf6fd; }
+.recipe-detail-diet--meat         { color: #8b2000; border-color: #e8c0b0; background: #fdf0ec; }
+.recipe-card-diet {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.08rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 600;
+    margin-top: 0.15rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+.recipe-card-diet--vegan        { color: #2d7a2d; border-color: #c3e6c3; background: #f0faf0; }
+.recipe-card-diet--vegetarian   { color: #5a7a00; border-color: #d4e8a0; background: #f6fae8; }
+.recipe-card-diet--pescatarian  { color: #006f9e; border-color: #b0d8ee; background: #eaf6fd; }
+.recipe-card-diet--meat         { color: #8b2000; border-color: #e8c0b0; background: #fdf0ec; }
 .recipe-detail-meta {
     display: flex;
     gap: 1rem;
@@ -869,6 +903,7 @@ main { padding: 2rem; }
     display: block;
 }
 .recipe-card-type,
+.recipe-card-diet,
 .recipe-card-title,
 .recipe-card-desc,
 .recipe-card-meta,
