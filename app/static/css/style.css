@@ -553,7 +553,8 @@ main { padding: 2rem; }
     cursor: pointer;
     font-size: 0.9rem;
 }
-.autocomplete-dropdown li:hover { background-color: var(--hover); }
+.autocomplete-dropdown li:hover,
+.autocomplete-dropdown li.active { background-color: var(--hover); }
 .dropdown-divider { border-top: 1px solid var(--border); padding: 0; margin: 0; }
 .dropdown-create { color: var(--muted); font-style: italic; }
 

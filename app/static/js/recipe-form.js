@@ -20,6 +20,7 @@ function setupAutocomplete(rowId) {
     const input = $(`ing-search-${rowId}`);
     const hidden = $(`ing-id-${rowId}`);
     const drop = $(`ing-drop-${rowId}`);
+    let cursor = -1;
 
     const search = debounce(async (q) => {
         if (!q.trim()) {
@@ -28,6 +29,7 @@ function setupAutocomplete(rowId) {
         }
         const res = await fetch(`/api/ingredients?q=${encodeURIComponent(q)}`);
         const results = await res.json();
+        cursor = -1;
         renderDropdown(drop, results, q, input, hidden);
     }, 250);
 
@@ -38,9 +40,33 @@ function setupAutocomplete(rowId) {
     input.addEventListener("focus", (e) => {
         if (e.target.value) search(e.target.value);
     });
+    input.addEventListener("keydown", (e) => {
+        if (drop.classList.contains("hidden")) return;
+        const items = [...drop.querySelectorAll("li:not(.dropdown-divider)")];
+        if (!items.length) return;
+
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            cursor = (cursor + 1) % items.length;
+            items.forEach((li, i) => li.classList.toggle("active", i === cursor));
+            items[cursor].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            cursor = (cursor - 1 + items.length) % items.length;
+            items.forEach((li, i) => li.classList.toggle("active", i === cursor));
+            items[cursor].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "Enter" && cursor >= 0) {
+            e.preventDefault();
+            items[cursor].click();
+        } else if (e.key === "Escape") {
+            drop.classList.add("hidden");
+            cursor = -1;
+        }
+    });
     document.addEventListener("click", (e) => {
         if (!input.closest(".autocomplete-wrap").contains(e.target)) {
             drop.classList.add("hidden");
+            cursor = -1;
         }
     });
 }
