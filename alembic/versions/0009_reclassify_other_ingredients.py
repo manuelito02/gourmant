@@ -166,10 +166,9 @@ def upgrade() -> None:
         if ids:
             conn.execute(
                 sa.text(
-                    f"UPDATE ingredients SET classification = '{cls}'"  # noqa: S608
-                    " WHERE id = ANY(:ids)"
+                    "UPDATE ingredients SET classification = :cls WHERE id = ANY(:ids)"
                 ),
-                {"ids": ids},
+                {"cls": cls, "ids": ids},
             )
             print(f"  [0009] reclassified {len(ids)} ingredients → {cls}")
 

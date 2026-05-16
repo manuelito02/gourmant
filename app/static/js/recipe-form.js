@@ -224,34 +224,84 @@ function removeRow(id) {
 
 // ── Ingredient rows ───────────────────────────────────────────────────────────
 
-function unitOptions() {
-    return AMOUNT_UNITS.map(
-        (u) => `<option value="${u.id}">${u.name} (${u.abbreviation})</option>`
-    ).join("");
-}
-
 function addIngredientRow(containerId, skipFocus = false) {
     const id = uid();
     const container = $(`${containerId}-ings`);
     const div = document.createElement("div");
     div.id = `ing-row-${id}`;
     div.className = "ingredient-row";
-    div.innerHTML = `
-        <div class="autocomplete-wrap">
-            <input id="ing-search-${id}" type="text" placeholder="${STRINGS.ingredientPlaceholder}" autocomplete="off" class="ing-search">
-            <input id="ing-id-${id}" type="hidden">
-            <ul id="ing-drop-${id}" class="autocomplete-dropdown hidden"></ul>
-        </div>
-        <input id="ing-amount-${id}" type="number" placeholder="${STRINGS.amountPlaceholder}" min="0.001" step="0.001" class="ing-amount">
-        <select id="ing-unit-${id}" class="ing-unit">${unitOptions()}</select>
-        <div class="row-controls">
-            <button type="button" class="btn-icon" onclick="moveRow(this)">↑</button>
-            <button type="button" class="btn-icon" onclick="moveRow(this, true)">↓</button>
-            <button type="button" class="btn-icon btn-remove" onclick="removeRow('ing-row-${id}')">×</button>
-        </div>`;
+
+    const searchInput = document.createElement("input");
+    searchInput.id = `ing-search-${id}`;
+    searchInput.type = "text";
+    searchInput.placeholder = STRINGS.ingredientPlaceholder;
+    searchInput.autocomplete = "off";
+    searchInput.className = "ing-search";
+
+    const hiddenInput = document.createElement("input");
+    hiddenInput.id = `ing-id-${id}`;
+    hiddenInput.type = "hidden";
+
+    const dropList = document.createElement("ul");
+    dropList.id = `ing-drop-${id}`;
+    dropList.className = "autocomplete-dropdown hidden";
+
+    const wrap = document.createElement("div");
+    wrap.className = "autocomplete-wrap";
+    wrap.appendChild(searchInput);
+    wrap.appendChild(hiddenInput);
+    wrap.appendChild(dropList);
+
+    const amountInput = document.createElement("input");
+    amountInput.id = `ing-amount-${id}`;
+    amountInput.type = "number";
+    amountInput.placeholder = STRINGS.amountPlaceholder;
+    amountInput.min = "0.001";
+    amountInput.step = "0.001";
+    amountInput.className = "ing-amount";
+
+    const unitSelect = document.createElement("select");
+    unitSelect.id = `ing-unit-${id}`;
+    unitSelect.className = "ing-unit";
+    AMOUNT_UNITS.forEach((u) => {
+        const opt = document.createElement("option");
+        opt.value = u.id;
+        opt.textContent = `${u.name} (${u.abbreviation})`;
+        unitSelect.appendChild(opt);
+    });
+
+    const btnUp = document.createElement("button");
+    btnUp.type = "button";
+    btnUp.className = "btn-icon";
+    btnUp.textContent = "↑";
+    btnUp.addEventListener("click", () => moveRow(btnUp));
+
+    const btnDown = document.createElement("button");
+    btnDown.type = "button";
+    btnDown.className = "btn-icon";
+    btnDown.textContent = "↓";
+    btnDown.addEventListener("click", () => moveRow(btnDown, true));
+
+    const btnRm = document.createElement("button");
+    btnRm.type = "button";
+    btnRm.className = "btn-icon btn-remove";
+    btnRm.textContent = "×";
+    btnRm.addEventListener("click", () => removeRow(`ing-row-${id}`));
+
+    const controls = document.createElement("div");
+    controls.className = "row-controls";
+    controls.appendChild(btnUp);
+    controls.appendChild(btnDown);
+    controls.appendChild(btnRm);
+
+    div.appendChild(wrap);
+    div.appendChild(amountInput);
+    div.appendChild(unitSelect);
+    div.appendChild(controls);
     container.appendChild(div);
+
     setupAutocomplete(id);
-    if (!skipFocus) $(`ing-search-${id}`).focus();
+    if (!skipFocus) searchInput.focus();
     return id;
 }
 
@@ -263,19 +313,58 @@ function addGroup(skipFocus = false) {
     const div = document.createElement("div");
     div.id = `group-${id}`;
     div.className = "ingredient-group";
-    div.innerHTML = `
-        <div class="group-header">
-            <input type="text" id="group-name-${id}" class="group-name" placeholder="${STRINGS.groupNamePlaceholder}">
-            <div class="row-controls">
-                <button type="button" class="btn-icon" onclick="moveRow(this)">↑</button>
-                <button type="button" class="btn-icon" onclick="moveRow(this, true)">↓</button>
-                <button type="button" class="btn-icon btn-remove" onclick="removeRow('group-${id}')">×</button>
-            </div>
-        </div>
-        <div id="group-${id}-ings" class="ingredient-list group-ingredient-list"></div>
-        <button type="button" class="btn-add btn-add-sub" onclick="addIngredientRow('group-${id}')">${STRINGS.addIngredient}</button>`;
+
+    const nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.id = `group-name-${id}`;
+    nameInput.className = "group-name";
+    nameInput.placeholder = STRINGS.groupNamePlaceholder;
+
+    const btnUp = document.createElement("button");
+    btnUp.type = "button";
+    btnUp.className = "btn-icon";
+    btnUp.textContent = "↑";
+    btnUp.addEventListener("click", () => moveRow(btnUp));
+
+    const btnDown = document.createElement("button");
+    btnDown.type = "button";
+    btnDown.className = "btn-icon";
+    btnDown.textContent = "↓";
+    btnDown.addEventListener("click", () => moveRow(btnDown, true));
+
+    const btnRm = document.createElement("button");
+    btnRm.type = "button";
+    btnRm.className = "btn-icon btn-remove";
+    btnRm.textContent = "×";
+    btnRm.addEventListener("click", () => removeRow(`group-${id}`));
+
+    const controls = document.createElement("div");
+    controls.className = "row-controls";
+    controls.appendChild(btnUp);
+    controls.appendChild(btnDown);
+    controls.appendChild(btnRm);
+
+    const header = document.createElement("div");
+    header.className = "group-header";
+    header.appendChild(nameInput);
+    header.appendChild(controls);
+
+    const ingList = document.createElement("div");
+    ingList.id = `group-${id}-ings`;
+    ingList.className = "ingredient-list group-ingredient-list";
+
+    const addBtn = document.createElement("button");
+    addBtn.type = "button";
+    addBtn.className = "btn-add btn-add-sub";
+    addBtn.textContent = STRINGS.addIngredient;
+    addBtn.addEventListener("click", () => addIngredientRow(`group-${id}`));
+
+    div.appendChild(header);
+    div.appendChild(ingList);
+    div.appendChild(addBtn);
     container.appendChild(div);
-    if (!skipFocus) $(`group-name-${id}`).focus();
+
+    if (!skipFocus) nameInput.focus();
     return id;
 }
 
