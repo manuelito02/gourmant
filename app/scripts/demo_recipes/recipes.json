@@ -4834,6 +4834,11 @@
     "servings": 4,
     "ingredients": [
       {
+        "name": "merlan",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
         "name": "Environ 80 g de farine",
         "amount": 1.0,
         "unit_name": "piece"
