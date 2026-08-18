@@ -1,0 +1,61 @@
+{% set cur = request.session.get('lang', 'en') %}
+<!DOCTYPE html>
+<html lang="{{ cur }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gourmant{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <a class="brand" href="/">Gourmant</a>
+        <div class="nav-right">
+            {% if request.session.get("user_id") %}
+                <span>{{ request.session.get("first_name") }}</span>
+                <details class="nav-menu">
+                    <summary class="nav-menu-trigger" aria-label="{{ _('Menu') }}">
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                        <span class="hamburger-bar"></span>
+                    </summary>
+                    <div class="nav-menu-panel">
+                        {% if request.session.get("role") == "admin" %}
+                        <a href="/admin/users" class="nav-menu-item">{{ _("Admin") }}</a>
+                        {% endif %}
+                        <a href="/account" class="nav-menu-item">{{ _("Account") }}</a>
+                        <form method="post" action="/logout" style="margin:0">
+                            <button type="submit" class="nav-menu-item nav-menu-item-btn">{{ _("Log out") }}</button>
+                        </form>
+                    </div>
+                </details>
+            {% else %}
+                <a href="/login" class="btn">{{ _("Log in") }}</a>
+            {% endif %}
+            <form method="post" action="/set-language" style="margin:0">
+                <select name="lang" class="lang-select" onchange="this.form.submit()" aria-label="Language">
+                    <option value="en" {% if cur == 'en' %}selected{% endif %}>EN</option>
+                    <option value="fr" {% if cur == 'fr' %}selected{% endif %}>FR</option>
+                    <option value="de" {% if cur == 'de' %}selected{% endif %}>DE</option>
+                    <option value="nl" {% if cur == 'nl' %}selected{% endif %}>NL</option>
+                </select>
+            </form>
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <script>
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('details.nav-menu').forEach(function (d) {
+                if (!d.contains(e.target)) d.removeAttribute('open');
+            });
+        });
+    </script>
+    {% block foot %}{% endblock %}
+</body>
+</html>

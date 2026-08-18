@@ -6,10 +6,59 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "alembic>=1.18.4",
+    "babel>=2.18.0",
+    "bcrypt>=5.0.0",
     "fastapi>=0.135.3",
+    "itsdangerous>=2.2.0",
+    "jinja2>=3.1.6",
     "psycopg[binary]>=3.3.3",
     "pydantic-settings>=2.13.1",
+    "pillow>=10.0",
+    "python-multipart>=0.0.26",
     "redis>=7.4.0",
+    "slowapi>=0.1.9",
     "sqlalchemy>=2.0.49",
     "uvicorn[standard]>=0.44.0",
+    "zxcvbn>=4.5.0",
 ]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.10",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=app --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.run]
+omit = ["app/models/__init__.py", "app/database.py", "app/scripts/build_demo_recipes.py", "app/scripts/seed_admin.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "N",    # pep8-naming
+    "RUF",  # ruff-specific rules
+]
+ignore = [
+    "B008",  # Depends()/Form() in function defaults is the FastAPI pattern
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

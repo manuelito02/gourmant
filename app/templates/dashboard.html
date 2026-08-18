@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% macro page_url(p) %}
+  {%- set parts = [] -%}
+  {%- if filter_q -%}{%- set _ = parts.append("q=" ~ filter_q | urlencode) -%}{%- endif -%}
+  {%- if filter_sort and filter_sort != "date_desc" -%}{%- set _ = parts.append("sort=" ~ filter_sort) -%}{%- endif -%}
+  {%- for t in filter_types -%}{%- set _ = parts.append("types=" ~ t) -%}{%- endfor -%}
+  {%- if filter_classification -%}{%- set _ = parts.append("classification=" ~ filter_classification) -%}{%- endif -%}
+  {%- if p > 1 -%}{%- set _ = parts.append("page=" ~ p) -%}{%- endif -%}
+  /dashboard{% if parts %}?{{ parts | join("&") }}{% endif %}
+{%- endmacro %}
+
+{% block title %}{{ _("Recipes") }} — Gourmant{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>{{ _("Recipes") }}</h1>
+        <a href="/recipes/new" class="btn-primary">{{ _("+ New recipe") }}</a>
+    </div>
+
+    <!-- ── Filters ── -->
+    <form method="get" action="/dashboard" id="filter-form" class="filter-bar" novalidate>
+
+        <div class="filter-row">
+            <input type="text" name="q" id="filter-q" value="{{ filter_q }}"
+                   placeholder="{{ _('Search…') }}" class="filter-search" autocomplete="off">
+            <select name="classification" class="filter-sort" onchange="this.form.submit()">
+                <option value="" {% if not filter_classification %}selected{% endif %}>{{ _("All diets") }}</option>
+                {% for dc in diet_classifications %}
+                <option value="{{ dc.value }}" {% if filter_classification == dc.value %}selected{% endif %}>{{ dc.label }}</option>
+                {% endfor %}
+            </select>
+            <select name="sort" class="filter-sort" onchange="this.form.submit()">
+                <option value="date_desc" {% if filter_sort == 'date_desc' %}selected{% endif %}>{{ _("Newest first") }}</option>
+                <option value="date_asc"  {% if filter_sort == 'date_asc'  %}selected{% endif %}>{{ _("Oldest first") }}</option>
+                <option value="title_asc" {% if filter_sort == 'title_asc' %}selected{% endif %}>{{ _("Title A–Z") }}</option>
+                <option value="title_desc"{% if filter_sort == 'title_desc'%}selected{% endif %}>{{ _("Title Z–A") }}</option>
+            </select>
+            {% if has_filters %}
+            <a href="/dashboard" class="filter-clear">{{ _("Clear filters") }}</a>
+            {% endif %}
+        </div>
+
+        <div class="filter-row">
+            <span class="filter-label">{{ _("Type") }}</span>
+            {% for rt in recipe_types %}
+            <label class="filter-type-pill">
+                <input type="checkbox" name="types" value="{{ rt.id }}" class="sr-only"
+                       {% if rt.id in filter_types %}checked{% endif %}
+                       onchange="this.form.submit()">
+                {{ _(rt.name) }}
+            </label>
+            {% endfor %}
+        </div>
+
+    </form>
+
+    {% if recipes %}
+    <div class="recipe-grid">
+        {% for recipe in recipes %}
+        <a href="/recipes/{{ recipe.id }}" class="recipe-card">
+            {% if recipe.image_filename %}
+            <img class="recipe-card-thumb" src="/uploads/thumb_{{ recipe.image_filename }}"
+                 alt="{{ recipe.title }}" loading="lazy">
+            {% endif %}
+            <div class="recipe-card-type">{{ _(recipe.type.name) }}</div>
+            <div class="recipe-card-diet recipe-card-diet--{{ recipe.classification.value }}">{{ _(recipe.classification.value.capitalize()) }}</div>
+            <h2 class="recipe-card-title">{{ recipe.title }}</h2>
+            {% if recipe.description %}
+            <p class="recipe-card-desc">{{ recipe.description }}</p>
+            {% endif %}
+            <div class="recipe-card-meta">
+                {% if recipe.servings %}{{ recipe.servings }} {{ _("servings") }} · {% endif %}{{ recipe.created_at.strftime("%d %b %Y") }}
+            </div>
+            <div class="recipe-card-author">{{ recipe.user.first_name }} {{ recipe.user.last_name }}</div>
+        </a>
+        {% endfor %}
+    </div>
+
+    {% if total_pages > 1 %}
+    <nav class="pagination">
+        {% if page > 1 %}
+        <a href="{{ page_url(page - 1) }}" class="pagination-btn">← {{ _("Previous") }}</a>
+        {% else %}
+        <span class="pagination-btn pagination-btn--disabled">← {{ _("Previous") }}</span>
+        {% endif %}
+        <span class="pagination-info">{{ _("Page %(n)s of %(m)s") % {"n": page, "m": total_pages} }}</span>
+        {% if page < total_pages %}
+        <a href="{{ page_url(page + 1) }}" class="pagination-btn">{{ _("Next") }} →</a>
+        {% else %}
+        <span class="pagination-btn pagination-btn--disabled">{{ _("Next") }} →</span>
+        {% endif %}
+    </nav>
+    {% endif %}
+
+    {% else %}
+    <div class="empty-state">
+        {% if has_filters %}
+        <p>{{ _("No recipes match your filters.") }}</p>
+        <a href="/dashboard" class="btn-primary">{{ _("Clear filters") }}</a>
+        {% else %}
+        <p>{{ _("No recipes yet.") }}</p>
+        <a href="/recipes/new" class="btn-primary">{{ _("Create your first recipe") }}</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+<script>
+(function () {
+    // ── Text search debounce ──────────────────────────────────────────────────
+    const searchInput = document.getElementById('filter-q');
+    let searchTimer;
+    searchInput.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => document.getElementById('filter-form').submit(), 400);
+    });
+    searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { clearTimeout(searchTimer); this.form.submit(); }
+    });
+
+
+}());
+</script>
+{% endblock %}

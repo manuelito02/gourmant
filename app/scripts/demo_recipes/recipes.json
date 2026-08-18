@@ -1,0 +1,5412 @@
+[
+  {
+    "title": "Poulet au vin jaune",
+    "description": "...et aux morilles ! Technique du poulet sauté en sauce.",
+    "type_name": "Sauce",
+    "servings": 8,
+    "ingredients": [
+      {
+        "name": "os poulet fermier",
+        "amount": 1.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "oignon",
+        "amount": 300.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "échalotes",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre doux",
+        "amount": 60.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "huile d’arachide",
+        "amount": 5.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "ousses d'ail écrasées",
+        "amount": 3.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "une bouteille de vin Jaune",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "1/2 litre de fond blanc bien corsé",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "1/2 l de crème fraîche double entière",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "champignons de Paris",
+        "amount": 400.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "morilles fraîches",
+        "amount": 250.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "sel et poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Couper le poulet en huit morceaux de taille équivalente.",
+        "duration": null
+      },
+      {
+        "description": "Dans une grande cocotte, chauffer le beurre et l'huile à feu doux jusqu'à ce que le beurre atteigne le stade noisette et raidir les morceaux côté peau sans coloration, saler et poivrer.",
+        "duration": null
+      },
+      {
+        "description": "Débarrasser puis faire suer sans coloration les oignons et les échalotes ciselés finement et ajouter l'ail écrasé puis déglacer avec la moitié du vin jaune.",
+        "duration": null
+      },
+      {
+        "description": "Replacer les morceaux de poulet dans la cocotte.",
+        "duration": null
+      },
+      {
+        "description": "Atteindre à feu doux le point d'ébullition et couvrir avec le fond blanc de volaille. Cuire pendant 1h30 à couvert et à feu doux.",
+        "duration": null
+      },
+      {
+        "description": "Contrôler la juste cuisson. Débarrasser le poulet.",
+        "duration": null
+      },
+      {
+        "description": "Réduire la cuisson de moitié et verser encore un petit verre de vin jaune pour caractériser la sauce, crémer et laisser réduire à feu doux de moitié. La crème en réduisant apportera une liaison souple et brillante.",
+        "duration": null
+      },
+      {
+        "description": "Pendant ce temps, laver les morilles et les cuire 5 mn dans l'eau frémissante salée et les réserver. Escaloper les champignons de Paris et les cuire à blanc pendant 2 mn (eau-beurre-sel-citron).",
+        "duration": null
+      },
+      {
+        "description": "La sauce est réduite de moitié. Filtrer et passer au chinois étamine en foulant.",
+        "duration": null
+      },
+      {
+        "description": "Replacer les morceaux de coq dans la cocotte et ajouter les champignons de Paris puis les morilles.",
+        "duration": null
+      },
+      {
+        "description": "Ici nous avons remplacé les morilles par des girolles et trompettes de la mort. Reporter à feu doux pour homogénéiser l'ensemble et redonner de la chaleur.",
+        "duration": null
+      }
+    ],
+    "image_filename": "939c11f337de4a7390e0ebbab7015860.jpg"
+  },
+  {
+    "title": "Soupe de poulet au lait de coco",
+    "description": "La soupe idéale après un coup de froid.",
+    "type_name": "Soup",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "les restes de poulet",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cm de racine de gingembre",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "1/2 bâton de citronnelle",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "bouillon de volaille",
+        "amount": 75.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "lait de coco",
+        "amount": 50.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "quelques feuilles de basilic thai ou de coriandre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sauce soja",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "nouilles chinoises",
+        "amount": 100.0,
+        "unit_name": "gram"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Émincer l’oignon et les échalotes et les faire suer dans un peu d'huile d'olive.",
+        "duration": null
+      },
+      {
+        "description": "Mouiller avec le bouillon de volaille et le lait de coco.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter dans le bouillon la citronnelle écrasée et le gingembre en rondelles et laisser infuser à frémissement une dizaine de minutes.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter les morceaux de poulet cuit et les nouilles chinoises.",
+        "duration": null
+      },
+      {
+        "description": "Servir quand les nouilles sont cuites et ajouter à l'envoi la sauce soja et le basilic thaï ciselé (ou la coriandre).",
+        "duration": null
+      }
+    ],
+    "image_filename": "eaae2d29264b43bc81bfce3c76c510fd.jpg"
+  },
+  {
+    "title": "Poulet Teriyaki",
+    "description": "Des blancs de poulet qui gardent leur moelleux grâce à la maîtrise de la cuisson.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "blancs de poulet fermier",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons rouges émincés",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes émincées",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail écrasées",
+        "amount": 4.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "graines de sésame blanc",
+        "amount": 1.0,
+        "unit_name": "cup"
+      },
+      {
+        "name": "huile de sésame brune",
+        "amount": 5.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "sauce teriyaki",
+        "amount": 3.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "vinaigre de riz",
+        "amount": 1.5,
+        "unit_name": "deciliter"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Émincer finement les oignons rouges et les échalotes.",
+        "duration": 1
+      },
+      {
+        "description": "Concasser l'ail.",
+        "duration": 1
+      },
+      {
+        "description": "Inciser superficiellement la surface des blancs de poulet pour éviter la rétractation de la viande pendant la cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Dans une poêle, rissoler ensemble oignons, échalote, ail avec l'huile de sésame.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter ensuite les filets de poulets pour les marquer en cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "La cuisson s'opère à feu modéré.",
+        "duration": 1
+      },
+      {
+        "description": "Retourner la volaille lorsqu'elle commence à être colorée en surface.",
+        "duration": 1
+      },
+      {
+        "description": "Répéter cette opération pendant toute la durée de la cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Déglacer ensuite les sucs avec le vinaigre de riz et la sauce teriyaki.",
+        "duration": 1
+      },
+      {
+        "description": "Les sucs se décollent et on va terminer la cuisson des blancs de poulet dans ce mélange.",
+        "duration": 1
+      },
+      {
+        "description": "Retourner le poulet dans la sauce, couvrir et prolonger la cuisson 10 minutes à feu doux.",
+        "duration": 1
+      },
+      {
+        "description": "Ôter le couvercle et augmenter l'allure de cuisson pour accélérer la réduction de la sauce.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter les graines de sésame et retourner à nouveau les filets de poulets dans la sauce.",
+        "duration": 1
+      },
+      {
+        "description": "Débarrasser le poulet dans un plat à four et terminer la réduction de la sauce.",
+        "duration": 1
+      },
+      {
+        "description": "Napper les blancs de volaille avec la sauce réduite et placer au four à 70°C pour les maintenir au chaud jusqu'au moment de servir.",
+        "duration": 1
+      },
+      {
+        "description": "Tailler les blancs de poulet en aiguillettes pour le dressage des assiettes.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "30da26e5951f47e9a03d969d27600e33.jpg"
+  },
+  {
+    "title": "Découper une volaille à cru en 8 morceaux - La découpe pour poulet fermier",
+    "description": "Le découpe en 8 morceaux pour poulet fermier",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "gros poulet fermier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "La volaille a tout d'abord été coupée en quarts, deux flans et deux cuisses.",
+        "duration": null
+      },
+      {
+        "description": "Prendre la cuisse à pleine main, la plier et inciser à la jointure des os.",
+        "duration": null
+      },
+      {
+        "description": "Les tendons sont coupés et la cuisse prête à être démontée.",
+        "duration": null
+      },
+      {
+        "description": "Une fois les tendons sectionnés, trancher à la frontière du pilon et du gras de cuisse.",
+        "duration": null
+      },
+      {
+        "description": "Replier la cuisse pour bien viser entre les deux os. Forcer en dégageant l'os de son logement en opérant une force contradictoire",
+        "duration": null
+      },
+      {
+        "description": "Couper les flancs en deux morceaux proportionnés.",
+        "duration": null
+      },
+      {
+        "description": "Le flanc est coupé en deux.",
+        "duration": null
+      },
+      {
+        "description": "Le poulet est découpé en huit morceaux.",
+        "duration": null
+      }
+    ],
+    "image_filename": "a40691238bfc4d4a955d1b4fd834d89f.jpg"
+  },
+  {
+    "title": "Découper une volaille à cru en 4 ou 8 morceaux - La découpe des cuisses",
+    "description": "Cette découpe est utilisée pour le poulet sauté.",
+    "type_name": "Main course",
+    "servings": null,
+    "ingredients": [
+      {
+        "name": "un gros poulet fermier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Vous aurez préalablement vidé et flambé la volaille pour ôter tout duvet persistant. Poser la volaille sur le flanc et prendre la cuisse à pleine main, la tirer vers vous et inciser...",
+        "duration": null
+      },
+      {
+        "description": "Inciser la peau jusqu'au sot-l'y-laisse. Dégager la cuisse en la soulevant délicatement pour laisser apparaître la boule de l'os du fémur.",
+        "duration": null
+      },
+      {
+        "description": "Dégager le sot-l'y laisse et contourner le cartilage de l'os du fémur.",
+        "duration": null
+      },
+      {
+        "description": "Désolidariser. L'os n'est pas abîmé. On voit bien l'emplacement du sot-l'y-laisse.",
+        "duration": null
+      },
+      {
+        "description": "La première cuisse est terminée. Procéder de la même façon pour la deuxième cuisse.",
+        "duration": null
+      },
+      {
+        "description": "Le poulet a été débarrassé de ses cuisses. Nous allons maintenant enlever la colonne vertébrale.",
+        "duration": null
+      },
+      {
+        "description": "Découper la peau en travers de la cage thoracique et jusqu'à la colonne vertébrale.",
+        "duration": null
+      },
+      {
+        "description": "Ouvrir naturellement.",
+        "duration": null
+      },
+      {
+        "description": "Plier la colonne qui se brisera sans difficulté.",
+        "duration": null
+      },
+      {
+        "description": "Briser la colonne pour ne garder que le bréchet et les deux flancs accessibles.",
+        "duration": null
+      },
+      {
+        "description": "Placer le reste de la bête sur la planche propre. Nous allons découper les flancs de la volaille.",
+        "duration": null
+      }
+    ],
+    "image_filename": "ff6758e541e3440e8a8f58d0a14f2e86.jpg"
+  },
+  {
+    "title": "Poulet au vinaigre",
+    "description": "Un plat de poulet riche en saveurs.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "poulet fermier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "échalotes",
+        "amount": 6.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vinaigre de vin rouge",
+        "amount": 1.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "coulis de tomates",
+        "amount": 2.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "crème entière",
+        "amount": 2.0,
+        "unit_name": "deciliter"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Découper la volaille à cru et en huit.",
+        "duration": 5
+      },
+      {
+        "description": "Rissoler les morceaux au beurre noisette dans un sautoir adapté.",
+        "duration": 5
+      },
+      {
+        "description": "Placer les morceaux dans un plat allant au four à 180°C pendant 30 minutes.",
+        "duration": 5
+      },
+      {
+        "description": "Puis suer les échalotes dans le beurre de cuisson.",
+        "duration": 5
+      },
+      {
+        "description": "Déglacer avec le vinaigre.",
+        "duration": 5
+      },
+      {
+        "description": "Réduire presqu’à sec.",
+        "duration": 5
+      },
+      {
+        "description": "Ajouter le coulis de tomate et réduire d’un tiers, crémer.",
+        "duration": 5
+      },
+      {
+        "description": "Replacer les morceaux de volaille dans le sautoir et couvrir avec la sauce obtenue.",
+        "duration": 5
+      },
+      {
+        "description": "Finaliser la cuisson par un mijotage doux pendant une quinzaine de minutes.",
+        "duration": 5
+      }
+    ],
+    "image_filename": "e30c4d34d88f45c4b6157edb83302f63.jpg"
+  },
+  {
+    "title": "Poulet chasseur",
+    "description": "Classiquement appelé \"poulet sauté chasseur\".",
+    "type_name": "Main course",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "os poulet fermier",
+        "amount": 1.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre",
+        "amount": 30.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "champignons de Paris",
+        "amount": 250.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "échalotes",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin blanc sec",
+        "amount": 3.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "cognac",
+        "amount": 5.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "fond brun de volaille lié",
+        "amount": 3.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "cerfeuil",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "persil",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "estragon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tomates",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "échalotes",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "une noix de beurre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym et laurier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Découper le poulet en 8.",
+        "duration": 5
+      },
+      {
+        "description": "Préparer un concassé de tomates réduit.",
+        "duration": 5
+      },
+      {
+        "description": "Émincer les champignons, ciseler les échalotes et hacher les herbes aromatiques.",
+        "duration": 5
+      },
+      {
+        "description": "Reconstituer le fond brun de volaille et y ajouter les parures de volailles et et champignons.",
+        "duration": 5
+      },
+      {
+        "description": "Dans la cocotte, rissoler les morceaux de poulet côté peau d'abord dans un peu de beurre chaud et retourner plusieurs fois en cours de coloration.",
+        "duration": 5
+      },
+      {
+        "description": "Débarrasser les morceaux dans une plaque à rôtir ou un sautoir et placer au four modéré et à couvert (170°C) pendant 30 minutes.",
+        "duration": 5
+      },
+      {
+        "description": "Pendant ce temps rissoler les champignons émincés dans la cocotte, dans le beurre de rissolage puis ajouter les échalotes ciselées.",
+        "duration": 5
+      },
+      {
+        "description": "Flamber au cognac et déglacer au vin blanc. Décoller les sucs, et baisser le feu. Réduire à feu doux. Ajouter le concassé de tomates sur les champignons.",
+        "duration": 5
+      },
+      {
+        "description": "Ajouter le fonds brun de volaille passé au chinois. Réduire l'ensemble, placer les morceaux de poulet dans la cocotte et terminer la cuisson 10 mn à frémissement. Ajouter les herbes concassées avant le service.",
+        "duration": 5
+      }
+    ],
+    "image_filename": "1999563c030349789d13218d5f64bb2d.jpg"
+  },
+  {
+    "title": "Fricassée de volaille à l'ancienne",
+    "description": "Une recette de poulet en sauce savoureuse et sans gluten.",
+    "type_name": "Sauce",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Un gros poulet fermier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "échalotes",
+        "amount": 5.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "un petit bouquet garni",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "crème fraîche",
+        "amount": 2.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "eau",
+        "amount": 75.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "petits oignons blancs",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "champignons de Paris",
+        "amount": 300.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "cuiller à soupe rase d'arrow",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "root",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "noix de muscade",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Découper le poulet en huit morceaux. Saler et poivrer.",
+        "duration": null
+      },
+      {
+        "description": "Nettoyer et éplucher les champignons.",
+        "duration": null
+      },
+      {
+        "description": "Pour réaliser le fond de volaille, faire suer dans un sautoir 2 échalotes et 1 oignon en gros dés avec les parures de poulet et de champignons. Ajouter un bouquet garni.",
+        "duration": null
+      },
+      {
+        "description": "Mouiller avec l'eau et porter à frémissement pendant 30 minutes et à couvert. Passer au chinois en fin de cuisson.",
+        "duration": null
+      },
+      {
+        "description": "Pendant ce temps couvrir les petits oignons avec de l'eau et une noisette de beurre et cuire 10 minutes à frémissement.",
+        "duration": null
+      },
+      {
+        "description": "Dans un sautoir, raidir les morceaux de poulet avec un peu de beurre sans coloration et sur les deux faces.",
+        "duration": null
+      },
+      {
+        "description": "Débarrasser les morceaux de poulet raidis.",
+        "duration": null
+      },
+      {
+        "description": "Sauter les champignons escalopés dans le même sautoir sans les colorer et réserver.",
+        "duration": null
+      },
+      {
+        "description": "Toujours dans le même sautoir suer les 3 échalotes ciselées en ajoutant une noisette de beurre si nécessaire et replacer le poulet raidi.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter le fond de volaille filtré à hauteur.",
+        "duration": null
+      },
+      {
+        "description": "Et cuire à couvert et à frémissement pendant 40 minutes.",
+        "duration": null
+      },
+      {
+        "description": "En fin de cuisson réserver le poulet et réduire d'un tiers le fond de volaille.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter la crème fraîche et réduire à nouveau d'un tiers.",
+        "duration": null
+      },
+      {
+        "description": "Délayer l'arrow-root dans un peu d'eau froide et verser dans la sauce en mélangeant au fouet jusqu'à obtenir la consistance voulue.",
+        "duration": null
+      },
+      {
+        "description": "Rectifier l'assaisonnement si nécessaire et ajouter la noix de muscade.",
+        "duration": null
+      },
+      {
+        "description": "Replacer tous les éléments dans la sauce et remettre à température à feu doux.",
+        "duration": null
+      }
+    ],
+    "image_filename": "e164b2469a6642e1a786d8fea38ec3c9.jpg"
+  },
+  {
+    "title": "Blanquette de poulet",
+    "description": "Une recette simple et savoureuse de cuisine familiale.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "blancs de volaille fermiers",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon piqué de 2 clous de girofle",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carotte",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vert de poireau",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "branche de céleri",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "laurier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "champignons de Paris",
+        "amount": 300.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "petits oignons grelots",
+        "amount": 300.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre",
+        "amount": 80.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "farine",
+        "amount": 80.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "muscade",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "bouillon de volaille (fond blanc)",
+        "amount": 1.0,
+        "unit_name": "liter"
+      },
+      {
+        "name": "crème",
+        "amount": 2.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Eplucher la carotte et la tailler en mirepoix.",
+        "duration": 1
+      },
+      {
+        "description": "Eplucher l'oignon et piquer avec les clous de girofle.",
+        "duration": 1
+      },
+      {
+        "description": "Nettoyer et émincer grossièrement le vert de poireau et la branche de céleri.",
+        "duration": 1
+      },
+      {
+        "description": "Couper les blancs de poulet en 2 ou 3 morceaux.",
+        "duration": 1
+      },
+      {
+        "description": "Placer le poulet et la garniture aromatique dans un récipient adapté.",
+        "duration": 1
+      },
+      {
+        "description": "Mouiller à hauteur.",
+        "duration": 1
+      },
+      {
+        "description": "Cuire à petits frémissement pendant 20 à 30 minutes.",
+        "duration": 1
+      },
+      {
+        "description": "Décanter la viande en fin de cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Pour le velouté :",
+        "duration": 1
+      },
+      {
+        "description": "Réaliser un roux blanc avec la farine et le beurre.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter en une fois un litre du bouillon de cuisson du poulet.",
+        "duration": 1
+      },
+      {
+        "description": "Mélanger jusqu'à épaississement, crémer et assaisonner (sel, poivre, muscade).",
+        "duration": 1
+      },
+      {
+        "description": "Placer les blancs de poulet dans le velouté et garder au chaud au bain-marie.",
+        "duration": 1
+      },
+      {
+        "description": "Laver, éplucher et escaloper les champignons de Paris.",
+        "duration": 1
+      },
+      {
+        "description": "Cuire les champignons à blanc et les ajouter dans le velouté.",
+        "duration": 1
+      },
+      {
+        "description": "Eplucher et glacer à blanc les petits oignons.",
+        "duration": 1
+      },
+      {
+        "description": "Dresser dans un plat ou directement sur assiette la blanquette et ajouter quelques oignons glacés.",
+        "duration": 1
+      },
+      {
+        "description": "Parsemer d'un peu de persil haché pour la fraîcheur.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "b627cbc349014650b8685d97803699c5.jpg"
+  },
+  {
+    "title": "Waterzoï de poulet",
+    "description": "Un souvenir de mes débuts culinaresques.",
+    "type_name": "Main course",
+    "servings": 60,
+    "ingredients": [
+      {
+        "name": "Un beau poulet fermier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carottes",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "navets",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "blancs de poireaux",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 3.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "feuilles de laurier",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "belles branches de thym",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons cloutés généreusement de girofle",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "quelques grains de poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 80.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "farine",
+        "amount": 80.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "crème liquide",
+        "amount": 1.5,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "jaunes d'oeufs",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "safran et muscade facultatif",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre pour finir",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Tailler les juliennes de carotte, navet et poireaux comme je vous l'ai enseigné.",
+        "duration": null
+      },
+      {
+        "description": "Découper le poulet en 8 sans le désosser.",
+        "duration": null
+      },
+      {
+        "description": "Mettre les morceaux de poulet à cuire dans l'eau avec le reste des légumes, les aromates et la carcasse du poulet. Cuire à feu modéré et à faible ébullition (frémissement)",
+        "duration": null
+      },
+      {
+        "description": "étuver les juliennes au beurre séparément et à la cool, n'oubliez pas de les saler et poivrer.",
+        "duration": null
+      },
+      {
+        "description": "Gérer les cuissons pour garder les légumes cuits à point. Réunissez les juliennes après cuisson.",
+        "duration": null
+      },
+      {
+        "description": "Après une bonne heure minimum à faible ébullition, vérifier la cuisson (attention les cuisses de poulet fermier méritent une cuisson prolongée). Débarrasser les morceaux dans une plaque.",
+        "duration": null
+      },
+      {
+        "description": "Rendre les morceaux présentables en enlevant les peaux, les petits os ceux du bréchet par exemple), les tendons restants.",
+        "duration": null
+      },
+      {
+        "description": "Une fois les morceaux parés, couvrir avec le bouillon (le fonds blanc de volaille) filtré au chinois et bien chaud.",
+        "duration": null
+      },
+      {
+        "description": "Couvrir à hauteur et maintenir au bain marie, pendant la finition.",
+        "duration": null
+      },
+      {
+        "description": "Confectionner le velouté de volaille, en faisant un roux avec le beurre et la farine puis en versant 1 litre de bouillon filtré en une fois sur le roux blanc, hors du feu. Délayer au fouet pour disperser la liaison et reporter au feu modéré sans cesser de remuer.",
+        "duration": null
+      },
+      {
+        "description": "Une fois la liaison obtenue (quelques bulles remontantes comme support visuel), lier au mélange de jaunes d'oeufs et crème. Mélanger en vannant. Ajouter la julienne de légumes dans la sauce ou la servir dissociée.",
+        "duration": null
+      },
+      {
+        "description": "Ici j'ai choisi de dresser d'abord les juliennes puis les morceaux de poulet et deux pommes tournées. Les morceaux sont ensuite nappés avec la sauce presque comme un chaud-froid et un petit rappel de julienne pour faire fashion.",
+        "duration": null
+      }
+    ],
+    "image_filename": "af649dad3bba4bd4b7839a164fcdfc64.jpg"
+  },
+  {
+    "title": "Poulet rôti : la bonne cuisson",
+    "description": "Mes conseils pour cuire un poulet rôti à la chair moelleuse et à la peau bien dorée.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "un beau poulet fermier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile neutre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Vérifier la volaille et éliminer si nécessaire les duvets subsistants.",
+        "duration": 6
+      },
+      {
+        "description": "Possiblement vous pourrez saler et poivrer de l’intérieur et y ajouter quelques branches de thym.",
+        "duration": 6
+      },
+      {
+        "description": "Brider le poulet.",
+        "duration": 6
+      },
+      {
+        "description": "Placer le poulet prêt à cuire dans un plat à four de taille adaptée ou une plaque à rôtir.",
+        "duration": 6
+      },
+      {
+        "description": "Badigeonner la peau avec un peu d'huile neutre (arachide, tournesol..) ou beurre fondu.",
+        "duration": 6
+      },
+      {
+        "description": "Placer au four à 170°C pendant environ 1h30 (le temps de cuisson dépend de la qualité de la volaille) .",
+        "duration": 6
+      },
+      {
+        "description": "Inutile de retourner ou arroser le poulet en cours de cuisson.",
+        "duration": 6
+      },
+      {
+        "description": "A l’issue de la cuisson piquer entre la cuisse et l’aile et basculer le poulet.  Un jus limpide et clair devrait s’y échapper, c’est le signe que la volaille est juste cuite.",
+        "duration": 6
+      },
+      {
+        "description": "Enlever la ficelle de bridage et replacer au four monté à 200°C quelques minutes si vous le préférez bien doré.",
+        "duration": 6
+      },
+      {
+        "description": "Débarrasser le poulet dans un autre plat et le réserver au four tempéré à 70°C juste pour le garder chaud.",
+        "duration": 6
+      },
+      {
+        "description": "Pour réaliser le jus, dégraisser, pincer les sucs sur le feu doux (directement dans la plaque à rôtir ou dans une casserole) .",
+        "duration": 6
+      },
+      {
+        "description": "Déglacer avec 5 dl d’eau.  Réduire et passer au chinois.",
+        "duration": 6
+      },
+      {
+        "description": "Dégraissez si nécessaire et réduisez à nouveau pour obtenir un jus corsé.",
+        "duration": 6
+      },
+      {
+        "description": "Le jus est un concentré on en a donc besoin de peu.",
+        "duration": 6
+      },
+      {
+        "description": "Découpez la volaille et servir avec le jus à part.",
+        "duration": 6
+      }
+    ],
+    "image_filename": "18ca125456aa4678bc49180c6f971aa3.jpg"
+  },
+  {
+    "title": "Le poulet fumé",
+    "description": "Poulet entier fumé à chaud au Bradley Smoker.",
+    "type_name": "Main course",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "beau poulet de 1.6 kg",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "laurier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sauce soja",
+        "amount": 3.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "herbes de Provence",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Flamber le poulet en surface au cas où il resterait du duvet et vérifier l'intérieur.",
+        "duration": 20
+      },
+      {
+        "description": "Garnir l'intérieur du poulet avec des herbes aromatiques. Ici nous avons choisi thym et laurier.",
+        "duration": 20
+      },
+      {
+        "description": "Ajouter un peu de sauce soja pour assaisonner l'intérieur.",
+        "duration": 20
+      },
+      {
+        "description": "Badigeonner le poulet d'huile d'olive qui va capter les arômes de fumée. Le poulet n'est pas bridé. Nous l'avons juste maintenu à l'aide d'une brochette.",
+        "duration": 20
+      },
+      {
+        "description": "Assaisonner l'extérieur de sel, poivre et herbes de Provence.",
+        "duration": 20
+      },
+      {
+        "description": "Placer le poulet directement sur la grille du Bradley Smoker préchauffé à 90°C.",
+        "duration": 20
+      },
+      {
+        "description": "Placer les galets de copeaux choisis dans le fumoir et laisser cuire et fumer pendant 4 heures.",
+        "duration": 20
+      },
+      {
+        "description": "En cours de cuisson vous pouvez badigeonner à nouveau le poulet avec un peu d'huile si nécessaire.",
+        "duration": 20
+      },
+      {
+        "description": "A la fin de la cuisson le poulet est parfait. Il n'a pas perdu de volume.",
+        "duration": 20
+      },
+      {
+        "description": "A consommer chaud ou froid comme un poulet rôti.",
+        "duration": 20
+      },
+      {
+        "description": "A la découpe on constate que la viande est moelleuse et légèrement rosée puisque la température n'a pas dépassé les 90°C.",
+        "duration": 20
+      },
+      {
+        "description": "Quelques aiguillettes de poulet fumé pour garnir une pizza  c'est top !",
+        "duration": 20
+      }
+    ],
+    "image_filename": "29bc76e02696418399e4a3d9a3c4cbdb.jpg"
+  },
+  {
+    "title": "Ailerons de poulet rôtis aux herbes",
+    "description": "Chicken wings à la française aux herbes de Provence, à température douce",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "ailerons de poulet",
+        "amount": 20.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile",
+        "amount": 1.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "herbes de Provence",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "paprika",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Vérifier que les ailerons de poulet soient propres (absence de duvets).",
+        "duration": 17
+      },
+      {
+        "description": "Mélanger l'huile avec les herbes de Provence et le paprika.",
+        "duration": 17
+      },
+      {
+        "description": "Enrober les ailerons de cette marinade.",
+        "duration": 17
+      },
+      {
+        "description": "Saler et poivrer.",
+        "duration": 17
+      },
+      {
+        "description": "Placer au four à 100°C pendant 2 heures.",
+        "duration": 17
+      },
+      {
+        "description": "Vérifier en cours de cuisson.",
+        "duration": 17
+      },
+      {
+        "description": "A l'issue de la cuisson placer les ailerons sous le grill pour les colorer avant de servir.",
+        "duration": 17
+      }
+    ],
+    "image_filename": "d19bfcf321b1440681b5034e72a5df38.jpg"
+  },
+  {
+    "title": "Irish Guinness chicken stew",
+    "description": "D'après un ragoût au poulet traditionnel",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "cuisses de poulet fermier",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "os oignons",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "bière stout. de préférence Guinness",
+        "amount": 45.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "bouillon de poulet",
+        "amount": 30.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "lardons",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "ousses d’ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "carottes",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "branches de céleri",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "pommes de terre",
+        "amount": 8.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "farine",
+        "amount": 30.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "feuilles de laurier",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs de thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Sel. poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Pelez l'ail et les oignons et hachez-les. Préparez le bouillon. Coupez les cuisses de poulet en séparant les pilons.",
+        "duration": 18
+      },
+      {
+        "description": "Mélangez la bière, 25 centilitres de bouillon, l'ail, le laurier et le thym. Réservez.",
+        "duration": 18
+      },
+      {
+        "description": "Étalez les oignons au fond d'une cocotte. Déposez les morceaux de poulet sur le lit d'oignons et répandez les lardons dessus.",
+        "duration": 18
+      },
+      {
+        "description": "Versez le mélange de bière et bouillon sur le poulet. Couvrez, portez à ébullition, baissez le feu et laissez mijoter une première heure.",
+        "duration": 18
+      },
+      {
+        "description": "Lavez, effilez et tronçonnez finement le céleri. Pelez et coupez les carottes en rondelles. Ajoutez le tout dans la cocotte et poursuivez la cuisson encore une heure.",
+        "duration": 18
+      },
+      {
+        "description": "Pelez les pommes de terre et coupez-les en huit.",
+        "duration": 18
+      },
+      {
+        "description": "Retirez les morceaux de poulet de la cocotte et réservez.",
+        "duration": 18
+      },
+      {
+        "description": "Mettez les pommes de terre dans la cocotte et laissez-les cuire à feu doux un quart d’heure à couvert.",
+        "duration": 18
+      },
+      {
+        "description": "Mélangez bien la farine au reste de bouillon et un peu de jus de cuisson. Mixez en cas de grumeaux. Versez la farine diluée dans la cocotte tout en remuant et en poursuivant la cuisson à couvert un quart d’heure à feu doux.",
+        "duration": 18
+      },
+      {
+        "description": "Remettez le poulet dans la cocotte, rectifiez l'assaisonnement en sel et poivre et gardez au chaud jusqu'au moment de servir. Servez dans des assiettes creuses avec le pain grillé, du soda bread ou un bon pain de seigle.",
+        "duration": 18
+      }
+    ],
+    "image_filename": "0063e3f5e7184b2bbb978a5722dbdb2b.jpg"
+  },
+  {
+    "title": "Beignets de chou fleur sauce blanche au poulet",
+    "description": "Tajine de beignets de chou fleur au poulet fermier, sauce blanche à la cannelle et au citron (marka brouklou maquli), un plat typique du terroir bônois, de la cuisine citadine de tous les jours et de ramadan. Servir chaud avec des quartiers de citron et parsemer de persil.",
+    "type_name": "Sauce",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "poulet fermier fermier en morceaux ou de la viande à raison de 1 bon morceau par personne",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "chou fleur",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon émincé",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs de smen beurre clarifié",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "bâtons de cannelle",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "petite cc de cannelle en poudre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cc de poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poignée de pois chiches trempés la veille",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs de farine",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "petits œufs",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "eau froide selon le besoin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs de persil ciselé",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "jaunes d'œufs",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs de persil",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "jus de 1 gros citron",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile pour friture",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Diviser le chou fleur en bouquets",
+        "duration": 2
+      },
+      {
+        "description": "Rincer abondement et soigneusement entre les branches pour dénicher d'éventuels occupants",
+        "duration": 2
+      },
+      {
+        "description": "Blanchir le chou fleur sans trop le cuire",
+        "duration": 2
+      },
+      {
+        "description": "Filtrer et laisser égoutter",
+        "duration": 2
+      },
+      {
+        "description": "Parallèlement faire rissoler les morceaux de poulet dans le gras",
+        "duration": 2
+      },
+      {
+        "description": "Ajouter l'oignon émincé et continuer de faire rissoler",
+        "duration": 2
+      },
+      {
+        "description": "Ajouter les bâtons de cannelle",
+        "duration": 2
+      },
+      {
+        "description": "Mouiller avec de l'eau chaude et couvrir le poulet",
+        "duration": 2
+      },
+      {
+        "description": "Ajouter les pois chiches et le poivre",
+        "duration": 2
+      },
+      {
+        "description": "Couvrir et laisser cuire poulet et pois chiches",
+        "duration": 2
+      },
+      {
+        "description": "A mi cuisson des pois chiches, ajouter le sel, continuer la cuisson",
+        "duration": 2
+      },
+      {
+        "description": "Préparer la pâte à frire, elle doit être assez épaisse de façon à ce qu'elle couvre le chou fleur, en tout cas pas liquide",
+        "duration": 2
+      },
+      {
+        "description": "Chauffer une friture",
+        "duration": 2
+      },
+      {
+        "description": "Plonger les bouquets de chou fleur dans la pâte, puis dans la friture, ils doivent être dorés",
+        "duration": 2
+      },
+      {
+        "description": "A la cocotte rectifier l'assaisonnement",
+        "duration": 2
+      },
+      {
+        "description": "Récupérer les morceaux de poulet",
+        "duration": 2
+      },
+      {
+        "description": "Ranger les beignets de chou fleur dans la marmite",
+        "duration": 2
+      },
+      {
+        "description": "Réajuster la sauce si besoin mais les choux fleurs ne doivent pas flotter dans le bouillon, ils doivent être sous la sauce.",
+        "duration": 2
+      },
+      {
+        "description": "Remettre le poulet dessus",
+        "duration": 2
+      },
+      {
+        "description": "Donner quelques bouillons puis retirer du feu",
+        "duration": 2
+      },
+      {
+        "description": "Battre les jaunes d'œufs avec le citron et le persil et verser cette liaison dans la cocotte puis bouger en un va et viens et en la tournant doucement",
+        "duration": 2
+      },
+      {
+        "description": "Servir chaud avec des quartiers de citron et parsemer de persil",
+        "duration": 2
+      }
+    ],
+    "image_filename": "58e4d128a53b43e7877ade61ab27e1a2.jpg"
+  },
+  {
+    "title": "Chicken irish stew",
+    "description": "On s’inspire ici du célèbre Irish stew, mais en troquant l’agneau pour du poulet, plus doux et plus léger. Les pommes de terre, emblématiques de la table irlandaise, restent au cœur de la recette. Le tout cuit lentement au four, jusqu’à devenir fondant et parfumé, pour offrir un plat simple et chaleureux, idéal quand le temps est gris et que l’on a besoin d’un bon plat réconfortant.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "cuisses de poulet entières",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "pommes de terre moyennes",
+        "amount": 8.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carottes",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cc de paprika doux",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cc de cumin en poudre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cc de fleur de sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs d’huile neutre",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "branches de thym + 1 feuille de laurier",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tablette de bouillon de poule dans 1/2 l d'eau",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs de Maïzena (ou fécule de pomme de terre)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cs à soupe de ciboulette ou de persil plat ciselés",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Coupez les cuisses de poulet pour séparer le haut de la cuisse du pilon. Placez-les dans un saladier et les saupoudrer de sel, de paprika et de cumin. Mélangez bien. Laissez le poulet ainsi s'imprégner pendant la préparation des légumes.",
+        "duration": 5
+      },
+      {
+        "description": "Épluchez et hachez les oignons. Épluchez et coupez les pommes de terre et les carottes en rondelles.",
+        "duration": 5
+      },
+      {
+        "description": "Faites revenir les morceaux de poulet dans l'huile chaude dans une cocotte en fonte (ou un faitout) allant au four jusqu'à ce qu'ils soient dorés. Réservez-les dans une assiette.",
+        "duration": 5
+      },
+      {
+        "description": "Préchauffez le four à 200°. Faites bouillir l’eau et diluez la tablette de bouillon dedans.",
+        "duration": 5
+      },
+      {
+        "description": "Remplacez, dans la cocotte, le poulet par les légumes, faites-les sauter quelques secondes.",
+        "duration": 5
+      },
+      {
+        "description": "Déposez le poulet dessus, enfoncez le thym dans les légumes et arrosez de bouillon de poulet (ou de fond de veau) et couvrez. Enfournez 30 minutes.",
+        "duration": 5
+      },
+      {
+        "description": "Diluez la Maïzena dans 2 cuillerées d'eau froide. Découvrez la cocotte au bout de 30 minutes, ajoutez la fécule diluée et arrosez généreusement le poulet de jus de cuisson.",
+        "duration": 5
+      },
+      {
+        "description": "Remettez 15 à 20 minutes au four jusqu'à ce que le poulet soit bien doré.",
+        "duration": 5
+      },
+      {
+        "description": "Servez parsemé d'herbes fraîches, ciboulette ciselée ou persil plat ciselé.",
+        "duration": 5
+      }
+    ],
+    "image_filename": "053c2400bf3d4bbcba6fd5bddac146ac.jpg"
+  },
+  {
+    "title": "One pot de crozets à la courge butternut et au poulet",
+    "description": "Après les excès de décembre, place à une cuisine plus légère et raisonnable, sans rien sacrifier au plaisir. Ce one pot de crozets à la courge butternut et au poulet coche toutes les cases : équilibré, gourmand et facile à préparer.\n\nJ’aime particulièrement le principe du plat unique : tout cuit dans la même poêle, les saveurs se mêlent harmonieusement et la vaisselle reste minimale. La butternut, légume phare de l’hiver, apporte douceur et fondant. Les crozets, avec leur forme et leur texture, sont parfaits pour ce type de cuisson. On y ajoute du poulet fermier, quelques champignons, un peu de maïs pour le contraste, et on laisse mijoter doucement dans un bouillon parfumé au vin blanc.\n\nUn plat simple, chaleureux et vraiment savoureux… direction la cuisine ?",
+    "type_name": "Soup",
+    "servings": 2,
+    "ingredients": [
+      {
+        "name": "c à soupe d'huile d'olives",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalote finement émincée",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "environ de chair de courge butternut. épluchée et découpée en cubes de 1.5 cm",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "crozets (pesés à sec)",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "vin blanc sec (type Riesling...)",
+        "amount": 20.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "bouillon volaille chaud",
+        "amount": 40.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "filet de poulet fermier d'environ 230-250 gr. découpé en cubes de 1.5 cm",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "petite boîte de lamelles de champignons de Paris égouttées 115 gr",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "boîte de maïs doux égoutté 165 gr",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "c à café de curry de Madras",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel (en complément du sel contenu dans le bouillon)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "à 3 c à soupe de crème fraîche entière ou allégée",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Dans une poêle antiadhésive, faire dorer 3 à 4 min les cubes de poulet dans 1 c à soupe d'huile d'olive, saler un peu. Puis rajouter l'échalote émincée pour la blondir. Puis sortir le tout sur une assiette et réserver.",
+        "duration": 6
+      },
+      {
+        "description": "Rajouter 1 c à soupe d'huile d'olive dans la poêle et faire revenir les lamelles de champignons + 1 c à café de curry + 500 gr de cubes de butternut pendant environ 8 min.",
+        "duration": 6
+      },
+      {
+        "description": "Déglacer avec 20 cl de vin blanc + 40 cl de bouillon chaud. Rajouter un peu de sel + 200 gr de crozets secs + le maïs égoutté et mélanger. Couvrir et laisser mijoter 10 min en remuant plusieurs fois.",
+        "duration": 6
+      },
+      {
+        "description": "Puis incorporer les cubes de poulet réservés (au besoin, rajouter quelques cl d'eau chaude pour éviter que cela n'attache) et continuer de faire mijoter à couvert pendant 10 min, en pensant à remuer le fond de temps à autre.",
+        "duration": 6
+      },
+      {
+        "description": "Rajouter 1 à 3 c à soupe de crème fraîche. Mélanger et goûter, et au besoin, ajuster l'assaisonnement.",
+        "duration": 6
+      }
+    ],
+    "image_filename": "f1e36f6be9174343a428af0ae6c0f5d2.jpg"
+  },
+  {
+    "title": "Gyozas de poulet",
+    "description": "La classique bouchée japonaise, en toute simplicité. Dégustez les gyozas avec de la sauce soja ou un mélange de sauce soja et de vinaigre de riz noir.",
+    "type_name": "Sauce",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "blanc de poulet",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "os shiitakés",
+        "amount": 4.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "jeunes oignons",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "2cm de gingembre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "blanc d’œuf",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "càs de bouillon de poule asiatique",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "càc de sucre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "càc de sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "1/2 càc de poivre blanc moulu",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "càc d’huile de sésame",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "càs de sauce soja claire",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "feuilles de pâte à gyozas",
+        "amount": 20.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "1. Mettre ensemble dans le robot mixer tous les ingrédients à l’exception de deux shiitakés et du vert des jeunes oignons. Mixer jusqu’à obtention d’une pâte légèrement plus claire que du poulet.",
+        "duration": 1
+      },
+      {
+        "description": "2. Hacher grossièrement les deux shiitakés et le vert des oignons, puis les incorporer à l’appareil pour y ajouter de la mâche.",
+        "duration": 1
+      },
+      {
+        "description": "3. Réaliser les gyozas en plaçant une cuillère à café de farce au centre d’une feuille, en pliant celle-ci en deux et en la scellant en humidifiant les bords et en prenant soin de faire des plis d’un côté afin de donner une jolie forme à la raviole.",
+        "duration": 1
+      },
+      {
+        "description": "4. Saisir à feu vif dans une poêle avec de l’huile de sésame (ou une huile neutre de type arachide ou pépins de raisin) pendant une minute, pour donner une belle coloration à la base des gyozas.",
+        "duration": 1
+      },
+      {
+        "description": "5. Jeter un verre d’eau dans la poêle, baisser le feu de moitié et couvrir. Laisser cuire 3 à 4 minutes, c’est prêt !",
+        "duration": 1
+      },
+      {
+        "description": "6. Dégustez les gyozas avec de la sauce soja ou un mélange de sauce soja et de vinaigre de riz noir.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "ab8ad5d8a431460fb625c8b7dcda3c10.jpg"
+  },
+  {
+    "title": "Homard Wings",
+    "description": "Les chefs Benjamin Reilhes et Glenn Viel, du restaurant étoilé Le Clair de la Plume à Grignan, dans la Drôme, vous invitent à découvrir une recette d'exception : les Homard Wings. Ce plat audacieux marie la finesse du homard à la gourmandise des ailerons de volaille confits, sublimant les saveurs de la mer et de la terre avec une touche d'exotisme.\n\nParfait pour impressionner vos convives lors d'une occasion spéciale, ce mets raffiné et innovant est une véritable expérience culinaire qui reflète l'excellence et la créativité de ce restaurant emblématique.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "homards bleus",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ailerons de volaille",
+        "amount": 8.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "peaux de volailles",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 250.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "riz à sushi",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "citron jaune (zestes)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "botte de menthe",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "bulbe de gingembre (haché)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "botte de cébette (ciselée)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Vinaigre à sushi (selon goût)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Huile de sésame torréfiée (selon goût)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Cuisson du homard",
+        "duration": 9
+      },
+      {
+        "description": "Cuire les queues de homard à l’anglaise pendant 2 minutes.",
+        "duration": 9
+      },
+      {
+        "description": "Réaliser un jus avec les têtes et pinces concassées.",
+        "duration": 9
+      },
+      {
+        "description": "Préparation des ailerons de volaille",
+        "duration": 9
+      },
+      {
+        "description": "Confire les ailerons de volaille pendant 2 heures dans le beurre à 85°C.",
+        "duration": 9
+      },
+      {
+        "description": "Ensuite, désosser, colorer les ailerons, les tailler en deux et les réserver dans un peu de jus de homard.",
+        "duration": 9
+      },
+      {
+        "description": "Préparation des chips de peaux de volaille",
+        "duration": 9
+      },
+      {
+        "description": "Placer les peaux entre 2 plaques et enfourner pendant 45 minutes à 160°C afin d’obtenir des chips de peaux de volaille.",
+        "duration": 9
+      },
+      {
+        "description": "Cuisson du riz",
+        "duration": 9
+      },
+      {
+        "description": "Cuire le riz à sushi dans un cuiseur à riz.",
+        "duration": 9
+      },
+      {
+        "description": "Préparation des condiments",
+        "duration": 9
+      },
+      {
+        "description": "Tailler la menthe en dés, hacher le gingembre, et ciseler la cébette.",
+        "duration": 9
+      },
+      {
+        "description": "Mélanger ces condiments avec le riz, le vinaigre de riz, l’huile de sésame, les zestes de citron jaune, et les chips de peaux de volaille concassées.",
+        "duration": 9
+      },
+      {
+        "description": "Dressage",
+        "duration": 9
+      },
+      {
+        "description": "Dans une assiette creuse chaude, disposer le homard juste chaud, taillé en 5 médaillons avec un éclat de chips de volaille dessus.",
+        "duration": 9
+      },
+      {
+        "description": "Ajouter 4 morceaux d’ailerons de volaille chauds et 5 cubes de citron vert dans l’assiette. Verser le jus de homard bien chaud autour des éléments.",
+        "duration": 9
+      },
+      {
+        "description": "Servir le riz à côté.",
+        "duration": 9
+      }
+    ],
+    "image_filename": "e8ebcfbf580d4fc7a76f7195472299f5.jpg"
+  },
+  {
+    "title": "Salade de riz 3 couleurs au poulet",
+    "description": "Une recette toute simple et rapide à faire mais terriblement gourmande et qui saura plaire à toute la famille ! Cette salade de riz trois couleurs aux restes de poulet sera parfaite pour un déjeuner sain et léger.",
+    "type_name": "Salad",
+    "servings": 5,
+    "ingredients": [
+      {
+        "name": "riz trois couleurs",
+        "amount": 250.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "petit poulet rôti",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "amandes entières",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "concombre en dés",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon haché",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "mozzarella en dés",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "petite poignée d'aneth haché",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Le zeste et le jus de 2 citrons",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 4.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "sucre en poudre",
+        "amount": 1.0,
+        "unit_name": "pinch"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Faire cuire le riz dans l'eau bouillante salée le temps indiqué.",
+        "duration": 2
+      },
+      {
+        "description": "Pendant ce temps, réunir tous les ingrédients de la vinaigrette dans un bocal, fermer, secouer.",
+        "duration": 2
+      },
+      {
+        "description": "Retirer la peau du poulet, et le détailler en lamelles.",
+        "duration": 2
+      },
+      {
+        "description": "Griller les amandes à sec dans une poêle, puis les hacher.",
+        "duration": 2
+      },
+      {
+        "description": "Egoutter le riz, le mettre dans un saladier.",
+        "duration": 2
+      },
+      {
+        "description": "Incorporer la vinaigrette, et laisser reposer quelques minutes.",
+        "duration": 2
+      },
+      {
+        "description": "Ajouter le poulet, les amandes, le concombre, l'oignon, la mozzarella, et remuer délicatement.",
+        "duration": 2
+      },
+      {
+        "description": "Couvrir et réserver au frais une nuit.",
+        "duration": 2
+      },
+      {
+        "description": "Au moment de servir, parsemer d'aneth.",
+        "duration": 2
+      }
+    ],
+    "image_filename": "40e1eb45b4b54f96a8dbd3f115c36f40.jpg"
+  },
+  {
+    "title": "Bo bun",
+    "description": "La salade composée au boeuf version cuisine vietnamienne.",
+    "type_name": "Salad",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "filet de boeuf",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "paquet de vermicelle de riz (400 g)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tiges de citronnelle ou de la poudre de citronnelle",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "germes de soja",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "Une dizaine de feuilles de salade",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "½ concombre (lave non épluché)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d’ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "feuilles de menthe et de coriandre coupées finement",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sauce nems préparée",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cacahuètes pilées",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "noix de macadamia torréfiées et pilées",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "une cuillère à soupe de nuoc-mâm",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sucre",
+        "amount": 1.0,
+        "unit_name": "teaspoon"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Commencer par couper le boeuf en fines tranches ou lanières.",
+        "duration": null
+      },
+      {
+        "description": "Déposer les lamelles de boeuf dans un plat creux avec des bâtons de citronnelle écrasés pour libérer le parfum et ajouter le nuoc mam et le sucre.",
+        "duration": null
+      },
+      {
+        "description": "Mélanger pour bien imprégner la viande de cette marinade.",
+        "duration": null
+      },
+      {
+        "description": "Filmer pour emprisonner les parfums et laisser au frais une bonne heure.",
+        "duration": null
+      },
+      {
+        "description": "Pendant ce temps cuire le vermicelle 2 minutes à l'eau frémissante.",
+        "duration": null
+      },
+      {
+        "description": "Emincer quelques feuilles de salade et trancher le concombre.",
+        "duration": null
+      },
+      {
+        "description": "Piler les arachides et les noix de macadamia préalablement torréfiées !",
+        "duration": null
+      },
+      {
+        "description": "Dans un wok faire revenir l'oignon et l'ail. Quand ils sont légèrement dorés ajouter la viande.",
+        "duration": null
+      },
+      {
+        "description": "Attention la viande ne doit pas être trop cuite. Il s'agit de fines lamelles de boeuf et quelques minutes au wok suffisent.",
+        "duration": null
+      },
+      {
+        "description": "Déposer dans chaque bol quelques germes de soja, des tranches de concombre, la salade émincée, la coriandre et les feuilles de menthe fraîche et les vermicelles.",
+        "duration": null
+      },
+      {
+        "description": "Terminer par la viande. Arroser de sauce nems et saupoudrer avec les arachides et noix concassées.",
+        "duration": null
+      }
+    ],
+    "image_filename": "1a4519c3d3254c8daf742ef8963d395c.jpg"
+  },
+  {
+    "title": "Boulettes de boeuf sauce Madère",
+    "description": "Une excellente recette à déguster en famille.",
+    "type_name": "Sauce",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "boeuf haché",
+        "amount": 700.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "1/2 bouquet de persil ou de coriandre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oeuf",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tranches de pain",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "madère",
+        "amount": 15.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "crème fraîche",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 30.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "tomates",
+        "amount": 1.0,
+        "unit_name": "kilogram"
+      },
+      {
+        "name": "oignons",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 4.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 5.0,
+        "unit_name": "centiliter"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Préparer un concassé de tomates.",
+        "duration": null
+      },
+      {
+        "description": "Passer le concassé au mixeur.",
+        "duration": null
+      },
+      {
+        "description": "Hacher le persil avec l'oignon et les échalotes.",
+        "duration": null
+      },
+      {
+        "description": "Dans un cul de poule mélanger la viande hachée et le mélange persil échalotes.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter l'oeuf, la mie de pain, sel et poivre et mélanger.",
+        "duration": null
+      },
+      {
+        "description": "Former des boulettes de taille régulière et réserver.",
+        "duration": null
+      },
+      {
+        "description": "Colorer les boulettes dans un peu de beurre à la poêle ou directement dans la cocotte.",
+        "duration": null
+      },
+      {
+        "description": "Lorsque les boulettes sont colorées déglacer au Madère.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter le concassé de tomates et cuire à feu doux 30 minutes à couvert. Remuer de temps en temps.",
+        "duration": null
+      },
+      {
+        "description": "Crémer avant de servir avec un riz basmati ou des pâtes fraîches.",
+        "duration": null
+      }
+    ],
+    "image_filename": "60018bb67f184d368d5300fabcca7c38.jpg"
+  },
+  {
+    "title": "Ficeler un rôti en une bride",
+    "description": "Sans barde de lard.",
+    "type_name": "Main course",
+    "servings": null,
+    "ingredients": [
+      {
+        "name": "rôti de boeuf",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "rôti de veau",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "rôti de porc",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Commencer par glisser la ficelle sous le rôti. Nous l'avons matérialisée en noir pour qu'elle soit plus visible.",
+        "duration": null
+      },
+      {
+        "description": "Nouer le premier tour de ficelle bien serré",
+        "duration": null
+      },
+      {
+        "description": "Faites une large boucle avec la ficelle de façon à pouvoir y passer le rôti",
+        "duration": null
+      },
+      {
+        "description": "Lorsque la boucle est passée autour du rôti...",
+        "duration": null
+      },
+      {
+        "description": "... tirez sur le bout de la ficelle pour serrer",
+        "duration": null
+      },
+      {
+        "description": "Vous pouvez maintenant recommencer une autre boucle et passer à nouveau le rôti à l'intérieur",
+        "duration": null
+      },
+      {
+        "description": "et ainsi de suite sur toute la longueur du rôti. Terminer par un noeud pour tenir l'ensemble. Le rôti est prêt à être mis en cuisson.",
+        "duration": null
+      }
+    ],
+    "image_filename": "eac076861c5c4be5bc106e76b899343a.jpg"
+  },
+  {
+    "title": "Rôti de boeuf",
+    "description": "Marquer une viande rouge pour le rôtissage.",
+    "type_name": "Main course",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "rôti de boeuf de 1 kg à 1.2 kg",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "thym (pour le jus)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Le rôti est paré et ficelé.",
+        "duration": null
+      },
+      {
+        "description": "Saler et poivrer. Le salage avant ou après n'altère pas la qualité de la cuisson.",
+        "duration": null
+      },
+      {
+        "description": "Marquer la coloration dans une poêle en retournant bien le rôti sur toutes ses faces.",
+        "duration": null
+      },
+      {
+        "description": "La chaleur évapore l'eau de surface et la réaction de Maillard se produit. Belle réaction de Maillard... l'assaisonnement permet de mieux préparer les \"sucs\" pour la réalisation du jus de rôti !",
+        "duration": null
+      },
+      {
+        "description": "Il faut bien sûr conserver les parures (propres) du contrefilet. Les graisses fondues serviront à arroser et parfumer la viande de manière plus efficace. Ici j'ajoute oignon, ail et échalotes pour apporter un goût \"cuisiné\".",
+        "duration": null
+      },
+      {
+        "description": "Placer le rôti sur les parures rissolées. Cela permettait de protéger le rôti de la chaleur accumulée par la plaque à rôtir. Aujourd'hui la pratique sert à créer davantage de sucs pour le jus.",
+        "duration": null
+      },
+      {
+        "description": "On compte en moyenne et de façon empirique et selon la qualité de la viande, l'état du four un quart d'heure de cuisson à 220°C par livre (500 g) de viande ficelée. Pour les accros à la sonde de température, stopper la cuisson lorsque la température affiche 45°C. On baisse ensuite le four à 70°C et on évite de dépasser les 50/55°C à coeur en fonction de la qualité et du degré de cuisson voulu.",
+        "duration": null
+      },
+      {
+        "description": "Pincer (chauffer) les sucs à feu modéré avec les parures et les graisses recueillies, puis déglacer avec de l'eau. Décoller avec la spatule et laisser réduire doucement. Vous pouvez ajouter une branche de thym, des grains de poivre...",
+        "duration": null
+      }
+    ],
+    "image_filename": "3daefb2774524ca68ad61fa35ebb620a.jpg"
+  },
+  {
+    "title": "Carbonade flamande",
+    "description": "Un ragoût de boeuf à la bière du Nord de la France et de la Belgique.",
+    "type_name": "Main course",
+    "servings": 8,
+    "ingredients": [
+      {
+        "name": "macreuse",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "paleron détaillés en cube de 70 g maximum",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "gîte détaillée en fines tranches",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "poitrine de porc salée en tranches larges",
+        "amount": 300.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "os oignons émincés",
+        "amount": 4.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "osses échalotes",
+        "amount": 8.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "ousses d'ail écrasées",
+        "amount": 5.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "un bouquet garni",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tranches de pain d'épices ou de pain rassis",
+        "amount": 8.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cuiller de farine",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "fond de veau lié",
+        "amount": 1.0,
+        "unit_name": "liter"
+      },
+      {
+        "name": "une bouteille de bière Jenlain ou de Leffe brune",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "petits oignons glacés à brun avec 20 g de beurre et 20 g de sucre",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "vergeoise (facultatif)",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "vinaigre de vin (facultatif)",
+        "amount": 1.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "moutarde",
+        "amount": 50.0,
+        "unit_name": "gram"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Détailler la viande en tranches régulières.",
+        "duration": 12
+      },
+      {
+        "description": "Rissoler le lard frais (non fumé) en bandes ou en gros lardons dans de l'huile ou du saindoux. Pour donner davantage de goût, je laisse la couenne qui se délitera pendant la cuisson du ragoût. Puis réserver.",
+        "duration": 12
+      },
+      {
+        "description": "Rissoler la viande dans un peu d'huile chaude pour obtenir une coloration de surface. C'est la réaction de Maillard qui va développer des arômes et corser la sauce.",
+        "duration": 12
+      },
+      {
+        "description": "Retourner les morceaux de viande sans les piquer. Ils se détachent du fond une fois la coagulation superficielle atteinte.",
+        "duration": 12
+      },
+      {
+        "description": "La viande est rissolée et réservée avec le lard en attente de la phase suivante.",
+        "duration": 12
+      },
+      {
+        "description": "Tapisser le fond de la cocotte dans laquelle la viande a été rissolée avec les oignons émincés, les échalotes et quelques gousses d'ail entières. Classiquement on incorpore un peu de vergeoise brune (le sucre brun du Nord).",
+        "duration": 12
+      },
+      {
+        "description": "Dès qu'un départ de caramel léger se fait sentir, déglacer au vinaigre (comme une gastrique). Décoller les sucs, mélanger et laisser les vapeurs acides s'évaporer.",
+        "duration": 12
+      },
+      {
+        "description": "Replacer la viande dans la cocotte en mélangeant l'ensemble, et singer avec la cuiller de farine (facultatif).",
+        "duration": 12
+      },
+      {
+        "description": "Verser la bière à hauteur. Bien sûr dans le Nord on conseillera une bière de garde, mais on peut aussi mouiller avec de la bière légère blonde.",
+        "duration": 12
+      },
+      {
+        "description": "Verser le fond de veau lié et ajouter le bouquet garni.",
+        "duration": 12
+      },
+      {
+        "description": "Poser sur la surface du pain d'épice ou du pain rassis tartiné de moutarde.",
+        "duration": 12
+      },
+      {
+        "description": "Placer la cocotte dans le four pendant 2h30 à four doux (160-170°C) et en mélangeant calmement et doucement tous les quarts d'heure.",
+        "duration": 12
+      }
+    ],
+    "image_filename": "dff1570817d64ca092deb7919eafbece.jpg"
+  },
+  {
+    "title": "Pot-au-feu",
+    "description": "Réussir un bon pot-au-feu de boeuf traditionnel des familles.",
+    "type_name": "Main course",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "boeuf (jarret. queue. paleron. macreuse. collier)",
+        "amount": 2.0,
+        "unit_name": "kilogram"
+      },
+      {
+        "name": "oignons",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 4.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "navets",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carottes",
+        "amount": 6.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poireaux",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "clous de girofle",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre en grain",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "laurier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "os à moelle",
+        "amount": 6.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Laver et éplucher les carottes et navets et les tailler en morceaux réguliers. Éplucher ail et oignons et piquer avec les clous de girofle.",
+        "duration": 15
+      },
+      {
+        "description": "Nettoyer les poireaux. Trancher les verts et les ficeler. Tailler les blancs en sifflets ou tronçons.",
+        "duration": 15
+      },
+      {
+        "description": "Rincer les morceaux de boeuf. Ficeler les morceaux de queue de boeuf si vous en avez. Placer les os à moelle dans l'eau froide en attendant la cuisson.",
+        "duration": 15
+      },
+      {
+        "description": "Dans une cocotte adaptée placer les aromates et les verts de poireaux ficelés. Les légumes seront ajoutés à mi-cuisson.",
+        "duration": 15
+      },
+      {
+        "description": "Ajouter dans la cocotte les morceaux de boeuf et couvrir d'eau froide à hauteur.",
+        "duration": 15
+      },
+      {
+        "description": "Cuire à frémissement et à couvert pendant 1h30 (à partie du frémissement).",
+        "duration": 15
+      },
+      {
+        "description": "Ajouter les légumes taillés et saler à raison d'une cuiller à café. Remettre en cuisson 1 heure.",
+        "duration": 15
+      },
+      {
+        "description": "Pendant ce temps pocher les os à moelle dans une partie du bouillon à frémissement pendant 10 à 15 minutes selon leur taille.",
+        "duration": 15
+      },
+      {
+        "description": "Le pot-au-feu est cuit et on constate que les légumes gardent une bonne tenue tout en ayant transmis leurs saveurs au bouillon.",
+        "duration": 15
+      },
+      {
+        "description": "Décanter et servir avec le bouillon filtré.",
+        "duration": 15
+      }
+    ],
+    "image_filename": "c0b37989ade4496185813926135fd16f.jpg"
+  },
+  {
+    "title": "Boeuf bourguignon avec marinade",
+    "description": "Un ragoût de boeuf classique de la cuisine française cuisiné au vin rouge de Bourgogne.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "gîte. paleron ou macreuse",
+        "amount": 1.0,
+        "unit_name": "kilogram"
+      },
+      {
+        "name": "fond de veau non lié",
+        "amount": 1.0,
+        "unit_name": "liter"
+      },
+      {
+        "name": "lardons",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "champignons escalopés",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "farine",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "une quinzaine de petits oignons glacés à brun",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "quelques tranches de pain pour les croûtons",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "persil haché",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon (un demi piqué au clou de girofle et l'autre taillé en mirepoix)",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "carottes",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "ousse d'ail écrasée",
+        "amount": 1.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "bouquet garni",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "queues de persil",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "grains de poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "quatre épices",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin rouge de Bourgogne (ou autre région !)",
+        "amount": 0.75,
+        "unit_name": "liter"
+      }
+    ],
+    "steps": [
+      {
+        "description": "La veille mettre les morceaux de viande détaillés entre 40 et 50 g à mariner dans le vin avec les aromates, ajouter les carottes. Terminer en couvrant d'un filet d'huile. Couvrir le récipient avec un film alimentaire et laisser au repos au frais.",
+        "duration": 12
+      },
+      {
+        "description": "Le lendemain, décanter c'est à dire séparer la garniture aromatique, la viande et le liquide. On conserve la garniture aromatique et le liquide de marinade séparé.",
+        "duration": 12
+      },
+      {
+        "description": "Pendant que les éléments égouttent, rissoler les lardons, préparer les champignons escalopés et les sauter avec coloration et vivement à leur tour dans la graisse des lardons.",
+        "duration": 12
+      },
+      {
+        "description": "N'oubliez pas de glacer des oignons à brun, de tailler des croûtons et les frire.",
+        "duration": 12
+      },
+      {
+        "description": "Rissoler les morceaux dans une grande cocotte dans l'huile chaude, sans superposer. Retourner les morceaux sur chaque face et rester vigilant. Le fond de la casserole ne doit pas brunir excessivement, et vous devez pouvoir rissoler le reste de la viande.",
+        "duration": 12
+      },
+      {
+        "description": "Lorsque les morceaux sont rissolés, débarrasser et couvrir. Versez dans la casserole (non dégraissée) les légumes de la marinade égouttés. Baissez l'intensité du feu et faites suer sans coloration excessive les légumes. L'alerte olfactive saura vous avertir que les légumes sont bien sués. Odeur agréable et alléchante.",
+        "duration": 12
+      },
+      {
+        "description": "Replacer ensuite la viande dans la cocotte. Mélanger le tout intimement. L'humidité conjuguée de la viande et de la garniture auront naturellement décollé les \"sucs\" présents dans le fond de la cocotte.",
+        "duration": 12
+      },
+      {
+        "description": "Singer : saupoudrer de farine et enrober chaque morceaux en mélangeant doucement. Un empois de surface se forme. Placer la cocotte sans couvercle au four réglé à 180°C pendant 10 minutes environ. On dit \"pincer\" les sucs et \"torréfier\" la farine.",
+        "duration": 12
+      },
+      {
+        "description": "Verser alors la marinade à hauteur. Ajouter également du fond de veau réduit.",
+        "duration": 12
+      },
+      {
+        "description": "Couvrir avec le couvercle (ici couvercle type \"braisière\"). Intéressant, ici on retrouve la forme et la technologie passée. L'eau contenue dans le couvercle prend la chaleur (par conduction) certes mais elle n'atteint pas l'ébullition, elle est donc moins chaude que la contenu de la cocotte. Il se passe alors un phénomène de condensation intérieure. L'humidité reste confinée dans la cocotte.",
+        "duration": 12
+      },
+      {
+        "description": "Cuire 2 à 3 heures environ, en fonction de la taille des morceaux et de la qualité de la viande. Cuisson lente et à petite ébullition contrôlée (que ce soit au four ou sur plaque: l'induction est particulièrement efficace pour la cuisson des ragoûts). Décantez à la pince les morceaux et filtrez la sauce obtenue dans une casserole et si nécessaire, réduire lentement, ou rectifiez la liaison avec un peu de fécule diluée à l'eau froide. Vérifier l'assaisonnement.",
+        "duration": 12
+      },
+      {
+        "description": "Ajouter une partie des champignons escalopés sautés, des lardons, des petits oignons glacés à brun dans la sauce et dresser en cassolette, en légumiers ou sur assiette avec un peu de persil haché. Présentez le tout surmonté d'un mélange des trois garnitures non liées dans la sauce, et les croûtons de pains frits. Servir avec nouilles fraîches, pommes de terre tournées...",
+        "duration": 12
+      }
+    ],
+    "image_filename": "9423de76a86345f9bacf8eae02cd3bbe.jpg"
+  },
+  {
+    "title": "La moussaka",
+    "description": "Version à la viande de boeuf, aux aubergines grillées et sauce béchamel.",
+    "type_name": "Sauce",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "aubergines",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "viande de boeuf hachée",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "tomates",
+        "amount": 8.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "rases de pesto rouge",
+        "amount": 4.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "oignons",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 6.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "origan",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "farine",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "lait",
+        "amount": 0.5,
+        "unit_name": "liter"
+      },
+      {
+        "name": "emmental râpé",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "muscade",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Réaliser la sauce béchamel et assaisonner avec du sel, du poivre et de la muscade.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter l'emmental râpé dans la béchamel chaude et réserver.",
+        "duration": 1
+      },
+      {
+        "description": "Suer à l'huile d'olive 3 gousses d'ail et 1 oignon ciselé. Ajouter les tomates concassées et le pesto rouge et laisser compoter mi-couvert jusqu'à obtenir un concassé réduit.",
+        "duration": 1
+      },
+      {
+        "description": "Rissoler 3 gousses d'ail et 1 oignon ciselé dans un peu d'huile d'olive jusqu'à une légère coloration.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter la viande hachée et cuire à feu vif en mélangeant.",
+        "duration": 1
+      },
+      {
+        "description": "Lorsque la viande est cuite ajouter le concassé de tomates réduit avec thym et origan. Laisser cuire à couvert et à feu doux une dizaine de minutes.",
+        "duration": 1
+      },
+      {
+        "description": "Tailler les aubergines dans la longueur en tranches régulières et les colorer en surface dans un peu d'huile d'olive bien chaude.",
+        "duration": 1
+      },
+      {
+        "description": "Huiler le plat et assaisonner légèrement avec thym ou origan.",
+        "duration": 1
+      },
+      {
+        "description": "Étaler une première couche d'aubergines. Ne pas hésiter à superposer les tranches.",
+        "duration": 1
+      },
+      {
+        "description": "Répartir toute la viande en une fois sur les aubergines et lisser.",
+        "duration": 1
+      },
+      {
+        "description": "Couvrir avec le reste des tranches d'aubergines.",
+        "duration": 1
+      },
+      {
+        "description": "Répartir la sauce béchamel en surface et mettre au four préchauffé.",
+        "duration": 1
+      },
+      {
+        "description": "Cuire 20 minutes à 200°C.",
+        "duration": 1
+      },
+      {
+        "description": "Vous pouvez également réaliser cette même recette de moussaka avec de l'épaule d'agneau selon vos préférences.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "d816e65822184d4eb75eaf465f829f27.jpg"
+  },
+  {
+    "title": "Brochettes de boeuf teriyaki et houmous au paprika en cuillères végétales",
+    "description": "Quand le boeuf s'invite à l'apéritif !",
+    "type_name": "Starter",
+    "servings": null,
+    "ingredients": [
+      {
+        "name": "boeuf (filet. poire. tende de tranche)",
+        "amount": 400.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "sauce teriyaki",
+        "amount": 1.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "sauce soja sucrée",
+        "amount": 5.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "quelques fines tranche de gingembre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "graines de sésame grillées",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "endives carmine",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "pois chiches en conserve",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 4.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 8.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "pointe de couteau de piment de Cayenne",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cumin en poudre",
+        "amount": 1.0,
+        "unit_name": "teaspoon"
+      },
+      {
+        "name": "paprika",
+        "amount": 1.0,
+        "unit_name": "teaspoon"
+      },
+      {
+        "name": "pointe de couteau de gingembre en poudre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "jus de citron",
+        "amount": 8.0,
+        "unit_name": "centiliter"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Détailler la viande en dés réguliers de taille moyenne.",
+        "duration": 1
+      },
+      {
+        "description": "Mettre la viande en marinade dans la sauce teriyaki avec la sauce soja et le gingembre. Couvrir et mariner au frais pendant 15 minutes . Pendant ce temps confectionner le houmous.",
+        "duration": 1
+      },
+      {
+        "description": "Egoutter les pois chiches et les ajouter dans le bol mixer avec les autres ingrédients. Mixer jusqu’à obtenir une texture homogène. Placer le houmous dans une poche à douille et dresser sur les feuilles d’endives.",
+        "duration": 1
+      },
+      {
+        "description": "Chauffer le gril à allure modérée. Égoutter les brochettes et les marquer sur le grill lorsqu’il est chaud.  Retourner et baisser l’allure. Badigeonner de la marinade pendant la cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Et saupoudrer de sésame grillé juste avant de servir.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "0d3114d0b62b4e17afd0f366be4b38f0.jpg"
+  },
+  {
+    "title": "Boeuf bourguignon",
+    "description": "Un ragoût de boeuf classique de la cuisine française cuisiné au vin rouge.",
+    "type_name": "Main course",
+    "servings": 8,
+    "ingredients": [
+      {
+        "name": "viande de boeuf (gîte. paleron ou macreuse)",
+        "amount": 2.0,
+        "unit_name": "kilogram"
+      },
+      {
+        "name": "fond de veau lié",
+        "amount": 1.5,
+        "unit_name": "liter"
+      },
+      {
+        "name": "huile",
+        "amount": 8.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "carottes",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "oignons",
+        "amount": 200.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 6.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "vin rouge corsé",
+        "amount": 75.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "poitrine de porc salée",
+        "amount": 400.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "champignons de Paris",
+        "amount": 400.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "petits oignons sauciers",
+        "amount": 300.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre (40 g pour les champignons + 30 g pour les petits oignons)",
+        "amount": 70.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "cas de sucre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cas de fécule de pomme de terre",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre en grains",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "laurier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Éplucher les petits oignons sauciers.",
+        "duration": 6
+      },
+      {
+        "description": "Éplucher puis escaloper les champignons de Paris.",
+        "duration": 6
+      },
+      {
+        "description": "Découper les carottes en bâtonnets.",
+        "duration": 6
+      },
+      {
+        "description": "Couper les oignons en gros cubes.",
+        "duration": 6
+      },
+      {
+        "description": "Concasser les gousses d'ail.",
+        "duration": 6
+      },
+      {
+        "description": "Tailler le lard en gros lardons.",
+        "duration": 6
+      },
+      {
+        "description": "Tailler la viande de boeuf en tranches épaisses et détailler en morceaux réguliers.",
+        "duration": 6
+      },
+      {
+        "description": "Dans une cocotte en fonte commencer par raidir le lard puis débarrasser.",
+        "duration": 6
+      },
+      {
+        "description": "Rissoler ensuite les morceaux de boeuf dans la même cocotte sans les superposer à température modérée jusqu'à obtenir une coloration.",
+        "duration": 6
+      },
+      {
+        "description": "Débarrasser la viande et garder au chaud.",
+        "duration": 6
+      },
+      {
+        "description": "Toujours dans la même cocotte rissoler ensemble toutes la garniture aromatique (oignons, carottes, ail, thym, laurier, poivre) jusqu'à une légère coloration.",
+        "duration": 6
+      },
+      {
+        "description": "Déglacer ensuite avec le vin rouge, décoller les sucs au fond de la cocotte et laisser mijoter une dizaine de minutes.",
+        "duration": 6
+      },
+      {
+        "description": "Dans une autre cocotte, assembler toutes les viandes et ajouter la garniture aromatique et le vin rouge qui ont infusé ensemble.",
+        "duration": 6
+      },
+      {
+        "description": "Mouiller à hauteur avec le fond de veau.",
+        "duration": 6
+      },
+      {
+        "description": "Mélanger brièvement, couvrir et laisser mijoter pendant 2 heures.",
+        "duration": 6
+      },
+      {
+        "description": "Pendant la cuisson de la viande préparer les garnitures d'appellation (petits oignons et champignons).",
+        "duration": 6
+      },
+      {
+        "description": "Dans une poêle sauter les champignons de Paris escalopés au beurre noisette puis débarrasser et garder au chaud.",
+        "duration": 6
+      },
+      {
+        "description": "Dans un sautoir, glacer les petits oignons à brun puis débarrasser et garder au chaud.",
+        "duration": 6
+      },
+      {
+        "description": "Lorsque le boeuf bourguignon est cuit, décanter la viande et filtrer la sauce.",
+        "duration": 6
+      },
+      {
+        "description": "Dégraisser la sauce en surface.",
+        "duration": 6
+      },
+      {
+        "description": "Dans une calotte, délayer la fécule de pomme de terre à l'eau froide puis verser dans la sauce chaude en mélangeant.",
+        "duration": 6
+      },
+      {
+        "description": "Dresser ensuite tous les éléments dans le plat de présentation et couvrir avec la sauce.",
+        "duration": 6
+      }
+    ],
+    "image_filename": "ab055d611f144622a8fec48d76df9483.jpg"
+  },
+  {
+    "title": "Carpaccio de boeuf",
+    "description": "Le carpaccio de boeuf est aussi frais qu'un tartare mais plus léger.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "contre filet",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 4.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "jus de citron",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "quelques feuilles de basilic ciselé ou de roquette entières",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre de Tellichery ou poivre noir",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "copeaux de parmesan",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Dans un petit bol verser l'huile et le jus de citron.",
+        "duration": null
+      },
+      {
+        "description": "Ici nous avons choisi de piler quelques baies de poivre de Tellichery de Terre Exotique.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter sel, poivre et herbes de Provence au mélange huile citron.",
+        "duration": null
+      },
+      {
+        "description": "Étaler la moitié du mélange parfumé sur les assiettes.",
+        "duration": null
+      },
+      {
+        "description": "Trancher le boeuf et dresser tout de suite sur assiette sans trop les chevaucher.",
+        "duration": null
+      },
+      {
+        "description": "Huiler à nouveau généreusement le boeuf au pinceau ou à la cuiller.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter les feuilles de basilic ciselées ou des feuilles de roquette entières et quelques copeaux de parmesan.",
+        "duration": null
+      },
+      {
+        "description": "Poivrer légèrement, filmer et mettre au frais une vingtaine de minutes avant de servir.",
+        "duration": null
+      }
+    ],
+    "image_filename": "d0979475b8b54ebea6bceb013425d596.jpg"
+  },
+  {
+    "title": "Côte de boeuf au barbecue",
+    "description": "Cuisson d'une côte de boeuf au Kamado Joe.",
+    "type_name": "Main course",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "côtes de boeuf de 1.5 kg (ici une Blanc bleu et une Aubrac)",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "herbes de Provence",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "moutarde fine ou ancienne",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Pour illustrer cette recette nous avons choisi du boeuf de deux races différentes, Blanc bleu et Aubrac.",
+        "duration": 1
+      },
+      {
+        "description": "La Blanc bleu a d'abord été enduite d'une marinade à base de moutarde fine et d'herbes de Provence et l'Aubrac simplement huilée et assaisonnée de sel, poivre et herbes de Provence.",
+        "duration": 1
+      },
+      {
+        "description": "Dans tous les cas choisissez une viande de bonne qualité.",
+        "duration": 1
+      },
+      {
+        "description": "Nous avons configuré le Kamado Joe en deux zones. Une première zone basse avec la grille en fonte pour le marquage et une seconde plus en hauteur avec une grille simple pour une cuisson moins agressive.",
+        "duration": 1
+      },
+      {
+        "description": "Les côtes ont été marquées l'une après l'autre. Cette opération est très rapide il ne s'agit pas de cuire.",
+        "duration": 1
+      },
+      {
+        "description": "Une fois la viande positionnée en hauteur, le Kamado Joe est fermé et la température régulée aux environs de 150°C pour la cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Comptez 15 minutes pour une viande saignante (tout dépend évidemment de l'épaisseur de la côte de boeuf).",
+        "duration": 1
+      },
+      {
+        "description": "On obtient un très beau rôtissage. La viande n'est pas rétractée, ni sèche.",
+        "duration": 1
+      },
+      {
+        "description": "On a la maîtrise d'une cuisson au four avec en même temps les arômes du barbecue.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "4dd20e4e78bd4496a6342b3baf184732.jpg"
+  },
+  {
+    "title": "Grillades à la plancha Firestyl",
+    "description": "Cuisson viandes et légumes sur la plancha Firestyl.",
+    "type_name": "Main course",
+    "servings": null,
+    "ingredients": [
+      {
+        "name": "beau magret de canard",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "entrecôte de boeuf Hereford",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "filet mignon de porc",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "aubergines",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "courgettes",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Commencer à mettre en chauffe la plancha Firestyl au moins 30 minutes avant de commencer la cuisson  si vous avez du petits bois sinon prévoir une heure avec des bûches.",
+        "duration": 1
+      },
+      {
+        "description": "Pendant ce temps on s'occupe des viandes et légumes à griller. On commence par préparer le magret de canard à la cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Ici pas de préparation pour cette belle entrecôte de boeuf Hereford.",
+        "duration": 1
+      },
+      {
+        "description": "Dégraisser partiellement le filet mignon et découper en médaillons.",
+        "duration": 1
+      },
+      {
+        "description": "Tester la bonne température de la plancha en posant les parures de viande sur les plaques. Vous allez très vite situer les endroits les plus chauds en général au milieu des plaques. Commencer à cuire le magret côté gras.",
+        "duration": 1
+      },
+      {
+        "description": "Retourner le magret côté peau. Dès qu'une coloration apparaît, déplacer le magret en bout de plaque pour qu'il continue sa cuisson doucement.",
+        "duration": 1
+      },
+      {
+        "description": "Procéder de la même façon pour l'entrecôte et le filet mignon sans oublier d'assaisonner les viandes avant de les griller.",
+        "duration": 1
+      },
+      {
+        "description": "La viande grille parfaitement sans brûler et sans attacher. Vous pouvez ajouter quelques gouttes d'huile d'olive pour le goût si vous désirez.",
+        "duration": 1
+      },
+      {
+        "description": "Débarrasser l'entrecôte en bout de plaque avant qu'elle n'ait atteint le degré de cuisson final attendu, bleu, saignant, à point...",
+        "duration": 1
+      },
+      {
+        "description": "J'ai procédé par étapes pour vous montrer le principe de cuisson mais, bien entendu, tout peut cuire en même temps (viandes et légumes) c'est la finalité de ce type de plancha. Beaucoup d'espace sur les plaques pour accueillir en même temps tous les types d'aliments.",
+        "duration": 1
+      },
+      {
+        "description": "On juge de la juste cuisson de la viande en tranchant l'entame et on remet sur la plancha quelques minutes si ce n'est pas suffisant. Ici pour moi c'est parfait.",
+        "duration": 1
+      },
+      {
+        "description": "Le magret est bien rosé comme je l'aime.",
+        "duration": 1
+      },
+      {
+        "description": "Il ne vous reste plus qu'à dresser ou laisser chacun se servir façon hommes des bois ! Sur cette ardoise nous avons posé le magret avec des demi oignons grillés, quelques tagliatelles de courgettes et une tranche d'aubergine grillée. Salade et tomates cerises pour la fraîcheur.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "c33952104ac441fc976ac8546512805e.jpg"
+  },
+  {
+    "title": "Carbonade flamande de Mamie Yvonne",
+    "description": "De ma grand-mère maternelle disparue, j'ai gardé son cahier de recettes. Voici la carbonade flamande comme elle la cuisinait dans son coron minier à Sin-Le-Noble (Nord) pour le plus grand bonheur de la famille.\n\nLa carbonade se prépare la veille et se sert accompagnée des frites maison évidemment...\n\nSi cette recette typiquement chti vous plait, n'hésitez pas à laisser un petit \"J'aime\" pour la retrouver dans votre livre de recettes. Et vous pouvez aussi laisser un petit commentaire ci-dessous !",
+    "type_name": "Main course",
+    "servings": 8,
+    "ingredients": [
+      {
+        "name": "os oignons",
+        "amount": 5.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "jarret de boeuf",
+        "amount": 1.0,
+        "unit_name": "kilogram"
+      },
+      {
+        "name": "beurre",
+        "amount": 30.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "cas d'huile",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cas de farine",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cas de vergeoise",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "bière blonde",
+        "amount": 25.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "bouillon de boeuf",
+        "amount": 25.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "cas de vinaigre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "bouquet garni",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Dans une cocotte en fonte, faire revenir la viande découpée en gros cubes jusqu'à ce qu'ils soient bien colorés.",
+        "duration": 33
+      },
+      {
+        "description": "Retirer la viande de la cocotte.",
+        "duration": 33
+      },
+      {
+        "description": "Ajouter les oignons émincés dans la cocotte et les faire revenir 5 minutes sans brunir.",
+        "duration": 33
+      },
+      {
+        "description": "Ensuite, étaler dans la cocotte une couche d'oignons, une couche de viande, etc.",
+        "duration": 33
+      },
+      {
+        "description": "Dans une casserole, mélanger farine, vergeoise et un peu de bouillon de boeuf et laisser mijoter 2 minutes.",
+        "duration": 33
+      },
+      {
+        "description": "Ajouter ensuite le reste de bouillon, la bière et le vinaigre.",
+        "duration": 33
+      },
+      {
+        "description": "Verser le contenu de la casserole dans la cocotte contenant la viande et les oignons.",
+        "duration": 33
+      },
+      {
+        "description": "Ajouter le bouquet garni.",
+        "duration": 33
+      },
+      {
+        "description": "Laisser la carbonade mijoter lonnnnngtemps !",
+        "duration": 33
+      }
+    ],
+    "image_filename": "7c16dbad6d5f43bba4364cd02342cd38.jpg"
+  },
+  {
+    "title": "Paleron de Bœuf Braisé",
+    "description": "Le paleron de bœuf braisé, une recette signée Benjamin Chrétien, est un plat savoureux et réconfortant qui met en valeur la richesse des saveurs traditionnelles. Ce chef talentueux nous propose une préparation où le paleron de bœuf, tendre et juteux, est d'abord doré à la perfection avant d'être mijoté lentement avec des légumes aromatiques tels que les oignons, les carottes et l'ail. Le tout est sublimé par un bouquet garni et un généreux déglaçage au vin rouge, qui confère au plat une profondeur gustative incomparable.\n\nAprès plusieurs heures de cuisson lente, la viande se détache délicatement à la fourchette, tandis que les saveurs se marient harmonieusement. Servi avec des tagliatelles al dente, ce plat est une véritable ode à la gastronomie française, où chaque bouchée raconte une histoire de patience et de passion culinaire.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "paleron de bœuf",
+        "amount": 1.2,
+        "unit_name": "kilogram"
+      },
+      {
+        "name": "oignons",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carottes",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "bouquet garni (thym. laurier. persil)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin rouge",
+        "amount": 750.0,
+        "unit_name": "milliliter"
+      },
+      {
+        "name": "farine",
+        "amount": 2.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 2.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "Sel et poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "concentré de tomate (facultatif)",
+        "amount": 1.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "tagliatelles",
+        "amount": 350.0,
+        "unit_name": "gram"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Préparation des légumes",
+        "duration": 5
+      },
+      {
+        "description": "Épluchez et coupez les oignons en quartiers. Épluchez et coupez les carottes en rondelles. Épluchez et écrasez les gousses d'ail.",
+        "duration": 5
+      },
+      {
+        "description": "Préparation de la viande",
+        "duration": 5
+      },
+      {
+        "description": "Coupez le paleron de bœuf en gros morceaux et assaisonnez.",
+        "duration": 5
+      },
+      {
+        "description": "Cuisson de la viande",
+        "duration": 5
+      },
+      {
+        "description": "Dans une grande cocotte, faites chauffer l'huile d'olive à feu moyen puis faites dorer les morceaux de viande de tous les côtés jusqu'à ce qu'ils soient bien colorés. Réservez.",
+        "duration": 5
+      },
+      {
+        "description": "Cuisson des légumes",
+        "duration": 5
+      },
+      {
+        "description": "Dans la même cocotte, faites revenir les oignons, les carottes et l'ail jusqu'à ce qu'ils soient tendres. Saupoudrez les légumes de farine et mélangez bien.",
+        "duration": 5
+      },
+      {
+        "description": "Déglaçage",
+        "duration": 5
+      },
+      {
+        "description": "Versez le vin rouge dans la cocotte et déglacez les sucs de cuisson en grattant le fond avec une spatule. Ajoutez le concentré de tomate mélangez bien.",
+        "duration": 5
+      },
+      {
+        "description": "Cuisson lente",
+        "duration": 5
+      },
+      {
+        "description": "Remettez la viande dans la cocotte avec les légumes et le vin.",
+        "duration": 5
+      },
+      {
+        "description": "Ajoutez le bouquet garni. Portez à ébullition, puis réduisez le feu et laissez mijoter à couvert pendant environ 2 à 3 heures, jusqu'à ce que la viande soit tendre et se détache facilement à la fourchette.",
+        "duration": 5
+      },
+      {
+        "description": "Cuisson des tagliatelles",
+        "duration": 5
+      },
+      {
+        "description": "Pendant que la viande mijote, faites cuire les tagliatelles selon les instructions du paquet. Égouttez les tagliatelles et réservez.",
+        "duration": 5
+      },
+      {
+        "description": "Finition",
+        "duration": 5
+      },
+      {
+        "description": "Retirez le bouquet garni de la cocotte.",
+        "duration": 5
+      },
+      {
+        "description": "Rectifiez l'assaisonnement en sel et poivre si nécessaire.",
+        "duration": 5
+      },
+      {
+        "description": "Servez le paleron de bœuf chaud avec les légumes et la sauce, accompagné des tagliatelles.",
+        "duration": 5
+      },
+      {
+        "description": "Présentation",
+        "duration": 5
+      },
+      {
+        "description": "Disposez les tagliatelles sur une assiette et placez un morceau de paleron de bœuf dessus.",
+        "duration": 5
+      },
+      {
+        "description": "Nappez de sauce et ajoutez quelques légumes pour la décoration.",
+        "duration": 5
+      }
+    ],
+    "image_filename": "a38d59a86bbe477faf0e78124a2cfe20.jpg"
+  },
+  {
+    "title": "Fondue chinoise",
+    "description": "Pour changer de la fondue bourguignonne, pourquoi ne pas essayer cette fondue chinoise qui marie légumes, poissons et viandes, un bouillon bien parfumé, le tout accompagné de nouilles, de riz et de sauces épicées. Pour ce faire, j'utilise mon wok électrique pour cette recette.",
+    "type_name": "Soup",
+    "servings": 6,
+    "ingredients": [
+      {
+        "name": "carcasse de poulet",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "chou chinois",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "gingembre frais",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "coriandre fraiche",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "petit oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "clous de girofle",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 3.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "bouillon cubes",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "épices (curcuma. piment. gingembre. badiane)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carotte",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "eau",
+        "amount": 3.0,
+        "unit_name": "liter"
+      },
+      {
+        "name": "poisson. saumon. cabillaud. thon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "crevettes",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "noix de pétoncles",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "seiche ou encornets",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "aiguillettes de canard",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "blancs de poulet",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "boeuf",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vermicelles de riz",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "champignons noirs",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "germes de soja (haricots mungo)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "concombre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "chou chinois",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carotte",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sauce soja",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sauce nuoc mam",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cive",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "A préparer quelques heures avant, le bouillon.",
+        "duration": 12
+      },
+      {
+        "description": "Dans un fait tout, faire revenir la carcasse du poulet avec un peu d'huile d'olive, la carotte pelée coupée en morceaux,  l'oignon piqué de clous de girofle et les gousses d'ail.",
+        "duration": 12
+      },
+      {
+        "description": "Verser l'eau, puis ajouter le gingembre pelé, l'anis étoilé, le sel et le poivre et les épices.",
+        "duration": 12
+      },
+      {
+        "description": "Laisser mijoter à feu doux pendant 2h, puis filtrer et réserver. Ajustez l'assaisonnement selon votre goût avec un peu de sauce nuoc mam.",
+        "duration": 12
+      },
+      {
+        "description": "Détailler les poissons et les viandes en fines lamelles, éplucher les crevettes.",
+        "duration": 12
+      },
+      {
+        "description": "Couper les légumes en lamelles.",
+        "duration": 12
+      },
+      {
+        "description": "Faire précuire les vermicelles dans de l'eau bouillante salée, les refroidir sous l'eau froide et réserver.",
+        "duration": 12
+      },
+      {
+        "description": "Présenter la fondue de la manière suivante.",
+        "duration": 12
+      },
+      {
+        "description": "Le bouillon doit rester à frémissement. Personnellement, je le mets dans mon wok électrique. Je découpe le chou chinois en lamelles que je jette dans le bouillon. Les viandes et les poissons ainsi que les légumes sont présentés dans de jolis plats. Les sauces sont mises à disposition.",
+        "duration": 12
+      },
+      {
+        "description": "Chaque convive choisira les ingrédients de son choix qu'il place dans le petit panier mis à sa disposition : il faut ensuite tremper l'épuisette dans le bouillon pour faire cuire les aliments. A la fin du repas chaque convive se sert un bol de bouillon qui se sera parfumé de tous les aliments qui auront été cuits dedans.",
+        "duration": 12
+      }
+    ],
+    "image_filename": "6f491567fa6340329b9f5aaabe830bd6.jpg"
+  },
+  {
+    "title": "Arancini",
+    "description": "Voici une recette de streedfood sicilienne, une recette très simple, à réaliser au pus vite ! L'arancino est une boule de riz, qui peut également avoir la forme d'un cône. A Palerme, on fête particulièrement ce met le 13 décembre lors de la commémoration de Sainte Lucia, martyre qui sauva Palerme de la famine. Il existe autant de façons de faire que de familles italiennes.",
+    "type_name": "Main course",
+    "servings": 3,
+    "ingredients": [
+      {
+        "name": "riz pour risotto",
+        "amount": 250.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "viande hachée de boeuf",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "petits pois",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "concentré de tomates",
+        "amount": 2.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "mozzarella",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "oeufs",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "jaunes",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin rouge",
+        "amount": 100.0,
+        "unit_name": "milliliter"
+      },
+      {
+        "name": "parmesan",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre",
+        "amount": 25.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 2.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "1/4 d'oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "un sachet de safran ou mieux du safran frais",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "chapelure",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel. poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile de friture",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Faire cuire votre riz dans de l'eau salée. Pendant la cuisson du riz, dissoudre le safran dans un saladier avec un peu d'eau. Ajouter les trois jaunes d'oeufs puis le riz une fois qu'il est cuit, et enfin le parmesan râpé.",
+        "duration": 4
+      },
+      {
+        "description": "Dans une poêle, faire revenir l'oignon avec l'huile d'olive. Ajouter la viande hachée, saler et laisser cuire quelques instants. Verser le vin rouge et laisser évaporer. Pendant ce temps, préparer le concentré de tomates en le faisant diluer dans environ 180 ml d'eau puis l'ajouter à la viande hachée. Saler, poivrer et laisser cuire environ 20 minutes à feu doux.",
+        "duration": 4
+      },
+      {
+        "description": "Faire cuire vos petits pois puis les unir à votre viande.",
+        "duration": 4
+      },
+      {
+        "description": "Le riz a refroidi, nous pouvons passer au façonnage des arancini :",
+        "duration": 4
+      },
+      {
+        "description": "Déposer dans votre main une poignée de riz que vous écraserez légèrement, former un creux pour y déposer un peu de préparation de viande et quelques morceaux de mozzarella. Recouvrir de riz et façonner l'arancino. Répéter l'exercice jusqu'à l'épuisement des ingrédients.",
+        "duration": 4
+      },
+      {
+        "description": "Passer tous les arancini dans les deux oeufs battus, puis dans la chapelure. Faire frire dans de l'huile bien chaude.",
+        "duration": 4
+      },
+      {
+        "description": "Déposer les arancini sur du papier absorbant et laisser tiédir.",
+        "duration": 4
+      }
+    ],
+    "image_filename": "88670057e1a14afc9fda88ec5fc0f50a.jpg"
+  },
+  {
+    "title": "Brochettes de kefta",
+    "description": "Avec l’arrivée des beaux jours, rien de tel qu’un petit barbecue et de bonnes brochettes ! Alors pourquoi ne pas les faire soi-même ? Aujourd’hui, je vous donne la recette des keftas de bœuf à la menthe. C’est une préparation à base de viande hachée, ici j’ai mis du bœuf, mélangée à des épices, des oignons et parfumée avec de de la menthe.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "bœuf haché",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousse d'ail",
+        "amount": 1.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "chapelure",
+        "amount": 2.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "et demie d'épices à couscous",
+        "amount": 1.0,
+        "unit_name": "teaspoon"
+      },
+      {
+        "name": "bouquet de menthe",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "yaourts grecs nature",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tomate allongée",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 1.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "sel. poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Mélangez le bœuf haché avec la chapelure, l'oignon râpé (ou coupé très finement), les 3/4 des feuilles de menthe ciselées, les épices, le sel et le poivre.",
+        "duration": 1
+      },
+      {
+        "description": "Faire 10 boulettes et roulez-les entre vos mains pour leur donner une forme allongée. Réservez-les 10 minutes au congélateur pour raffermir un peu la viande.",
+        "duration": 1
+      },
+      {
+        "description": "Pendant ce temps, préparez la sauce au yaourt : fouettez les yaourts avec la gousse d'ail râpée (ou finement coupée), 1 cuillère à soupe d'huile d'olive, le sel et le poivre.",
+        "duration": 1
+      },
+      {
+        "description": "Rincez et épongez la tomate. Coupez-la en petits dés. Incorporez la moitié de la tomate dans la sauce et l'autre moitié à la surface.",
+        "duration": 1
+      },
+      {
+        "description": "Embrochez les keftas sur une brochette.",
+        "duration": 1
+      },
+      {
+        "description": "Cuire les keftas au barbecue ou sur un gril en fonte huilé. Parsemez les brochettes avec le reste de menthe ciselée et les servir avec la sauce au yaourt bien froide.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "437630da79f947ebba427953d11be2db.jpg"
+  },
+  {
+    "title": "Burger italien pesto, tomate, parmesan, roquette",
+    "description": "Je vous propose une version estivale et ensoleillée du burger : le burger italien ! Un pain moelleux garni de pesto parfumé, de tomates juteuses, de parmesan, de roquette croquante, de feuilles de basilic frais et de mozzarella fondante… Un mélange simple mais ultra savoureux, qui sent bon l’été et la Méditerranée.\n\nC’est une recette fraîche, rapide et pleine de caractère, idéale pour un déjeuner sur le pouce ou un dîner décontracté entre amis. On peut y ajouter une touche de balsamique ou une viande grillée pour les plus gourmands.\n\nÀ servir avec des chips de polenta, une salade de tomates cerises ou même des légumes grillés, pour un voyage express au cœur de l’Italie !",
+    "type_name": "Salad",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "pains à burger",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "à 15 tomates cerises",
+        "amount": 10.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "steaks hachés",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Une poignée de roquette",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Quelques copeaux de parmesan",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "boule de mozzarella",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Quelques feuilles de basilic",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "CS de pesto",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Sel. poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Couper vos pains en deux, les faire toaster et réserver.",
+        "duration": 1
+      },
+      {
+        "description": "Faire des tranches de mozzarella et couper vos tomates en tranches.",
+        "duration": 1
+      },
+      {
+        "description": "Faites cuire les steaks hachés d'un côté, les retourner puis disposer sur le dessus de chaque steak une tranche de mozzarella que vous laisserez fondre et, si vous le souhaitez, une tranche de pancetta ou jambon cru.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "0997d737a6bf4a3e9f956a7a0ebd5fff.jpg"
+  },
+  {
+    "title": "Moussaka",
+    "description": "Recette traditionnelle grecque. La moussaka est la recette grecque emblématique composée de couches d'aubergines, de viande hachée et de sauce béchamel qui est connue à travers le monde. Comme avec la plupart des ragoûts, la moussaka est encore meilleure le lendemain une fois que toutes les saveurs ont eu le temps de se mêler.",
+    "type_name": "Sauce",
+    "servings": 10,
+    "ingredients": [
+      {
+        "name": "boeuf (ou d'agneau haché)",
+        "amount": 800.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "pommes de terre",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "aubergines",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons (coupés en dés)",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile d'olive extra-vierge",
+        "amount": 400.0,
+        "unit_name": "milliliter"
+      },
+      {
+        "name": "concentré de tomate",
+        "amount": 2.0,
+        "unit_name": "tablespoon"
+      },
+      {
+        "name": "ousses d'ail (pressées)",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "vin rouge",
+        "amount": 150.0,
+        "unit_name": "milliliter"
+      },
+      {
+        "name": "½ bouquet de persil (ciselé)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "lait",
+        "amount": 1.0,
+        "unit_name": "liter"
+      },
+      {
+        "name": "farine",
+        "amount": 125.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre",
+        "amount": 125.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "jaunes d'oeufs",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "½ cuillère à café de muscade moulue",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Peler les pommes de terre et les couper en tranches de 5 mm.",
+        "duration": 40
+      },
+      {
+        "description": "Couper les extrémités de l'aubergine.",
+        "duration": 40
+      },
+      {
+        "description": "Couper des tranches en longueur de 5 mm d'épaisseur.",
+        "duration": 40
+      }
+    ],
+    "image_filename": "d5ab968dd0ce40a8a43a93faa6425fbd.jpg"
+  },
+  {
+    "title": "Filets de sole Dieppoise",
+    "description": "Pocher à court mouillement.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "soles filets (2 filets par personne)",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "têtes de champignons",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "crevettes grises décortiquées",
+        "amount": 100.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "moules de bouchot",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "beurre",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "crème",
+        "amount": 3.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "vin blanc",
+        "amount": 1.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "jus de moule",
+        "amount": 25.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalote ciselée",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "un bouquet garni",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin blanc sec",
+        "amount": 1.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "une branche de céleri ou des queues de persil",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Si vous ne les avez pas achetés tout prêts, levez vos filets de sole",
+        "duration": null
+      },
+      {
+        "description": "Nettoyer les moules, les cuire à la marinière et conserver le jus de cuisson.",
+        "duration": null
+      },
+      {
+        "description": "Décortiquer et ébarber les moules pour le dressage.",
+        "duration": null
+      },
+      {
+        "description": "Emincer les champignons et les étuver rapidement au beurre et au citron.",
+        "duration": null
+      },
+      {
+        "description": "Plier les filets de sole en trois et les placer dans un sautoir beurré et poivré.",
+        "duration": null
+      },
+      {
+        "description": "Verser le vin blanc et le jus de moules à hauteur sur les filets de sole.",
+        "duration": null
+      },
+      {
+        "description": "Couvrir avec un disque de papier sulfurisé muni d'une cheminée et cuire à feu modéré quelques minutes. Les filets doivent rester fermes. Débarrasser et réserver au chaud (70°C).",
+        "duration": null
+      },
+      {
+        "description": "Crémer le jus de cuisson, réduire de moitié et monter au beurre. Passer ensuite au chinois.",
+        "duration": null
+      },
+      {
+        "description": "Poser les champignons et les crevettes grises au centre de l'assiette. Déposer les filets de sole par dessus. Ajouter quelques moules décortiquées et napper avec la sauce.",
+        "duration": null
+      }
+    ],
+    "image_filename": "d49b1000695c4ca6a57b8c141a9861f0.jpg"
+  },
+  {
+    "title": "Filet de bar en écailles de courgette",
+    "description": "Un poisson cuit au four et qui ne sèche pas.",
+    "type_name": "Main course",
+    "servings": 2,
+    "ingredients": [
+      {
+        "name": "pavés de bar de ligne (loup) de 150 à 200 g ou 2 filets de bar d'élevage",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "courgette",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile d'olive",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel et poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "quelques branches de thym frais",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "un demi litre d'eau et 20 g de sel pour la saumure",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Le bar a été écaillé, les filets de bar sont désarêtés.",
+        "duration": 1
+      },
+      {
+        "description": "Dissoudre le sel dans l'eau froide pour réaliser la saumure.",
+        "duration": 1
+      },
+      {
+        "description": "Plonger les pavés de bar 15 minutes dans la saumure.",
+        "duration": 1
+      },
+      {
+        "description": "Pendant ce temps tailler la courgette en très fines lamelles à la mandoline.",
+        "duration": 1
+      },
+      {
+        "description": "Sortir les pavés de poisson de la saumure, rincer, et déposer sur papier absorbant.",
+        "duration": 1
+      },
+      {
+        "description": "Huiler la plaque de cuisson avec de l'huile d'olive.",
+        "duration": 1
+      },
+      {
+        "description": "Déposer les pavés de bar côté peau sur la plaque et badigeonner légèrement d'huile d'olive.",
+        "duration": 1
+      },
+      {
+        "description": "Poivrer et déposer en surface quelques feuilles et fleurs de thym frais.",
+        "duration": 1
+      },
+      {
+        "description": "Déposer les rondelles de courgette coupées en 2 en les faisant se chevaucher.",
+        "duration": 1
+      },
+      {
+        "description": "Badigeonner les courgettes en surface avec un peu d'huile, ajouter un peu de fleur de sel et enfourner 8 à 10 minutes à 200°C.",
+        "duration": 1
+      },
+      {
+        "description": "Dresser sur assiette avec quelques gouttes d'une bonne huile d'olive.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "dff941d6bf4a44b28fa0c63cbb8c89fa.jpg"
+  },
+  {
+    "title": "Darne de lieu noir pochée",
+    "description": "Cuisson du poisson au court-bouillon.",
+    "type_name": "Soup",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "darnes de lieu noir",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignon",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carotte",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "thym",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "laurier",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "jus de citron",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin blanc (facultatif)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "gros sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "et demi d'eau",
+        "amount": 1.0,
+        "unit_name": "liter"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Rincer les darnes de lieu.",
+        "duration": null
+      },
+      {
+        "description": "Placer la garniture aromatique émincée dans un sautoir profond.",
+        "duration": null
+      },
+      {
+        "description": "Verser l'eau froide avec le jus de citron et le vin blanc.",
+        "duration": null
+      },
+      {
+        "description": "Couvrir et cuire à feu doux pendant 10 minutes.",
+        "duration": null
+      },
+      {
+        "description": "Le court-bouillon est cuit. Maintenez le à frémissement.",
+        "duration": null
+      },
+      {
+        "description": "Placer le poisson qui doit être couvert à hauteur par le court-bouillon.",
+        "duration": null
+      },
+      {
+        "description": "Couvrir et cuire une dizaine de minute à frémissement (ici les darnes ont une épaisseur de 2 cm environ).",
+        "duration": null
+      },
+      {
+        "description": "Vérifier la cuisson et sortir le poisson pour l'égoutter.",
+        "duration": null
+      },
+      {
+        "description": "Oter la peau délicatement.",
+        "duration": null
+      },
+      {
+        "description": "Enlever l'arrête centrale. C'est à l'arrête que l'on peut vérifier la juste cuisson (rosé).",
+        "duration": null
+      },
+      {
+        "description": "Terminer en ôtant les dernières arrêtes visibles sans abimer la darne.",
+        "duration": null
+      },
+      {
+        "description": "Servir chaud ou froid avec des pommes tournées et une béarnaise par exemple.",
+        "duration": null
+      }
+    ],
+    "image_filename": "2ed96267c9a7451d90f9abf0b9c0ee04.jpg"
+  },
+  {
+    "title": "Salade de bar tiède à l'huile de noisette",
+    "description": "Cette recette de filets de bar particulièrement légère et goûteuse est idéalement servie en entrée.",
+    "type_name": "Salad",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "à 600 gr de filet de bar de ligne ou d'élevage",
+        "amount": 400.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile de noisette",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "fleur de sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "baies de la passion ou poivre de Timut",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "échalotes vertes ciselées",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "salade",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile de noisette",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vinaigre de Xérès",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "quelques gouttes de crème de balsamique",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Lever les filets de bar et ôter les arêtes. Ici 2 beaux filets de bar de ligne.",
+        "duration": 1
+      },
+      {
+        "description": "Huiler la plaque de cuisson au pinceau avec l'huile de noisette.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter un peu de fleur de sel et de baies de la passion broyées au pilon directement sur la plaque.",
+        "duration": 1
+      },
+      {
+        "description": "Escaloper finement le filet de poisson.",
+        "duration": 1
+      },
+      {
+        "description": "Disposer les escalopes de bar sur la plaque de cuisson.",
+        "duration": 1
+      },
+      {
+        "description": "Badigeonner le poisson d'un peu d'huile de noisette et assaisonner à nouveau.",
+        "duration": 1
+      },
+      {
+        "description": "Enfourner à 220°C en mode grill et position haute dans le four préchauffé pendant 1 à 2 minutes.",
+        "duration": 1
+      },
+      {
+        "description": "Sortir le poisson du four le temps d'assaisonner la salade.",
+        "duration": 1
+      },
+      {
+        "description": "Dresser la salade sur assiette, déposer un peu d'échalote ciselée et assaisonner.",
+        "duration": 1
+      },
+      {
+        "description": "Déposer les escalopes de bar tièdes sur la salade.",
+        "duration": 1
+      },
+      {
+        "description": "Servir immédiatement.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "bb5f5376d20a4530b037d1b90c0dc919.jpg"
+  },
+  {
+    "title": "Merlan pané à l'anglaise",
+    "description": "Un poisson pané fait maison !",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "merlan",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "Environ 80 g de farine",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oeufs entiers",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "une cuillère à café d'huile",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "une cuillère à soupe d'eau",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "mie de pain",
+        "amount": 150.0,
+        "unit_name": "gram"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Ecailler et vider le merlan de la même façon que pour le loup, puis rincer et éponger.",
+        "duration": null
+      },
+      {
+        "description": "Ensuite, nous allons  désarêter le merlan par le dos",
+        "duration": null
+      },
+      {
+        "description": "Le poisson est maintenant prêt à être passé dans la farine des deux côtés",
+        "duration": null
+      },
+      {
+        "description": "Tapoter pour enlever l'excédent de farine.",
+        "duration": null
+      },
+      {
+        "description": "Passer ensuite le poisson fariné dans l'oeuf battu avec l'huile et l'eau, le sel et poivre.",
+        "duration": null
+      },
+      {
+        "description": "Et pour terminer passer le poisson dans la chapelure ou la mie de pain tamisée...",
+        "duration": null
+      },
+      {
+        "description": "...et ce, sur toutes les faces. Presser légèrement avec la main pour bien faire adhérer la mie de pain.",
+        "duration": null
+      },
+      {
+        "description": "Marquer l'intérieur du merlan avec une spatule ou le dos d'un éminceur pour former un quadrillage.",
+        "duration": null
+      },
+      {
+        "description": "Le poisson est prêt à être sauté dans un mélange beurre et huile, côté quadrillé en premier, pendant 3 à 4 minutes. Retourner ensuite le poisson et terminer la cuisson à feu doux",
+        "duration": null
+      }
+    ],
+    "image_filename": "a1b2e353884445c88cdd4f93fd995595.jpg"
+  },
+  {
+    "title": "Terrine de poisson en gelée",
+    "description": "Terrine de joues de lotte aux petits légumes ou aspic de joues de lotte.",
+    "type_name": "Main course",
+    "servings": 8,
+    "ingredients": [
+      {
+        "name": "1/2 litre de fumet de crustacés ou de fumet de poisson",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "gélatine",
+        "amount": 15.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "à 8 joues de lotte selon leur taille",
+        "amount": 7.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "carottes coupées en rondelles",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "petits pois",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "haricots verts",
+        "amount": 150.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "fenouil frais",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Parer les joues de lotte pour ôter le fine peau grise qui recouvre la face externe.",
+        "duration": null
+      },
+      {
+        "description": "Fondre la gélatine dans le fumet de crustacés chaud.",
+        "duration": null
+      },
+      {
+        "description": "Pocher les joues de lotte 5 minutes à petits frémissements.",
+        "duration": null
+      },
+      {
+        "description": "Pocher les haricots verts quelques minutes à l'eau frémissante et les rafraîchir à l'eau glacée.",
+        "duration": null
+      },
+      {
+        "description": "Même chose avec les petits pois et les carottes en rondelles.",
+        "duration": null
+      },
+      {
+        "description": "Disposer les légumes de façon harmonieuse en commençant par les haricots verts.",
+        "duration": null
+      },
+      {
+        "description": "Répartir un peu de petits pois et de carottes.",
+        "duration": null
+      },
+      {
+        "description": "Déposer les joues de lotte au-dessus des légumes et ajouter quelques fines tiges de fenouil frais.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter le reste des légumes et verser le fumet tiède à hauteur.",
+        "duration": null
+      },
+      {
+        "description": "Couvrir la terrine et la placer au réfrigérateur jusqu'au lendemain.",
+        "duration": null
+      },
+      {
+        "description": "On obtient un aspic très frais dans laquelle les légumes ont gardé leur belle couleur.",
+        "duration": null
+      }
+    ],
+    "image_filename": "4dcb2ba36ca9467281cc7e00ddb6443f.jpg"
+  },
+  {
+    "title": "Curry vert de lotte",
+    "description": "Un curry de poisson à la noix de coco et au citron vert.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Une très belle queue de lotte parée et nettoyée (compter en moyenne 200 g brut ou 150 g minimum net par personne)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "à 3 cl huile d'olive ou d'arachide",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "ousses d'ail",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "tiges de citronelle écrasées",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "osses échalotes ciselées",
+        "amount": 2.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "une cuillère à café de curry vert en pâte",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "lait ou de crème de coco",
+        "amount": 20.0,
+        "unit_name": "centiliter"
+      },
+      {
+        "name": "le zeste d'un demi citron vert",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "oignons grelots ou 8 oignons nouveaux",
+        "amount": 12.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "1/2 litre de fumet de poisson (réalisé avec les parures de lotte)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tranches de gingembre",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "sauce soja non sucrée",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "feuilles de basilic ou de coriandre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "facultatif : nuoc-mâm",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "huile de sésame",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "garniture (haricots plats. haricots verts. pois...)",
+        "amount": 200.0,
+        "unit_name": "gram"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Commencer par habiller la queue de lotte et lever les filets puis détailler en médaillons réguliers.",
+        "duration": 1
+      },
+      {
+        "description": "Avec les parures de lotte et quelques aromates confectionner un fumet de poisson.",
+        "duration": 1
+      },
+      {
+        "description": "Cuire les haricots coco plats à l'anglaise comme montré sur la fiche technique et réserver.",
+        "duration": 1
+      },
+      {
+        "description": "Faites chauffer à feu doux l'huile d'olive dans un wok ou une sauteuse.",
+        "duration": 1
+      },
+      {
+        "description": "Faire suer les échalotes et l'ail haché toujours à feu doux. ils ne doivent pas colorer.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter le gingembre et la pâte de curry vert.",
+        "duration": 1
+      },
+      {
+        "description": "Mouiller au fumet de poisson passé au chinois.",
+        "duration": 1
+      },
+      {
+        "description": "Ajouter les bâtons de citronnelle, les petits oignons blancs et le zeste entier (non émincé) de citron vert.",
+        "duration": 1
+      },
+      {
+        "description": "et enfin le lait de coco. Porter à petite ébullition.",
+        "duration": 1
+      },
+      {
+        "description": "Lorsque l'ébullition est atteinte, ajouter les médaillons de lotte et laisser cuire 7 à 10 minutes à toute petite ébullition. A ce stade vous pouvez ajouter le nuoc mam ou pas et la sauce soja (un trait). Gouter et rectifier l'assaisonnement à votre goût.",
+        "duration": 1
+      },
+      {
+        "description": "En fin de cuisson, ôter les aromates.",
+        "duration": 1
+      },
+      {
+        "description": "Server en assiettes creuses en ajoutant les haricots coco plats et un peu de basilic ciselé (ou quelques feuilles de coriandre). Verser quelques gouttes d'huile de sésame, juste avant de servir... mais ça c'est ma petite touche personnelle !",
+        "duration": 1
+      }
+    ],
+    "image_filename": "ed88413888da4f25abfe48e7f8f7d195.jpg"
+  },
+  {
+    "title": "Tartare de saumon",
+    "description": "Un tartare de poisson à servir frais mais pas glacé.",
+    "type_name": "Main course",
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "saumon frais (sans peau et sans arêtes)",
+        "amount": 500.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "oignons rouges ciselés",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cuillers à soupe d'huile d'olive",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "jus de citron",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cuiller à soupe d'estragon frais",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "osse cuiller à soupe de câpres",
+        "amount": 1.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "sel",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "poivre de Timut (baies de Timur)",
+        "amount": 1.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "feuilles de sucrines pour la présentation",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Ici un coeur de filet de saumon appelé aussi \"baron\" en poissonnerie.",
+        "duration": null
+      },
+      {
+        "description": "Tailler le saumon en tranches pas trop fines. 5 mm d'épaisseur, c'est bien.",
+        "duration": null
+      },
+      {
+        "description": "Vous pouvez ôter la partie grasse ou pas selon vos préférences.",
+        "duration": null
+      },
+      {
+        "description": "Couper les tranches en 2 dans la longueur et tailler en dés.",
+        "duration": null
+      },
+      {
+        "description": "Réserver les dés de saumon au froid pendant la préparation des aromates.",
+        "duration": null
+      },
+      {
+        "description": "Concasser les câpres.",
+        "duration": null
+      },
+      {
+        "description": "Ciseler les oignons rouges.",
+        "duration": null
+      },
+      {
+        "description": "Ciseler l'estragon.",
+        "duration": null
+      },
+      {
+        "description": "Broyer au pilon quelques baies de poivre de Timut pour profiter du maximum d'arômes.",
+        "duration": null
+      },
+      {
+        "description": "Mélanger les ingrédients et ajouter l'huile d'olive.",
+        "duration": null
+      },
+      {
+        "description": "Verser le jus de citron, mélanger et dresser en coupelles, verrines ou feuilles de sucrine.",
+        "duration": null
+      }
+    ],
+    "image_filename": "caaca013a1da4c63aa4b77fd9db6bd2b.jpg"
+  },
+  {
+    "title": "Dos de cabillaud Dugléré",
+    "description": "L'harmonie cosmique de la terre et de la mer.",
+    "type_name": "Main course",
+    "servings": 2,
+    "ingredients": [
+      {
+        "name": "dos de cabillaud épais de 150 g minimum frais ou surgelés",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "beurre",
+        "amount": 50.0,
+        "unit_name": "gram"
+      },
+      {
+        "name": "échalotes",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "cuillers à soupe de persil haché",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "tomates",
+        "amount": 3.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "vin blanc sec",
+        "amount": 1.5,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "creme fraîche entière liquide ou 2 cuillers à soupe de crème fraîche épaisse",
+        "amount": 2.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "sel et poivre",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Placer les échalotes ciselées dans le sautoir grassement beurré.",
+        "duration": null
+      },
+      {
+        "description": "Ajouter les tomates taillées en petits dès (prélablement mondées, épépinées) et ajouter le persil haché.",
+        "duration": null
+      },
+      {
+        "description": "Mélanger .",
+        "duration": null
+      },
+      {
+        "description": "Poser les dos de cabillaud sur cette garniture crue.",
+        "duration": null
+      },
+      {
+        "description": "Verser le vin blanc sec, saler, poivrer avec modération; les arômes propres aux produits suffisent souvent à donner les saveurs fortes et spécifiques.",
+        "duration": null
+      },
+      {
+        "description": "Plaquer un papier cuisson et couvrir d'un couvercle adapté.",
+        "duration": null
+      },
+      {
+        "description": "Placer le sautoir dans le four préchauffé à 170°C et cuire pendant 10 minutes (environ) il est nécessaire de copntrôler en cours de cuisson.",
+        "duration": null
+      },
+      {
+        "description": "Lorsque le poisson est cuit, on remarque que la garniture a rendu de l'eau. Le poisson doit absolument rester nacré, \"rosé\".",
+        "duration": null
+      },
+      {
+        "description": "Débarrasser les dos de cabillaud et les réserver au chaud (à couvert dans un four réglé à 70°C max) le temps de finaliser la sauce.",
+        "duration": null
+      },
+      {
+        "description": "Réduire le jus de moitié au moins et à allure modérée pour bien concentrer les saveurs, et atteindre une forme de laison naturelle.",
+        "duration": null
+      },
+      {
+        "description": "Verser la crème et mélanger.",
+        "duration": null
+      },
+      {
+        "description": "Réduire jusqu'à la liaison. Poussez plus ou moins la réduction en fonction de votre préférence. En fin de réduction vous pouvez, et je vous le conseille, ajouter une noix de beurre et l'incorprorer à feu doux. Vous pouvez également ajouter un peu de persil haché pour apporter un touche fraîcheur dans la sauce.",
+        "duration": null
+      }
+    ],
+    "image_filename": "29091e4d51df4c3daab181b8ad1e86a7.jpg"
+  },
+  {
+    "title": "Blancs de turbot sur blancs de poireaux",
+    "description": "Simple mais mortellement délicieux !",
+    "type_name": "Main course",
+    "servings": 2,
+    "ingredients": [
+      {
+        "name": "filets de turbot de 200 g chacun",
+        "amount": 2.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "blancs de poireaux",
+        "amount": 4.0,
+        "unit_name": "piece"
+      },
+      {
+        "name": "crème",
+        "amount": 2.0,
+        "unit_name": "deciliter"
+      },
+      {
+        "name": "sel et poivre du moulin",
+        "amount": 1.0,
+        "unit_name": "piece"
+      }
+    ],
+    "steps": [
+      {
+        "description": "Émincer les blancs de poireaux et étuver la julienne de poireaux au beurre fondu sans coloration et à couvert.",
+        "duration": 1
+      },
+      {
+        "description": "Quand les poireaux prennent un aspect de compote bien luisante et fondante verser un peu de crème pour lier et mélanger.",
+        "duration": 1
+      },
+      {
+        "description": "Verser les poireaux dans un plat allant au four poser les blancs de turbot sur les poireaux.",
+        "duration": 1
+      },
+      {
+        "description": "Napper légèrement de crème.",
+        "duration": 1
+      },
+      {
+        "description": "Saler et poivrer.",
+        "duration": 1
+      },
+      {
+        "description": "Couvrir d'une feuille d'aluminium.",
+        "duration": 1
+      },
+      {
+        "description": "Porter au four à température douce (160°C) environ.",
+        "duration": 1
+      },
+      {
+        "description": "Cuire environ 10 à 15 mn (vérifier la cuisson)",
+        "duration": 1
+      },
+      {
+        "description": "Saupoudrer de quelques herbes fraîches ciselées.",
+        "duration": 1
+      }
+    ],
+    "image_filename": "dd9e879f45c94cb5b0c7736b3308c5bc.jpg"
+  }
+]

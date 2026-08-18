@@ -1,0 +1,701 @@
+# German translations for Gourmant
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-05-16 12:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: app/i18n_strings.py:11
+msgid "gram"
+msgstr "Gramm"
+
+#: app/i18n_strings.py:12
+msgid "kilogram"
+msgstr "Kilogramm"
+
+#: app/i18n_strings.py:13
+msgid "milliliter"
+msgstr "Milliliter"
+
+#: app/i18n_strings.py:14
+msgid "liter"
+msgstr "Liter"
+
+#: app/i18n_strings.py:15
+msgid "centiliter"
+msgstr "Zentiliter"
+
+#: app/i18n_strings.py:16
+msgid "deciliter"
+msgstr "Deziliter"
+
+#: app/i18n_strings.py:17
+msgid "teaspoon"
+msgstr "Teelöffel"
+
+#: app/i18n_strings.py:18
+msgid "tablespoon"
+msgstr "Esslöffel"
+
+#: app/i18n_strings.py:19
+msgid "cup"
+msgstr "Tasse"
+
+#: app/i18n_strings.py:20
+msgid "piece"
+msgstr "Stück"
+
+#: app/i18n_strings.py:21
+msgid "pinch"
+msgstr "Prise"
+
+#: app/i18n_strings.py:22
+msgid "to taste"
+msgstr "Nach Geschmack"
+
+#: app/i18n_strings.py:25
+msgid "Vegetable"
+msgstr "Gemüse"
+
+#: app/i18n_strings.py:26
+msgid "Fruit"
+msgstr "Obst"
+
+#: app/i18n_strings.py:27 app/i18n_strings.py:59
+msgid "Meat"
+msgstr "Fleisch"
+
+#: app/i18n_strings.py:28
+msgid "Fish"
+msgstr "Fisch"
+
+#: app/i18n_strings.py:29
+msgid "Seafood"
+msgstr "Meeresfrüchte"
+
+#: app/i18n_strings.py:30
+msgid "Dairy"
+msgstr "Milchprodukte"
+
+#: app/i18n_strings.py:31
+msgid "Egg"
+msgstr "Ei"
+
+#: app/i18n_strings.py:32
+msgid "Grain"
+msgstr "Getreide"
+
+#: app/i18n_strings.py:33
+msgid "Legume"
+msgstr "Hülsenfrucht"
+
+#: app/i18n_strings.py:34
+msgid "Nut"
+msgstr "Nuss"
+
+#: app/i18n_strings.py:35
+msgid "Spice"
+msgstr "Gewürz"
+
+#: app/i18n_strings.py:36
+msgid "Herb"
+msgstr "Kraut"
+
+#: app/i18n_strings.py:37
+msgid "Oil"
+msgstr "Öl"
+
+#: app/i18n_strings.py:38
+msgid "Sweetener"
+msgstr "Süßungsmittel"
+
+#: app/i18n_strings.py:39
+msgid "Condiment"
+msgstr "Würzmittel"
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+#: app/i18n_strings.py:40 app/i18n_strings.py:53
+msgid "Beverage"
+msgstr "Getränk"
+
+#: app/i18n_strings.py:41
+msgid "Other"
+msgstr "Sonstiges"
+
+#: app/i18n_strings.py:44
+msgid "Starter"
+msgstr "Vorspeise"
+
+#: app/i18n_strings.py:45
+msgid "Main course"
+msgstr "Hauptgericht"
+
+#: app/i18n_strings.py:46
+msgid "Dessert"
+msgstr "Dessert"
+
+#: app/i18n_strings.py:47
+msgid "Sauce"
+msgstr "Soße"
+
+#: app/i18n_strings.py:48
+msgid "Side dish"
+msgstr "Beilage"
+
+#: app/i18n_strings.py:49
+msgid "Soup"
+msgstr "Suppe"
+
+#: app/i18n_strings.py:50
+msgid "Salad"
+msgstr "Salat"
+
+#: app/i18n_strings.py:51
+msgid "Breakfast"
+msgstr "Frühstück"
+
+#: app/i18n_strings.py:52
+msgid "Snack"
+msgstr "Snack"
+
+#: app/i18n_strings.py:56
+msgid "Vegan"
+msgstr "Vegan"
+
+#: app/i18n_strings.py:57
+msgid "Vegetarian"
+msgstr "Vegetarisch"
+
+#: app/i18n_strings.py:58
+msgid "Pescatarian"
+msgstr "Pescetarisch"
+
+#: app/i18n_strings.py:60 app/templates/dashboard.html:29
+msgid "All diets"
+msgstr "Alle Ernährungsweisen"
+
+#: app/i18n_strings.py:61 app/templates/recipe_form.html:126
+msgid "Diet"
+msgstr "Ernährung"
+
+# ── Auth errors
+# ───────────────────────────────────────────────────────────────
+#: app/i18n_strings.py:64
+msgid "Password is too weak."
+msgstr "Das Passwort ist zu schwach."
+
+#: app/i18n_strings.py:65 app/routers/auth.py:59
+msgid "Invalid email or password"
+msgstr "Ungültige E-Mail-Adresse oder Passwort"
+
+#: app/i18n_strings.py:66 app/routers/recipes.py:34
+msgid "Not authenticated"
+msgstr "Nicht authentifiziert"
+
+#: app/i18n_strings.py:67 app/routers/recipes.py:261 app/routers/recipes.py:329
+#: app/routers/recipes.py:416
+msgid "Recipe not found"
+msgstr "Rezept nicht gefunden"
+
+#: app/i18n_strings.py:68 app/routers/recipes.py:263
+msgid "Not your recipe"
+msgstr "Dieses Rezept gehört Ihnen nicht"
+
+#: app/i18n_strings.py:69
+msgid "Name is required"
+msgstr "Name ist erforderlich"
+
+#: app/i18n_strings.py:70
+msgid "Ingredient already exists"
+msgstr "Diese Zutat existiert bereits"
+
+#: app/i18n_strings.py:71
+msgid "My Recipes"
+msgstr "Meine Rezepte"
+
+#: app/routers/admin.py:81
+msgid "Cannot remove the last admin role."
+msgstr "Die letzte Administratorrolle kann nicht entfernt werden."
+
+#: app/routers/admin.py:102
+msgid "Cannot delete your own account."
+msgstr "Das eigene Konto kann nicht gelöscht werden."
+
+#: app/routers/admin.py:104
+msgid "Cannot delete the last admin."
+msgstr "Der letzte Administrator kann nicht gelöscht werden."
+
+# ── Auth errors
+# ───────────────────────────────────────────────────────────────
+#: app/routers/auth.py:92 app/routers/settings.py:90
+msgid "Passwords do not match"
+msgstr "Die Passwörter stimmen nicht überein"
+
+#: app/routers/auth.py:107
+msgid "An account with this email already exists"
+msgstr "Ein Konto mit dieser E-Mail-Adresse existiert bereits"
+
+#: app/routers/settings.py:77
+msgid "First name is required."
+msgstr "Vorname ist erforderlich."
+
+#: app/routers/settings.py:79
+msgid "Last name is required."
+msgstr "Nachname ist erforderlich."
+
+#: app/routers/settings.py:81
+msgid "Invalid language."
+msgstr "Ungültige Sprache."
+
+#: app/routers/settings.py:86
+msgid "All password fields are required to change your password"
+msgstr "Alle Passwortfelder sind erforderlich, um Ihr Passwort zu ändern"
+
+#: app/routers/settings.py:88
+msgid "Current password is incorrect"
+msgstr "Das aktuelle Passwort ist falsch"
+
+#: app/templates/account.html:3 app/templates/account.html:7
+msgid "Account settings"
+msgstr "Kontoeinstellungen"
+
+#: app/templates/account.html:16
+msgid "Personal information"
+msgstr "Persönliche Informationen"
+
+#: app/templates/account.html:19 app/templates/register.html:14
+msgid "First name"
+msgstr "Vorname"
+
+#: app/templates/account.html:24 app/templates/register.html:18
+msgid "Last name"
+msgstr "Nachname"
+
+# ── Auth
+# ──────────────────────────────────────────────────────────────────────
+#: app/templates/account.html:30 app/templates/admin/user_edit.html:15
+#: app/templates/login.html:13 app/templates/register.html:23
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+#: app/templates/account.html:32
+msgid "Email cannot be changed"
+msgstr "E-Mail-Adresse kann nicht geändert werden"
+
+#: app/templates/account.html:37
+msgid "Default language"
+msgstr "Standardsprache"
+
+#: app/templates/account.html:49
+msgid "Change password"
+msgstr "Passwort ändern"
+
+#: app/templates/account.html:50
+msgid "Leave blank to keep your current password"
+msgstr "Leer lassen, um Ihr aktuelles Passwort beizubehalten"
+
+#: app/templates/account.html:52
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+#: app/templates/account.html:57
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: app/templates/account.html:66
+msgid "Confirm new password"
+msgstr "Neues Passwort bestätigen"
+
+#: app/templates/account.html:73 app/templates/admin/user_edit.html:31
+#: app/templates/recipe_form.html:107 app/templates/recipe_form.html:131
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: app/templates/account.html:74
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: app/templates/account.html:84 app/templates/register.html:47
+msgid "Very weak"
+msgstr "Sehr schwach"
+
+#: app/templates/account.html:85 app/templates/register.html:48
+msgid "Weak"
+msgstr "Schwach"
+
+#: app/templates/account.html:86 app/templates/register.html:49
+msgid "Fair"
+msgstr "Mittel"
+
+#: app/templates/account.html:87 app/templates/register.html:50
+msgid "Strong"
+msgstr "Stark"
+
+#: app/templates/account.html:88 app/templates/register.html:51
+msgid "Very strong"
+msgstr "Sehr stark"
+
+#: app/templates/base.html:21
+msgid "Menu"
+msgstr "Menü"
+
+#: app/templates/admin/user_edit.html:25 app/templates/base.html:28
+msgid "Admin"
+msgstr "Admin"
+
+# ── Account
+# ───────────────────────────────────────────────────────────────────
+#: app/templates/base.html:30
+msgid "Account"
+msgstr "Konto"
+
+#: app/templates/base.html:32
+msgid "Log out"
+msgstr "Abmelden"
+
+# ── Nav
+# ──────────────────────────────────────────────────────────────────────
+#: app/templates/base.html:37 app/templates/login.html:3
+#: app/templates/login.html:7 app/templates/login.html:20
+#: app/templates/register.html:40
+msgid "Log in"
+msgstr "Anmelden"
+
+#: app/templates/admin/users.html:17 app/templates/dashboard.html:13
+#: app/templates/dashboard.html:18
+msgid "Recipes"
+msgstr "Rezepte"
+
+#: app/templates/dashboard.html:19
+msgid "+ New recipe"
+msgstr "+ Neues Rezept"
+
+#: app/templates/dashboard.html:27
+msgid "Search…"
+msgstr "Suchen…"
+
+#: app/templates/dashboard.html:35
+msgid "Newest first"
+msgstr "Neueste zuerst"
+
+#: app/templates/dashboard.html:36
+msgid "Oldest first"
+msgstr "Älteste zuerst"
+
+#: app/templates/dashboard.html:37
+msgid "Title A–Z"
+msgstr "Titel A–Z"
+
+#: app/templates/dashboard.html:38
+msgid "Title Z–A"
+msgstr "Titel Z–A"
+
+#: app/templates/dashboard.html:41 app/templates/dashboard.html:101
+msgid "Clear filters"
+msgstr "Filter zurücksetzen"
+
+#: app/templates/dashboard.html:46 app/templates/recipe_form.html:52
+#: app/templates/recipe_form.html:122
+msgid "Type"
+msgstr "Typ"
+
+#: app/templates/dashboard.html:74 app/templates/recipe_detail.html:37
+msgid "servings"
+msgstr "Portionen"
+
+#: app/templates/dashboard.html:84 app/templates/dashboard.html:86
+msgid "Previous"
+msgstr "Zurück"
+
+#: app/templates/dashboard.html:88
+#, python-format
+msgid "Page %(n)s of %(m)s"
+msgstr "Seite %(n)s von %(m)s"
+
+#: app/templates/dashboard.html:90 app/templates/dashboard.html:92
+msgid "Next"
+msgstr "Weiter"
+
+#: app/templates/dashboard.html:100
+msgid "No recipes match your filters."
+msgstr "Keine Rezepte entsprechen Ihren Filtern."
+
+#: app/templates/dashboard.html:103
+msgid "No recipes yet."
+msgstr "Noch keine Rezepte."
+
+#: app/templates/dashboard.html:104
+msgid "Create your first recipe"
+msgstr "Erstellen Sie Ihr erstes Rezept"
+
+# ── Index
+# ─────────────────────────────────────────────────────────────────────
+#: app/templates/index.html:7
+msgid "Welcome to the Gourmant App!"
+msgstr "Willkommen bei der Gourmant App!"
+
+#: app/templates/index.html:8
+msgid "Your recipe management companion."
+msgstr "Ihr Rezeptverwaltungs-Assistent."
+
+#: app/templates/login.html:17 app/templates/register.html:27
+msgid "Password"
+msgstr "Passwort"
+
+#: app/templates/login.html:22
+msgid "No account yet?"
+msgstr "Noch kein Konto?"
+
+#: app/templates/login.html:22
+msgid "Create one"
+msgstr "Jetzt erstellen"
+
+#: app/templates/recipe_detail.html:21 app/templates/recipe_form.html:3
+#: app/templates/recipe_form.html:38
+msgid "Edit recipe"
+msgstr "Rezept bearbeiten"
+
+# ── Recipe detail
+# ─────────────────────────────────────────────────────────────
+#: app/templates/recipe_detail.html:23
+msgid "← Back"
+msgstr "← Zurück"
+
+#: app/templates/recipe_detail.html:48 app/templates/recipe_form.html:90
+msgid "Ingredients"
+msgstr "Zutaten"
+
+#: app/templates/recipe_detail.html:77
+msgid "No ingredients added."
+msgstr "Keine Zutaten hinzugefügt."
+
+#: app/templates/recipe_detail.html:84 app/templates/recipe_form.html:101
+msgid "Steps"
+msgstr "Schritte"
+
+#: app/templates/recipe_detail.html:86
+msgid "min total"
+msgstr "min gesamt"
+
+#: app/templates/recipe_detail.html:98
+msgid "Step image"
+msgstr "Schritt-Bild"
+
+#: app/templates/recipe_detail.html:110
+msgid "No steps added."
+msgstr "Keine Schritte hinzugefügt."
+
+# ── Recipe form
+# ───────────────────────────────────────────────────────────────
+#: app/templates/recipe_form.html:3 app/templates/recipe_form.html:38
+msgid "New recipe"
+msgstr "Neues Rezept"
+
+#: app/templates/recipe_form.html:13
+msgid "Ingredient…"
+msgstr "Zutat…"
+
+#: app/templates/recipe_form.html:14
+msgid "Amount"
+msgstr "Menge"
+
+#: app/templates/recipe_form.html:15
+msgid "Group name (e.g. Dough, Toppings…)"
+msgstr "Gruppenname (z.B. Teig, Beläge…)"
+
+#: app/templates/recipe_form.html:16
+msgid "Describe this step…"
+msgstr "Beschreiben Sie diesen Schritt…"
+
+#: app/templates/recipe_form.html:17
+msgid "Saving…"
+msgstr "Wird gespeichert…"
+
+#: app/templates/recipe_form.html:18 app/templates/recipe_form.html:108
+msgid "Save recipe"
+msgstr "Rezept speichern"
+
+#: app/templates/recipe_form.html:19
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: app/templates/recipe_form.html:20
+msgid "Title is required."
+msgstr "Titel ist erforderlich."
+
+#: app/templates/recipe_form.html:21
+msgid "Failed to save recipe."
+msgstr "Rezept konnte nicht gespeichert werden."
+
+#: app/templates/recipe_form.html:22
+msgid "Network error. Please try again."
+msgstr "Netzwerkfehler. Bitte versuchen Sie es erneut."
+
+#: app/templates/recipe_form.html:23
+msgid "Failed to create ingredient."
+msgstr "Zutat konnte nicht erstellt werden."
+
+#: app/templates/recipe_form.html:24
+msgid "Add at least one ingredient."
+msgstr "Füge mindestens eine Zutat hinzu."
+
+#: app/templates/recipe_form.html:25
+msgid "Add at least one step."
+msgstr "Füge mindestens einen Schritt hinzu."
+
+#: app/templates/recipe_form.html:26
+msgid "Each ingredient needs a valid amount."
+msgstr "Jede Zutat benötigt eine gültige Menge."
+
+#: app/templates/recipe_form.html:27 app/templates/recipe_form.html:82
+msgid "Add image"
+msgstr "Bild hinzufügen"
+
+#: app/templates/recipe_form.html:28
+msgid "Uploading…"
+msgstr "Wird hochgeladen…"
+
+#: app/templates/recipe_form.html:29
+msgid "Upload failed"
+msgstr "Upload fehlgeschlagen"
+
+#: app/templates/recipe_form.html:30 app/templates/recipe_form.html:78
+msgid "Remove image"
+msgstr "Bild entfernen"
+
+#: app/templates/recipe_form.html:31 app/templates/recipe_form.html:93
+msgid "+ Add ingredient"
+msgstr "+ Zutat hinzufügen"
+
+#: app/templates/recipe_form.html:45
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/recipe_form.html:47
+msgid "Title"
+msgstr "Titel"
+
+#: app/templates/recipe_form.html:48
+msgid "e.g. Pizza Margherita"
+msgstr "z.B. Pizza Margherita"
+
+#: app/templates/recipe_form.html:60
+msgid "Servings"
+msgstr "Portionen"
+
+#: app/templates/recipe_form.html:61
+msgid "e.g. 4"
+msgstr "z.B. 4"
+
+#: app/templates/recipe_form.html:65
+msgid "Description"
+msgstr "Beschreibung"
+
+#: app/templates/recipe_form.html:66
+msgid "A short description of the recipe…"
+msgstr "Eine kurze Beschreibung des Rezepts…"
+
+# ── Recipe images
+# ────────────────────────────────────────────────────────────
+#: app/templates/recipe_form.html:72
+msgid "Cover image"
+msgstr "Titelbild"
+
+#: app/templates/recipe_form.html:76
+msgid "Cover image preview"
+msgstr "Vorschau des Titelbilds"
+
+#: app/templates/recipe_form.html:96
+msgid "+ Add group"
+msgstr "+ Gruppe hinzufügen"
+
+#: app/templates/recipe_form.html:103
+msgid "+ Add step"
+msgstr "+ Schritt hinzufügen"
+
+#: app/templates/recipe_form.html:116
+msgid "New ingredient"
+msgstr "Neue Zutat"
+
+#: app/templates/admin/users.html:15 app/templates/recipe_form.html:118
+msgid "Name"
+msgstr "Name"
+
+#: app/templates/recipe_form.html:132
+msgid "Create"
+msgstr "Erstellen"
+
+#: app/templates/register.html:3 app/templates/register.html:7
+#: app/templates/register.html:38
+msgid "Create account"
+msgstr "Konto erstellen"
+
+#: app/templates/register.html:35
+msgid "Confirm password"
+msgstr "Passwort bestätigen"
+
+#: app/templates/register.html:40
+msgid "Already have an account?"
+msgstr "Bereits ein Konto?"
+
+#: app/templates/admin/user_edit.html:3 app/templates/admin/user_edit.html:10
+msgid "Edit user"
+msgstr "Benutzer bearbeiten"
+
+#: app/templates/admin/user_edit.html:8 app/templates/admin/users.html:10
+msgid "Users"
+msgstr "Benutzer"
+
+#: app/templates/admin/user_edit.html:22 app/templates/admin/users.html:16
+msgid "Role"
+msgstr "Rolle"
+
+#: app/templates/admin/user_edit.html:24
+msgid "User"
+msgstr "Benutzer"
+
+#: app/templates/admin/user_edit.html:32
+msgid "Save"
+msgstr "Speichern"
+
+#: app/templates/admin/users.html:3
+msgid "Admin — Users"
+msgstr "Admin — Benutzer"
+
+#: app/templates/admin/users.html:8
+msgid "Dashboard"
+msgstr "Übersicht"
+
+#: app/templates/admin/users.html:14
+msgid "Email"
+msgstr "E-Mail"
+
+#: app/templates/admin/users.html:18
+msgid "Created"
+msgstr "Erstellt"
+
+#: app/templates/admin/users.html:33
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: app/templates/admin/users.html:37
+msgid "Delete user and all their recipes?"
+msgstr "Benutzer und alle Rezepte löschen?"
+
+#: app/templates/admin/users.html:38
+msgid "Delete"
+msgstr "Löschen"
+
+#~ msgid "Add ingredient…"
+#~ msgstr "Zutat hinzufügen…"
+
